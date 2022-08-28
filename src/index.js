@@ -58,6 +58,7 @@ const updatePoints = ({
         }
         resultsByDriver[driver.name][pointsField] = newPoints;
       }
+      
       if (
         !entry.isDnfEntry &&
         entry.isDebutant &&

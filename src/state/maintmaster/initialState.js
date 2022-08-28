@@ -14,6 +14,7 @@ const initialState = {
   useNationalityAsTeam: false,
   showTeamNameTextColumn: true,
   hideTeamLogoColumn: true,
+  numPointsForDebutant: 5,
  // disableOverall: true,
 //teamPointsForPowerstage: false,
   // dropLowestScoringRoundsNumber: 1,
@@ -23,7 +24,7 @@ const initialState = {
   divisions: {
     elit: {
       divisionName: "elit",
-      displayName: "MaintMaster Elit",
+      displayName: "Elit",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 1,
       clubs: [
@@ -51,7 +52,7 @@ const initialState = {
     },
     a: {
       divisionName: "a",
-      displayName: "MaintMaster A",
+      displayName: "A",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
       clubs: [
@@ -121,7 +122,7 @@ const initialState = {
     },
     b: {
       divisionName: "b",
-      displayName: "MaintMaster B",
+      displayName: "B",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
       clubs: [
@@ -148,8 +149,7 @@ const initialState = {
               name: "Johan.nesse",
               stageTime: "06:42.600",
               totalTime: "28.31.160",
-              isDnfEntry: true,
-              isVIP: true,
+              isDebutant: true,
             },
           ]
         }
@@ -172,7 +172,7 @@ const initialState = {
     },   
     c: {
       divisionName: "c",
-      displayName: "MaintMaster C",
+      displayName: "C",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
       clubs: [
@@ -219,8 +219,7 @@ const initialState = {
       ],
       points: {
         powerStage: [5,4,3,2,1],
-        //overall: [25,22,20,19,18,16,14,12,10,8,5,3,1]
-        overall: [30,27,25,22,19,15,13,11,8,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+        overall: [30,27,25,22,19,15,13,11,8,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       },
     }
   }

@@ -174,7 +174,7 @@ const writeStandingsHTML = (division, type, links) => {
     division.divisionName,
     type,
     links,
-    data.headerLocations
+    data.headerLocations,
   );
   data.lastUpdatedAt = moment()
     .utc()
@@ -280,6 +280,7 @@ const transformForStandingsHTML = (division, type) => {
       !leagueRef.league.hideCarColumnInStandings &&
       leagueRef.league.showCarNameAsTextInStandings,
     title: division.displayName || division.divisionName,
+    siteTitlePrefix: leagueRef.league.siteTitlePrefix,
     divisionName: division.divisionName,
     showPointsAfterDropRounds:
       leagueRef.league.dropLowestScoringRoundsNumber > 0,
@@ -324,6 +325,7 @@ const transformForDriverResultsHTML = (event, division) => {
     headerLocations,
     rows,
     title: division.displayName || divisionName,
+    siteTitlePrefix: leagueRef.league.siteTitlePrefix,
     showTeam: leagueRef.hasTeams && !leagueRef.league.useNationalityAsTeam,
     showCar: leagueRef.hasCars || leagueRef.league.showCarNameAsTextInResults,
     showCarName: leagueRef.league.showCarNameAsTextInResults,

@@ -58,9 +58,9 @@ const updatePoints = ({
         }
         resultsByDriver[driver.name][pointsField] = newPoints;
       }
-      
+
       if (
-        !entry.isDnfEntry &&
+        entry.isDnfEntry &&
         entry.isDebutant &&
         pointsField === "overallPoints"
       ) {
@@ -286,6 +286,8 @@ const getTotalPointsDisplay = (result, event) => {
       } else {
         display = "DNS";
       }
+    } else if (result.entry.isDebutant) {
+      display = result.totalPoints;
     } else if (result.entry.isDnfEntry) {
       display = "DNF";
     }

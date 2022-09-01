@@ -31,18 +31,7 @@ const initialState = {
         }
       ],
       events: [],
-      manualResults: [
-        {
-          eventIndex: 0,
-          results: [
-            {
-              name: "CA_Oisin-Hussey_6",
-              stageTime: "07:52.947",
-              totalTime: "47:43.750"
-            }
-          ]
-        }
-      ],
+      manualResults: [],
       cars: [
         "Seat Ibiza Kit Car",
         "Volkswagen Golf Kitcar",
@@ -58,74 +47,8 @@ const initialState = {
         "Ford Sierra Cosworth RS500"
       ],
       points: {
-        powerStage: [5, 4, 3, 2, 1],
-        overall: [
-          65,
-          59,
-          55,
-          51,
-          47,
-          44,
-          41,
-          38,
-          36,
-          34,
-          32,
-          30,
-          28,
-          27,
-          26,
-          25,
-          24,
-          23,
-          22,
-          21,
-          20,
-          19,
-          18,
-          17,
-          16,
-          15,
-          14,
-          13,
-          12,
-          11,
-          10,
-          9,
-          8,
-          7,
-          6,
-          5,
-          4,
-          3,
-          2,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1
-        ]
+        powerStage: [],
+        overall: []
       }
     }
   }

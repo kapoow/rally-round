@@ -5,7 +5,7 @@ const initialState = {
   // subfolderName: "worldcup",
   logo: "maintmaster.png",
   siteTitlePrefix: "MaintMaster",
-  useStandingsForHome: true,
+  useStandingsForHome: false,
   showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,
@@ -31,6 +31,7 @@ const initialState = {
         {
           clubId: "414209",
           championshipIds: ["602654", "607003", "621615", "626133","630229","655547",],
+          includeNextChampionships: true
         }
     ],
     events: [],
@@ -59,6 +60,7 @@ const initialState = {
         {
           clubId: "392122",
           championshipIds: ["602657","607006","621616","626135","630247","655548",],
+          includeNextChampionships: true
         }
       ],
       events: [],
@@ -129,6 +131,7 @@ const initialState = {
         {
           clubId: "392123",
           championshipIds: ["602658","607009","621617","626138","630246","655549",],
+          includeNextChampionships: true
         }
       ],
       events: [],
@@ -148,11 +151,43 @@ const initialState = {
             {
               name: "Johan.nesse",
               stageTime: "06:42.600",
-              totalTime: "28.31.160",
+              totalTime: "28:31.160",
               isDebutant: true,
+              isDnfEntry: true,
+            },
+            {
+              name: "RALLY-KALLE72",
+              stageTime: "06:36.700",
+              totalTime: "28:54.336",
+              isDebutant: true,
+              isDnfEntry: true,
+            }
+          ]
+        },
+        {
+          eventIndex: 3,
+          results: [
+            {
+              name: "RALLY-KALLE72",
+              stageTime: "03:37.132",
+              totalTime: "43:03.053",
+              isDebutant: true,
+              isDnfEntry: true,
+            }
+          ]
+        },
+        {
+          eventIndex: 5,
+          results: [
+            {
+              name: "Johan.nesse",
+              stageTime: "03:41.787",
+              totalTime: "28:24.367",
+              isDebutant: true,
+              isDnfEntry: true,
             },
           ]
-        }
+        },
       ],
       cars: [
         "Peugeot 206 Rally",
@@ -179,6 +214,7 @@ const initialState = {
         {
           clubId: "392124",
           championshipIds: ["602659","607010","621618","626140","630244","655550",],
+          includeNextChampionships: true
         }
       ],
       events: [],
@@ -192,8 +228,41 @@ const initialState = {
               //totalTime: "23:59:59.000",
               //stageDiff: "N/A",
               isDnfEntry: true,
-              isDnsEntry: true
-            }
+              isDnsEntry: true,
+            },
+            {
+              name: "Raybz|★|",
+              stageTime: "07:02.816",
+              totalTime: "30:44.300",
+              isDnfEntry: true,
+              isDebutant: true,
+            },
+            {
+              name: "ERNEBRO",
+              stageTime: "07:20.965",
+              totalTime: "32:32.600",
+              isDnfEntry: true,
+              isDebutant: true,
+            },
+          ]
+        },
+        {
+          eventIndex: 3,
+          results: [
+            {
+              name: "Raybz|★|",
+              stageTime: "03:37.964",
+              totalTime: "46:24.366",
+              isDnfEntry: true,
+              isDebutant: true,
+            },
+            {
+              name: "ERNEBRO",
+              stageTime: "04:02.061",
+              totalTime: "48:30.595",
+              isDnfEntry: true,
+              isDebutant: true,
+            },
           ]
         },
         {

@@ -1,7 +1,7 @@
 Racenet Display Name,Username/Gamertag,Team,Class,Car,Name3
-SFR_S.Sandegren,Simon Sandegren,MaintMaster SRT,elit,Ford Focus RS Rally 2007
-CA_Dennis-Hernehult_30,Dennis Hernehult,M-sport Sweden,elit,Ford Focus RS Rally 2007
-TBSPULMEKANISKA,Thomas Billman,M-sport Sweden,elit,Ford Focus RS Rally 2007
+SFR_S.Sandegren,Simon Sandegren,MaintMaster SRT Open,elit,Ford Focus RS Rally 2007
+CA_Dennis-Hernehult_30,Dennis Hernehult,M-Sport Sweden,elit,Ford Focus RS Rally 2007
+TBSPULMEKANISKA,Thomas Billman,M-Sport Sweden,elit,Ford Focus RS Rally 2007
 JIMPAN1203,Jimmy Norr Kambrink,MaintMaster SRT Open,elit,Citroën C4 Rally
 OLSSON1964BYN,Johan Olsson,Citroën Sport Scandinavia,elit,Citroën C4 Rally
 TOMMIE LINDBERG,Tommie Lindberg,Citroën Sport Scandinavia,elit,Citroën C4 Rally
@@ -21,11 +21,11 @@ ZALANA [WRCK],Joakim Ottosson,MaintMaster SRT Open,a,Ford Focus RS Rally 2001
 DYRRAN3,Daniel Dyrenius,MaintMaster SRT Open,a,SUBARU Impreza
 j hjortbrandt,Johan Hjortbrandt,MaintMaster SRT Open,a,Ford Focus RS Rally 2007,j hjortbrandt
 XCONX1,Tom Aldenfors,MaintMaster SRT Open,a,SUBARU Impreza
-D Gustafsson,Daniel Gustafsson,M-sport Sweden,a,Ford Focus RS Rally 2007,D Gustafsson
-Weepy,Jonas Gustafsson,M-sport Sweden,a,Ford Focus RS Rally 2007,Weepy
-THOMASDAHN,Thomas Dahn,M-sport Sweden,a,Ford Focus RS Rally 2007
-DAHLIIN,Andreas Dahlin,M-sport Sweden,a,Ford Focus RS Rally 2007
-TNG-FEDORICO,Federico Harvenberg,Wermland Rally Team,a,Ford Focus RS Rally 2007
+D Gustafsson,Daniel Gustafsson,M-Sport Sweden,a,Ford Focus RS Rally 2007,D Gustafsson
+Weepy,Jonas Gustafsson,M-Sport Sweden,a,Ford Focus RS Rally 2007,Weepy
+THOMASDAHN,Thomas Dahn,M-Sport Sweden,a,Ford Focus RS Rally 2007
+DAHLIIN,Andreas Dahlin,M-Sport Sweden,a,Ford Focus RS Rally 2007
+TNG-FEDORICO,Federico Harvenberg,Wermland Rally Team,a,Ford Focus RS Rally 2007,fedorico
 PERANST,Per Änst,Wermland Rally Team,a,ŠKODA Fabia Rally
 LUDDE1515,Ludvig Gabrielsson,Wermland Rally Team,a,Citroën C4 Rally
 THORELLSKI,Erik Thorell,Wermland Rally Team,a,Citroën C4 Rally
@@ -59,10 +59,10 @@ DYRRAN2,Mikael Dyrrenius,MaintMaster SRT Open,b,SUBARU Impreza
 4WDALDENFORS,Jim aldenfors,MaintMaster SRT Open,b,Citroën C4 Rally
 BONAH,Björn Hvit,MaintMaster SRT Open,b,SUBARU Impreza
 OSED,Robin Nygren,MaintMaster SRT Open,b,SUBARU Impreza
-MAZZAN,Jonathan Pettersson,M-sport Sweden,b,Ford Focus RS Rally 2007
-OSCARALMQVIST,OscarAlmqvist,M-sport Sweden,b,Ford Focus RS Rally 2007
-DOKTOR.FROJD,Jesper Fröjd,M-sport Sweden,b,Ford Focus RS Rally 2007
-LIALOK12,Sofie Peterson,M-sport Sweden,b,Ford Focus RS Rally 2007
+MAZZAN,Jonathan Pettersson,M-Sport Sweden,b,Ford Focus RS Rally 2007
+OSCARALMQVIST,OscarAlmqvist,M-Sport Sweden,b,Ford Focus RS Rally 2007
+DOKTOR.FROJD,Jesper Fröjd,M-Sport Sweden,b,Ford Focus RS Rally 2007
+LIALOK12,Sofie Peterson,M-Sport Sweden,b,Ford Focus RS Rally 2007
 FOLKRACE_NONAS,Jonas Hedlund,SimRace Team Sweden,b,Ford Focus RS Rally 2001
 DENKAN_N,Dennis Nygren,SimRace Team Sweden,b,SUBARU Impreza
 JIMMYLEHN,Jimmy Lehn,Wermland Rally Team,b,ŠKODA Fabia Rally
@@ -94,27 +94,27 @@ RALLY-KALLE72,Peter Friman,,b,
 "M,Eriksson",Markus Eriksson,,b,
 Mathiasjweber,Mathias johansson,,b,
 Raybz|★|,Rasmus Nyberg,,c,
-J86P,Jesper Persson,,c,SUBARU Impreza
-MATTIAS,Mattias Lagerqvist,MaintMaster SRT,c,Ford Focus RS Rally 2007
-VULCA71,Magnus Bergström,MaintMaster SRT Open,c,Ford Focus RS Rally 2007
-FFALT_74,Fredrik Fält,M-sport Sweden,c,Ford Focus RS Rally 2007
-PSR_VIKSTROM,Johan Vikström,M-sport Sweden,c,SUBARU Impreza S4 Rally
+J86P,Jesper Persson,MaintMaster SRT,c,SUBARU Impreza
+MATTIAS,Mattias Lagerqvist,MaintMaster SRT Open,c,Ford Focus RS Rally 2007
+VULCA71,Magnus Bergström,M-Sport Sweden,c,Ford Focus RS Rally 2007
+FFALT_74,Fredrik Fält,M-Sport Sweden,c,Ford Focus RS Rally 2007
+PSR_VIKSTROM,Johan Vikström,,c,SUBARU Impreza S4 Rally
 PETER.DANIELSSON,Peter Danielsson,,c,ŠKODA Fabia Rally,Peter.Danielsson
-JOSCARSSON,John Oscarsson,Wermland Rally Team,c,Ford Focus RS Rally 2007
+JOSCARSSON,John Oscarsson,,c,Ford Focus RS Rally 2007
 Ducce950,Tomas Eriksson,MaintMaster SRT,c,SUBARU Impreza
 RILLEPOINT,Rickard Persson,MaintMaster SRT,c,SUBARU Impreza
-MORGAN OLSSON,Morgan Olsson,MaintMaster SRT,c,SUBARU Impreza
-SLAES100,Claes Söderdahl,MaintMaster SRT Open,c,Ford Focus RS Rally 2007
-JOST69,Johannes Stötzel,M-sport Sweden,c,SUBARU Impreza
-FAMILJEN001,Daniel Mauritzell,MaintMaster SRT,c,ŠKODA Fabia Rally
+MORGAN OLSSON,Morgan Olsson,MaintMaster SRT Open,c,SUBARU Impreza
+SLAES100,Claes Söderdahl,M-Sport Sweden,c,Ford Focus RS Rally 2007
+JOST69,Johannes Stötzel,MaintMaster SRT,c,SUBARU Impreza
+FAMILJEN001,Daniel Mauritzell,Wermland Rally Team,c,ŠKODA Fabia Rally
 NWORCO,Nick Orchard,Wermland Rally Team,c,ŠKODA Fabia Rally
-TWEVSTER,Trevor Neish,Wermland Rally Team,c,SUBARU Impreza
-MI-ER,Micke Eriksson,,c,Ford Focus RS Rally 2007
-THOMSA_ONE,Thomas Rignell,M-sport Sweden,c,Citroën C4 Rally
+TWEVSTER,Trevor Neish,,c,SUBARU Impreza
+MI-ER,Micke Eriksson,M-Sport Sweden,c,Ford Focus RS Rally 2007
+THOMSA_ONE,Thomas Rignell,Citroën Sport Scandinavia,c,Citroën C4 Rally,TeamRignell
 XYLEX,Robin Grankvist,Citroën Sport Scandinavia,c,Citroën C4 Rally
-TOBIER,Tobias Eriksson,Citroën Sport Scandinavia,c,SUBARU Impreza
-DENNIS.C,Dennis Christensen,,c,Ford Focus RS Rally 2001
-MIKAEL.ELOFSSON,Mikael Elofsson,Wermland Rally Team,c,
+TOBIER,Tobias Eriksson,,c,SUBARU Impreza
+DENNIS.C,Dennis Christensen,Wermland Rally Team,c,Ford Focus RS Rally 2001
+MIKAEL.ELOFSSON,Mikael Elofsson,,c,
 MRWERMELAND,Mathias Lundberg,,c,Citroën C4 Rally
 #19 TOFFEBACKLIN,Kristoffer Bäcklin,,c,
 Ante5525,Anton Persson,,c,
@@ -137,6 +137,4 @@ UAUGUSTINSSON,Ulf Augustinsson,,c,
 virre9,Viktor Wiström,,c,
 Rallypojken1337,Timo Johansson,,c,
 Xbox one,Thomas wallmo,,c,
-Raybz|★|,Rasmus Nyberg,,c,
-TeamRignell,Thomas Rignell,,c,,thomsa_one
 limpan_volvo_940,Patrik Lindberg,,c,

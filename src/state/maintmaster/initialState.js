@@ -5,7 +5,7 @@ const initialState = {
   // subfolderName: "worldcup",
   logo: "maintmaster.png",
   siteTitlePrefix: "MaintMaster",
-  useStandingsForHome: false,
+  useStandingsForHome: true,
   showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,

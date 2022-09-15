@@ -21,6 +21,7 @@ jobs:
           node-version: 12.x
       - run: npm install
       #- run: node --unhandled-rejections=strict ./runner.js
+      - name: Run a multi-line script
         run: |
           echo test the checkout action,
           ls -a

@@ -2,7 +2,7 @@ const initialState = {
   nullTeamIsPrivateer: true,
   pointsForDNF: false,
   websiteName: "MaintMaster-shakedown",
-  // subfolderName: "worldcup",
+  subfolderName: "Shakedown",
   logo: "maintmaster.png",
   siteTitlePrefix: "Shakedown",
   useStandingsForHome: true,

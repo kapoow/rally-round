@@ -6,7 +6,7 @@ const initialState = {
   logo: "maintmaster.png",
   siteTitlePrefix: "MaintMaster",
   useStandingsForHome: true,
-  showLivePoints: false,
+  showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,
   hideCarColumnInStandings: false,

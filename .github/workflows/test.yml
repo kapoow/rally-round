@@ -26,8 +26,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: './hidden/out/maintmaster/website'
-          destination-github-username: 'kapoow'
-          destination-repository-name: 'kapoow.github.io'
+          destination-github-username: 'MaintMaster'
+          destination-repository-name: 'maintmaster.github.io'
           user-email: jonas.gsson@gmail.com
           user-name: kapoow
           target-branch: main

@@ -5,11 +5,10 @@ jobs:
     env:
       DIRT_USERNAME: ${{ secrets.DIRT_USERNAME }}
       DIRT_PASSWORD: ${{ secrets.DIRT_PASSWORD }}
-      #DIRT_AWS_ACCESS_KEY: ${{ secrets.DIRT_AWS_ACCESS_KEY }}
-      #DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
-      #GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+      DIRT_AWS_ACCESS_KEY: ${{ secrets.DIRT_AWS_ACCESS_KEY }}
+      DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
+      GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
       DEBUG: tkidman:*
-      CLUB: maintmaster
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -20,8 +19,15 @@ jobs:
         with:
           node-version: 12.x
       - run: npm install
-      #- run: node --unhandled-rejections=strict ./runner.js
-      - name: Run a multi-line script
-        run: |
-          echo test the checkout action,
-          ls -a
+      - run: CLUB=maintmaster node --unhandled-rejections=strict ./runner.js
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: './hidden/out/maintmaster/website'
+          destination-github-username: 'kapoow'
+          destination-repository-name: 'kapoow.github.io'
+          user-email: jonas.gsson@gmail.com
+          user-name: kapoow
+          target-branch: main

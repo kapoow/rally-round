@@ -7,7 +7,7 @@ const initialState = {
   siteTitlePrefix: "MaintMaster",
   useStandingsForHome: false,
   useResultsForHome: true,
-  showLivePoints: true,
+  showLivePoints: false,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,
   hideCarColumnInStandings: false,

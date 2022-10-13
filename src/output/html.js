@@ -11,8 +11,14 @@ const {
   getAllResults,
   getLocation
 } = require("./shared");
-const { outputPath, templatePath, getCountryForAnyCode } = require("../shared");
+const {
+  outputPath,
+  templatePath,
+  getCountryForAnyCode,
+  eventStatuses
+} = require("../shared");
 const { processFantasyResults } = require("../fantasy/fantasyCalculator");
+const { getLocalization } = require("./localization");
 // const { eventStatuses } = require("../shared");
 const resultColours = ["#76FF6A", "#faff5d", "#ffe300", "#ff5858"];
 
@@ -125,7 +131,8 @@ const getNavigationHTML = (
     endTime: leagueRef.endTime,
     activeCountry: leagueRef.activeCountryCode,
     logo: leagueRef.league.logo,
-    siteTitlePrefix: leagueRef.league.siteTitlePrefix
+    siteTitlePrefix: leagueRef.league.siteTitlePrefix,
+    localization: getLocalization()
   });
 };
 
@@ -290,12 +297,23 @@ const transformForStandingsHTML = (division, type) => {
     backgroundStyle: leagueRef.getBackgroundStyle(),
     logo: leagueRef.league.logo,
     showTeamNameTextColumn: leagueRef.league.showTeamNameTextColumn,
-    hideTeamLogoColumn: leagueRef.league.hideTeamLogoColumn
+    hideTeamLogoColumn: leagueRef.league.hideTeamLogoColumn,
+    localization: getLocalization()
   };
 };
 
 const hasPoints = (pointsField, rows) => {
   return rows.some(row => row[pointsField]);
+};
+
+const getStageTimeDisplay = (result, event) => {
+  if (
+    leagueRef.league.hideStageTimesUntilEventEnd &&
+    event.eventStatus !== eventStatuses.finished
+  ) {
+    return "--";
+  }
+  return result.entry.stageTime;
 };
 
 const transformForDriverResultsHTML = (event, division) => {
@@ -318,7 +336,8 @@ const transformForDriverResultsHTML = (event, division) => {
       teamLogo: getTeamLogo(driver.teamId),
       country,
       divisionDisplayName:
-        resultDivision.displayName || resultDivision.divisionName
+        resultDivision.displayName || resultDivision.divisionName,
+      stageTimeDisplay: getStageTimeDisplay(result, event)
     };
   });
   return {
@@ -343,7 +362,8 @@ const transformForDriverResultsHTML = (event, division) => {
     showSuperRallyColumn: leagueRef.league.showSuperRallyColumn,
     fullResultsLink: division.rbr
       ? `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results.php&rally_id=${event.eventId}`
-      : null
+      : null,
+    localization: getLocalization()
   };
 };
 
@@ -356,7 +376,7 @@ const writeDriverResultsHTML = (event, division, links, eventIndex) => {
     "driver",
     links,
     data.headerLocations
-    );
+  );
 
   data.lastUpdatedAt = moment()
     .utc()

@@ -31,7 +31,24 @@ const initialState = {
         }
       ],
       events: [],
-      manualResults: [],
+      manualResults: [
+        {
+          eventIndex: 0,
+          results: [
+            {
+              name: "CA_Oisin-Hussey_6",
+              stageTime: "07:52.947",
+              totalTime: "47:43.750"
+            },
+            {
+              name: "ifBULL",
+              stageTime: "08:01.608",
+              totalTime: "51:53.064",
+              isDnfEntry: false
+            }
+          ]
+        }
+      ],
       cars: [
         "Seat Ibiza Kit Car",
         "Volkswagen Golf Kitcar",

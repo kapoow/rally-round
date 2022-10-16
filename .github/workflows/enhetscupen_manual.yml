@@ -21,9 +21,9 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: npm install
-      - name: maintmaster
+      - name: maintmaster-enhetscupen
         if: always()
-        run: CLUB=maintmaster node --unhandled-rejections=strict ./runner.js
+        run: CLUB=maintmaster-enhetscupen node --unhandled-rejections=strict ./runner.js
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:

@@ -1,7 +1,7 @@
 const {
   teamId,
   name,
-  //car,
+  car,
   division,
   raceNetName,
   name3
@@ -9,11 +9,11 @@ const {
 
 const driverColumns = {
   [teamId]: "Team",
-  [name]: "Username/Gamertag",
-  [raceNetName]: "Racenet Display Name",
+  [name]: "Name",
+  [raceNetName]: "RacenetId",
   [division]: "Class",
-  //[car]: "Car",
-  [name3]: "Name3"
+  [car]: "Car",
+  [name3]: "ConsoleId"
 };
 
 module.exports = { driverColumns };

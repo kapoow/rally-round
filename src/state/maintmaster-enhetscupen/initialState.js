@@ -1,11 +1,12 @@
 const initialState = {
   nullTeamIsPrivateer: true,
   pointsForDNF: false,
-  websiteName: "MaintMaster-Enhetscupen-results",
+  websiteName: "MaintMaster",
   subfolderName: "enhetscupen",
   logo: "maintmaster.png",
   siteTitlePrefix: "Enhetscupen",
-  useStandingsForHome: true,
+  useStandingsForHome: false,
+  useResultsForHome:true,
   showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,
@@ -22,33 +23,8 @@ const initialState = {
   backgroundStyle:
     "background-image: linear-gradient(#00b1b1, #39d7d7); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
   divisions: {
-    elit: {
-      divisionName: "elit",
-      displayName: "Elit",
-      disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 1,
-      filterEntries: {
-        matchDivision: true,
-      },
-      clubs: [
-        {
-          clubId: "380076",
-          championshipIds: ["602665",],
-          includeNextChampionships: true
-        },
-    ],
-    events: [],
-
-      cars: [
-        "SUBARU WRX STI NR4"
-      ],
-      points: {
-        powerStage: [5, 4, 3, 2, 1],
-        overall: [15, 13, 11, 9, 7, 6, 5, 5, 5, 5]
-      }
-    },
     a: {
-      divisionName: "a",
+      divisionName: "A",
       displayName: "A",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
@@ -58,7 +34,7 @@ const initialState = {
       clubs: [
         {
           clubId: "380076",
-          championshipIds: ["602665",],
+          championshipIds: ["671711",],
           includeNextChampionships: true
         },
       ],
@@ -66,15 +42,15 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "SUBARU WRX STI NR4"
+        "Audi Sport quattro S1 E2"
       ],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,10,8,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+        overall: [30,27,25,24,23,21,19,17,15,13,12,11,10,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       }
     },
     b: {
-      divisionName: "b",
+      divisionName: "B",
       displayName: "B",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
@@ -84,7 +60,7 @@ const initialState = {
       clubs: [
         {
           clubId: "380076",
-          championshipIds: ["602665",],
+          championshipIds: ["671711",],
           includeNextChampionships: true
         },
       ],
@@ -92,15 +68,15 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "SUBARU WRX STI NR4"
+        "Audi Sport quattro S1 E2"
       ],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,20,19,18,17,15,13,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,]
+        overall: [30,27,25,24,23,21,19,17,15,13,12,11,10,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       }
     },   
     c: {
-      divisionName: "c",
+      divisionName: "C",
       displayName: "C",
       disableSameCarValidation: true,
       maxDriversScoringPointsForTeam: 2,
@@ -110,7 +86,7 @@ const initialState = {
       clubs: [
         {
           clubId: "380076",
-          championshipIds: ["602665",],
+          championshipIds: ["671711",],
           includeNextChampionships: true
         },
       ],
@@ -118,37 +94,11 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "SUBARU WRX STI NR4"
+        "Audi Sport quattro S1 E2"
       ],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,22,19,15,13,11,8,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      },
-    },
-    open: {
-      divisionName: "open",
-      displayName: "Open",
-      disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 2,
-      filterEntries: {
-        matchDivision: true,
-      },
-      clubs: [
-        {
-          clubId: "380076",
-          championshipIds: ["602665",],
-          includeNextChampionships: true
-        },
-      ],
-      events: [],
-      manualResults: [
-      ],
-      cars: [
-        "SUBARU WRX STI NR4"
-      ],
-      points: {
-        powerStage: [5, 4, 3, 2, 1],
-        overall: [15, 13, 11, 9, 7, 6, 5, 5, 5, 5]
+        overall: [30,27,25,24,23,21,19,17,15,13,12,11,10,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       },
     },
   }

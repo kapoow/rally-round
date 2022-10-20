@@ -14,7 +14,7 @@ const initialState = {
   useCarAsTeam: false,
   useNationalityAsTeam: false,
   showTeamNameTextColumn: true,
-  hideTeamLogoColumn: true,
+  hideTeamLogoColumn: false,
   numPointsForDebutant: 5,
  // disableOverall: true,
 //teamPointsForPowerstage: false,

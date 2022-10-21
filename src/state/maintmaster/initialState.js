@@ -41,8 +41,6 @@ const initialState = {
       events: [],
       manualResults: [	
       ],
-      cars: [
-      ],
       points: {
         powerStage: [5,4,3,2,1],
         overall: [30,27,25,24,23,21,19,17,15,13,12,11,10,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
@@ -66,8 +64,6 @@ const initialState = {
       events: [],
       manualResults: [	
       ],
-      cars: [
-      ],
       points: {
         powerStage: [5,4,3,2,1],
         overall: [30,27,25,24,23,21,19,17,15,13,12,11,10,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
@@ -90,8 +86,6 @@ const initialState = {
       ],
       events: [],
       manualResults: [	
-      ],
-      cars: [
       ],
       points: {
         powerStage: [5,4,3,2,1],

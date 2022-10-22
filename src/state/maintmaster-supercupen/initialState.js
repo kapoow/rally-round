@@ -6,7 +6,7 @@ const initialState = {
   logo: "maintmaster.png",
   siteTitlePrefix: "Supercupen",
   useStandingsForHome: false,
-  useResultsForHome: false,
+  useResultsForHome: true,
   showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: false,

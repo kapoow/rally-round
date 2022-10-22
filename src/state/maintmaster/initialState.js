@@ -13,7 +13,7 @@ const initialState = {
   hideCarColumnInStandings: false,
   useCarAsTeam: false,
   useNationalityAsTeam: false,
-  showTeamNameTextColumn: true,
+  showTeamNameTextColumn: false,
   hideTeamLogoColumn: false,
   numPointsForDebutant: 5,
  // disableOverall: true,

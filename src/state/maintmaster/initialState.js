@@ -28,10 +28,6 @@ const initialState = {
       href: "/season5"
     },
     {
-      name: "Supportserien s5",
-      href: "/season5/supportserien"
-    },
-    {
       name: "Enhetscupen s5",
       href: "/season5/enhetscupen"
     },

@@ -50,7 +50,7 @@ const initialState = {
       divisionName: "B",
       displayName: "B",
       disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 3,
+      maxDriversScoringPointsForTeam: 2,
       filterEntries: {
         matchDivision: true,
       },
@@ -73,7 +73,7 @@ const initialState = {
       divisionName: "C",
       displayName: "C",
       disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 3,
+      maxDriversScoringPointsForTeam: 2,
       filterEntries: {
         matchDivision: true,
       },

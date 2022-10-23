@@ -6,51 +6,10 @@ const { leagueRef } = require("../state/league");
 const copydir = require("copy-dir");
 const { upload } = require("../api/aws/s3");
 const { writeSheetsForDivision } = require("./spreadsheet");
-const { writeHTMLOutputForDivision } = require("./html");
+const { writeAllHTML } = require("./html");
 const { writePlacementOutput } = require("./html");
-const { writeFantasyHTML } = require("./html");
-const { writeHomeHTML, writeErrorHTML } = require("./html");
 
-const addLinks = (links, name, type, displayName) => {
-  const linkDisplay = displayName || name;
-  if (!links[type]) {
-    links[type] = [];
-  }
-  links[type].push({
-    name,
-    link: `${linkDisplay}`,
-    href: `./${name}-${type}-standings.html`,
-    active: false
-  });
-};
-
-const getHtmlLinks = () => {
-  const league = leagueRef.league;
-  const links = Object.values(league.divisions).reduce((links, division) => {
-    const divisionName = division.divisionName;
-    const displayName = division.displayName;
-    if (leagueRef.hasTeams) {
-      addLinks(links, divisionName, "team", displayName);
-    }
-    addLinks(links, divisionName, "driver", displayName);
-    return links;
-  }, {});
-  if (leagueRef.includeOverall) {
-    if (leagueRef.hasTeams) {
-      addLinks(links, "overall", "team");
-    }
-    addLinks(links, "overall", "driver");
-  }
-  if (league.fantasy) {
-    addLinks(links, "team", "fantasy");
-    addLinks(links, "driver", "fantasy");
-    addLinks(links, "rosters", "fantasy");
-  }
-  return links;
-};
-
-const writeOutputForDivision = async (division, links) => {
-  writeHTMLOutputForDivision(division, links);
+const writeOutputForDivision = async division => {
   await writeSheetsForDivision(division);
 };
 
@@ -66,21 +25,17 @@ const writeOutput = async () => {
     debug("only writing placements, returning");
     return true;
   }
-  const links = getHtmlLinks();
-  if (!league.subfolderName && !league.useStandingsForHome && !league.useResultsForHome) {
-    writeHomeHTML(links);
-    writeErrorHTML(links);
-  }
+
+  writeAllHTML();
+
   for (let divisionName of Object.keys(league.divisions)) {
     const division = league.divisions[divisionName];
-    await writeOutputForDivision(division, links);
+    await writeOutputForDivision(division);
   }
   if (league.overall) {
-    await writeOutputForDivision(league.overall, links);
+    await writeOutputForDivision(league.overall);
   }
-  if (league.fantasy) {
-    writeFantasyHTML(league.fantasy, links);
-  }
+
   writeJSON(league);
   if (process.env.DIRT_AWS_ACCESS_KEY && league.websiteName) {
     await upload(league.websiteName, league.subfolderName);
@@ -98,9 +53,7 @@ const writeJSON = eventResults => {
 const checkOutputDirs = () => {
   fs.existsSync(hiddenPath) || fs.mkdirSync(hiddenPath);
   fs.existsSync(cachePath) || fs.mkdirSync(cachePath, { recursive: true });
-  if (fs.existsSync(outputPath)){
-    fs.rmdirSync(outputPath, { recursive: true });
-  }
+  fs.rmdirSync(outputPath, { recursive: true });
   fs.mkdirSync(outputPath, { recursive: true });
   fs.mkdirSync(`${outputPath}/website`);
   copydir.sync("./assets", `${outputPath}/website/assets`);

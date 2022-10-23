@@ -19,6 +19,7 @@ const {
 } = require("../shared");
 const { processFantasyResults } = require("../fantasy/fantasyCalculator");
 const { getLocalization } = require("./localization");
+const { allLeagues } = require("../state/allLeagues");
 // const { eventStatuses } = require("../shared");
 const resultColours = ["#76FF6A", "#faff5d", "#ffe300", "#ff5858"];
 
@@ -30,7 +31,8 @@ const colours = {
   default: ""
 };
 
-const compiled_navigation = null;
+let compiledNavigation = null;
+let compiledScripts = null;
 
 const writeFantasyHTML = (fantasyResults, links) => {
   const data = processFantasyResults(fantasyResults);
@@ -110,11 +112,6 @@ const getNavigationHTML = (
   links,
   headerLocations
 ) => {
-  if (compiled_navigation == null) {
-    const navigationTemplateFile = `${templatePath}/navigation.hbs`;
-    const _t = fs.readFileSync(navigationTemplateFile).toString();
-    this.compiled_navigation = Handlebars.compile(_t);
-  }
   Object.keys(links).forEach(menu => {
     if (menu === "active") return;
     links[menu].forEach(link => {
@@ -125,7 +122,7 @@ const getNavigationHTML = (
       }
     });
   });
-  return this.compiled_navigation({
+  return compiledNavigation({
     links,
     secondary: headerLocations,
     endTime: leagueRef.endTime,
@@ -136,9 +133,14 @@ const getNavigationHTML = (
   });
 };
 
+const getScriptsHTML = () => {
+  return compiledScripts({});
+};
+
 const writeHomeHTML = links => {
   const data = {
     navigation: getNavigationHTML("", "", links, null),
+    scripts: getScriptsHTML(),
     backgroundStyle: leagueRef.getBackgroundStyle(),
     logo: leagueRef.league.logo
   };
@@ -158,6 +160,7 @@ const writeHomeHTML = links => {
 const writeErrorHTML = links => {
   const data = {
     navigation: getNavigationHTML("", "", links, null),
+    scripts: getScriptsHTML(),
     backgroundStyle: leagueRef.getBackgroundStyle(),
     logo: leagueRef.league.logo
   };
@@ -174,18 +177,26 @@ const writeErrorHTML = links => {
   fs.writeFileSync(`./${outputPath}/website/error.html`, out);
 };
 
+const getLastUpdatedAt = () => {
+  if (leagueRef.league.overrideLastUpdated) {
+    return leagueRef.league.overrideLastUpdated;
+  }
+  return moment()
+    .utc()
+    .format();
+};
+
 const writeStandingsHTML = (division, type, links) => {
   const data = transformForStandingsHTML(division, type);
-  data.overall = division.divisionName === "overall";
+  data.overall = division.divisionName === "overall"
   data.navigation = getNavigationHTML(
     division.divisionName,
     type,
     links,
-    data.headerLocations,
+    data.headerLocations
   );
-  data.lastUpdatedAt = moment()
-    .utc()
-    .format();
+  data.scripts = getScriptsHTML();
+  data.lastUpdatedAt = getLastUpdatedAt();
 
   const standingsTemplateFile = `${templatePath}/${type}Standings.hbs`;
   const _t = fs.readFileSync(standingsTemplateFile).toString();
@@ -377,10 +388,8 @@ const writeDriverResultsHTML = (event, division, links, eventIndex) => {
     links,
     data.headerLocations
   );
-
-  data.lastUpdatedAt = moment()
-    .utc()
-    .format();
+  data.scripts = getScriptsHTML();
+  data.lastUpdatedAt = getLastUpdatedAt();
 
   const templateFile = `${templatePath}/eventResults.hbs`;
   if (!fs.existsSync(templateFile)) {
@@ -397,8 +406,70 @@ const writeDriverResultsHTML = (event, division, links, eventIndex) => {
     out
   );
   if (division.divisionName == "overall" && leagueRef.league.useResultsForHome) {
-  fs.writeFileSync(`./${outputPath}/website/index.html`, out);
+    fs.writeFileSync(`./${outputPath}/website/index.html`, out);
   }
+};
+
+const addLinks = (links, name, type, displayName) => {
+  const linkDisplay = displayName || name;
+  if (!links[type]) {
+    links[type] = [];
+  }
+  links[type].push({
+    name,
+    link: `${linkDisplay}`,
+    href: `./${name}-${type}-standings.html`,
+    active: false
+  });
+};
+
+const addHistoricalLinks = links => {
+  links.historical = leagueRef.league.historicalSeasonLinks || [];
+};
+
+const addSeriesLinks = links => {
+  links.series = allLeagues.reduce((seriesLinks, otherLeague) => {
+    if (
+      otherLeague.websiteName === leagueRef.league.websiteName &&
+      otherLeague.subfolderName !== leagueRef.league.subfolderName &&
+      !otherLeague.hideFromSeriesLinks
+    ) {
+      seriesLinks.push({
+        name: otherLeague.siteTitlePrefix,
+        link: otherLeague.siteTitlePrefix,
+        href: `/${otherLeague.subfolderName}`,
+        active: false
+      });
+    }
+    return seriesLinks;
+  }, []);
+};
+
+const getHtmlLinks = () => {
+  const league = leagueRef.league;
+  const links = Object.values(league.divisions).reduce((links, division) => {
+    const divisionName = division.divisionName;
+    const displayName = division.displayName;
+    if (leagueRef.hasTeams) {
+      addLinks(links, divisionName, "team", displayName);
+    }
+    addLinks(links, divisionName, "driver", displayName);
+    return links;
+  }, {});
+  if (leagueRef.includeOverall) {
+    if (leagueRef.hasTeams) {
+      addLinks(links, "overall", "team");
+    }
+    addLinks(links, "overall", "driver");
+  }
+  if (league.fantasy) {
+    addLinks(links, "team", "fantasy");
+    addLinks(links, "driver", "fantasy");
+    addLinks(links, "rosters", "fantasy");
+  }
+  addHistoricalLinks(links);
+  addSeriesLinks(links);
+  return links;
 };
 
 const writeHTMLOutputForDivision = (division, links) => {
@@ -411,11 +482,35 @@ const writeHTMLOutputForDivision = (division, links) => {
   );
 };
 
+const writeAllHTML = () => {
+  const navigationTemplateFile = `${templatePath}/navigation.hbs`;
+  const navTemplate = fs.readFileSync(navigationTemplateFile).toString();
+  compiledNavigation = Handlebars.compile(navTemplate);
+
+  const scriptsTemplateFile = `${templatePath}/scripts.hbs`;
+  const scriptsTemplate = fs.readFileSync(scriptsTemplateFile).toString();
+  compiledScripts = Handlebars.compile(scriptsTemplate);
+
+  const links = getHtmlLinks();
+  const league = leagueRef.league;
+  if (!league.subfolderName && !league.useStandingsForHome) {
+    writeHomeHTML(links);
+    writeErrorHTML(links);
+  }
+  for (let divisionName of Object.keys(league.divisions)) {
+    const division = league.divisions[divisionName];
+    writeHTMLOutputForDivision(division, links);
+  }
+  if (league.overall) {
+    writeHTMLOutputForDivision(league.overall, links);
+  }
+  if (league.fantasy) {
+    writeFantasyHTML(league.fantasy, links);
+  }
+};
+
 module.exports = {
-  writeHomeHTML,
-  writeErrorHTML,
-  writeFantasyHTML,
-  writeHTMLOutputForDivision,
+  writeAllHTML,
   colours,
   // tests
   getStandingColour

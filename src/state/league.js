@@ -179,7 +179,7 @@ const init = async () => {
   leagueRef.getBackgroundStyle = () => {
     return (
       league.backgroundStyle ||
-      "background-image: linear-gradient(315deg, #ffffff 0%, #00b1b1 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
+      "background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
     );
   };
   await loadFantasy(leagueRef.league);

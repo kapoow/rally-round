@@ -22,6 +22,24 @@ const initialState = {
   //incorrectCarTimePenaltySeconds: 120,
   backgroundStyle:
     "background-image: linear-gradient(#00b1b1, #39d7d7); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
+  historicalSeasonLinks: [
+    {
+      name: "MaintMaster s5",
+      href: "/season5"
+    },
+    {
+      name: "Supportserien s5",
+      href: "/season5/supportserien"
+    },
+    {
+      name: "Enhetscupen s5",
+      href: "/season5/enhetscupen"
+    },
+    {
+      name: "Supercupen s5",
+      href: "/season5/supercupen"
+    }
+  ],   
   divisions: {
     a: {
       divisionName: "A",

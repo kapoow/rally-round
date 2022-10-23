@@ -17,7 +17,7 @@ const initialState = {
   hideTeamLogoColumn: false,
   numPointsForDebutant: 5,
  // disableOverall: true,
-//teamPointsForPowerstage: false,
+  teamPointsForPowerstage: true,
   // dropLowestScoringRoundsNumber: 1,
   //incorrectCarTimePenaltySeconds: 120,
   backgroundStyle:

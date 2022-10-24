@@ -99,7 +99,40 @@ const initialState = {
         }
       ],
       events: [],
-      manualResults: [	
+      manualResults: [
+        {
+          eventIndex: 0,
+          results: [
+            {
+              name: "Rackar Hubert",
+              isDebutant: true,
+            },
+            {
+              name: "Dalle",
+              isDebutant: true,
+            },
+            {
+              name: "Spiralfjader",
+              isDebutant: true,
+            },
+            {
+              name: "ASPLUND",
+              isDebutant: true,
+            },
+            {
+              name: "L Backlund",
+              isDebutant: true,
+            },
+            {
+              name: "H-D Steiner",
+              isDebutant: true,
+            },
+            {
+              name: "Hillerstrumpa",
+              isDebutant: true,
+            },
+          ]
+        },	
       ],
       points: {
         powerStage: [5,4,3,2,1],

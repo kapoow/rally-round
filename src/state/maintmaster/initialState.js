@@ -76,7 +76,16 @@ const initialState = {
         }
       ],
       events: [],
-      manualResults: [	
+      manualResults: [
+        {
+          eventIndex: 0,
+          results: [
+            {
+              name: "H-D Steiner",
+              isDebutant: true,
+            },
+          ]
+        },
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -121,10 +130,6 @@ const initialState = {
             },
             {
               name: "L Backlund",
-              isDebutant: true,
-            },
-            {
-              name: "H-D Steiner",
               isDebutant: true,
             },
             {

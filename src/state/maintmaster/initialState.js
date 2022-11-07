@@ -132,6 +132,23 @@ const initialState = {
               isDebutant: true,
             },
           ]
+        },
+        {
+          eventIndex: 1,
+          results: [
+            {
+              name: "Dalle",
+              isDebutant: true,
+            },
+            {
+              name: "ASPLUND",
+              isDebutant: true,
+            },
+            {
+              name: "L Backlund",
+              isDebutant: true,
+            },
+          ]
         },	
       ],
       points: {

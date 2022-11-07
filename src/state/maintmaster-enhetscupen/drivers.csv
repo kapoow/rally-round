@@ -2,7 +2,7 @@ Name,RacenetId,ConsoleId,Class,Team
 Alexander Adamsson,FabbeLitoNo1,AlexanderAdmson,C,
 Alexander Boman,,Boman,C,
 Alexander Magnusson,breesladd,SKÅNINGEN,A,Kapow Racing Sverige
-Anders Hillerström(D),Hillerstrumpa,Hillerstrumpa,C,Kapow Racing Sverige
+Anders Hillerström,Hillerstrumpa,Hillerstrumpa,C,Kapow Racing Sverige
 Anders Olsson,Tollsson,Tollsson,A,Castrol Team Sweden
 Andreas Dahlin,dahliin86,DAHLIIN,A,Kapow Racing Sverige
 Andreas Persson,AKP86,AKP86,B,Kapow Racing Sverige
@@ -36,7 +36,7 @@ Fredrik Fält,Ffalt,FFALT_74,C,Kapow Racing Sverige
 Göran Nilsson,kollin240,32.GÖRAN NILSON,A,
 Hampus Juteryd,Jutarn,Jutarn26,B,
 Hannes Forsberg,Vigor 火,VigorKV,B,
-Hans-Daniel Steiner(D),Raketservice,H-D Steiner,C,
+Hans-Daniel Steiner,Raketservice,H-D Steiner,B,
 Henka Andersson,LucasHenrik,HENKA.ANDERSSON,A,Wermland Rally Team
 Henrik Janson,HenrikJanson,Stålkrabban,B,Castrol Team Sweden
 Henrik Lindström,Henriklindström,Henrik Lindström,A,
@@ -100,7 +100,7 @@ Michael Gustafsson,MikaelG,Michael Gustafsson,C,
 Micke Eriksson,mi-er,63mi-er,C,Kapow Racing Finland
 Micke wetterlöf,Micke,Micke wetterlöf,C,
 Mikael Bylund,AMAZINGMICKE,MickeBylund,B,Team Alfa
-Mikael Dyrrenius,Dyrran2,Dyrran2,B,Kapow Racing Finland
+Mikael Dyrenius,Dyrran2,Dyrran2,B,Kapow Racing Finland
 Mikael Elofsson,,MIKAEL.ELOFSSON,C,
 Mikael Lann,Tirwyn,TGR_TIRWYN,C,
 Morgan Olsson,olssonmorgan57,Morgan Olsson,C,
@@ -161,14 +161,14 @@ Ulf Augustinsson,UAugustinsson,UAUGUSTINSSON,C,
 Ulf Augustinsson,Wonderedlion436,Uaugustinsson,C,
 Viktor Wiström,Torren,virre9,C,
 Oscar Josefsson,,Occocc,C,
-Casper Nilsson(D),Rackar Hubert,,C,
+Casper Nilsson,Rackar Hubert,,C,
 Niklas Persson(D),NickeP,!NICKE!,C,
-Leif Backlund(D),Backlund,L Backlund,C,
-Jonas Svanström(D),TheOneKluBBa,THEONEKLUBBA,B,Team Alfa
-Ingemar Allerdahl(D),Iggy82,Iggy_82,B,Team Alfa
+Leif Backlund,Backlund,L Backlund,C,
+Jonas Svanström,TheOneKluBBa,THEONEKLUBBA,C,Team Alfa
+Ingemar Allerdahl,Iggy82,Iggy_82,B,Team Alfa
 Roger Edlund(D),Redlunds,Lord_rge,B,Team Alfa
 Sebastian Asplund(D),asplund,ASPLUND,C,Kapow Racing Finland
-Sebastian Ågren(D),,Spiralfjader,C,
+Sebastian Ågren,,Spiralfjader,C,
 Daniel Hellstrom(D),,Dalle,C,
 Peter Friman,,Rally-Kalle72,B,
 Robin Gustafsson(D),,Binzate,C,

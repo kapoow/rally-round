@@ -16,4 +16,9 @@ const driverColumns = {
   [name3]: "ConsoleId"
 };
 
-module.exports = { driverColumns };
+const sheetsConfig = {
+  sheetId: "1XWkV05uHHCc-YSVTTQ0sTa62lnXMe76lvXB0ChiwpJ0",
+  tabName: "All tiers"
+};
+
+module.exports = { driverColumns, sheetsConfig };

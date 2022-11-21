@@ -154,7 +154,33 @@ const initialState = {
               isDebutant: true,
             },
           ]
-        },	
+        },
+        {
+          eventIndex: 2,
+          results: [
+            {
+              name: "TGR_Tirwyn",
+              stageTime: "07:28.891",
+              totalTime: "42:53.964",
+            },
+            {
+              name: "Dalle",
+              isDebutant: true,
+            },
+            {
+              name: "ASPLUND",
+              isDebutant: true,
+            },
+            {
+              name: "!Nicke!",
+              isDebutant: true,
+            },
+            {
+              name: "Sledge",
+              isDebutant: true,
+            },
+          ]
+        },		
       ],
       points: {
         powerStage: [5,4,3,2,1],

@@ -87,6 +87,15 @@ const initialState = {
       ],
       events: [],
       manualResults: [
+        {
+          eventIndex: 1,
+          results: [
+            {
+              name: "Ducce950",
+              totalTime: "33:57.777",
+            },
+          ]
+        },
       ],
       points: {
         powerStage: [5,4,3,2,1],

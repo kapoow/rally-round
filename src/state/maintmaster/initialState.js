@@ -163,22 +163,6 @@ const initialState = {
               stageTime: "07:28.891",
               totalTime: "42:53.964",
             },
-            {
-              name: "Dalle",
-              isDebutant: true,
-            },
-            {
-              name: "ASPLUND",
-              isDebutant: true,
-            },
-            {
-              name: "!Nicke!",
-              isDebutant: true,
-            },
-            {
-              name: "Sledge",
-              isDebutant: true,
-            },
           ]
         },		
       ],

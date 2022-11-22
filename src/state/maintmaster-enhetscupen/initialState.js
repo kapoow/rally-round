@@ -60,7 +60,7 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "Audi Sport quattro S1 E2"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -86,7 +86,7 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "Audi Sport quattro S1 E2"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -112,7 +112,7 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "Audi Sport quattro S1 E2"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
       ],
       points: {
         powerStage: [5,4,3,2,1],

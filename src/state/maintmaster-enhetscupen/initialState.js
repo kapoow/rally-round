@@ -110,6 +110,15 @@ const initialState = {
       ],
       events: [],
       manualResults: [
+        {
+          eventIndex: 3,
+          results: [
+            {
+              name: "Sledge",
+              totalTime: "37:15.420",
+            },
+          ]
+        },
       ],
       cars: [
         "Audi Sport quattro S1 E2","SUBARU Impreza 1995"

@@ -53,7 +53,16 @@ const initialState = {
         }
       ],
       events: [],
-      manualResults: [	
+      manualResults: [
+        {
+          eventIndex: 0,
+          results: [
+            {
+              name: "H-D Steiner",
+              isDebutant: true,
+            },
+          ]
+        },
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -78,11 +87,11 @@ const initialState = {
       events: [],
       manualResults: [
         {
-          eventIndex: 0,
+          eventIndex: 3,
           results: [
             {
-              name: "H-D Steiner",
-              isDebutant: true,
+              name: "Tollsson",
+              totalTime: "47:45.539",
             },
           ]
         },

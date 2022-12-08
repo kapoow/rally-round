@@ -1,14 +1,21 @@
-const { name, teamId, car, name3 } = require("../constants/driverFieldNames");
+const {
+  name,
+  teamId,
+  car,
+  name3,
+  division
+} = require("../constants/driverFieldNames");
 
 const driverColumns = {
   [name]: "Driver",
   [teamId]: "Team",
   [car]: "Car",
-  [name3]: "Alt Name"
+  [name3]: "Alt Name",
+  [division]: "Class"
 };
 
 const sheetsConfig = {
-  sheetId: "1kUyNMullXunLlNt88X8uokK_07JHUYRJozMxL9HNLsE",
+  sheetId: "10iq51x0DNXv3gJsAQ8-WM8AQGOz3YEi5wxuxGikFFw0",
   tabName: "All tiers"
 };
 

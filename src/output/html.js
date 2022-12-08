@@ -188,7 +188,7 @@ const getLastUpdatedAt = () => {
 
 const writeStandingsHTML = (division, type, links) => {
   const data = transformForStandingsHTML(division, type);
-  data.overall = division.divisionName === "overall"
+  data.overall = division.divisionName === "overall";
   data.navigation = getNavigationHTML(
     division.divisionName,
     type,
@@ -357,6 +357,7 @@ const transformForDriverResultsHTML = (event, division) => {
     title: division.displayName || divisionName,
     siteTitlePrefix: leagueRef.league.siteTitlePrefix,
     showTeam: leagueRef.hasTeams && !leagueRef.league.useNationalityAsTeam,
+    showTeamNameTextColumn: leagueRef.league.showTeamNameTextColumn,
     showCar: leagueRef.hasCars || leagueRef.league.showCarNameAsTextInResults,
     showCarName: leagueRef.league.showCarNameAsTextInResults,
     showPowerStagePoints: hasPoints("powerStagePoints", rows),
@@ -371,9 +372,10 @@ const transformForDriverResultsHTML = (event, division) => {
     logo: leagueRef.league.logo,
     hideTeamLogoColumn: leagueRef.league.hideTeamLogoColumn,
     showSuperRallyColumn: leagueRef.league.showSuperRallyColumn,
-    fullResultsLink: division.rbr
-      ? `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results.php&rally_id=${event.eventId}`
-      : null,
+    fullResultsLink:
+      division.rbr && event.eventId
+        ? `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results.php&rally_id=${event.eventId}`
+        : null,
     localization: getLocalization()
   };
 };
@@ -434,10 +436,11 @@ const addSeriesLinks = links => {
       otherLeague.subfolderName !== leagueRef.league.subfolderName &&
       !otherLeague.hideFromSeriesLinks
     ) {
+      const subfolderName = otherLeague.subfolderName || "";
       seriesLinks.push({
         name: otherLeague.siteTitlePrefix,
         link: otherLeague.siteTitlePrefix,
-        href: `/${otherLeague.subfolderName}`,
+        href: `/${subfolderName}`,
         active: false
       });
     }

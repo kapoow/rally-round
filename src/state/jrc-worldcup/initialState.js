@@ -1,7 +1,7 @@
 const initialState = {
   pointsForDNF: false,
-  // websiteName: "jrc-results",
-  // subfolderName: "worldcup",
+  websiteName: "jrc-results",
+  subfolderName: "world-cup",
   showLivePoints: true,
   showLivePointsDaysRemaining: 4,
   showCarNameAsTextInResults: true,
@@ -14,7 +14,7 @@ const initialState = {
   backgroundStyle:
     "background-image: linear-gradient(#2193b0, #6dd5ed); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
   logo: "JRC.png",
-  siteTitlePrefix: "JRC",
+  siteTitlePrefix: "JRC World Cup",
   divisions: {
     worldCup: {
       divisionName: "worldCup",

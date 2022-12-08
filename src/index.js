@@ -150,10 +150,13 @@ const applyIncorrectCarPenalty = entry => {
       entry.stageTime,
       leagueRef.league.incorrectCarTimePenaltySeconds
     );
-    entry.penaltyReason = "Wrong car choice";
+    entry.extraInfo = `${leagueRef.league.incorrectCarTimePenaltySeconds} ${
+      getLocalization().second_penalty
+    }`;
   } else {
     entry.isDnfEntry = true;
-    entry.disqualificationReason = "Wrong car choice";
+    entry.disqualificationReason = getLocalization().incorrect_car_choice;
+    entry.extraInfo = getLocalization().incorrect_car_choice;
   }
 };
 const applyPenaltyIfIncorrectCar = (event, lastStageEntries, divisionName) => {
@@ -213,6 +216,9 @@ const setManualResults = ({
     if (eventManualResults) {
       eventManualResults.results.forEach(manualEntry => {
         debug(`applying manual result for ${manualEntry.name}`);
+        if (!manualEntry.extraInfo) {
+          manualEntry.extraInfo = getLocalization().manual_result_applied;
+        }
         const driverNames = leagueRef.getDriverNames(manualEntry.name);
         const existingEntry = entries.find(entry =>
           driverNames.includes(entry.name)
@@ -817,11 +823,18 @@ const calculateOverall = processedDivisions => {
     const division = processedDivisions[divisionName];
     division.events.forEach(event => {
       let overallEvent = overall.events.find(
-        overallEvent => overallEvent.location === event.location
+        overallEvent =>
+          (overallEvent.location && overallEvent.location === event.location) ||
+          (overallEvent.locationName &&
+            overallEvent.locationName === event.locationName)
       );
       if (!overallEvent) {
         overallEvent = {
           location: event.location,
+          locationName: event.locationName,
+          locationFlag: event.locationFlag,
+          endTime: event.endTime,
+          eventStatus: event.eventStatus,
           results: { driverResults: [], teamResults: [] }
         };
         overall.events.push(overallEvent);

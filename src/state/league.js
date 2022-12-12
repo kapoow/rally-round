@@ -1,4 +1,4 @@
-const { keyBy } = require("lodash");
+const { keyBy, isEmpty } = require("lodash");
 const Papa = require("papaparse");
 const fs = require("fs");
 const debug = require("debug")("tkidman:dirt2-results:state");
@@ -13,6 +13,36 @@ const moment = require("moment");
 const missingDrivers = {};
 const drivers = {};
 const leagueRef = {};
+
+// cars by lowercase name
+const carsByName = Object.keys(vehicles).reduce((acc, key) => {
+  acc[key.toLowerCase()] = vehicles[key];
+  return acc;
+}, {});
+
+const carBrands = fs
+  .readdirSync("./assets/cars")
+  .map(carFile => carFile.split(".")[0]);
+
+const getCarByName = carName => {
+  if (!carName) {
+    return null;
+  }
+  const lowerCarName = carName.toLowerCase();
+  if (!carsByName[lowerCarName]) {
+    const brand = carBrands.find(carBrand =>
+      lowerCarName.includes(carBrand.toLowerCase())
+    );
+    if (!brand) {
+      debug(`Unable to find brand for car: ${carName}, setting to unknown`);
+    }
+    carsByName[lowerCarName] = {
+      brand: brand || "unknown",
+      class: "unknown"
+    };
+  }
+  return carsByName[lowerCarName];
+};
 
 const getField = (row, fieldName) => {
   if (row[fieldName]) {
@@ -121,6 +151,35 @@ const loadDrivers = async () => {
   return { driversById: {}, driversByRaceNet: {}, driversByName3: {} };
 };
 
+const loadManualResultsFromSheets = async () => {
+  const resultRows = await loadSheetAndTransform({
+    sheetId: sheetsConfig.sheetId,
+    tabName: "Manual Results"
+  });
+  const manualResults = resultRows.map(row => {
+    if (!row["Name"] || !row["Event Number"] || !row["Total Time"]) {
+      throw new Error(
+        "'Event Number', 'Name' and 'Total Time' are mandatory columns"
+      );
+    }
+    const result = {
+      name: row["Name"],
+      totalTime: row["Total Time"]
+    };
+    if (row["PS Time"]) {
+      result.stageTime = row["PS Time"];
+    }
+    if (row["Comment"]) {
+      result.extraInfo = row["Comment"];
+    }
+    return {
+      eventIndex: row["Event Number"] - 1,
+      results: [result]
+    };
+  });
+  return manualResults;
+};
+
 const loadFantasy = async league => {
   if (!league.fantasy) {
     return;
@@ -202,6 +261,17 @@ const init = async () => {
     );
   };
   await loadFantasy(leagueRef.league);
+  if (isEmpty(league.manualResults)) {
+    league.manualResults = [];
+  }
+  try {
+    const manualResultsFromSheets = await loadManualResultsFromSheets();
+    league.manualResults.push(...manualResultsFromSheets);
+  } catch (e) {
+    debug(
+      `Unable to load manual results from sheets, probably because a tab named 'Manual Results' does not exist - ${e.message}`
+    );
+  }
   return leagueRef;
 };
 
@@ -265,5 +335,6 @@ module.exports = {
   leagueRef,
   getDriversByDivision,
   getTeamIds,
-  printMissingDrivers
+  printMissingDrivers,
+  getCarByName
 };

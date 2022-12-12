@@ -4,7 +4,7 @@ const fs = require("fs");
 const Handlebars = require("handlebars");
 const debug = require("debug")("tkidman:dirt2-results:output:html");
 
-const { leagueRef } = require("../state/league");
+const { leagueRef, getCarByName } = require("../state/league");
 const {
   getDriverData,
   getHeaderLocations,
@@ -339,10 +339,11 @@ const transformForDriverResultsHTML = (event, division) => {
         result.stageTimes,
         division.benchmarks
       );
+    const entryCar = getCarByName(result.entry.vehicleName);
     return {
       ...result,
       position: index + 1,
-      car: carBrand,
+      car: entryCar ? entryCar.brand : carBrand,
       driver,
       teamLogo: getTeamLogo(driver.teamId),
       country,
@@ -464,6 +465,69 @@ const getHtmlLinks = () => {
       addLinks(links, "overall", "team");
     }
     addLinks(links, "overall", "driver");
+  }
+  if (league.fantasy) {
+    addLinks(links, "team", "fantasy");
+    addLinks(links, "driver", "fantasy");
+    addLinks(links, "rosters", "fantasy");
+  }
+  addHistoricalLinks(links);
+  addSeriesLinks(links);
+  return links;
+};
+
+const addLinks = (links, name, type, displayName) => {
+  const linkDisplay = displayName || name;
+  if (!links[type]) {
+    links[type] = [];
+  }
+  links[type].push({
+    name,
+    link: `${linkDisplay}`,
+    href: `./${name}-${type}-standings.html`,
+    active: false
+  });
+};
+
+const addHistoricalLinks = links => {
+  links.historical = leagueRef.league.historicalSeasonLinks || [];
+};
+
+const addSeriesLinks = links => {
+  links.series = allLeagues.reduce((seriesLinks, otherLeague) => {
+    if (
+      otherLeague.websiteName === leagueRef.league.websiteName &&
+      otherLeague.subfolderName !== leagueRef.league.subfolderName &&
+      !otherLeague.hideFromSeriesLinks
+    ) {
+      const subfolderName = otherLeague.subfolderName || "";
+      seriesLinks.push({
+        name: otherLeague.siteTitlePrefix,
+        link: otherLeague.siteTitlePrefix,
+        href: `/${subfolderName}`,
+        active: false
+      });
+    }
+    return seriesLinks;
+  }, []);
+};
+
+const getHtmlLinks = () => {
+  const league = leagueRef.league;
+  const links = Object.values(league.divisions).reduce((links, division) => {
+    const divisionName = division.divisionName;
+    const displayName = division.displayName;
+    if (leagueRef.hasTeams) {
+      addLinks(links, divisionName, "team", displayName);
+    }
+    addLinks(links, divisionName, "driver", displayName);
+    return links;
+  }, {});
+  if (leagueRef.includeOverall) {
+    if (leagueRef.hasTeams) {
+      addLinks(links, "overall", "team", getLocalization().overall);
+    }
+    addLinks(links, "overall", "driver", getLocalization().overall);
   }
   if (league.fantasy) {
     addLinks(links, "team", "fantasy");

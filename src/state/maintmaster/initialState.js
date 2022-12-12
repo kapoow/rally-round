@@ -54,7 +54,7 @@ const initialState = {
       ],
       events: [],
       manualResults: [
-        {
+        /*{
           eventIndex: 3,
           results: [
             {
@@ -62,7 +62,7 @@ const initialState = {
               totalTime: "47:45.539",
             },
           ]
-        },
+        },*/
       ],
       points: {
         powerStage: [5,4,3,2,1],

@@ -18,7 +18,8 @@ const driverColumns = {
 
 const sheetsConfig = {
   sheetId: "1XWkV05uHHCc-YSVTTQ0sTa62lnXMe76lvXB0ChiwpJ0",
-  tabName: "All tiers"
+  tabName: "All tiers",
+  manualResultsTabName: "Supercupen MR"
 };
 
 module.exports = { driverColumns, sheetsConfig };

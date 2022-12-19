@@ -178,6 +178,15 @@ const initialState = {
             }
           ]
         },		
+        {
+          eventIndex: 4,
+          results: [
+            {
+              name: "Berg.Liam",
+              isDebutant: true,
+            },
+          ]
+        },	
       ],
       points: {
         powerStage: [5,4,3,2,1],

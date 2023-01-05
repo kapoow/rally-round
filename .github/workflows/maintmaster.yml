@@ -28,9 +28,9 @@ jobs:
       - name: maintmaster
         if: always()
         run: CLUB=maintmaster node --unhandled-rejections=strict ./runner.js
-      - name: supercupen
-        if: always()
-        run: CLUB=maintmaster-supercupen node --unhandled-rejections=strict ./runner.js
+     # - name: supercupen
+     #   if: always()
+     #   run: CLUB=maintmaster-supercupen node --unhandled-rejections=strict ./runner.js
       - name: Pushes to maintmaster repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
@@ -42,14 +42,14 @@ jobs:
           user-email: jonas.gsson@gmail.com
           user-name: kapoow
           target-branch: main
-      - name: Pushes to supercupen repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: './hidden/out/maintmaster-supercupen/website'
-          destination-github-username: 'MaintMaster'
-          destination-repository-name: 'supercupen'
-          user-email: jonas.gsson@gmail.com
-          user-name: kapoow
-          target-branch: main
+     # - name: Pushes to supercupen repository
+     #   uses: cpina/github-action-push-to-another-repository@main
+     #   env:
+     #    API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+     #    with:
+     #     source-directory: './hidden/out/maintmaster-supercupen/website'
+     #     destination-github-username: 'MaintMaster'
+     #     destination-repository-name: 'supercupen'
+     #     user-email: jonas.gsson@gmail.com
+     #     user-name: kapoow
+     #     target-branch: main

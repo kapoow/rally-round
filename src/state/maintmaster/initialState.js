@@ -48,8 +48,8 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303"],
-          includeNextChampionships: true
+          championshipIds: ["674303","679096","684128","687920","692218"],
+          includeNextChampionships: false
         }
       ],
       events: [],
@@ -80,8 +80,8 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303"],
-          includeNextChampionships: true
+          championshipIds: ["674303","679096","684128","687920","692218"],
+          includeNextChampionships: false
         }
       ],
       events: [],
@@ -112,8 +112,8 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303"],
-          includeNextChampionships: true
+          championshipIds: ["674303","679096","684128","687920","692218"],
+          includeNextChampionships: false
         }
       ],
       events: [],

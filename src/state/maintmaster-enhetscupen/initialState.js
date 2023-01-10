@@ -60,7 +60,7 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995","Peugeot 206 Rally"
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -86,7 +86,7 @@ const initialState = {
       manualResults: [
       ],
       cars: [
-        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995","Peugeot 206 Rally"
       ],
       points: {
         powerStage: [5,4,3,2,1],
@@ -121,7 +121,7 @@ const initialState = {
         },
       ],
       cars: [
-        "Audi Sport quattro S1 E2","SUBARU Impreza 1995"
+        "Audi Sport quattro S1 E2","SUBARU Impreza 1995","Peugeot 206 Rally"
       ],
       points: {
         powerStage: [5,4,3,2,1],

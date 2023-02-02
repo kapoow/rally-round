@@ -48,7 +48,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164"],
+          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
           includeNextChampionships: false
         }
       ],
@@ -80,7 +80,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164"],
+          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
           includeNextChampionships: false
         }
       ],
@@ -112,7 +112,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164"],
+          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
           includeNextChampionships: false
         }
       ],

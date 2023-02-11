@@ -1,0 +1,41 @@
+#on: workflow_dispatch
+on:
+  schedule:
+    # every hour on the hour
+    - cron: "0 * * * *"
+
+jobs:
+  publish-results:
+    env:
+      DIRT_USERNAME: ${{ secrets.DIRT_USERNAME }}
+      DIRT_PASSWORD: ${{ secrets.DIRT_PASSWORD }}
+      DIRT_AWS_ACCESS_KEY: ${{ secrets.DIRT_AWS_ACCESS_KEY }}
+      DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
+      GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+      DEBUG: tkidman:*
+      LOCALE: se
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: npm install
+      - name: maintmaster-voc
+        if: always()
+        run: CLUB=maintmaster-voc node --unhandled-rejections=strict ./runner.js
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: './hidden/out/maintmaster-enhetscupen/website'
+          destination-github-username: 'MaintMaster'
+          destination-repository-name: 'voc'
+          user-email: jonas.gsson@gmail.com
+          user-name: kapoow
+          target-branch: main

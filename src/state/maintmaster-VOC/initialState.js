@@ -58,6 +58,8 @@ const initialState = {
       ],
       events: [],
       manualResults: [],
+      cars: ["Fiat 131 Abarth Rally"
+      ],
       points: {
         powerStage: [5,4,3,2,1],
         overall: [
@@ -65,130 +67,6 @@ const initialState = {
         ]
       }
     },
-/* b: {
-      divisionName: "B",
-      displayName: "B",
-      disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 2,
-      filterEntries: {
-        matchDivision: true,
-      },
-      clubs: [
-        {
-          clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164"],
-          includeNextChampionships: false
-        }
-      ],
-      events: [],
-      manualResults: [
-        {
-          eventIndex: 0,
-          results: [
-            {
-              name: "H-D Steiner",
-              isDebutant: true,
-            },
-          ]
-        },
-      ],
-      points: {
-        powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,11,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      }
-    },
-    c: {
-      divisionName: "C",
-      displayName: "C",
-      disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 2,
-      filterEntries: {
-        matchDivision: true,
-      },
-      clubs: [
-        {
-          clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164"],
-          includeNextChampionships: false
-        }
-      ],
-      events: [],
-      manualResults: [
-        {
-          eventIndex: 0,
-          results: [
-            {
-              name: "Rackar Hubert",
-              isDebutant: true,
-            },
-            {
-              name: "Dalle",
-              isDebutant: true,
-            },
-            {
-              name: "Spiralfjader",
-              isDebutant: true,
-            },
-            {
-              name: "ASPLUND",
-              isDebutant: true,
-            },
-            {
-              name: "L Backlund",
-              isDebutant: true,
-            },
-            {
-              name: "Hillerstrumpa",
-              isDebutant: true,
-            },
-          ]
-        },
-        {
-          eventIndex: 1,
-          results: [
-            {
-              name: "Dalle",
-              isDebutant: true,
-            },
-            {
-              name: "ASPLUND",
-              isDebutant: true,
-            },
-            {
-              name: "L Backlund",
-              isDebutant: true,
-            },
-          ]
-        },
-        {
-          eventIndex: 2,
-          results: [
-            {
-              name: "TGR_Tirwyn",
-              stageTime: "07:28.891",
-              totalTime: "42:53.964",
-            },
-            {
-              name: "Sledge",
-              isDebutant: true,
-            }
-          ]
-        },		
-        {
-          eventIndex: 4,
-          results: [
-            {
-              name: "Berg.Liam",
-              isDebutant: true,
-            },
-          ]
-        },	
-      ],
-      points: {
-        powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,11,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      }
-    },*/
   }
 };
 

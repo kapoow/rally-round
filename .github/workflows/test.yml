@@ -9,6 +9,7 @@ jobs:
       DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
       GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
       DEBUG: tkidman:*
+      LOCALE: se
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -20,14 +21,3 @@ jobs:
           node-version: 12.x
       - run: npm install
       - run: CLUB=maintmaster node --unhandled-rejections=strict ./runner.js
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: './hidden/out/maintmaster/website'
-          destination-github-username: 'MaintMaster'
-          destination-repository-name: 'maintmaster.github.io'
-          user-email: jonas.gsson@gmail.com
-          user-name: kapoow
-          target-branch: main

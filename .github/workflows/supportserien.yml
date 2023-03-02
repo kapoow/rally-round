@@ -33,7 +33,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: './hidden/out/maintmaster-supportserien/website'
+          source-directory: './hidden/out/maintmaster-2wd/website'
           destination-github-username: 'MaintMaster'
           destination-repository-name: '2wd'
           user-email: jonas.gsson@gmail.com

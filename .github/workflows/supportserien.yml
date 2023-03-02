@@ -9,8 +9,8 @@ jobs:
     env:
       DIRT_USERNAME: ${{ secrets.DIRT_USERNAME }}
       DIRT_PASSWORD: ${{ secrets.DIRT_PASSWORD }}
-      DIRT_AWS_ACCESS_KEY: ${{ secrets.DIRT_AWS_ACCESS_KEY }}
-      DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
+      #DIRT_AWS_ACCESS_KEY: ${{ secrets.DIRT_AWS_ACCESS_KEY }}
+      #DIRT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DIRT_AWS_SECRET_ACCESS_KEY }}
       GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
       DEBUG: tkidman:*
       LOCALE: se
@@ -25,9 +25,9 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: npm install
-      - name: maintmaster-supportserien
+      - name: maintmaster-2wd
         if: always()
-        run: CLUB=maintmaster-supportserien node --unhandled-rejections=strict ./runner.js
+        run: CLUB=maintmaster-2wd node --unhandled-rejections=strict ./runner.js
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
@@ -35,7 +35,7 @@ jobs:
         with:
           source-directory: './hidden/out/maintmaster-supportserien/website'
           destination-github-username: 'MaintMaster'
-          destination-repository-name: 'supportserien'
+          destination-repository-name: '2wd'
           user-email: jonas.gsson@gmail.com
           user-name: kapoow
           target-branch: main

@@ -24,6 +24,22 @@ const initialState = {
     "background-image: linear-gradient(#00b1b1, #39d7d7); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
   historicalSeasonLinks: [
     {
+      name: "MaintMaster s6",
+      href: "/season6"
+    },
+    {
+      name: "Supportserien s6",
+      href: "/season6/supportserien"
+    },
+    {
+      name: "Enhetscupen s6",
+      href: "/season6/enhetscupen"
+    },
+    {
+      name: "Supercupen s6",
+      href: "/season6/supercupen"
+    },
+    {
       name: "MaintMaster s5",
       href: "/season5"
     },

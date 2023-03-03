@@ -29,7 +29,7 @@ const initialState = {
     },
     {
       name: "Supportserien s6",
-      href: "/season6"
+      href: "/season6/supportserien"
     },
     {
       name: "Enhetscupen s6",

@@ -1,4 +1,5 @@
 import csv, os, codecs, collections
+from datetime import datetime
 from pybars import Compiler
 
 class TeamStanding():
@@ -65,33 +66,40 @@ class CombineTeamStandings():
         compiler = Compiler()
 
         # Compile the template
-        source = codecs.open("src\\output\\templates\\teamStandings.hbs", encoding="utf-8").read()
-        template = compiler.compile(source)
-        outputVar = []
+        templateFolder = "src\\output\\templates\\"
+        source = codecs.open(os.path.join(templateFolder, "teamStandings.hbs"), encoding="utf-8").read()
+        scripts = codecs.open(os.path.join(templateFolder, "scripts.hbs"), encoding="utf-8").read()
+        print(scripts)
+        # template = compiler.compile(source)
+        # outputVar = []
         
-        for standingsPage in updatedSeriesStanding:
-            for team in updatedSeriesStanding[standingsPage]:
-                out = {}
-                out["name"] = team
-                out["points"] = updatedSeriesStanding[standingsPage][team]
-                out["previous"] = ""
-                out["neutral"] = ""
-                out["negative"] = ""
-                out["drivers"] = ""
-                out["weekPoints"] = ""
-                out["budget"] = ""
-                out["roster"] = ""
-                out["captains"] = ""
-                outputVar.append(out)
-        print(outputVar)
-        output = template({
-            'teams': [
-                outputVar
-            ],
-            'bestBuy':'',
-            'prices': ''})
+        # for standingsPage in updatedSeriesStanding:
+        #     for team in updatedSeriesStanding[standingsPage]:
+        #         out = {}
+        #         out["overall"] = "overall"
+        #         out["navigation"] = "" #getCompiledNavigation
+        #         out["scripts"] = scripts
+        #         out["lastUpdatedAt"] = datetime.now()
+        #         out["name"] = team
+        #         out["points"] = updatedSeriesStanding[standingsPage][team]
+        #         out["previous"] = ""
+        #         out["neutral"] = ""
+        #         out["negative"] = ""
+        #         out["drivers"] = ""
+        #         out["weekPoints"] = ""
+        #         out["budget"] = ""
+        #         out["roster"] = ""
+        #         out["captains"] = ""
+        #         outputVar.append(out)
+        # print(outputVar)
+        # output = template({
+        #     'teams': [
+        #         outputVar
+        #     ],
+        #     'bestBuy':'',
+        #     'prices': ''})
 
-        print(output)
+        # print(output)
     
                 
 

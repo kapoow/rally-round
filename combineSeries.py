@@ -1,4 +1,5 @@
-import csv, os
+import csv, os, codecs, collections
+from pybars import Compiler
 
 class TeamStanding():
     def __init__(this, position, upOrDown, team, points):
@@ -55,11 +56,43 @@ class CombineTeamStandings():
 
                 newPoints = int(str(oldPoints1)) + int(str(oldPoints2))
 
-                updatedTeamStandings[teamStandingsFiles1[i].standings[x].team] = newPoints        
+                updatedTeamStandings[teamStandingsFiles1[i].standings[x].team] = newPoints
+                
         
-            updatedSeriesStanding[teamStandingsFiles1[i].name[0:teamStandingsFiles1[i].name.find("-")]] = updatedSeriesStanding
+            updatedSeriesStanding[teamStandingsFiles1[i].name[0:teamStandingsFiles1[i].name.find("-")]] = collections.OrderedDict(sorted(updatedTeamStandings.items(), key=lambda kv: kv[1], reverse=True))
+            updatedTeamStandings = {}
 
-        print(updatedSeriesStanding)
+        compiler = Compiler()
+
+        # Compile the template
+        source = codecs.open("src\\output\\templates\\teamStandings.hbs", encoding="utf-8").read()
+        template = compiler.compile(source)
+        outputVar = []
+        
+        for standingsPage in updatedSeriesStanding:
+            for team in updatedSeriesStanding[standingsPage]:
+                out = {}
+                out["name"] = team
+                out["points"] = updatedSeriesStanding[standingsPage][team]
+                out["previous"] = ""
+                out["neutral"] = ""
+                out["negative"] = ""
+                out["drivers"] = ""
+                out["weekPoints"] = ""
+                out["budget"] = ""
+                out["roster"] = ""
+                out["captains"] = ""
+                outputVar.append(out)
+        print(outputVar)
+        output = template({
+            'teams': [
+                outputVar
+            ],
+            'bestBuy':'',
+            'prices': ''})
+
+        print(output)
+    
                 
 
 if __name__ == '__main__':

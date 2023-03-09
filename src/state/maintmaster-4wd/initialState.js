@@ -57,33 +57,24 @@ const initialState = {
       divisionName: "A",
       displayName: "A",
       disableSameCarValidation: true,
-      maxDriversScoringPointsForTeam: 3,
+      maxDriversScoringPointsForTeam: 2,
       filterEntries: {
         matchDivision: true,
       },
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
-          includeNextChampionships: false
+          championshipIds: ["723653"],
+          includeNextChampionships: true
         }
       ],
       events: [],
-      manualResults: [
-        /*{
-          eventIndex: 3,
-          results: [
-            {
-              name: "Tollsson",
-              totalTime: "47:45.539",
-            },
-          ]
-        },*/
-      ],
+      manualResults: [],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,11,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      }
+        overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+      },
+      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
     },
     b: {
       divisionName: "B",
@@ -96,26 +87,17 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
-          includeNextChampionships: false
+          championshipIds: ["723653"],
+          includeNextChampionships: true
         }
       ],
       events: [],
-      manualResults: [
-        {
-          eventIndex: 0,
-          results: [
-            {
-              name: "H-D Steiner",
-              isDebutant: true,
-            },
-          ]
-        },
-      ],
+      manualResults: [],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,11,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      }
+        overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+      },
+      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
     },
     c: {
       divisionName: "C",
@@ -128,86 +110,17 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["674303","679096","684128","687920","692218","698871","704164","711532"],
-          includeNextChampionships: false
+          championshipIds: ["723653"],
+          includeNextChampionships: true
         }
       ],
       events: [],
-      manualResults: [
-        {
-          eventIndex: 0,
-          results: [
-            {
-              name: "Rackar Hubert",
-              isDebutant: true,
-            },
-            {
-              name: "Dalle",
-              isDebutant: true,
-            },
-            {
-              name: "Spiralfjader",
-              isDebutant: true,
-            },
-            {
-              name: "ASPLUND",
-              isDebutant: true,
-            },
-            {
-              name: "L Backlund",
-              isDebutant: true,
-            },
-            {
-              name: "Hillerstrumpa",
-              isDebutant: true,
-            },
-          ]
-        },
-        {
-          eventIndex: 1,
-          results: [
-            {
-              name: "Dalle",
-              isDebutant: true,
-            },
-            {
-              name: "ASPLUND",
-              isDebutant: true,
-            },
-            {
-              name: "L Backlund",
-              isDebutant: true,
-            },
-          ]
-        },
-        {
-          eventIndex: 2,
-          results: [
-            {
-              name: "TGR_Tirwyn",
-              stageTime: "07:28.891",
-              totalTime: "42:53.964",
-            },
-            {
-              name: "Sledge",
-              isDebutant: true,
-            }
-          ]
-        },		
-        {
-          eventIndex: 4,
-          results: [
-            {
-              name: "Berg.Liam",
-              isDebutant: true,
-            },
-          ]
-        },	
-      ],
+      manualResults: [],
       points: {
         powerStage: [5,4,3,2,1],
-        overall: [30,27,25,24,23,21,19,17,15,13,11,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-      }
+        overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+      },
+      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
     },
   }
 };

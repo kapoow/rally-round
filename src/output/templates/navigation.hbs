@@ -88,7 +88,7 @@
         </a>
 
         <h3 class="w3-hide-large navTitle bold" style="display:block;">
-            {{links.active.menu}} - {{links.active.link}}
+            {{links.active.menu}} {{subfolderName}} - {{links.active.link}}
             {{#if endTime}}<br><span id="countdown"></span>{{/if}}
         </h3>
 
@@ -113,6 +113,7 @@
 	</div>
 
 	<div id="seriesMobileNav" class="w3-bar-block w3-black w3-hide w3-hide-large" style="overflow-y:scroll;max-height:95vh;">
+		<a href="/index.html" class="w3-bar-item w3-button">Hem</a>
         {{#if links.series}}
             <span class="w3-bar-item">---series---</span>
             {{#each links.series}}

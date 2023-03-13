@@ -2,6 +2,9 @@ const moment = require("moment");
 
 const fs = require("fs");
 const Handlebars = require("handlebars");
+Handlebars.registerHelper('loud', function (aString) {
+  return aString.toUpperCase()
+})
 const debug = require("debug")("tkidman:dirt2-results:output:html");
 
 const { leagueRef, getCarByName } = require("../state/league");
@@ -129,6 +132,7 @@ const getNavigationHTML = (
     activeCountry: leagueRef.activeCountryCode,
     logo: leagueRef.league.logo,
     siteTitlePrefix: leagueRef.league.siteTitlePrefix,
+    subfolderName: leagueRef.league.subfolderName,
     localization: getLocalization()
   });
 };
@@ -299,6 +303,7 @@ const transformForStandingsHTML = (division, type) => {
       leagueRef.league.showCarNameAsTextInStandings,
     title: division.displayName || division.divisionName,
     siteTitlePrefix: leagueRef.league.siteTitlePrefix,
+    subfolderName: leagueRef.league.subfolderName,
     divisionName: division.divisionName,
     showPointsAfterDropRounds:
       leagueRef.league.dropLowestScoringRoundsNumber > 0,
@@ -357,6 +362,7 @@ const transformForDriverResultsHTML = (event, division) => {
     rows,
     title: division.displayName || divisionName,
     siteTitlePrefix: leagueRef.league.siteTitlePrefix,
+    subfolderName: leagueRef.league.subfolderName,
     showTeam: leagueRef.hasTeams && !leagueRef.league.useNationalityAsTeam,
     showTeamNameTextColumn: leagueRef.league.showTeamNameTextColumn,
     showCar: leagueRef.hasCars || leagueRef.league.showCarNameAsTextInResults,

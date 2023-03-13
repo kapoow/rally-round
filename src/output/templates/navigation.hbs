@@ -33,7 +33,7 @@
 
 		{{#if links.driver}}
 		<div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-			<button class="w3-button">{{localization.driver_standings}}</button>
+			<button class="w3-button">{{localization.driver_standings}} - {{loud subfolderName}}</button>
 			<div class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide-small w3-hide-medium">
 				{{#with links.driver}}
 				{{#each this}}
@@ -46,7 +46,7 @@
 
 		{{#if links.team}}
 		<div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-			<button class="w3-button">{{localization.team_standings}}</button>
+			<button class="w3-button">{{localization.team_standings}} - {{loud subfolderName}}</button>
 			<div class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide-small w3-hide-medium">
 				{{#with links.team}}
 				{{#each this}}

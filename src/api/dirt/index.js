@@ -11,6 +11,7 @@ const PASSWORD_SELECTOR = "#Password";
 const LOGIN_BUTTON_SELECTOR = "#login_button_container > input";
 const puppeteer = require("puppeteer");
 const { eventStatuses } = require("../../shared");
+const { isNil } = require("lodash");
 const validCreds = {};
 
 const dirtRally2Domain = "https://dirtrally2.dirtgame.com";
@@ -155,7 +156,7 @@ const fetchClubs = async () => {
   let pageNumber = 1;
   let numPages = null;
 
-  while (!numPages || pageNumber <= numPages) {
+  while (isNil(numPages) || pageNumber <= numPages) {
     const payload = {
       searchTerm: "",
       pageNumber,
@@ -229,39 +230,51 @@ const fetchEventResults = async ({
     debug(`cached event results retrieved: ${cacheFileName}`);
     return JSON.parse(cacheFile);
   }
-  const payload = {
-    eventId,
-    challengeId,
-    stageId,
-    page: 1,
-    pageSize: 100
-    // selectedEventId: 0,
-    // orderByTotalTime: true,
-    // platformFilter: "None",
-    // playerFilter: "Everyone",
-    // filterByAssists: "Unspecified",
-    // filterByWheel: "Unspecified",
-    // nationalityFilter: "None",
-  };
-  debug(`retrieving event results from racenet: ${eventId}`);
-  const response = await retry(
-    {
-      method: "POST",
-      url: `${dirtRally2Domain}/api/Leaderboard`,
-      headers: { Cookie: cookie.trim(), "RaceNet.XSRFH": xsrfh.trim() },
-      data: payload
-    },
-    10
-  );
-  debug(`event results retrieved, event id: ${eventId}, stage id: ${stageId}`);
-  // only cache finished events
-  if (eventStatus === eventStatuses.finished) {
-    fs.writeFileSync(
-      `${cacheFileName}`,
-      JSON.stringify(response.data, null, 2)
+
+  let previousEntries = [];
+  let allResponses;
+  let page = 1;
+  let pageCount = null;
+
+  while (isNil(pageCount) || page <= pageCount) {
+    const payload = {
+      eventId,
+      challengeId,
+      stageId,
+      page,
+      pageSize: 100
+      // selectedEventId: 0,
+      // orderByTotalTime: true,
+      // platformFilter: "None",
+      // playerFilter: "Everyone",
+      // filterByAssists: "Unspecified",
+      // filterByWheel: "Unspecified",
+      // nationalityFilter: "None",
+    };
+    debug(`retrieving event results from racenet: ${eventId}`);
+    const response = await retry(
+      {
+        method: "POST",
+        url: `${dirtRally2Domain}/api/Leaderboard`,
+        headers: { Cookie: cookie.trim(), "RaceNet.XSRFH": xsrfh.trim() },
+        data: payload
+      },
+      10
     );
+    allResponses = response.data;
+    previousEntries.push(...response.data.entries);
+    pageCount = response.data.pageCount;
+    debug(
+      `event results retrieved, event id: ${eventId}, stage id: ${stageId}, Page: ${page}, pageCount: ${pageCount}`
+    );
+    page++;
   }
-  return response.data;
+  allResponses.entries = previousEntries;
+  //only cache finished events
+  if (eventStatus === eventStatuses.finished) {
+    fs.writeFileSync(`${cacheFileName}`, JSON.stringify(allResponses, null, 2));
+  }
+  return allResponses;
 };
 
 module.exports = {

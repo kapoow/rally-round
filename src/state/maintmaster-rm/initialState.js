@@ -38,12 +38,12 @@ const initialState = {
       filterEntries: {
         matchDivision: true
       },
+      appendEventIndexesToPrevious: [1],
       clubs: [
         {
           clubId: "444856",
           championshipIds: ["713917"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713917"]
+          includeNextChampionships: true,
         }
       ],
       cars: [
@@ -71,12 +71,12 @@ const initialState = {
       filterEntries: {
         matchDivision: true
       },
+      appendEventIndexesToPrevious: [1],
       clubs: [
         {
           clubId: "444857",
           championshipIds: ["713922"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713922"]
+          includeNextChampionships: true,
         },
       ],
       events: [],
@@ -96,12 +96,12 @@ const initialState = {
       filterEntries: {
         matchDivision: true
       },
+      appendEventIndexesToPrevious: [1],
       clubs: [
         {
           clubId: "444855",
           championshipIds: ["713924"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713924"]
+          includeNextChampionships: true,
         }
       ],
       events: [],
@@ -121,12 +121,12 @@ const initialState = {
       filterEntries: {
         matchDivision: true
       },
+      appendEventIndexesToPrevious: [1],
       clubs: [
         {
           clubId: "444858",
           championshipIds: ["713926"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713926"]
+          includeNextChampionships: true,
         }
       ],
       events: [],
@@ -146,30 +146,27 @@ const initialState = {
       filterEntries: {
         matchDivision: false
       },
+      appendEventIndexesToPrevious: [1],
       clubs: [
         {
           clubId: "444858",
           championshipIds: ["713926"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713926"]
+          includeNextChampionships: true,
         },
         {
           clubId: "444855",
           championshipIds: ["713924"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713924"]
+          includeNextChampionships: true,
         },
         {
           clubId: "444857",
           championshipIds: ["713922"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713922"]
+          includeNextChampionships: true,
         },
         {
           clubId: "444856",
           championshipIds: ["713917"],
-          includeNextChampionships: false,
-          mergeEventsInChampionships: ["713917"]
+          includeNextChampionships: true,
         }
       ],
       events: [],

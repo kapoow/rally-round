@@ -38,4 +38,4 @@ jobs:
           destination-repository-name: 'maintmaster-rm'
           user-email: jonas.gsson@gmail.com
           user-name: kapoow
-          target-branch: main
+          target-branch: master

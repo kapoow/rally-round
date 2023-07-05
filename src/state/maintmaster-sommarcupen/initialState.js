@@ -8,7 +8,7 @@ const initialState = {
   useStandingsForHome: true,
   useResultsForHome: false,
   showLivePoints: true,
-  showLivePointsDaysRemaining: 4,
+  showLivePointsDaysRemaining: 8,
   showCarNameAsTextInResults: false,
   showCarNameAsTextInStandings: false,
   hideCarColumnInStandings: false,

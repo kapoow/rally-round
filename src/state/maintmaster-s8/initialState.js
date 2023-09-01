@@ -2,9 +2,9 @@ const initialState = {
   nullTeamIsPrivateer: true,
   pointsForDNF: false,
   websiteName: "MaintMaster",
-  subfolderName: "4wd",
+  subfolderName: "s8",
   logo: "maintmaster.png",
-  siteTitlePrefix: "MaintMaster 4WD",
+  siteTitlePrefix: "MaintMaster s8",
   useStandingsForHome: false,
   useResultsForHome: true,
   showLivePoints: true,
@@ -23,6 +23,14 @@ const initialState = {
   backgroundStyle:
     "background-image: linear-gradient(#00b1b1, #39d7d7); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
   historicalSeasonLinks: [
+    {
+      name: "MaintMaster s7 4wd",
+      href: "/season7-4wd"
+    },
+    {
+      name: "MaintMaster s7 2wd",
+      href: "/season7-2wd"
+    },
     {
       name: "MaintMaster s6",
       href: "/season6"
@@ -64,7 +72,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["723653"],
+          championshipIds: ["781203"],
           includeNextChampionships: true
         }
       ],
@@ -74,7 +82,7 @@ const initialState = {
         powerStage: [5,4,3,2,1],
         overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       },
-      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
+      cars: ["SUBARU Legacy RS","SUBARU Impreza 1995","Mitsubishi Lancer Evolution VI","Ford Escort RS Cosworth"]
     },
     b: {
       divisionName: "B",
@@ -87,7 +95,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["723653"],
+          championshipIds: ["781203"],
           includeNextChampionships: true
         }
       ],
@@ -97,7 +105,7 @@ const initialState = {
         powerStage: [5,4,3,2,1],
         overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       },
-      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
+      cars: ["SUBARU Legacy RS","SUBARU Impreza 1995","Mitsubishi Lancer Evolution VI","Ford Escort RS Cosworth"]
     },
     c: {
       divisionName: "C",
@@ -110,7 +118,7 @@ const initialState = {
       clubs: [
         {
           clubId: "437959",
-          championshipIds: ["723653"],
+          championshipIds: ["781203"],
           includeNextChampionships: true
         }
       ],
@@ -120,7 +128,7 @@ const initialState = {
         powerStage: [5,4,3,2,1],
         overall: [50,44,41,38,35,32,30,28,26,24,22,20,18,17,16,15,14,13,12,11,10,9,8,7,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
       },
-      cars: ["Ford Fiesta R5","ŠKODA Fabia R5","Mitsubishi Space Star R5","Citroën C3 R5","Volkswagen Polo GTI R5","Peugeot 208 T16 R5"]
+      cars: ["SUBARU Legacy RS","SUBARU Impreza 1995","Mitsubishi Lancer Evolution VI","Ford Escort RS Cosworth"]
     },
   }
 };

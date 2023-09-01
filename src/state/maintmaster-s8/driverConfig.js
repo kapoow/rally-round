@@ -19,7 +19,7 @@ const driverColumns = {
 const sheetsConfig = {
   sheetId: "1XWkV05uHHCc-YSVTTQ0sTa62lnXMe76lvXB0ChiwpJ0",
   tabName: "All tiers",
-  manualResultsTabName: "4wd MR"
+  manualResultsTabName: "Huvudserien MR"
 };
 
 module.exports = { driverColumns, sheetsConfig };

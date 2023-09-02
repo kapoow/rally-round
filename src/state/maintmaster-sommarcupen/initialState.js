@@ -1,7 +1,7 @@
 const initialState = {
   nullTeamIsPrivateer: false,
   pointsForDNF: false,
-  websiteName: "MaintMaster",
+  websiteName: "Sommarcupen",
   subfolderName: "Sommarcupen",
   logo: "maintmaster.png",
   siteTitlePrefix: "Sommarcupen",

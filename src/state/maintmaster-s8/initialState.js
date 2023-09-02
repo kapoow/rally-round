@@ -32,6 +32,10 @@ const initialState = {
       href: "/season7-2wd"
     },
     {
+      name: "Sommarcupen",
+      href: "/sommarcupen"
+    },
+    {
       name: "MaintMaster s6",
       href: "/season6"
     },

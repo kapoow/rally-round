@@ -42,7 +42,7 @@ const initialState = {
       clubs: [
         {
           clubId: "444856",
-          championshipIds: ["785814"],
+          championshipIds: ["747749"],
           includeNextChampionships: true,
         }
       ],
@@ -75,7 +75,7 @@ const initialState = {
       clubs: [
         {
           clubId: "444857",
-          championshipIds: ["785812"],
+          championshipIds: ["747751"],
           includeNextChampionships: true,
         },
       ],
@@ -100,7 +100,7 @@ const initialState = {
       clubs: [
         {
           clubId: "444855",
-          championshipIds: ["785813"],
+          championshipIds: ["747750"],
           includeNextChampionships: true,
         }
       ],
@@ -125,7 +125,7 @@ const initialState = {
       clubs: [
         {
           clubId: "444858",
-          championshipIds: ["785811"],
+          championshipIds: ["747752"],
           includeNextChampionships: true,
         }
       ],
@@ -150,22 +150,22 @@ const initialState = {
       clubs: [
         {
           clubId: "444858",
-          championshipIds: ["785811"],
+          championshipIds: ["747752"],
           includeNextChampionships: true,
         },
         {
           clubId: "444855",
-          championshipIds: ["785813"],
+          championshipIds: ["747750"],
           includeNextChampionships: true,
         },
         {
           clubId: "444857",
-          championshipIds: ["785812"],
+          championshipIds: ["747751"],
           includeNextChampionships: true,
         },
         {
           clubId: "444856",
-          championshipIds: ["785814"],
+          championshipIds: ["747749"],
           includeNextChampionships: true,
         }
       ],

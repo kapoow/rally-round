@@ -11,5 +11,22 @@ if (process.argv[4]) {
   process.env.CLUB = process.argv[4];
 }
 const { processAllDivisions } = require("./src");
+const runGitHubOperations = require('./src/api/github/github');
+const debug = require("debug")("tkidman:dirt2-results:state");
 
-processAllDivisions();
+
+debug('Starting processAllDivisions...');
+
+processAllDivisions()
+  .then(() => {
+    debug('processAllDivisions completed. Proceeding with GitHub operations...');
+    return runGitHubOperations();
+  })
+  .then(() => {
+    debug('GitHub operations completed. Script completed.');
+  })
+  .catch((error) => {
+    debug('Error in the main script:', error);
+    throw error;
+  });
+  

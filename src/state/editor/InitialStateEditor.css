@@ -107,10 +107,50 @@
 }
 
 .general-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px 20px;
+  max-width: 800px;
+  align-items: center;
+}
+
+.general-fields .field-group {
+  display: contents;
+}
+
+.general-fields .field-group label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.general-fields .field-group input,
+.general-fields .field-group textarea {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.general-fields .field-group input:focus,
+.general-fields .field-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.general-fields .field-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  justify-self: start;
+}
+
+.general-fields .field-group textarea {
+  resize: vertical;
+  min-height: 60px;
 }
 
 .field-group {
@@ -151,11 +191,20 @@
   min-height: 80px;
 }
 
+.general-section,
 .divisions-section,
 .historical-links-section {
   margin-bottom: 30px;
 }
 
+.general-section {
+  background-color: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.general-section h3,
 .divisions-section h3,
 .historical-links-section h3 {
   margin: 0 0 20px 0;
@@ -190,6 +239,77 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
+}
+
+.division-fields-column {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px 20px;
+  max-width: 900px;
+  align-items: center;
+}
+
+.division-fields-column .field-group {
+  display: contents;
+}
+
+.division-fields-column .field-group label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.division-fields-column .field-group input,
+.division-fields-column .field-group textarea {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.division-fields-column .field-group input:focus,
+.division-fields-column .field-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.division-fields-column .field-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  justify-self: start;
+}
+
+.division-fields-column .field-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Nested fields within array fields and points config should use horizontal layout */
+.array-field .field-group,
+.points-config .field-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.array-field .field-group label,
+.points-config .field-group label {
+  text-align: left;
+  padding-right: 0;
+  margin-bottom: 0;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.array-field .field-group input,
+.points-config .field-group input {
+  flex: 1;
 }
 
 .link-group {
@@ -277,49 +397,73 @@
   background-color: #c82333;
 }
 
+.historical-links-section .add-button {
+  margin-bottom: 15px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .initial-state-editor {
     padding: 10px;
   }
-  
+
   .editor-header {
     flex-direction: column;
     gap: 15px;
     align-items: stretch;
   }
-  
+
   .editor-actions {
     justify-content: center;
   }
-  
+
   .general-fields {
+    grid-template-columns: 1fr;
     max-width: 100%;
+    gap: 5px 0;
   }
-  
+
+  .general-fields .field-group label {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 5px;
+  }
+
   .division-fields {
     grid-template-columns: 1fr;
   }
-  
+
+  .division-fields-column {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 5px 0;
+  }
+
+  .division-fields-column .field-group label {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 5px;
+  }
+
   .promotion-relegation-config {
     grid-template-columns: 1fr;
   }
-  
+
   .division-header {
     flex-direction: column;
     gap: 10px;
     align-items: stretch;
   }
-  
+
   .link-group {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .editor-tabs {
     flex-wrap: wrap;
   }
-  
+
   .editor-tabs button {
     flex: 1;
     min-width: 100px;

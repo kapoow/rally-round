@@ -324,7 +324,8 @@ const uploadRedirectHTML = async (
     Bucket: bucket,
     Key: redirectKey,
     Body: htmlContent,
-    ContentType: "text/html"
+    ContentType: "text/html",
+    CacheControl: "no-cache, no-store, must-revalidate, max-age=0"
   };
 
   return new Promise((resolve, reject) => {

@@ -57,10 +57,21 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
   }
 
   const handleAddArrayItem = (key, defaultValue) => {
-    setConfig(prev => ({
-      ...prev,
-      [key]: [...(prev[key] || []), defaultValue]
-    }))
+    setConfig(prev => {
+      if (key === 'historicalSeasonLinks') {
+        // For historical links, add to BEGINNING (index 0) to match championship workflow
+        return {
+          ...prev,
+          [key]: [defaultValue, ...(prev[key] || [])]
+        }
+      } else {
+        // For other arrays, append to end
+        return {
+          ...prev,
+          [key]: [...(prev[key] || []), defaultValue]
+        }
+      }
+    })
   }
 
   const handleRemoveArrayItem = (key, index) => {
@@ -136,7 +147,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
 
   const renderDivisions = () => {
     const divisions = config.divisions || {}
-    
+
     return (
       <div className="divisions-section">
         <h3>Divisions</h3>
@@ -144,7 +155,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
           <div key={divisionKey} className="division-group">
             <div className="division-header">
               <h4>{divisionKey}</h4>
-              <button 
+              <button
                 onClick={() => {
                   const newDivisions = { ...divisions }
                   delete newDivisions[divisionKey]
@@ -155,7 +166,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                 Remove Division
               </button>
             </div>
-            
+
             <div className="division-fields-column">
               <div className="field-group">
                 <label>Division Name</label>
@@ -168,7 +179,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   })}
                 />
               </div>
-              
+
               <div className="field-group">
                 <label>Display Name</label>
                 <input
@@ -180,7 +191,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   })}
                 />
               </div>
-              
+
               <div className="field-group">
                 <label>Max Drivers Scoring Points for Team</label>
                 <input
@@ -192,7 +203,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   })}
                 />
               </div>
-              
+
               <div className="field-group">
                 <label>Disable Same Car Validation</label>
                 <input
@@ -204,7 +215,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   })}
                 />
               </div>
-              
+
               <div className="field-group">
                 <label>Enable Same Car Class Validation</label>
                 <input
@@ -216,7 +227,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   })}
                 />
               </div>
-              
+
               {/* WRC Configuration */}
               <div className="field-group">
                 <label>WRC Championships</label>
@@ -269,7 +280,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                           }}
                         />
                       </div>
-                      <button 
+                      <button
                         onClick={() => {
                           const newWrc = (divisions[divisionKey].wrc || []).filter((_, i) => i !== index)
                           handleObjectFieldChange('divisions', divisionKey, {
@@ -283,7 +294,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                       </button>
                     </div>
                   ))}
-                  <button 
+                  <button
                     onClick={() => {
                       const newWrc = [...(divisions[divisionKey].wrc || []), {
                         clubId: '',
@@ -301,7 +312,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   </button>
                 </div>
               </div>
-              
+
               {/* Points Configuration */}
               <div className="field-group">
                 <label>Points Configuration</label>
@@ -359,7 +370,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Cars Configuration */}
               <div className="field-group">
                 <label>Allowed Cars (one per line)</label>
@@ -375,7 +386,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   rows={4}
                 />
               </div>
-              
+
               {/* Excluded Cars Configuration */}
               <div className="field-group">
                 <label>Excluded Cars (one per line)</label>
@@ -391,7 +402,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                   rows={4}
                 />
               </div>
-              
+
               {/* Promotion/Relegation Configuration */}
               <div className="field-group">
                 <label>Promotion/Relegation</label>
@@ -435,7 +446,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
             </div>
           </div>
         ))}
-        <button 
+        <button
           onClick={() => {
             const newKey = `division${Object.keys(divisions).length + 1}`
             handleFieldChange('divisions', {
@@ -461,10 +472,16 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
 
   const renderHistoricalLinks = () => {
     const links = config.historicalSeasonLinks || []
-    
+
     return (
       <div className="historical-links-section">
         <h3>Historical Season Links</h3>
+        <button
+          onClick={() => handleAddArrayItem('historicalSeasonLinks', { name: '', href: '' })}
+          className="add-button"
+        >
+          Add Link
+        </button>
         {links.map((link, index) => (
           <div key={index} className="link-group">
             <div className="field-group">
@@ -489,7 +506,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
                 })}
               />
             </div>
-            <button 
+            <button
               onClick={() => handleRemoveArrayItem('historicalSeasonLinks', index)}
               className="remove-button"
             >
@@ -497,12 +514,6 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
             </button>
           </div>
         ))}
-        <button 
-          onClick={() => handleAddArrayItem('historicalSeasonLinks', { name: '', href: '' })}
-          className="add-button"
-        >
-          Add Link
-        </button>
       </div>
     )
   }
@@ -510,17 +521,17 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
   const handleSave = () => {
     // Basic validation
     const newErrors = []
-    
+
     if (!config.websiteName) {
       newErrors.push('Website name is required')
     }
-    
+
     if (config.divisions && Object.keys(config.divisions).length === 0) {
       newErrors.push('At least one division is required')
     }
-    
+
     setErrors(newErrors)
-    
+
     if (newErrors.length === 0) {
       onSave(config)
     }
@@ -548,19 +559,19 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
       )}
 
       <div className="editor-tabs">
-        <button 
+        <button
           className={activeTab === 'general' ? 'active' : ''}
           onClick={() => setActiveTab('general')}
         >
           General
         </button>
-        <button 
+        <button
           className={activeTab === 'divisions' ? 'active' : ''}
           onClick={() => setActiveTab('divisions')}
         >
           Divisions
         </button>
-        <button 
+        <button
           className={activeTab === 'historical' ? 'active' : ''}
           onClick={() => setActiveTab('historical')}
         >

@@ -88,6 +88,48 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.contains("th-total") ||
         header.classList.contains("th-diff"));
     const isDiffColumn = header && header.classList.contains("th-diff");
+    const isPsPointsColumn =
+      header && header.classList.contains("th-ps-points");
+    const isPointsColumn = header && header.classList.contains("th-points");
+    const isTotalPointsColumn =
+      header && header.classList.contains("th-total-points");
+
+    let psTimeColumnIndex = -1;
+    if (isPsPointsColumn) {
+      headers.forEach((h, idx) => {
+        if (h.classList.contains("th-ps")) {
+          psTimeColumnIndex = idx;
+        }
+      });
+    }
+
+    let totalTimeColumnIndex = -1;
+    if (isPointsColumn || isTotalPointsColumn) {
+      headers.forEach((h, idx) => {
+        if (h.classList.contains("th-total")) {
+          totalTimeColumnIndex = idx;
+        }
+      });
+    }
+
+    function compareByTimeColumn(rowA, rowB, timeColumnIndex, sortOrder) {
+      if (timeColumnIndex < 0) return null;
+      const timeCellA = rowA.children[timeColumnIndex];
+      const timeCellB = rowB.children[timeColumnIndex];
+      if (!timeCellA || !timeCellB) return null;
+
+      const timeValueA = getCellValue(timeCellA);
+      const timeValueB = getCellValue(timeCellB);
+      const timeA = parseTime(timeValueA);
+      const timeB = parseTime(timeValueB);
+
+      if (timeA !== null && timeB !== null) {
+        return (timeA - timeB) * -sortOrder;
+      }
+      if (timeA !== null && timeB === null) return -1 * sortOrder;
+      if (timeA === null && timeB !== null) return 1 * sortOrder;
+      return null;
+    }
 
     rows.sort((rowA, rowB) => {
       const cellElementA = rowA.children[columnIndex];
@@ -95,15 +137,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (!cellElementA || !cellElementB) {
         if (!cellElementA && !cellElementB) return 0;
-        return !cellElementA ? 1 * order : -1 * order;
+        return !cellElementA ? 1 : -1;
       }
 
       const cellA = getCellValue(cellElementA);
       const cellB = getCellValue(cellElementB);
 
-      if (cellA === "" && cellB === "") return 0;
-      if (cellA === "") return -1 * order;
-      if (cellB === "") return 1 * order;
+      // For PS points, points, and total points columns, don't return early for empty cells - we'll sort by time
+      if (!isPsPointsColumn && !isPointsColumn && !isTotalPointsColumn) {
+        if (cellA === "" && cellB === "") return 0;
+        if (cellA === "") return -1 * order;
+        if (cellB === "") return 1 * order;
+      }
 
       if (cellA === "--" || cellB === "--") {
         if (cellA === "--" && cellB === "--") return 0;
@@ -135,23 +180,60 @@ document.addEventListener("DOMContentLoaded", function() {
       const numA = Number(cellA);
       const numB = Number(cellB);
       const isNumberA =
-        cellA !== "" &&
-        !isNaN(numA) &&
-        isFinite(numA) &&
-        /^-?\d*\.?\d+$/.test(cellA);
+        cellA !== "" && Number.isFinite(numA) && /^-?\d*\.?\d+$/.test(cellA);
       const isNumberB =
-        cellB !== "" &&
-        !isNaN(numB) &&
-        isFinite(numB) &&
-        /^-?\d*\.?\d+$/.test(cellB);
+        cellB !== "" && Number.isFinite(numB) && /^-?\d*\.?\d+$/.test(cellB);
 
       if (isNumberA && isNumberB) {
-        return (numA - numB) * order;
+        const primarySort = (numA - numB) * order;
+        if (primarySort === 0) {
+          if (isPsPointsColumn) {
+            const timeSort = compareByTimeColumn(
+              rowA,
+              rowB,
+              psTimeColumnIndex,
+              order
+            );
+            if (timeSort !== null) return timeSort;
+          }
+          if (isPointsColumn || isTotalPointsColumn) {
+            const timeSort = compareByTimeColumn(
+              rowA,
+              rowB,
+              totalTimeColumnIndex,
+              order
+            );
+            if (timeSort !== null) return timeSort;
+          }
+        }
+        return primarySort;
       } else if (isNumberA) {
+        // In ascending: empty (0 points) comes before number; in descending: number comes before empty
         return 1 * order;
       } else if (isNumberB) {
         return -1 * order;
       } else {
+        if (isPsPointsColumn) {
+          const timeSort = compareByTimeColumn(
+            rowA,
+            rowB,
+            psTimeColumnIndex,
+            order
+          );
+          if (timeSort !== null) return timeSort;
+        }
+        if (isPointsColumn || isTotalPointsColumn) {
+          const timeSort = compareByTimeColumn(
+            rowA,
+            rowB,
+            totalTimeColumnIndex,
+            order
+          );
+          if (timeSort !== null) return timeSort;
+        }
+        // Fallback to string comparison for non-numeric, non-time columns
+        // or when secondary time sorting is unavailable
+        if (cellA === "" && cellB === "") return 0;
         return (
           cellA.localeCompare(cellB, undefined, {
             numeric: true,
@@ -171,11 +253,25 @@ document.addEventListener("DOMContentLoaded", function() {
     sortedHeader.classList.add(order === 1 ? "sorted-asc" : "sorted-desc");
   }
 
-  let currentSortedColumn = 0;
-  let currentSortOrder = 1;
+  function shouldDefaultToDescending(header) {
+    if (!header) return false;
+    return (
+      header.classList.contains("th-diff") ||
+      header.classList.contains("th-sr") ||
+      header.classList.contains("th-leg") ||
+      header.classList.contains("th-ps-points") ||
+      header.classList.contains("th-total-points") ||
+      header.classList.contains("th-points") ||
+      header.classList.contains("th-location")
+    );
+  }
 
-  sortTableByColumn(table, 0, 1);
-  updateHeaderStyles(headers, headers[0], 1);
+  let currentSortedColumn = 0;
+  const initialHeader = headers[0];
+  let currentSortOrder = shouldDefaultToDescending(initialHeader) ? -1 : 1;
+
+  sortTableByColumn(table, 0, currentSortOrder);
+  updateHeaderStyles(headers, headers[0], currentSortOrder);
 
   headers.forEach((header, index) => {
     header.addEventListener("click", e => {
@@ -187,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentSortOrder *= -1;
       } else {
         currentSortedColumn = index;
-        currentSortOrder = 1;
+        currentSortOrder = shouldDefaultToDescending(header) ? -1 : 1;
       }
 
       sortTableByColumn(table, index, currentSortOrder);

@@ -177,10 +177,10 @@ exports[`e2e generates driver leg results 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Test E2E Rally Grundstrom Leg 1 Driver Results</h2>
+          <h2 class=\\"ml-1\\">Test E2E Rally Grundstrom Leg 1 Driver Results</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -219,13 +219,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">1</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/fin.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/fin.png\\" class=\\"img-sm\\"
                   alt=\\"fin\\" title=\\"fin\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">QazRa</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -242,13 +242,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">2</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Hawk24</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -265,13 +265,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">3</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bel.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bel.png\\" class=\\"img-sm\\"
                   alt=\\"bel\\" title=\\"bel\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">THELC Matt</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -288,13 +288,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">4</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Joe Hutchinson</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -311,13 +311,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">5</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">HotdogCowboy</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -334,13 +334,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">6</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">PETTET Jordan (shakey-deal)</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -357,13 +357,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">7</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/nor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/nor.png\\" class=\\"img-sm\\"
                   alt=\\"nor\\" title=\\"nor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Roy Magnes</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -380,13 +380,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">8</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">satchmo</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -403,13 +403,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">9</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Weepy</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -426,13 +426,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">10</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/kor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/kor.png\\" class=\\"img-sm\\"
                   alt=\\"kor\\" title=\\"kor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Prodicrux</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -449,13 +449,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">11</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">FAHEY Andrew</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/seat.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"seat\\"
+                <img src=\\"./assets/cars/seat.png\\" class=\\"img-md\\" alt=\\"seat\\"
                   title=\\"seat\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -472,13 +472,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">12</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">jezza</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/seat.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"seat\\"
+                <img src=\\"./assets/cars/seat.png\\" class=\\"img-md\\" alt=\\"seat\\"
                   title=\\"seat\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -495,13 +495,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">13</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ctbr</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -518,13 +518,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">14</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Maximilian Maksy</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -541,13 +541,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">15</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Thom B</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -564,13 +564,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">16</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/row.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/row.png\\" class=\\"img-sm\\"
                   alt=\\"row\\" title=\\"row\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Erki Erik Poola</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -587,13 +587,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">17</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">davidgrundstrom</td>
               <td class=\\"td-team-name text-left\\">No-recce</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -610,13 +610,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">18</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">dejota95</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -633,13 +633,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">19</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">meatcreap</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -656,13 +656,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">20</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Bollis</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -679,13 +679,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">21</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/hun.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/hun.png\\" class=\\"img-sm\\"
                   alt=\\"hun\\" title=\\"hun\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">fujiRS</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -702,13 +702,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">22</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Kringelwurst</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -725,13 +725,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">23</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TheZenor</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -748,13 +748,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">24</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Tommie Lindberg</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -771,13 +771,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">25</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TASIS Edgar</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -794,13 +794,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">26</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ninko</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -817,13 +817,13 @@ exports[`e2e generates driver leg results 1`] = `
             <tr>
               <td class=\\"td-pos\\">27</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bra.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bra.png\\" class=\\"img-sm\\"
                   alt=\\"bra\\" title=\\"bra\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Htchet</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -840,10 +840,10 @@ exports[`e2e generates driver leg results 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <a href=\\"https://rallysimfans.hu/rbr/rally_online.php?centerbox&#x3D;rally_results.php&amp;rally_id&#x3D;47367\\" target=\\"_none\\">full results</a>
       </div>
     </div>
@@ -1032,10 +1032,10 @@ exports[`e2e generates driver results 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Test E2E Rally Grundstrom Driver Results</h2>
+          <h2 class=\\"ml-1\\">Test E2E Rally Grundstrom Driver Results</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -1083,13 +1083,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">1</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Hawk24</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1111,13 +1111,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">2</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bel.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bel.png\\" class=\\"img-sm\\"
                   alt=\\"bel\\" title=\\"bel\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">THELC Matt</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1139,13 +1139,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">3</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/fin.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/fin.png\\" class=\\"img-sm\\"
                   alt=\\"fin\\" title=\\"fin\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">QazRa</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1167,13 +1167,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">4</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">HotdogCowboy</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1195,13 +1195,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">5</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/nor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/nor.png\\" class=\\"img-sm\\"
                   alt=\\"nor\\" title=\\"nor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Roy Magnes</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1223,13 +1223,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">6</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">satchmo</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1251,13 +1251,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">7</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Joe Hutchinson</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1279,13 +1279,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">8</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/kor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/kor.png\\" class=\\"img-sm\\"
                   alt=\\"kor\\" title=\\"kor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Prodicrux</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1307,13 +1307,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">9</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Thom B</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1335,13 +1335,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">10</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">davidgrundstrom</td>
               <td class=\\"td-team-name text-left\\">No-recce</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1363,13 +1363,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">11</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Bollis</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1391,13 +1391,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">12</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">meatcreap</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1419,13 +1419,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">13</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Kringelwurst</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1447,13 +1447,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">14</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">PETTET Jordan (shakey-deal)</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/subaru.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"subaru\\"
+                <img src=\\"./assets/cars/subaru.png\\" class=\\"img-md\\" alt=\\"subaru\\"
                   title=\\"subaru\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1475,13 +1475,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">15</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">FAHEY Andrew</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/seat.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"seat\\"
+                <img src=\\"./assets/cars/seat.png\\" class=\\"img-md\\" alt=\\"seat\\"
                   title=\\"seat\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1503,13 +1503,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">16</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ctbr</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1531,13 +1531,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">17</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Weepy</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1562,13 +1562,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">18</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">jezza</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/seat.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"seat\\"
+                <img src=\\"./assets/cars/seat.png\\" class=\\"img-md\\" alt=\\"seat\\"
                   title=\\"seat\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1590,13 +1590,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">19</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/hun.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/hun.png\\" class=\\"img-sm\\"
                   alt=\\"hun\\" title=\\"hun\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">fujiRS</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1618,13 +1618,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">20</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Maximilian Maksy</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1646,13 +1646,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">21</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/row.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/row.png\\" class=\\"img-sm\\"
                   alt=\\"row\\" title=\\"row\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Erki Erik Poola</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1674,13 +1674,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">22</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">dejota95</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1702,13 +1702,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">23</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Tommie Lindberg</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1730,13 +1730,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">24</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TheZenor</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1758,13 +1758,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">25</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TASIS Edgar</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1786,13 +1786,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">26</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ninko</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1814,13 +1814,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">27</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bra.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bra.png\\" class=\\"img-sm\\"
                   alt=\\"bra\\" title=\\"bra\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Htchet</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1842,13 +1842,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">28</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/ita.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/ita.png\\" class=\\"img-sm\\"
                   alt=\\"ita\\" title=\\"ita\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Superciuc93</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1870,13 +1870,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">29</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Williams Huw</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1898,13 +1898,13 @@ exports[`e2e generates driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">30</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">MartinRC</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -1926,10 +1926,10 @@ exports[`e2e generates driver results 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <a href=\\"https://rallysimfans.hu/rbr/rally_online.php?centerbox&#x3D;rally_results.php&amp;rally_id&#x3D;47367\\" target=\\"_none\\">full results</a>
       </div>
     </div>
@@ -1976,7 +1976,7 @@ exports[`e2e generates driver standings 1`] = `
   <link rel=\\"stylesheet\\" href=\\"./assets/css/style.css\\">
 
   <link rel=\\"icon\\" href=\\"./assets/rsc-guy.png\\">
-  <title>TEST-E2E | Test E2E – Driver Standings</title>
+  <title>TEST-E2E | Home</title>
 </head>
 
 <body style=\\"background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;\\">
@@ -2003,7 +2003,7 @@ exports[`e2e generates driver standings 1`] = `
       </button>
 
       <div class=\\"navMenu\\">
-            <a class=\\"navLink isActive\\" href=\\"./test-e2e-driver-standings.html\\">
+            <a class=\\"navLink \\" href=\\"./test-e2e-driver-standings.html\\">
               Test E2E
             </a>
             <a class=\\"navLink \\" href=\\"./test-e2e2-driver-standings.html\\">
@@ -2048,7 +2048,7 @@ exports[`e2e generates driver standings 1`] = `
     </button>
 
     <div class=\\"navTitle navMobileOnly\\">
-      <div class=\\"navTitle__main\\">driver - Test E2E</div>
+      <div class=\\"navTitle__main\\"> - </div>
       
     </div>
 
@@ -2065,7 +2065,7 @@ exports[`e2e generates driver standings 1`] = `
 
   <div id=\\"mobileNav\\" class=\\"drawer\\" hidden>
     <nav class=\\"drawer__content\\" aria-label=\\"Mobile menu\\">
-          <a class=\\"drawer__link isActive\\" href=\\"./test-e2e-driver-standings.html\\">
+          <a class=\\"drawer__link \\" href=\\"./test-e2e-driver-standings.html\\">
             Driver Standings - Test E2E
           </a>
           <a class=\\"drawer__link \\" href=\\"./test-e2e2-driver-standings.html\\">
@@ -2096,740 +2096,158 @@ exports[`e2e generates driver standings 1`] = `
     </div>
   </div>
 
-    <div class=\\"secondaryNav\\">
-        <a
-          class=\\"secondaryNav__item\\"
-          href=\\"./test-e2e-0-driver-results.html\\"
-          style=\\"\\"
-        >
-          <img class=\\"secondaryNav__flag\\" src=\\"./assets/country-flags/swe.png\\" alt=\\"swe\\" />
-        </a>
-        <a
-          class=\\"secondaryNav__item\\"
-          href=\\"./test-e2e-1-driver-results.html\\"
-          style=\\"\\"
-        >
-          <img class=\\"secondaryNav__flag\\" src=\\"./assets/country-flags/est.png\\" alt=\\"est\\" />
-        </a>
-    </div>
 </header>
 
 
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Test E2E Driver Standings</h2>
+          <h2 class=\\"ml-1\\">TEST-E2E Home</h2>
         </div>
       </div>
-      <div class=\\"column-filter\\">
-        <button class=\\"column-filter__btn\\" type=\\"button\\" aria-label=\\"Filter columns\\">
-          <span>Filter Columns</span>
-        </button>
-        <div class=\\"column-filter__menu\\">
-          <div class=\\"column-filter__items\\"></div>
-          <div class=\\"column-filter__actions\\">
-            <button class=\\"column-filter__action-btn\\" data-action=\\"show-all\\">Show All</button>
-            <button class=\\"column-filter__action-btn\\" data-action=\\"close\\">Close</button>
+      <div class=\\"home-layout\\">
+        <main class=\\"home-main\\">
+
+      <div class=\\"mb-1\\">
+        <h3>Championship Rules</h3>
+        <div class=\\"card\\">
+          <div class=\\"card-body\\">
+            <p><strong>Drop Rounds:</strong> 2 lowest scoring rounds dropped</p>
+            <p><strong>Points (Top 5):</strong> 30, 24, 19, 15, 12</p>
+            <p><strong>Power Stage Points:</strong> 5, 4, 3, 2, 1</p>
           </div>
         </div>
       </div>
-      <div class=\\"table-scroll-indicator\\" id=\\"tableScrollIndicator\\" aria-hidden=\\"true\\">
-        <div class=\\"table-scroll-indicator__content\\"></div>
-      </div>
-      <div class=\\"table-scroll-wrapper\\">
-        <table id=\\"tableDrivers\\">
-          <thead>
-            <tr>
-              <th class=\\"th-pos\\">Pos</th>
-              <th class=\\"th-change\\"></th>
-              <th class=\\"th-nat\\">Nat</th>
-              <th class=\\"th-driver\\">Driver</th>
-              <th class=\\"th-team-name\\">Team Name</th>
 
-                <th class=\\"th-location\\">
-                  <a href=\\"./test-e2e-0-driver-results.html\\" style=\\"\\">
-                    <img src=\\"./assets/country-flags/swe.png\\" alt=\\"swe\\" title=\\"swe\\"/>
-                  </a>
-                </th>
-                <th class=\\"th-location\\">
-                  <a href=\\"./test-e2e-1-driver-results.html\\" style=\\"\\">
-                    <img src=\\"./assets/country-flags/est.png\\" alt=\\"est\\" title=\\"est\\"/>
-                  </a>
-                </th>
-              <th class=\\"th-points\\">Points</th>
-              <th class=\\"th-adr\\">ADR*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class=\\"td-pos\\">1</td>
-              <td class=\\"td-change\\">
-                <span class=\\"neutral\\">=</span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"deu\\" title=\\"deu\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Hawk24</td>
-              <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
-              <td class=\\"td-result\\">
-                66
-              </td>
-              <td class=\\"td-result\\">
-                38
-              </td>
-              <td class=\\"td-points bold\\">104</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">2</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;1
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/fin.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"fin\\" title=\\"fin\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">QazRa</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                39
-              </td>
-              <td class=\\"td-result\\">
-                54
-              </td>
-              <td class=\\"td-points bold\\">93</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">3</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;13
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"est\\" title=\\"est\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">ninko</td>
-              <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-result\\">
-                61
-              </td>
-              <td class=\\"td-points bold\\">61</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">4</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-2
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bel.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"bel\\" title=\\"bel\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">THELC Matt</td>
-              <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
-              <td class=\\"td-result\\">
-                52
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">52</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">5</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-1
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"usa\\" title=\\"usa\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">HotdogCowboy</td>
-              <td class=\\"td-team-name text-left\\">All Beef Franks</td>
-              <td class=\\"td-result\\">
-                32
-              </td>
-              <td class=\\"td-result\\">
-                16
-              </td>
-              <td class=\\"td-points bold\\">48</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">6</td>
-              <td class=\\"td-change\\">
-                <span class=\\"neutral\\">=</span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"aus\\" title=\\"aus\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">satchmo</td>
-              <td class=\\"td-team-name text-left\\">CodeBros</td>
-              <td class=\\"td-result\\">
-                20
-              </td>
-              <td class=\\"td-result\\">
-                27
-              </td>
-              <td class=\\"td-points bold\\">47</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">7</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-2
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/nor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"nor\\" title=\\"nor\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Roy Magnes</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                24
-              </td>
-              <td class=\\"td-result\\">
-                14
-              </td>
-              <td class=\\"td-points bold\\">38</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">8</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"deu\\" title=\\"deu\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Kringelwurst</td>
-              <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class=\\"td-result\\">
-                3
-              </td>
-              <td class=\\"td-result\\">
-                32
-              </td>
-              <td class=\\"td-points bold\\">35</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">9</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;1
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"swe\\" title=\\"swe\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">davidgrundstrom</td>
-              <td class=\\"td-team-name text-left\\">No-recce</td>
-              <td class=\\"td-result\\">
-                7
-              </td>
-              <td class=\\"td-result\\">
-                19
-              </td>
-              <td class=\\"td-points bold\\">26</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">9</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-1
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/kor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"kor\\" title=\\"kor\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Prodicrux</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                16
-              </td>
-              <td class=\\"td-result\\">
-                10
-              </td>
-              <td class=\\"td-points bold\\">26</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">11</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"swe\\" title=\\"swe\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Weepy</td>
-              <td class=\\"td-team-name text-left\\">CodeBros</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                20
-              </td>
-              <td class=\\"td-points bold\\">20</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">12</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"gbr\\" title=\\"gbr\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Joe Hutchinson</td>
-              <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
-              <td class=\\"td-result\\">
-                18
-              </td>
-              <td class=\\"td-result\\">
-                DNS
-              </td>
-              <td class=\\"td-points bold\\">18</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">13</td>
-              <td class=\\"td-change\\">
-                <span class=\\"positive\\">
-                  <i class=\\"arrow up\\"></i>&nbsp;3
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bra.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"bra\\" title=\\"bra\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Htchet</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-result\\">
-                16
-              </td>
-              <td class=\\"td-points bold\\">16</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">14</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"deu\\" title=\\"deu\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Thom B</td>
-              <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class=\\"td-result\\">
-                10
-              </td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-points bold\\">10</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">15</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-4
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"swe\\" title=\\"swe\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Bollis</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                5
-              </td>
-              <td class=\\"td-result\\">
-                4
-              </td>
-              <td class=\\"td-points bold\\">9</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">16</td>
-              <td class=\\"td-change\\">
-                <span class=\\"neutral\\">=</span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/ita.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"ita\\" title=\\"ita\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Superciuc93</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-result\\">
-                8
-              </td>
-              <td class=\\"td-points bold\\">8</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">17</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-1
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"aus\\" title=\\"aus\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">jezza</td>
-              <td class=\\"td-team-name text-left\\">The stale poos</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                6
-              </td>
-              <td class=\\"td-points bold\\">6</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">18</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-6
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"usa\\" title=\\"usa\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">meatcreap</td>
-              <td class=\\"td-team-name text-left\\">All Beef Franks</td>
-              <td class=\\"td-result\\">
-                4
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">4</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">19</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-4
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"gbr\\" title=\\"gbr\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">FAHEY Andrew</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                1
-              </td>
-              <td class=\\"td-result\\">
-                1
-              </td>
-              <td class=\\"td-points bold\\">2</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">19</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"gbr\\" title=\\"gbr\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">PETTET Jordan (shakey-deal)</td>
-              <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
-              <td class=\\"td-result\\">
-                2
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">2</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"swe\\" title=\\"swe\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">ctbr</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"esp\\" title=\\"esp\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">TASIS Edgar</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/hun.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"hun\\" title=\\"hun\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">fujiRS</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"est\\" title=\\"est\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">MartinRC</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                DNS
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"swe\\" title=\\"swe\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Tommie Lindberg</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"esp\\" title=\\"esp\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">dejota95</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"deu\\" title=\\"deu\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Maximilian Maksy</td>
-              <td class=\\"td-team-name text-left\\">The stale poos</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"est\\" title=\\"est\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">TheZenor</td>
-              <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/row.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"row\\" title=\\"row\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Erki Erik Poola</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                0
-              </td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-            <tr>
-              <td class=\\"td-pos\\">21</td>
-              <td class=\\"td-change\\">
-                <span class=\\"negative\\">
-                  <i class=\\"arrow down\\"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
-                  alt=\\"gbr\\" title=\\"gbr\\" />
-              </td>
-              <td class=\\"td-driver text-left bold\\">Williams Huw</td>
-              <td class=\\"td-team-name text-left\\">privateer</td>
-              <td class=\\"td-result\\">
-                DNF
-              </td>
-              <td class=\\"td-result\\">
-                DNS
-              </td>
-              <td class=\\"td-points bold\\">0</td>
-              <td class=\\"td-adr bold\\">0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
-        <p>Last updated at: last-updated-test-e2e</p>
-      </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
-        <p>*After Dropped Rounds: total points after 2 lowest scoring rounds removed - endurance rounds count as 2</p>
+
+        <div class=\\"top-drivers-by-division mb-1\\">
+          <h3>Top 3 Drivers — by Division</h3>
+          <div class=\\"top-drivers-division-grid\\">
+          <div class=\\"top-drivers-division\\">
+            <h4 class=\\"top-drivers-division__title\\">Test E2E</h4>
+            <table class=\\"top-drivers-table\\">
+              <thead>
+                <tr>
+                  <th class=\\"th-pos\\">Pos</th>
+                  <th class=\\"th-change\\"></th>
+                  <th class=\\"th-nat\\">Nat</th>
+                  <th class=\\"th-driver\\">Driver</th>
+                  <th class=\\"th-points\\">Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class=\\"td-pos\\">1</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"neutral\\">=</span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
+                      alt=\\"deu\\" title=\\"deu\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">Hawk24</td>
+                  <td class=\\"td-points bold\\">104</td>
+                </tr>
+                <tr>
+                  <td class=\\"td-pos\\">2</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"positive\\">
+                      <i class=\\"arrow up\\"></i>&nbsp;1
+                    </span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/fin.png\\" class=\\"img-sm\\"
+                      alt=\\"fin\\" title=\\"fin\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">QazRa</td>
+                  <td class=\\"td-points bold\\">93</td>
+                </tr>
+                <tr>
+                  <td class=\\"td-pos\\">3</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"positive\\">
+                      <i class=\\"arrow up\\"></i>&nbsp;13
+                    </span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
+                      alt=\\"est\\" title=\\"est\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">ninko</td>
+                  <td class=\\"td-points bold\\">61</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class=\\"top-drivers-division\\">
+            <h4 class=\\"top-drivers-division__title\\">Test E2E2</h4>
+            <table class=\\"top-drivers-table\\">
+              <thead>
+                <tr>
+                  <th class=\\"th-pos\\">Pos</th>
+                  <th class=\\"th-change\\"></th>
+                  <th class=\\"th-nat\\">Nat</th>
+                  <th class=\\"th-driver\\">Driver</th>
+                  <th class=\\"th-points\\">Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style=\\"background-color: #ffd74e\\">
+                  <td class=\\"td-pos\\">1</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"neutral\\">=</span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
+                      alt=\\"aus\\" title=\\"aus\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">woosh</td>
+                  <td class=\\"td-points bold\\">130</td>
+                </tr>
+                <tr style=\\"background-color: #ccffc8\\">
+                  <td class=\\"td-pos\\">2</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"neutral\\">=</span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
+                      alt=\\"aus\\" title=\\"aus\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">winstall</td>
+                  <td class=\\"td-points bold\\">104</td>
+                </tr>
+                <tr style=\\"background-color: #ccffc8\\">
+                  <td class=\\"td-pos\\">3</td>
+                  <td class=\\"td-change\\">
+                    <span class=\\"neutral\\">=</span>
+                  </td>
+                  <td class=\\"td-nat\\">
+                    <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
+                      alt=\\"aus\\" title=\\"aus\\" />
+                  </td>
+                  <td class=\\"td-driver text-left bold\\">testdriver1</td>
+                  <td class=\\"td-points bold\\">82</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+        </main>
+        <aside class=\\"home-aside\\" aria-label=\\"Previous seasons\\">
+          <h3 class=\\"home-aside__title\\">Previous Seasons</h3>
+          <ul class=\\"home-aside__list\\">
+            <li><a href=\\"/e2e-1\\">E2E Season 1</a></li>
+          </ul>
+        </aside>
       </div>
     </div>
   </div>
 </div>
+
   <script src=\\"./assets/js/app.js\\" defer></script>
 </body>
 
@@ -3013,10 +2431,10 @@ exports[`e2e generates overall driver results 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Overall Rally Nonko Driver Results</h2>
+          <h2 class=\\"ml-1\\">Overall Rally Nonko Driver Results</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -3059,14 +2477,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">1</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">woosh</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3086,14 +2504,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">2</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">winstall</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3113,14 +2531,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">3</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ninko</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3140,14 +2558,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">4</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver1</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3167,14 +2585,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">5</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver2</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3194,14 +2612,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">6</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver3</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3221,14 +2639,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">7</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver4</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3248,14 +2666,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">8</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/fin.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/fin.png\\" class=\\"img-sm\\"
                   alt=\\"fin\\" title=\\"fin\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">QazRa</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3275,14 +2693,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">9</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver5</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3302,14 +2720,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">10</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver6</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3329,14 +2747,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">11</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver7</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3356,14 +2774,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">12</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver8</td>
               <td class=\\"td-div\\">Test E2E2</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3383,14 +2801,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">13</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Hawk24</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3410,14 +2828,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">14</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Kringelwurst</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3437,14 +2855,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">15</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">satchmo</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3464,14 +2882,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">16</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Weepy</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">CodeBros</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/lancia.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"lancia\\"
+                <img src=\\"./assets/cars/lancia.png\\" class=\\"img-md\\" alt=\\"lancia\\"
                   title=\\"lancia\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3491,14 +2909,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">17</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">davidgrundstrom</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">No-recce</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3518,14 +2936,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">18</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bra.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bra.png\\" class=\\"img-sm\\"
                   alt=\\"bra\\" title=\\"bra\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Htchet</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/lancia.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"lancia\\"
+                <img src=\\"./assets/cars/lancia.png\\" class=\\"img-md\\" alt=\\"lancia\\"
                   title=\\"lancia\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3545,14 +2963,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">19</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/nor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/nor.png\\" class=\\"img-sm\\"
                   alt=\\"nor\\" title=\\"nor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Roy Magnes</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3572,14 +2990,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">20</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">HotdogCowboy</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3599,14 +3017,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">21</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/kor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/kor.png\\" class=\\"img-sm\\"
                   alt=\\"kor\\" title=\\"kor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Prodicrux</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3626,14 +3044,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">22</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/ita.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/ita.png\\" class=\\"img-sm\\"
                   alt=\\"ita\\" title=\\"ita\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Superciuc93</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3653,14 +3071,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">23</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">jezza</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3680,14 +3098,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">24</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Bollis</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3707,14 +3125,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">25</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">FAHEY Andrew</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3734,14 +3152,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">26</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ctbr</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3761,14 +3179,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">27</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TASIS Edgar</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3788,14 +3206,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">28</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/hun.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/hun.png\\" class=\\"img-sm\\"
                   alt=\\"hun\\" title=\\"hun\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">fujiRS</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3815,14 +3233,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">29</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">MartinRC</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3842,14 +3260,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">30</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">meatcreap</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">All Beef Franks</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3869,14 +3287,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">31</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Tommie Lindberg</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3896,14 +3314,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">32</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">PETTET Jordan (shakey-deal)</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Heat Seeking Geezers mk2</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/lancia.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"lancia\\"
+                <img src=\\"./assets/cars/lancia.png\\" class=\\"img-md\\" alt=\\"lancia\\"
                   title=\\"lancia\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3923,14 +3341,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">33</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">dejota95</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3950,14 +3368,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">34</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Maximilian Maksy</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">The stale poos</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/opel.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"opel\\"
+                <img src=\\"./assets/cars/opel.png\\" class=\\"img-md\\" alt=\\"opel\\"
                   title=\\"opel\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -3977,14 +3395,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">35</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bel.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bel.png\\" class=\\"img-sm\\"
                   alt=\\"bel\\" title=\\"bel\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">THELC Matt</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/porsche.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"porsche\\"
+                <img src=\\"./assets/cars/porsche.png\\" class=\\"img-md\\" alt=\\"porsche\\"
                   title=\\"porsche\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4004,14 +3422,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">36</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TheZenor</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Flat Out Racing</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/ford.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"ford\\"
+                <img src=\\"./assets/cars/ford.png\\" class=\\"img-md\\" alt=\\"ford\\"
                   title=\\"ford\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4031,14 +3449,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">37</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Joe Hutchinson</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Rizla&#x27;s Suffering Club</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4058,14 +3476,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">38</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/row.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/row.png\\" class=\\"img-sm\\"
                   alt=\\"row\\" title=\\"row\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Erki Erik Poola</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4085,14 +3503,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">39</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Thom B</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">Kringel&#x27;s Coal Rental and Co.</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4112,14 +3530,14 @@ exports[`e2e generates overall driver results 1`] = `
             <tr>
               <td class=\\"td-pos\\">40</td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Williams Huw</td>
               <td class=\\"td-div\\">Test E2E</td>
               <td class=\\"td-team-name text-left\\">privateer</td>
               <td class=\\"td-car\\">
-                <img src=\\"./assets/cars/mitsubishi.png\\" style=\\"max-width:2em; max-height:2em;\\" alt=\\"mitsubishi\\"
+                <img src=\\"./assets/cars/mitsubishi.png\\" class=\\"img-md\\" alt=\\"mitsubishi\\"
                   title=\\"mitsubishi\\" />
               </td>
               <td class=\\"td-car-name text-left\\">
@@ -4139,7 +3557,7 @@ exports[`e2e generates overall driver results 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
     </div>
@@ -4328,10 +3746,10 @@ exports[`e2e generates overall driver standings 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Overall Driver Standings</h2>
+          <h2 class=\\"ml-1\\">Overall Driver Standings</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -4383,7 +3801,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">woosh</td>
@@ -4406,7 +3824,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">winstall</td>
@@ -4429,7 +3847,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Hawk24</td>
@@ -4452,7 +3870,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/fin.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/fin.png\\" class=\\"img-sm\\"
                   alt=\\"fin\\" title=\\"fin\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">QazRa</td>
@@ -4473,7 +3891,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 <span class=\\"neutral\\">=</span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver1</td>
@@ -4496,7 +3914,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver2</td>
@@ -4519,7 +3937,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ninko</td>
@@ -4542,7 +3960,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bel.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bel.png\\" class=\\"img-sm\\"
                   alt=\\"bel\\" title=\\"bel\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">THELC Matt</td>
@@ -4563,7 +3981,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 <span class=\\"neutral\\">=</span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver3</td>
@@ -4586,7 +4004,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">HotdogCowboy</td>
@@ -4607,7 +4025,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 <span class=\\"neutral\\">=</span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">satchmo</td>
@@ -4630,7 +4048,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver4</td>
@@ -4653,7 +4071,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/nor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/nor.png\\" class=\\"img-sm\\"
                   alt=\\"nor\\" title=\\"nor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Roy Magnes</td>
@@ -4676,7 +4094,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver5</td>
@@ -4699,7 +4117,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Kringelwurst</td>
@@ -4722,7 +4140,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver6</td>
@@ -4743,7 +4161,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 <span class=\\"neutral\\">=</span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver7</td>
@@ -4766,7 +4184,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">davidgrundstrom</td>
@@ -4789,7 +4207,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/kor.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/kor.png\\" class=\\"img-sm\\"
                   alt=\\"kor\\" title=\\"kor\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Prodicrux</td>
@@ -4812,7 +4230,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">testdriver8</td>
@@ -4835,7 +4253,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Weepy</td>
@@ -4858,7 +4276,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Joe Hutchinson</td>
@@ -4881,7 +4299,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/bra.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/bra.png\\" class=\\"img-sm\\"
                   alt=\\"bra\\" title=\\"bra\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Htchet</td>
@@ -4904,7 +4322,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Thom B</td>
@@ -4927,7 +4345,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Bollis</td>
@@ -4948,7 +4366,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 <span class=\\"neutral\\">=</span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/ita.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/ita.png\\" class=\\"img-sm\\"
                   alt=\\"ita\\" title=\\"ita\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Superciuc93</td>
@@ -4971,7 +4389,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/aus.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/aus.png\\" class=\\"img-sm\\"
                   alt=\\"aus\\" title=\\"aus\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">jezza</td>
@@ -4994,7 +4412,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/usa.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/usa.png\\" class=\\"img-sm\\"
                   alt=\\"usa\\" title=\\"usa\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">meatcreap</td>
@@ -5017,7 +4435,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">FAHEY Andrew</td>
@@ -5040,7 +4458,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">PETTET Jordan (shakey-deal)</td>
@@ -5063,7 +4481,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">ctbr</td>
@@ -5086,7 +4504,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TASIS Edgar</td>
@@ -5109,7 +4527,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/hun.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/hun.png\\" class=\\"img-sm\\"
                   alt=\\"hun\\" title=\\"hun\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">fujiRS</td>
@@ -5132,7 +4550,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">MartinRC</td>
@@ -5155,7 +4573,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/swe.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/swe.png\\" class=\\"img-sm\\"
                   alt=\\"swe\\" title=\\"swe\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Tommie Lindberg</td>
@@ -5178,7 +4596,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/esp.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/esp.png\\" class=\\"img-sm\\"
                   alt=\\"esp\\" title=\\"esp\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">dejota95</td>
@@ -5201,7 +4619,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/deu.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/deu.png\\" class=\\"img-sm\\"
                   alt=\\"deu\\" title=\\"deu\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Maximilian Maksy</td>
@@ -5224,7 +4642,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/est.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/est.png\\" class=\\"img-sm\\"
                   alt=\\"est\\" title=\\"est\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">TheZenor</td>
@@ -5247,7 +4665,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/row.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/row.png\\" class=\\"img-sm\\"
                   alt=\\"row\\" title=\\"row\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Erki Erik Poola</td>
@@ -5270,7 +4688,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 </span>
               </td>
               <td class=\\"td-nat\\">
-                <img src=\\"./assets/country-flags/gbr.png\\" style=\\"max-width:1.5em; max-height:1.5em;\\"
+                <img src=\\"./assets/country-flags/gbr.png\\" class=\\"img-sm\\"
                   alt=\\"gbr\\" title=\\"gbr\\" />
               </td>
               <td class=\\"td-driver text-left bold\\">Williams Huw</td>
@@ -5288,10 +4706,10 @@ exports[`e2e generates overall driver standings 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>*After Dropped Rounds: total points after 2 lowest scoring rounds removed - endurance rounds count as 2</p>
       </div>
     </div>
@@ -5480,10 +4898,10 @@ exports[`e2e generates overall team standings 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Overall Team Standings</h2>
+          <h2 class=\\"ml-1\\">Overall Team Standings</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -5647,7 +5065,7 @@ exports[`e2e generates overall team standings 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
     </div>
@@ -5836,10 +5254,10 @@ exports[`e2e generates team standings 1`] = `
   <div class=\\"container\\">
   <div class=\\"flexContainer\\">
     <div class=\\"flexBox\\">
-      <div style=\\"margin-bottom: 1em;\\" class=\\"hide-medium hide-small\\">
-        <div class=\\"logo\\" style=\\"display:flex;\\">
+      <div class=\\"mb-1 hide-medium hide-small\\">
+        <div class=\\"logo d-flex\\">
           <img src=\\"./assets/rsc-guy.png\\" />
-          <h2 style=\\"margin-left:1em;\\">Test E2E Team Standings</h2>
+          <h2 class=\\"ml-1\\">Test E2E Team Standings</h2>
         </div>
       </div>
       <div class=\\"column-filter\\">
@@ -6005,7 +5423,7 @@ exports[`e2e generates team standings 1`] = `
           </tbody>
         </table>
       </div>
-      <div style=\\"margin:0 auto; text-align:center;\\">
+      <div class=\\"text-center\\">
         <p>Last updated at: last-updated-test-e2e</p>
       </div>
     </div>

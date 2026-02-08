@@ -12,8 +12,8 @@ const points = {
 const initialState = {
   pointsForDNF: false,
   websiteName: "jrc-results",
-  subfolderName: "themed",
-  useStandingsForHome: true,
+  //subfolderName: "themed",
+  useStandingsForHome: false,
   showLivePoints: true,
   showLivePointsDaysRemaining: 2,
   hideCarColumnInStandings: false,

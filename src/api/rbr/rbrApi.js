@@ -16,9 +16,10 @@ const loadFromCache = cacheFileName => {
 
 const fetchCsvResults = async (rallyId, eventFinished) => {
   const cacheFileName = `${cachePath}/${rallyId}.csv`;
-  if (eventFinished) {
+  // Use cache when event is finished, or when e2e/preview request fixture cache for active events
+  const useCache = eventFinished || process.env.USE_RBR_FIXTURE_CACHE;
+  if (useCache) {
     const cacheFile = loadFromCache(cacheFileName);
-
     if (cacheFile) {
       debug(`cached event results retrieved: ${cacheFileName}`);
       return cacheFile;
@@ -41,9 +42,9 @@ const fetchCsvStandings = async (rallyId, eventFinished) => {
     throw new Error("invalid rally id, aborting");
   }
   const cacheFileName = `${cachePath}/${rallyId}_standings.csv`;
-  if (eventFinished) {
+  const useCache = eventFinished || process.env.USE_RBR_FIXTURE_CACHE;
+  if (useCache) {
     const cacheFile = loadFromCache(cacheFileName);
-
     if (cacheFile) {
       debug(`cached event results retrieved: ${cacheFileName}`);
       return cacheFile;

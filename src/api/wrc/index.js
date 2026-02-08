@@ -58,7 +58,7 @@ const loadFromCache = cacheFileName => {
   try {
     return fs.readFileSync(cacheFileName, "utf8");
   } catch (_err) {
-    debug("cache file not found, loading from API");
+    debug(`cache file not found: ${cacheFileName}, loading from API`);
   }
   return null;
 };

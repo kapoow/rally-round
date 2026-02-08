@@ -11,7 +11,9 @@
     "validate-configs": "node src/state/editor/validate.js",
     "config-editor": "cd src/state/editor && node server.js",
     "prepush": "npm run lint -- --fix && npm run test && npm run validate-configs",
-    "prepare-championship": "node prepareNewChampionship.js"
+    "prepare-championship": "node prepareNewChampionship.js",
+    "preview": "node scripts/preview-e2e.js",
+    "preview:watch": "nodemon --watch src --watch assets/css --exec 'npm run preview'"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "husky": "^4.2.5",
     "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
     "prettier": "^3.8.1"
   },
   "husky": {

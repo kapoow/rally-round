@@ -2416,7 +2416,7 @@ exports[`e2e generates driver standings 1`] = `
             <div class="season-stats-grid">
               <div class="stat-item">
                 <span class="stat-label">Events Completed</span>
-                <span class="stat-value">2 / 3</span>
+                <span class="stat-value">2 / 4</span>
               </div>
               <div class="stat-item">
                 <span class="stat-label">Avg. Entries per Event</span>
@@ -2439,7 +2439,7 @@ exports[`e2e generates driver standings 1`] = `
             <div class="season-stats-grid">
               <div class="stat-item">
                 <span class="stat-label">Events Completed</span>
-                <span class="stat-value">2 / 3</span>
+                <span class="stat-value">2 / 4</span>
               </div>
               <div class="stat-item">
                 <span class="stat-label">Avg. Entries per Event</span>

@@ -3,7 +3,7 @@ const initialState = {
   useStandingsForHome: false,
   showCarPerformance: false,
   showLivePoints: true,
-  showLivePointsDaysRemaining: 9,  
+  showLivePointsDaysRemaining: 9,
   disableTeams: true,
   hideCarColumnInStandings: true,
   showCarNameAsTextInResults: true,
@@ -15,6 +15,7 @@ const initialState = {
   backgroundStyle:
     "background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
   logo: "OOR.png",
+  theme: "dark",
   siteTitlePrefix: "Ladd och Sladd",
   hideStageTimesUntilEventEnd: true,
   teamOverride: {},

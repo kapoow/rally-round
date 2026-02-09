@@ -485,11 +485,14 @@ const getSeasonStats = divisions => {
     const dnfRate =
       totalEntries > 0 ? ((totalDNFs / totalEntries) * 100).toFixed(1) : 0;
 
+    const totalEvents =
+      division.events.length + (division.upcomingEvents?.length || 0);
+
     divisionStats.push({
       divisionName: division.displayName || divName,
-      totalEvents: division.events.length,
+      totalEvents,
       completedEvents,
-      eventsRemaining: division.events.length - completedEvents,
+      eventsRemaining: totalEvents - completedEvents,
       avgEntriesPerEvent,
       dnfRate,
       closestFinish: closestFinish.event ? closestFinish : null

@@ -512,6 +512,7 @@ const transformForHomeHTML = league => {
     historicalSeasonLinks: league.historicalSeasonLinks || [],
     showTeamNameTextColumn: league.showTeamNameTextColumn,
     hideTeamLogoColumn: league.hideTeamLogoColumn,
+    showCarPerformance: league.showCarPerformance !== false, // default true
     localization: getLocalization(),
     lastCompletedEvents: getLastCompletedEvents(league.divisions),
     championshipBattles: getChampionshipBattles(league.divisions),
@@ -552,6 +553,7 @@ const writeHomeHTML = links => {
     body: bodyHtml,
     pageTitle,
     logo: league.logo,
+    theme: league.theme,
     backgroundStyle: leagueRef.getBackgroundStyle(),
     navigation: getNavigationHTML("home", "home", links, null)
   });
@@ -618,7 +620,8 @@ const writeStandingsHTML = (division, type, links) => {
     pageTitle,
     navigation: data.navigation,
     backgroundStyle: data.backgroundStyle,
-    logo: leagueRef.league.logo
+    logo: leagueRef.league.logo,
+    theme: leagueRef.league.theme
   });
 
   fs.writeFileSync(
@@ -942,7 +945,8 @@ const writeDriverResultsHTML = ({
     pageTitle,
     navigation: data.navigation,
     backgroundStyle: data.backgroundStyle,
-    logo: leagueRef.league.logo
+    logo: leagueRef.league.logo,
+    theme: leagueRef.league.theme
   });
 
   fs.writeFileSync(

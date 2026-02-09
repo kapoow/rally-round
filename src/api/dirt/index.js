@@ -87,20 +87,23 @@ const login = async resolve => {
     await page.keyboard.type(password);
 
     debug("logging in ...");
-    await page.click(LOGIN_BUTTON_SELECTOR);
-    debug("going to find-clubs page ...");
+    await Promise.all([
+      page.waitForNavigation(),
+      page.click(LOGIN_BUTTON_SELECTOR)
+    ]);
+    debug("login complete, going to find-clubs page ...");
 
     debug("extracting credentials ...");
 
     page.on("request", async request => {
-      if (request._url.includes("Search")) {
+      if (request.url().includes("Search")) {
         const cookies = await page.cookies();
         const cookieHeader = cookies
           .map(cookie => `${cookie.name}=${cookie.value}`)
           .join("; ");
         const creds = {
           cookie: cookieHeader,
-          xsrfh: request._headers["racenet.xsrfh"]
+          xsrfh: request.headers()["racenet.xsrfh"]
         };
         fs.writeFileSync(cachedCredsFile, JSON.stringify(creds, null, 2));
         debug("credentials retrieved, closing headless browser");
@@ -113,12 +116,14 @@ const login = async resolve => {
   } catch (e) {
     debug("puppeteer error", e);
     // see if the creds were saved correctly anyway
-    const cachedCreds = JSON.parse(fs.readFileSync(cachedCredsFile, "utf8"));
-    const response = await myClubs(cachedCreds);
-    if (response.status === 200) {
-      debug("puppeteer error but creds saved successfully, continuing");
-      resolve(cachedCreds);
-      return;
+    if (fs.existsSync(cachedCredsFile)) {
+      const cachedCreds = JSON.parse(fs.readFileSync(cachedCredsFile, "utf8"));
+      const response = await myClubs(cachedCreds);
+      if (response.status === 200) {
+        debug("puppeteer error but creds saved successfully, continuing");
+        resolve(cachedCreds);
+        return;
+      }
     }
     throw e;
   }

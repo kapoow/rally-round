@@ -251,7 +251,7 @@ template {
 
 .card-header {
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
   padding: 0.75em 1em;
 }
 
@@ -386,7 +386,7 @@ th>a>img {
 
 thead>tr {
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
 }
 
 tbody>tr:nth-child(even) {
@@ -537,6 +537,7 @@ tbody>tr:nth-child(odd) {
   --primary-light-2: rgba(83, 85, 191, 0.3);
   --primary-light-3: rgba(83, 85, 191, 0.4);
   --primary-light-4: rgba(83, 85, 191, 0.5);
+  --primary-fg: #ffffff;
   --white: #ffffff;
   --white-95: rgba(255, 255, 255, 0.95);
   --white-25: rgba(255, 255, 255, 0.25);
@@ -584,6 +585,54 @@ tbody>tr:nth-child(odd) {
   /* Sizes */
   --scrollbar-height: 12px;
   --scrollbar-width: 8px;
+}
+
+/* =========================
+   THEME VARIANTS
+   ========================= */
+
+/* Dark theme - Blue Grey with white text */
+.theme-dark {
+  --primary: #263238;
+  --primary-dark: #1a1f23;
+  --primary-light: rgba(38, 50, 56, 0.2);
+  --primary-light-2: rgba(38, 50, 56, 0.3);
+  --primary-light-3: rgba(38, 50, 56, 0.4);
+  --primary-light-4: rgba(38, 50, 56, 0.5);
+  --primary-fg: #ffffff;
+}
+
+/* Red theme - Material Red 800 with white text */
+.theme-red {
+  --primary: #c62828;
+  --primary-dark: #b71c1c;
+  --primary-light: rgba(198, 40, 40, 0.2);
+  --primary-light-2: rgba(198, 40, 40, 0.3);
+  --primary-light-3: rgba(198, 40, 40, 0.4);
+  --primary-light-4: rgba(198, 40, 40, 0.5);
+  --primary-fg: #ffffff;
+}
+
+/* Green theme - Material Green 800 with white text */
+.theme-green {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: rgba(46, 125, 50, 0.2);
+  --primary-light-2: rgba(46, 125, 50, 0.3);
+  --primary-light-3: rgba(46, 125, 50, 0.4);
+  --primary-light-4: rgba(46, 125, 50, 0.5);
+  --primary-fg: #ffffff;
+}
+
+/* Orange theme - Material Orange 800 with white text */
+.theme-orange {
+  --primary: #ef6c00;
+  --primary-dark: #e65100;
+  --primary-light: rgba(239, 108, 0, 0.2);
+  --primary-light-2: rgba(239, 108, 0, 0.3);
+  --primary-light-3: rgba(239, 108, 0, 0.4);
+  --primary-light-4: rgba(239, 108, 0, 0.5);
+  --primary-fg: #ffffff;
 }
 
 .siteHeader {
@@ -685,7 +734,7 @@ tbody>tr:nth-child(odd) {
 .navDrop:hover .navBtn,
 .navDrop:focus-within .navBtn {
   background: var(--primary-light);
-  color: var(--white);
+  color: var(--primary-fg);
   border-color: var(--primary-light-3);
 }
 
@@ -769,7 +818,7 @@ tbody>tr:nth-child(odd) {
 .navLink.isActive,
 .navLink.active {
   background: var(--primary-light);
-  color: var(--white);
+  color: var(--primary-fg);
   font-weight: 600;
   border-left: 3px solid var(--primary);
   padding-left: calc(var(--spacing-xl) - 3px);
@@ -1428,7 +1477,7 @@ td.hide-column {
 /* Hero section */
 .home-hero .card-header {
   background: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
 }
 
 /* Live event countdown in hero (flag + time remaining, same as nav) */
@@ -1473,13 +1522,13 @@ td.hide-column {
 
 .home-btn:hover {
   background: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
   box-shadow: 0 2px 6px var(--black-2);
 }
 
 .home-btn--primary {
   background: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
 }
 
 .home-btn--primary:hover {
@@ -1562,7 +1611,7 @@ td.hide-column {
 
 .home-btn-inline:hover {
   background: var(--primary);
-  color: var(--white);
+  color: var(--primary-fg);
 }
 
 /* Championship Battle Tracker */

@@ -79,6 +79,9 @@ npm run prepare-championship <club_name>
 - Promotion/relegation rules
 
 **Event Processing**:
+- Events are split into two arrays at fetch time:
+  - `division.events` - Processed events only (active + finished) with results/standings
+  - `division.upcomingEvents` - Future events (no results/standings, used for display only)
 - Events have `leaderboardStages[]` - raw stage times from API
 - Last stage results determine final positions
 - Manual results can override API data
@@ -131,9 +134,12 @@ npm run prepare-championship <club_name>
 ### Caching
 
 - Results cached in `./hidden/cache/` (local) and S3 (remote)
-- Cache prevents re-fetching completed events
-- Can be cleared by deleting cache directory
+- **Active events**: ALWAYS fetch from API (never cached) - ensures live data
+- **Finished events**: Cached after first fetch, reused on subsequent runs
+- Cache cleared on startup by default (for CI/CD workflow)
+- Set `KEEP_LOCAL_CACHE=true` to preserve cache between local runs
 - Downloaded from S3 at start if AWS credentials present
+- WRC nationality codes: `src/fetch/wrc/nationalities.csv` (173 entries)
 
 ### Output Structure
 

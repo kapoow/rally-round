@@ -231,6 +231,12 @@ teamOverride: {
 }
 ```
 
+**Color Theme**:
+```javascript
+theme: "dark"  // Options: "dark", "red", "green", "orange" (default: blue/purple if not set)
+// Themes are WCAG AA compliant for accessibility
+```
+
 ## Testing
 
 - Tests use Jest

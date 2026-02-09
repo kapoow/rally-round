@@ -60,9 +60,13 @@ The integration is automatic - no code changes needed in existing applications. 
 
 1. Detect the 2FA requirement
 2. Click "Send Code" button
-3. Retrieve security code from Gmail
+3. Retrieve security code (see below)
 4. Enter code and submit
 5. Complete authentication process
+
+### When Gmail API is not set up
+
+If `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, and `GMAIL_REFRESH_TOKEN` are not all set, the flow falls back to **manual 2FA**: the process prints a message, then prompts in the terminal for the 6-digit EA security code. Check your email for the code, type it when prompted, and press Enter. The code is then submitted in the browser. No Gmail API setup is required for this path.
 
 ## Files Added
 

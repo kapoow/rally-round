@@ -64,15 +64,15 @@ const socket = tls.connect(options, () => {
     // Determine filename based on certificate type
     if (index === 0) {
       // Server certificate
-      certName = '_.dirtgame.pem';
+      certName = 'dirtgame-server.pem';
       console.log(`[${index + 1}/${certChain.length}] Server Certificate`);
-    } else if (subject.includes('USERTrust') || issuer === subject) {
+    } else if (subject.includes('DigiCert') && subject.includes('Root')) {
       // Root CA
-      certName = 'Builtin Object Token_USERTrust RSA Certification Authority.pem';
+      certName = 'digicert-root.pem';
       console.log(`[${index + 1}/${certChain.length}] Root CA`);
-    } else if (subject.includes('Sectigo')) {
+    } else if (subject.includes('DigiCert') || subject.includes('TLS')) {
       // Intermediate CA
-      certName = 'Sectigo RSA Organization Validation Secure Server CA.pem';
+      certName = 'digicert-intermediate.pem';
       console.log(`[${index + 1}/${certChain.length}] Intermediate CA`);
     } else {
       // Unknown intermediate

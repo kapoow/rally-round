@@ -44,15 +44,15 @@ for i in "${!CERT_FILES[@]}"; do
     # Determine destination based on certificate type
     if [ $CERT_NUM -eq 1 ]; then
         # Server certificate
-        DEST_FILE="${CERT_DIR}/_.dirtgame.pem"
+        DEST_FILE="${CERT_DIR}/dirtgame-server.pem"
         TYPE="Server Certificate"
     elif echo "$SUBJECT_CN" | grep -qi "DigiCert Global Root"; then
         # Root CA
-        DEST_FILE="${CERT_DIR}/Builtin Object Token_USERTrust RSA Certification Authority.pem"
+        DEST_FILE="${CERT_DIR}/digicert-root.pem"
         TYPE="Root CA"
     elif echo "$SUBJECT_CN" | grep -qi "DigiCert.*CA"; then
         # Intermediate CA
-        DEST_FILE="${CERT_DIR}/Sectigo RSA Organization Validation Secure Server CA.pem"
+        DEST_FILE="${CERT_DIR}/digicert-intermediate.pem"
         TYPE="Intermediate CA"
     else
         # Default intermediate
@@ -73,5 +73,7 @@ rm -f /tmp/cert-* /tmp/fullchain.pem
 
 echo "✅ Certificates updated successfully!"
 echo ""
-echo "Note: The certificate provider has changed from Sectigo to DigiCert."
-echo "The old Sectigo certificate file names are kept for compatibility."
+echo "Certificate files saved:"
+echo "  - digicert-root.pem (DigiCert Global Root G2)"
+echo "  - digicert-intermediate.pem (DigiCert TLS RSA SHA256 2020 CA1)"
+echo "  - dirtgame-server.pem (www.dirtgame.com)"

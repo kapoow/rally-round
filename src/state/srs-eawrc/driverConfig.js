@@ -1,15 +1,10 @@
-const {
-  name,
-  car,
-  raceNetName,
-  name3
-} = require("../constants/driverFieldNames");
+const { name, teamId, car, name3 } = require("../constants/driverFieldNames");
 
 const driverColumns = {
-  [name]: "Name",
-  [raceNetName]: "RacenetId",
+  [name]: "Driver",
+  [teamId]: "Team",
   [car]: "Car",
-  [name3]: "ConsoleId"
+  [name3]: "Alt Name"
 };
 
 module.exports = { driverColumns };

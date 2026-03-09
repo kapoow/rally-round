@@ -23,8 +23,8 @@ const initialState = {
   teamOverride: {},
   historicalSeasonLinks: [],
   divisions: {
-    Total: {
-      divisionName: "srs-eawrc",
+    total: {
+      divisionName: "total",
       displayName: "SRS EAWRC",
       disableSameCarValidation: true,
       wrc: [

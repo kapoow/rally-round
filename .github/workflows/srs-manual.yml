@@ -1,0 +1,56 @@
+name: SRS EAWRC - Manual Update
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  update-srs-eawrc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout simrally-sverige branch
+        uses: actions/checkout@v4
+        with:
+          ref: simrally-sverige
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Restore event cache
+        uses: actions/cache@v4
+        with:
+          path: hidden/cache
+          key: srs-eawrc-cache-${{ github.run_id }}
+          restore-keys: |
+            srs-eawrc-cache-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate championship results
+        env:
+          CLUB: srs-eawrc
+          RACENET_USERNAME: ${{ secrets.RACENET_USERNAME }}
+          RACENET_PASSWORD: ${{ secrets.RACENET_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+          GITHUB_ORG: ${{ secrets.GH_ORG }}
+          KEEP_LOCAL_CACHE: true
+          LOCALE: se
+          DEBUG: tkidman:*
+        run: node --unhandled-rejections=strict runner.js
+
+      - name: Upload logs as artifact (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: error-logs
+          path: |
+            hidden/out/
+            hidden/cache/
+          retention-days: 7

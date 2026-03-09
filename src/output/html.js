@@ -302,8 +302,8 @@ const getChampionshipBattles = divisions => {
           secondPlacePoints: secondPlace.standing.totalPoints,
           gap,
           eventsRemaining,
-          mathematicallyOpen: gap < totalPointsRemaining,
-          tightBattle: gap < maxPointsPerEvent * 2
+          mathematicallyOpen: gap < totalPointsRemaining * 0.5,
+          tightBattle: gap < maxPointsPerEvent * 0.5
         };
       } catch (e) {
         debug(`championship battle for division ${divName}: ${e}`);

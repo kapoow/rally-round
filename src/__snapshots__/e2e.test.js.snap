@@ -187,6 +187,13 @@ exports[`e2e generates driver leg results 1`] = `
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
         </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
+        </a>
     </div>
 </header>
 
@@ -1086,6 +1093,13 @@ exports[`e2e generates driver results 1`] = `
           style=""
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
         </a>
     </div>
 </header>
@@ -2266,7 +2280,7 @@ exports[`e2e generates driver standings 1`] = `
         <div class="card-body">
           <p>
             <img src="./assets/country-flags/swe.png" class="img-sm" alt="swe" />
-            <strong>Test E2E</strong> - Rally Sweden
+            <strong>Test E2E2</strong> - Rally Sweden
           </p>
           <p>Starts: December 15, 2099 at 12:00 AM</p>
         </div>
@@ -2280,17 +2294,17 @@ exports[`e2e generates driver standings 1`] = `
         <div class="card-body">
           <div class="last-event-division">
             <div class="last-event-header">
-              <h4>Test E2E - Rally Nonko</h4>
-              <span class="text-muted">Rally Nonko</span>
+              <h4>Test E2E - Rally Sweden</h4>
+              <span class="text-muted">Rally Sweden</span>
             </div>
             <div class="winner-info">
-              <img src="./assets/country-flags/est.png" class="img-sm" alt="est" />
-              <strong>ninko</strong>
-              <span class="winner-margin">won by +00:00:07.905</span>
+              <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
+              <strong>QazRa</strong>
+              <span class="winner-margin">won by N/A</span>
             </div>
             <div class="last-event-meta">
               <span class="text-muted">30 entries</span>
-              <a href="./test-e2e-1-driver-results.html" class="home-btn-inline">View Results</a>
+              <a href="./test-e2e-3-driver-results.html" class="home-btn-inline">View Results</a>
             </div>
           </div>
           <hr class="last-event-separator">
@@ -2336,11 +2350,11 @@ exports[`e2e generates driver standings 1`] = `
                 <span class="points">93 pts</span>
               </div>
             </div>
-            <p class="battle-remaining">2 events remaining</p>
+            <p class="battle-remaining">1 events remaining</p>
             <a href="./test-e2e-driver-standings.html" class="home-btn-inline">View Standings</a>
           </div>
           <hr class="last-event-separator">
-          <div class="battle-item tight-battle">
+          <div class="battle-item ">
             <h4>Test E2E2</h4>
             <div class="battle-leaders">
               <div class="battle-driver">
@@ -2350,7 +2364,7 @@ exports[`e2e generates driver standings 1`] = `
               </div>
               <div class="battle-gap">
                 <span class="gap-value">26 pt gap</span>
-                <span class="gap-status tight">Tight!</span>
+                <span class="gap-status">Still Open</span>
               </div>
               <div class="battle-driver">
                 <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
@@ -2382,6 +2396,20 @@ exports[`e2e generates driver standings 1`] = `
             </div>
             <div class="form-guide-recent">
               Recent finishes: 1, 1
+            </div>
+          </div>
+          <hr class="last-event-separator">
+          <div class="form-guide-item">
+            <div class="form-guide-driver">
+              <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
+              <strong>QazRa</strong>
+              <span class="division-badge">Test E2E</span>
+            </div>
+            <div class="form-guide-stats">
+              <span>1 wins • 3 podiums in last 3 events</span>
+            </div>
+            <div class="form-guide-recent">
+              Recent finishes: 3, 2, 1
             </div>
           </div>
           
@@ -2416,7 +2444,7 @@ exports[`e2e generates driver standings 1`] = `
             <div class="season-stats-grid">
               <div class="stat-item">
                 <span class="stat-label">Events Completed</span>
-                <span class="stat-value">2 / 4</span>
+                <span class="stat-value">3 / 4</span>
               </div>
               <div class="stat-item">
                 <span class="stat-label">Avg. Entries per Event</span>
@@ -2424,7 +2452,7 @@ exports[`e2e generates driver standings 1`] = `
               </div>
               <div class="stat-item">
                 <span class="stat-label">DNF Rate</span>
-                <span class="stat-value">16.7%</span>
+                <span class="stat-value">44.4%</span>
               </div>
               <div class="stat-item stat-highlight">
                 <span class="stat-label">Closest Finish</span>
@@ -2496,9 +2524,7 @@ exports[`e2e generates driver standings 1`] = `
                   <tr>
                     <td class="td-pos">2</td>
                     <td class="td-change">
-                      <span class="positive">
-                        <i class="arrow up"></i>&nbsp;1
-                      </span>
+                      <span class="neutral">=</span>
                     </td>
                     <td class="td-nat">
                       <img src="./assets/country-flags/fin.png" class="img-sm"
@@ -2510,9 +2536,7 @@ exports[`e2e generates driver standings 1`] = `
                   <tr>
                     <td class="td-pos">3</td>
                     <td class="td-change">
-                      <span class="positive">
-                        <i class="arrow up"></i>&nbsp;13
-                      </span>
+                      <span class="neutral">=</span>
                     </td>
                     <td class="td-nat">
                       <img src="./assets/country-flags/est.png" class="img-sm"
@@ -2772,6 +2796,13 @@ exports[`e2e generates overall driver results 1`] = `
           style=""
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
         </a>
     </div>
 </header>
@@ -4133,6 +4164,13 @@ exports[`e2e generates overall driver standings 1`] = `
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
         </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
+        </a>
     </div>
 </header>
 
@@ -4215,6 +4253,11 @@ exports[`e2e generates overall driver standings 1`] = `
                     <img src="./assets/country-flags/fin.png" alt="fin" title="fin"/>
                   </a>
                 </th>
+                <th class="th-location">
+                  <a href="./overall-3-driver-results.html" style="">
+                    <img src="./assets/country-flags/swe.png" alt="swe" title="swe"/>
+                  </a>
+                </th>
               <th class="th-points">Points</th>
               <th class="th-adr">ADR*</th>
             </tr>
@@ -4223,9 +4266,7 @@ exports[`e2e generates overall driver standings 1`] = `
             <tr>
               <td class="td-pos">1</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4244,13 +4285,40 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">130</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">65</td>
             </tr>
             <tr>
               <td class="td-pos">2</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/deu.png" class="img-sm"
+                  alt="deu" title="deu" />
+              </td>
+              <td class="td-driver text-left bold">Hawk24</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
+              <td class="td-result">
+                66
+              </td>
+              <td class="td-result">
+                38
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">104</td>
+              <td class="td-adr bold">66</td>
+            </tr>
+            <tr>
+              <td class="td-pos">3</td>
+              <td class="td-change">
+                <span class="negative">
+                  <i class="arrow down"></i>&nbsp;-1
                 </span>
               </td>
               <td class="td-nat">
@@ -4270,40 +4338,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">104</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">2</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/deu.png" class="img-sm"
-                  alt="deu" title="deu" />
-              </td>
-              <td class="td-driver text-left bold">Hawk24</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-result">
-                66
-              </td>
-              <td class="td-result">
-                38
-              </td>
-              <td class="td-result">
-                
-              </td>
-              <td class="td-points bold">104</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">52</td>
             </tr>
             <tr>
               <td class="td-pos">4</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;2
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/fin.png" class="img-sm"
@@ -4321,8 +4361,11 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">93</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">54</td>
             </tr>
             <tr>
               <td class="td-pos">5</td>
@@ -4346,14 +4389,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">82</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">41</td>
             </tr>
             <tr>
               <td class="td-pos">6</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4372,14 +4413,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">64</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">32</td>
             </tr>
             <tr>
               <td class="td-pos">7</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;19
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/est.png" class="img-sm"
@@ -4397,15 +4436,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">61</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">61</td>
             </tr>
             <tr>
               <td class="td-pos">8</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/bel.png" class="img-sm"
@@ -4423,8 +4463,11 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">52</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">52</td>
             </tr>
             <tr>
               <td class="td-pos">9</td>
@@ -4448,14 +4491,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">50</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">25</td>
             </tr>
             <tr>
               <td class="td-pos">10</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-3
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/usa.png" class="img-sm"
@@ -4473,8 +4514,11 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">48</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">32</td>
             </tr>
             <tr>
               <td class="td-pos">11</td>
@@ -4497,15 +4541,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">47</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">27</td>
             </tr>
             <tr>
               <td class="td-pos">12</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4524,14 +4569,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">40</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">20</td>
             </tr>
             <tr>
               <td class="td-pos">13</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-3
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/nor.png" class="img-sm"
@@ -4549,15 +4592,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">38</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">24</td>
             </tr>
             <tr>
               <td class="td-pos">14</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4576,14 +4620,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">36</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">18</td>
             </tr>
             <tr>
               <td class="td-pos">15</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;8
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/deu.png" class="img-sm"
@@ -4601,15 +4643,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">35</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">32</td>
             </tr>
             <tr>
               <td class="td-pos">16</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4628,7 +4671,7 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">32</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">16</td>
             </tr>
             <tr>
               <td class="td-pos">17</td>
@@ -4652,14 +4695,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">28</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">14</td>
             </tr>
             <tr>
               <td class="td-pos">18</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;2
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/swe.png" class="img-sm"
@@ -4677,14 +4718,17 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">26</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">19</td>
             </tr>
             <tr>
-              <td class="td-pos">18</td>
+              <td class="td-pos">19</td>
               <td class="td-change">
                 <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-3
+                  <i class="arrow down"></i>&nbsp;-1
                 </span>
               </td>
               <td class="td-nat">
@@ -4703,15 +4747,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">26</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">16</td>
             </tr>
             <tr>
               <td class="td-pos">20</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-2
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4730,14 +4775,12 @@ exports[`e2e generates overall driver standings 1`] = `
                 
               </td>
               <td class="td-points bold">24</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">12</td>
             </tr>
             <tr>
               <td class="td-pos">21</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/swe.png" class="img-sm"
@@ -4755,15 +4798,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">20</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">20</td>
             </tr>
             <tr>
               <td class="td-pos">22</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-9
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
@@ -4781,15 +4825,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">18</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">18</td>
             </tr>
             <tr>
               <td class="td-pos">23</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;3
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/bra.png" class="img-sm"
@@ -4807,15 +4852,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">16</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">16</td>
             </tr>
             <tr>
               <td class="td-pos">24</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/deu.png" class="img-sm"
@@ -4833,15 +4879,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">10</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">10</td>
             </tr>
             <tr>
               <td class="td-pos">25</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-4
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/swe.png" class="img-sm"
@@ -4859,8 +4906,11 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">9</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">5</td>
             </tr>
             <tr>
               <td class="td-pos">26</td>
@@ -4883,15 +4933,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">8</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">8</td>
             </tr>
             <tr>
               <td class="td-pos">27</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/aus.png" class="img-sm"
@@ -4909,15 +4960,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">6</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">6</td>
             </tr>
             <tr>
               <td class="td-pos">28</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-6
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/usa.png" class="img-sm"
@@ -4935,14 +4987,44 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">4</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">4</td>
             </tr>
             <tr>
               <td class="td-pos">29</td>
               <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/gbr.png" class="img-sm"
+                  alt="gbr" title="gbr" />
+              </td>
+              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
+              <td class="td-result">
+                2
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">2</td>
+              <td class="td-adr bold">2</td>
+            </tr>
+            <tr>
+              <td class="td-pos">30</td>
+              <td class="td-change">
                 <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-4
+                  <i class="arrow down"></i>&nbsp;-1
                 </span>
               </td>
               <td class="td-nat">
@@ -4961,67 +5043,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
-              <td class="td-points bold">2</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">29</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/gbr.png" class="img-sm"
-                  alt="gbr" title="gbr" />
-              </td>
-              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
               <td class="td-result">
-                2
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
+                DNS
               </td>
               <td class="td-points bold">2</td>
-              <td class="td-adr bold">0</td>
+              <td class="td-adr bold">1</td>
             </tr>
             <tr>
               <td class="td-pos">31</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/swe.png" class="img-sm"
-                  alt="swe" title="swe" />
-              </td>
-              <td class="td-driver text-left bold">ctbr</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
-              </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/esp.png" class="img-sm"
@@ -5039,119 +5070,16 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/hun.png" class="img-sm"
-                  alt="hun" title="hun" />
-              </td>
-              <td class="td-driver text-left bold">fujiRS</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
-              </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/est.png" class="img-sm"
-                  alt="est" title="est" />
-              </td>
-              <td class="td-driver text-left bold">MartinRC</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">privateer</td>
               <td class="td-result">
                 DNS
               </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
-              </td>
               <td class="td-points bold">0</td>
               <td class="td-adr bold">0</td>
             </tr>
             <tr>
               <td class="td-pos">31</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/swe.png" class="img-sm"
-                  alt="swe" title="swe" />
-              </td>
-              <td class="td-driver text-left bold">Tommie Lindberg</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
-              </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/esp.png" class="img-sm"
-                  alt="esp" title="esp" />
-              </td>
-              <td class="td-driver text-left bold">dejota95</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
-              </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/deu.png" class="img-sm"
@@ -5169,31 +5097,8 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
-              <td class="td-points bold">0</td>
-              <td class="td-adr bold">0</td>
-            </tr>
-            <tr>
-              <td class="td-pos">31</td>
-              <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
-              </td>
-              <td class="td-nat">
-                <img src="./assets/country-flags/est.png" class="img-sm"
-                  alt="est" title="est" />
-              </td>
-              <td class="td-driver text-left bold">TheZenor</td>
-              <td class="td-div">Test E2E</td>
-              <td class="td-team-name text-left">Flat Out Racing</td>
               <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                0
-              </td>
-              <td class="td-result">
-                
+                DNS
               </td>
               <td class="td-points bold">0</td>
               <td class="td-adr bold">0</td>
@@ -5201,9 +5106,7 @@ exports[`e2e generates overall driver standings 1`] = `
             <tr>
               <td class="td-pos">31</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/row.png" class="img-sm"
@@ -5221,15 +5124,151 @@ exports[`e2e generates overall driver standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                DNS
+              </td>
               <td class="td-points bold">0</td>
               <td class="td-adr bold">0</td>
             </tr>
             <tr>
               <td class="td-pos">31</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-5
-                </span>
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/est.png" class="img-sm"
+                  alt="est" title="est" />
+              </td>
+              <td class="td-driver text-left bold">TheZenor</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">Flat Out Racing</td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/hun.png" class="img-sm"
+                  alt="hun" title="hun" />
+              </td>
+              <td class="td-driver text-left bold">fujiRS</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">privateer</td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/esp.png" class="img-sm"
+                  alt="esp" title="esp" />
+              </td>
+              <td class="td-driver text-left bold">dejota95</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">privateer</td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/swe.png" class="img-sm"
+                  alt="swe" title="swe" />
+              </td>
+              <td class="td-driver text-left bold">ctbr</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">privateer</td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/swe.png" class="img-sm"
+                  alt="swe" title="swe" />
+              </td>
+              <td class="td-driver text-left bold">Tommie Lindberg</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">privateer</td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
               </td>
               <td class="td-nat">
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
@@ -5246,6 +5285,36 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-result">
                 
+              </td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-points bold">0</td>
+              <td class="td-adr bold">0</td>
+            </tr>
+            <tr>
+              <td class="td-pos">31</td>
+              <td class="td-change">
+                <span class="neutral">=</span>
+              </td>
+              <td class="td-nat">
+                <img src="./assets/country-flags/est.png" class="img-sm"
+                  alt="est" title="est" />
+              </td>
+              <td class="td-driver text-left bold">MartinRC</td>
+              <td class="td-div">Test E2E</td>
+              <td class="td-team-name text-left">privateer</td>
+              <td class="td-result">
+                DNS
+              </td>
+              <td class="td-result">
+                0
+              </td>
+              <td class="td-result">
+                
+              </td>
+              <td class="td-result">
+                DNS
               </td>
               <td class="td-points bold">0</td>
               <td class="td-adr bold">0</td>
@@ -5455,6 +5524,13 @@ exports[`e2e generates overall team standings 1`] = `
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
         </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
+        </a>
     </div>
 </header>
 
@@ -5527,6 +5603,9 @@ exports[`e2e generates overall team standings 1`] = `
               <th class="th-location">
                 <img src="./assets/country-flags/fin.png" alt="fin" />
               </th>
+              <th class="th-location">
+                <img src="./assets/country-flags/swe.png" alt="swe" />
+              </th>
               <th class="th-points">Points</th>
             </tr>
           </thead>
@@ -5546,14 +5625,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">280</td>
             </tr>
             <tr>
               <td class="td-pos">2</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Heat Seeking Geezers mk2</td>
               <td class="td-result">
@@ -5565,14 +5645,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">101</td>
             </tr>
             <tr>
               <td class="td-pos">3</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Rizla&#x27;s Suffering Club</td>
               <td class="td-result">
@@ -5584,14 +5665,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">66</td>
             </tr>
             <tr>
               <td class="td-pos">4</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;3
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Flat Out Racing</td>
               <td class="td-result">
@@ -5603,14 +5685,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">61</td>
             </tr>
             <tr>
               <td class="td-pos">5</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">All Beef Franks</td>
               <td class="td-result">
@@ -5622,14 +5705,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">46</td>
             </tr>
             <tr>
               <td class="td-pos">6</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Kringel&#x27;s Coal Rental and Co.</td>
               <td class="td-result">
@@ -5641,14 +5725,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">40</td>
             </tr>
             <tr>
               <td class="td-pos">7</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">No-recce</td>
               <td class="td-result">
@@ -5660,14 +5745,15 @@ exports[`e2e generates overall team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">24</td>
             </tr>
             <tr>
               <td class="td-pos">8</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">The stale poos</td>
               <td class="td-result">
@@ -5678,6 +5764,9 @@ exports[`e2e generates overall team standings 1`] = `
               </td>
               <td class="td-result">
                 
+              </td>
+              <td class="td-result">
+                0
               </td>
               <td class="td-points bold">6</td>
             </tr>
@@ -5883,6 +5972,13 @@ exports[`e2e generates team standings 1`] = `
         >
           <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
         </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-3-driver-results.html"
+          style=""
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
+        </a>
     </div>
 </header>
 
@@ -5955,6 +6051,9 @@ exports[`e2e generates team standings 1`] = `
               <th class="th-location">
                 <img src="./assets/country-flags/fin.png" alt="fin" />
               </th>
+              <th class="th-location">
+                <img src="./assets/country-flags/swe.png" alt="swe" />
+              </th>
               <th class="th-points">Points</th>
             </tr>
           </thead>
@@ -5962,9 +6061,7 @@ exports[`e2e generates team standings 1`] = `
             <tr>
               <td class="td-pos">1</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Heat Seeking Geezers mk2</td>
               <td class="td-result">
@@ -5976,14 +6073,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">101</td>
             </tr>
             <tr>
               <td class="td-pos">2</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Rizla&#x27;s Suffering Club</td>
               <td class="td-result">
@@ -5995,14 +6093,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">66</td>
             </tr>
             <tr>
               <td class="td-pos">3</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">CodeBros</td>
               <td class="td-result">
@@ -6014,14 +6113,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">64</td>
             </tr>
             <tr>
               <td class="td-pos">4</td>
               <td class="td-change">
-                <span class="positive">
-                  <i class="arrow up"></i>&nbsp;3
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Flat Out Racing</td>
               <td class="td-result">
@@ -6033,14 +6133,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">61</td>
             </tr>
             <tr>
               <td class="td-pos">5</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-2
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">All Beef Franks</td>
               <td class="td-result">
@@ -6052,14 +6153,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">46</td>
             </tr>
             <tr>
               <td class="td-pos">6</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">Kringel&#x27;s Coal Rental and Co.</td>
               <td class="td-result">
@@ -6071,14 +6173,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">40</td>
             </tr>
             <tr>
               <td class="td-pos">7</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">No-recce</td>
               <td class="td-result">
@@ -6090,14 +6193,15 @@ exports[`e2e generates team standings 1`] = `
               <td class="td-result">
                 
               </td>
+              <td class="td-result">
+                0
+              </td>
               <td class="td-points bold">24</td>
             </tr>
             <tr>
               <td class="td-pos">8</td>
               <td class="td-change">
-                <span class="negative">
-                  <i class="arrow down"></i>&nbsp;-1
-                </span>
+                <span class="neutral">=</span>
               </td>
               <td class="td-team-name text-left bold">The stale poos</td>
               <td class="td-result">
@@ -6108,6 +6212,9 @@ exports[`e2e generates team standings 1`] = `
               </td>
               <td class="td-result">
                 
+              </td>
+              <td class="td-result">
+                0
               </td>
               <td class="td-points bold">6</td>
             </tr>

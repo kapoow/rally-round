@@ -38,7 +38,9 @@ const getExistingLogos = async (
       .filter(item => {
         // For root assets, match files directly in assets/ (not in subdirs)
         if (!logoType) {
-          const parts = item.path.replace(`${clubFolder}/assets/`, "").split("/");
+          const parts = item.path
+            .replace(`${clubFolder}/assets/`, "")
+            .split("/");
           return parts.length === 1 && item.path.endsWith(".png");
         }
         // For subdirs (teams/cars), match files in that subdir
@@ -238,7 +240,10 @@ const runGitHubOperations = async () => {
         // Upload missing logos as blobs
         for (const file of missingLogos) {
           const content = fs.readFileSync(path.join(logoDir, file));
-          const blobSha = await createBlob(content.toString("base64"), "base64");
+          const blobSha = await createBlob(
+            content.toString("base64"),
+            "base64"
+          );
           tree.push({
             path: `${clubFolder}/assets/${logoType}/${file}`,
             mode: "100644",

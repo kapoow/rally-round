@@ -233,7 +233,7 @@
         </div>
         <div class="card-body">
           {{#if rules.dropRounds}}
-          <p><strong>{{localization.drop_rounds}}</strong> {{rules.dropRounds}} {{localization.lowest_scoring}} {{#if (eq rules.dropRounds 1)}}{{localization.round}}{{else}}{{localization.rounds}}{{/if}} {{localization.dropped}}</p>
+          <p><strong>{{localization.drop_rounds}}</strong> {{rules.dropRounds}} {{#if (eq rules.dropRounds 1)}}{{localization.drop_rounds_singular_text}}{{else}}{{localization.drop_rounds_plural_text}}{{/if}}</p>
           {{/if}}
           {{#if rules.overallPointsTop5.length}}
           <p><strong>{{localization.points_top_5}}</strong> {{#each rules.overallPointsTop5}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>

@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout simrally-sverige branch
+      - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: simrally-sverige
+          ref: master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

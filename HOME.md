@@ -6,7 +6,7 @@ Working document for the site home page template: what it does, what we want to 
 
 ## What it currently does
 
-The home page is the landing view for a league when **useStandingsForHome** is `false` (and the league has no subfolder). It’s rendered by `writeHomeHTML()` in `src/output/html.js` and receives data built there.
+The home page is the landing view for a league when **useStandingsForHome** is `false`. It’s rendered by `writeHomeHTML()` in `src/output/html.js` and receives data built there.
 
 ### Sections (in order)
 

@@ -283,7 +283,9 @@ const getChampionshipBattles = divisions => {
         const completedEvents = (division.events || []).filter(
           e => e.eventStatus === eventStatuses.finished
         ).length;
-        const totalEvents = (division.events || []).length;
+        const totalEvents =
+          (division.events || []).length +
+          (division.upcomingEvents?.length || 0);
         const eventsRemaining = totalEvents - completedEvents;
 
         const maxPointsPerEvent = division.points?.overall?.[0] || 25;
@@ -1080,7 +1082,7 @@ const writeAllHTML = () => {
 
   const links = getHtmlLinks();
   const league = leagueRef.league;
-  if (!league.subfolderName && !league.useStandingsForHome) {
+  if (!league.useStandingsForHome) {
     writeHomeHTML(links);
     writeErrorHTML(links);
   }

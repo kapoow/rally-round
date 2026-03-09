@@ -43,7 +43,7 @@ exports[`e2e generates driver leg results 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -943,7 +943,7 @@ exports[`e2e generates driver results 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -2074,7 +2074,7 @@ exports[`e2e generates driver standings 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -2336,7 +2336,7 @@ exports[`e2e generates driver standings 1`] = `
                 <span class="points">93 pts</span>
               </div>
             </div>
-            <p class="battle-remaining">1 events remaining</p>
+            <p class="battle-remaining">2 events remaining</p>
             <a href="./test-e2e-driver-standings.html" class="home-btn-inline">View Standings</a>
           </div>
           <hr class="last-event-separator">
@@ -2358,7 +2358,7 @@ exports[`e2e generates driver standings 1`] = `
                 <span class="points">104 pts</span>
               </div>
             </div>
-            <p class="battle-remaining">1 events remaining</p>
+            <p class="battle-remaining">2 events remaining</p>
             <a href="./test-e2e2-driver-standings.html" class="home-btn-inline">View Standings</a>
           </div>
           
@@ -2629,7 +2629,7 @@ exports[`e2e generates overall driver results 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -3989,7 +3989,7 @@ exports[`e2e generates overall driver standings 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -5311,7 +5311,7 @@ exports[`e2e generates overall team standings 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 
@@ -5739,7 +5739,7 @@ exports[`e2e generates team standings 1`] = `
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
       <div class="dropdown">
-        <a class="brand" href="/index.html" aria-label="Home">
+        <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
         </a>
 

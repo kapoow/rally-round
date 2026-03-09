@@ -1,6 +1,6 @@
 const initialState = {
   pointsForDNF: false,
-  useStandingsForHome: true,
+  useStandingsForHome: false,
   showCarPerformance: false,
   showLivePoints: true,
   //showLivePointsDaysRemaining: 9,
@@ -9,7 +9,7 @@ const initialState = {
     "*After Dropped Rounds: total points after 1 lowest scoring rounds removed",
   sortByDropRoundPoints: true,
   disableTeams: true,
-  hideCarColumnInStandings: true,
+  hideCarColumnInStandings: false,
   showCarNameAsTextInResults: true,
   nullTeamIsPrivateer: true,
   showTeamNameTextColumn: false,

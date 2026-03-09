@@ -3,7 +3,11 @@ const initialState = {
   useStandingsForHome: true,
   showCarPerformance: false,
   showLivePoints: true,
-  showLivePointsDaysRemaining: 9,
+  //showLivePointsDaysRemaining: 9,
+  dropLowestScoringRoundsNumber: 1,
+  afterDropRoundMessage:
+    "*After Dropped Rounds: total points after 1 lowest scoring rounds removed",
+  sortByDropRoundPoints: true,
   disableTeams: true,
   hideCarColumnInStandings: true,
   showCarNameAsTextInResults: true,
@@ -19,12 +23,12 @@ const initialState = {
   logo: "SRS.png",
   theme: "dark",
   siteTitlePrefix: "SRS EAWRC",
-  hideStageTimesUntilEventEnd: true,
+  hideStageTimesUntilEventEnd: false,
   teamOverride: {},
   historicalSeasonLinks: [],
   divisions: {
-    total: {
-      divisionName: "total",
+    srseawrc: {
+      divisionName: "srseawrc",
       displayName: "SRS EAWRC",
       disableSameCarValidation: true,
       wrc: [

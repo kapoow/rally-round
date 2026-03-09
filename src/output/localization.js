@@ -103,7 +103,7 @@ const localization = {
     total: "Total",
     team_name: "Team",
     car: "Bil",
-    car_name: "Bil Namn",
+    car_name: "Bilmodell",
     ps: "PS",
     sr: "SR",
     diff: "Diff",

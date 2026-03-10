@@ -321,14 +321,20 @@ const runGitHubOperations = async () => {
     );
     debug(`Created new tree: ${treeData.data.sha}`);
 
-    // Create a new commit
+    // Create a new commit with bot identity
     const commitMessage = `Update ${process.env.CLUB} championship results`;
+    const botIdentity = {
+      name: "github-actions[bot]",
+      email: "41898282+github-actions[bot]@users.noreply.github.com"
+    };
     const commitData = await axios.post(
       `https://api.github.com/repos/${owner}/${repo}/git/commits`,
       {
         message: commitMessage,
         tree: treeData.data.sha,
-        parents: [latestCommitSha]
+        parents: [latestCommitSha],
+        author: botIdentity,
+        committer: botIdentity
       },
       { headers }
     );

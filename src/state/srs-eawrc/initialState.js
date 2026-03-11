@@ -8,6 +8,8 @@ const initialState = {
   afterDropRoundMessage:
     "*After Dropped Rounds: total points after 1 lowest scoring rounds removed",
   sortByDropRoundPoints: true,
+  superRallyIsDnf: true,
+  showSuperRallyColumn: true,
   disableTeams: true,
   hideCarColumnInStandings: false,
   showCarNameAsTextInResults: true,

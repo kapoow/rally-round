@@ -193,6 +193,7 @@ template {
 .home-layout {
   display: flex;
   width: 100%;
+  min-width: 40vw;
 }
 
 .home-main {
@@ -210,7 +211,11 @@ template {
 
 @media (min-width: 900px) {
   .home-cards-grid {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-cards-grid>*:only-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -244,7 +249,6 @@ template {
 
 /* Cards */
 .card {
-  border: 1px solid var(--black-1);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -288,7 +292,7 @@ template {
   gap: 2em;
 }
 
-.top-drivers-division-grid > * {
+.top-drivers-division-grid>* {
   flex: 1 1 calc((100% - 2em) / 3);
 }
 

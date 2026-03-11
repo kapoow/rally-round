@@ -191,7 +191,7 @@ exports[`e2e generates driver leg results 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -1091,7 +1091,7 @@ exports[`e2e generates driver results 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -2199,7 +2199,7 @@ exports[`e2e generates driver standings 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -2268,7 +2268,7 @@ exports[`e2e generates driver standings 1`] = `
             <img src="./assets/country-flags/swe.png" class="img-sm" alt="swe" />
             <strong>Test E2E</strong> - Rally Sweden
           </p>
-          <p>Starts: December 15, 2099 at 12:00 AM</p>
+          <p>Starts: January 1, 2031 at 12:00 AM</p>
         </div>
       </div>
 
@@ -2777,7 +2777,7 @@ exports[`e2e generates overall driver results 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -4137,7 +4137,7 @@ exports[`e2e generates overall driver standings 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -5459,7 +5459,7 @@ exports[`e2e generates overall team standings 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -5887,7 +5887,7 @@ exports[`e2e generates team standings 1`] = `
 </header>
 
 <script>
-  var countDownDate = new Date("2099-12-31T22:59:00.000Z").getTime();
+  var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;

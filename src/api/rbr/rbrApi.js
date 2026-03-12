@@ -4,6 +4,11 @@ const { cachePath } = require("../../shared");
 const fs = require("fs");
 const { isNil, keyBy } = require("lodash");
 const cheerio = require("cheerio");
+const puppeteer = require("puppeteer");
+
+const RSF_BASE_URL = "https://rallysimfans.hu/rbr";
+const RSF_CREDS_FILE = "./rsf-creds.json";
+const validCreds = {};
 
 const loadFromCache = cacheFileName => {
   try {
@@ -14,20 +19,130 @@ const loadFromCache = cacheFileName => {
   return null;
 };
 
+const buildAxiosHeaders = sessionCookie => ({
+  Cookie: `PHPSESSID=${sessionCookie}`,
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.0 Safari/537.36"
+});
+
+const isSessionValid = async sessionCookie => {
+  try {
+    const response = await axios.get(
+      `${RSF_BASE_URL}/rally_online.php?centerbox=rally_results.php&rally_id=1`,
+      { headers: buildAxiosHeaders(sessionCookie) }
+    );
+    return !response.data.includes("Please login");
+  } catch (_err) {
+    return false;
+  }
+};
+
+const loginWithPuppeteer = async () => {
+  const username = process.env.RSF_USERNAME;
+  const password = process.env.RSF_PASSWORD;
+
+  if (!username || !password) {
+    throw new Error(
+      "RSF_USERNAME and RSF_PASSWORD must be set in environment variables"
+    );
+  }
+
+  debug("launching puppeteer for RSF login");
+  const browser = await puppeteer.launch({
+    headless: process.env.SHOW_BROWSER === "true" ? false : "new",
+    args: [
+      `--user-agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.0 Safari/537.36`,
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--single-process",
+      "--disable-gpu"
+    ]
+  });
+
+  try {
+    const page = await browser.newPage();
+    debug("navigating to RSF login page");
+    await page.goto(`${RSF_BASE_URL}/account2.php?centerbox=bejelentkezes2`, {
+      waitUntil: "networkidle2"
+    });
+
+    const usernameSelector = 'input[name="l_username"]';
+    const passwordSelector = 'input[name="l_pass"]';
+
+    await page.waitForSelector(usernameSelector, { timeout: 10000 });
+    await page.type(usernameSelector, username);
+    await page.type(passwordSelector, password);
+
+    debug("submitting RSF login form");
+    const loginButton = await page.evaluateHandle(() => {
+      const buttons = Array.from(
+        document.querySelectorAll("button, input[type=submit]")
+      );
+      return buttons.find(
+        el =>
+          el.textContent.toLowerCase().includes("login") ||
+          (el.value && el.value.toLowerCase().includes("login"))
+      );
+    });
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: "networkidle2" }),
+      loginButton.click()
+    ]);
+
+    const cookies = await page.cookies();
+    const phpSessId = cookies.find(c => c.name === "PHPSESSID");
+
+    if (!phpSessId) {
+      throw new Error("Login failed: PHPSESSID cookie not found after login");
+    }
+
+    debug("RSF login successful, session cookie obtained");
+    return phpSessId.value;
+  } finally {
+    await browser.close();
+  }
+};
+
+const getCreds = async () => {
+  if (validCreds.sessionCookie) {
+    return validCreds.sessionCookie;
+  }
+
+  if (fs.existsSync(RSF_CREDS_FILE)) {
+    const cached = JSON.parse(fs.readFileSync(RSF_CREDS_FILE, "utf8"));
+    if (cached.sessionCookie) {
+      debug("cached RSF session found, validating");
+      if (await isSessionValid(cached.sessionCookie)) {
+        debug("cached RSF session is valid");
+        validCreds.sessionCookie = cached.sessionCookie;
+        return validCreds.sessionCookie;
+      }
+      debug("cached RSF session expired, re-logging in");
+    }
+  }
+
+  const sessionCookie = await loginWithPuppeteer();
+  fs.writeFileSync(RSF_CREDS_FILE, JSON.stringify({ sessionCookie }, null, 2));
+  validCreds.sessionCookie = sessionCookie;
+  return sessionCookie;
+};
+
 const fetchCsvResults = async (rallyId, eventFinished) => {
   const cacheFileName = `${cachePath}/${rallyId}.csv`;
-  // Use cache when event is finished, or when e2e/preview request fixture cache for active events
   const useCache = eventFinished || process.env.USE_RBR_FIXTURE_CACHE;
   if (useCache) {
     const cacheFile = loadFromCache(cacheFileName);
+
     if (cacheFile) {
       debug(`cached event results retrieved: ${cacheFileName}`);
       return cacheFile;
     }
   }
+  const sessionCookie = await getCreds();
   const response = await axios.get(
-    `https://rallysimfans.hu/rbr/csv_export_beta.php?rally_id=${rallyId}&ngp_enable=6`,
-    { responseType: "blob" }
+    `${RSF_BASE_URL}/csv_export_beta.php?rally_id=${rallyId}&ngp_enable=6`,
+    { responseType: "blob", headers: buildAxiosHeaders(sessionCookie) }
   );
 
   if (eventFinished) {
@@ -45,19 +160,23 @@ const fetchCsvStandings = async (rallyId, eventFinished) => {
   const useCache = eventFinished || process.env.USE_RBR_FIXTURE_CACHE;
   if (useCache) {
     const cacheFile = loadFromCache(cacheFileName);
+
     if (cacheFile) {
       debug(`cached event results retrieved: ${cacheFileName}`);
       return cacheFile;
     }
   }
 
+  const sessionCookie = await getCreds();
+  const headers = buildAxiosHeaders(sessionCookie);
   const response = await axios.get(
-    `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results.php&rally_id=${rallyId}`
+    `${RSF_BASE_URL}/rally_online.php?centerbox=rally_results.php&rally_id=${rallyId}`,
+    { headers }
   );
   const sess = extractSess(response.headers);
   const standingsCsvResponse = await axios.get(
-    `https://rallysimfans.hu/rbr/csv_export_results.php?rally_id=${rallyId}&group=7&ngp_enable=6&sess=${sess}`,
-    { responseType: "blob" }
+    `${RSF_BASE_URL}/csv_export_results.php?rally_id=${rallyId}&group=7&ngp_enable=6&sess=${sess}`,
+    { responseType: "blob", headers }
   );
   if (eventFinished) {
     fs.writeFileSync(`${cacheFileName}`, standingsCsvResponse.data);
@@ -87,9 +206,12 @@ const fetchHtmlSuperRally = async ({ rallyId, saveCacheFile }) => {
     }
   }
 
+  const sessionCookie = await getCreds();
   const data = [];
-  const url = `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results.php&rally_id=${rallyId}`;
-  const response = await axios.get(url);
+  const url = `${RSF_BASE_URL}/rally_online.php?centerbox=rally_results.php&rally_id=${rallyId}`;
+  const response = await axios.get(url, {
+    headers: buildAxiosHeaders(sessionCookie)
+  });
   const html = response.data;
   const $ = cheerio.load(html);
 
@@ -189,7 +311,7 @@ const fetchHtmlStageResults = async ({
   const cacheFileName = `${cachePath}/${rallyId}_${stageNumber}_results.json`;
 
   if (runtimeCache[cacheFileName]) {
-    return runtimeCache[cacheFileName];
+    return runtimeCache[cacheFileName].map(entry => ({ ...entry }));
   }
 
   if (saveCacheFile) {
@@ -200,8 +322,11 @@ const fetchHtmlStageResults = async ({
       return JSON.parse(cacheFile);
     }
   }
-  const url = `https://rallysimfans.hu/rbr/rally_online.php?centerbox=rally_results_stres.php&rally_id=${rallyId}&stage_no=${stageNumber}`;
-  const response = await axios.get(url);
+  const sessionCookie = await getCreds();
+  const url = `${RSF_BASE_URL}/rally_online.php?centerbox=rally_results_stres.php&rally_id=${rallyId}&stage_no=${stageNumber}`;
+  const response = await axios.get(url, {
+    headers: buildAxiosHeaders(sessionCookie)
+  });
   const html = response.data;
   const $ = cheerio.load(html);
 
@@ -239,5 +364,6 @@ module.exports = {
   fetchHtmlStageResults,
   fetchHtmlSuperRally,
   //testing
-  extractSess
+  extractSess,
+  getCreds
 };

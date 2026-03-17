@@ -223,10 +223,26 @@ const login = async (resolve, reject) => {
       debug("Waiting for normal navigation...");
     }
 
-    await page.waitForNavigation({ waitUntil: "networkidle2", timeout: 30000 });
-    await delay(4000);
+    const navigationPromise = page
+      .waitForNavigation({ waitUntil: "networkidle2", timeout: 30000 })
+      .then(async () => {
+        await delay(4000);
+        debug("Navigation complete");
+        return null;
+      })
+      .catch(error => {
+        debug(`Navigation wait ended without completion: ${error.message}`);
+        return null;
+      });
 
-    const tokens = await authResponsePromise;
+    const maybeTokens = await Promise.race([
+      authResponsePromise,
+      navigationPromise
+    ]);
+    const tokens =
+      maybeTokens && maybeTokens.accessToken
+        ? maybeTokens
+        : await authResponsePromise;
 
     debug("writing tokens to tokens.json");
     fs.writeFileSync("tokens.json", JSON.stringify(tokens, null, 2));

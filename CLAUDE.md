@@ -82,6 +82,7 @@ npm run prepare-championship <club_name>
 - Events are split into two arrays at fetch time:
   - `division.events` - Processed events only (active + finished) with results/standings
   - `division.upcomingEvents` - Future events (no results/standings, used for display only)
+- Guards protect against empty arrays: standings/spreadsheet generation checks for empty `division.events` and skips/returns null to prevent crashes
 - Events have `leaderboardStages[]` - raw stage times from API
 - Last stage results determine final positions
 - Manual results can override API data
@@ -147,7 +148,7 @@ Generated in `./hidden/out/`:
 - `website/` - HTML files + assets
 - Individual pages per event per division (driver results, team results)
 - Standings pages
-- Home page (configurable: standings redirect or custom homepage). When using custom homepage: hero, Last Event Winners + Championship Battles cards (in `home-cards-grid`), Championship Rules, Top 3 by division. See `HOME.md` for structure and data.
+- Home page (configurable: standings redirect or custom homepage). When using custom homepage: hero, Last Event Winners + Championship Battles cards (in `home-cards-grid`), Championship Rules, Top 3 by division. See `HOME.md` for the current homepage implementation notes.
 - JSON dump (`leagueResults.json`)
 
 ### Templating
@@ -162,6 +163,7 @@ Uses Handlebars templates in `src/output/templates/`:
 - Data preparation delegated to `transform*HTML()` or helper functions
 - Example: `writeHomeHTML()` → `transformForHomeHTML()` → 9 helper functions
 - Example: `writeStandingsHTML()` → `transformForStandingsHTML()`
+- Homepage filtering: `transformForHomeHTML()` uses `getHomeDivisions()` to filter divisions (excludes those with `hideDriverStandingsLink`), passes filtered divisions to all helpers
 - Keep write functions small (~30-50 lines); extract complex logic to separate functions
 
 **Event URL Format:**
@@ -300,6 +302,5 @@ DEBUG=tkidman:*  # Enable debug logging
 
 - `readme.md` - Setup and basic usage
 - `STARTING_NEW_CHAMPIONSHIP.md` - Guide for starting new seasons
-- `HOME.md` - Home page: current sections, data passed to `home.hbs`, changelog
-- `HOMEPAGE_FEATURES_GUIDE.md` - Homepage features (implemented and planned) with code snippets and CSS
+- `HOME.md` - Home page: current `home.hbs` implementation, data flow, and homepage-specific rules
 - `GMAIL_2FA_INTEGRATION.md` - WRC Gmail 2FA setup

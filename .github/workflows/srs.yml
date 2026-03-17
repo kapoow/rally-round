@@ -46,10 +46,12 @@ jobs:
         run: npm ci
 
       - name: Generate championship results for SRS EAWRC
+        timeout-minutes: 6
         run: CLUB=srs-eawrc node --unhandled-rejections=strict runner.js
 
       - name: Generate championship results for SRS DR2
         if: always()
+        timeout-minutes: 6
         run: CLUB=srs-dr2 node --unhandled-rejections=strict runner.js
 
       - name: Upload logs as artifact (on failure)

@@ -17,6 +17,74 @@ const delay = time => {
   });
 };
 
+const waitForAuthResponse = (page, timeout = 60000) => {
+  let cancel = () => {};
+
+  const promise = new Promise((resolve, reject) => {
+    let settled = false;
+
+    const finish = (fn, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      page.off("response", onResponse);
+      fn(value);
+    };
+
+    const timer = setTimeout(() => {
+      finish(
+        reject,
+        new Error(`Timed out waiting for EA auth response after ${timeout}ms`)
+      );
+    }, timeout);
+
+    const onResponse = async response => {
+      if (
+        !response
+          .url()
+          .includes("https://web-api.racenet.com/api/identity/auth")
+      ) {
+        return;
+      }
+
+      if (response.status() !== 200) {
+        finish(
+          reject,
+          new Error(`EA auth request failed with status ${response.status()}`)
+        );
+        return;
+      }
+
+      try {
+        debug("200 auth response found");
+        const responseBody = await response.text();
+        const authData = JSON.parse(responseBody);
+        const tokens = {
+          accessToken: authData.access_token,
+          refreshToken: authData.refresh_token
+        };
+        finish(resolve, tokens);
+      } catch (error) {
+        finish(reject, error);
+      }
+    };
+
+    cancel = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      page.off("response", onResponse);
+    };
+
+    page.on("response", onResponse);
+  });
+
+  return {
+    promise,
+    cancel
+  };
+};
+
 const getCreds = async () => {
   if (validCreds.accessToken) {
     return validCreds;
@@ -91,43 +159,21 @@ const login = async (resolve, reject) => {
     ]
   });
   const page = await browser.newPage();
+  const { promise: authResponsePromise, cancel: cancelAuthResponseWait } =
+    waitForAuthResponse(page);
+  let cleanedUp = false;
 
-  // Handle the "auth" response
-  page.on("response", async response => {
-    // debug(`response received ${response.url()}`);
-    if (
-      response
-        .url()
-        .includes("https://web-api.racenet.com/api/identity/auth") &&
-      response.status() === 200
-    ) {
-      debug("200 auth response found");
-      const responseBody = await response.text();
+  const cleanup = async () => {
+    if (cleanedUp) return;
+    cleanedUp = true;
 
-      // Parse the JSON response and extract tokens
-      const authData = JSON.parse(responseBody);
-      const accessToken = authData.access_token;
-      //const tokenType = authData.token_type;
-      //const expiresIn = authData.expires_in;
-      const refreshToken = authData.refresh_token;
-      //const idToken = authData.id_token;
+    cancelAuthResponseWait();
 
-      const tokens = {
-        accessToken: accessToken,
-        //tokenType: tokenType,
-        //expiresIn: expiresIn,
-        refreshToken: refreshToken
-        //idToken: idToken
-      };
-
-      debug("writing tokens to tokens.json");
-      fs.writeFileSync("tokens.json", JSON.stringify(tokens, null, 2));
-      debug("credentials retrieved, closing headless browser");
+    if (!page.isClosed()) {
       await page.close();
-      await browser.close();
-      resolve(tokens);
     }
-  });
+    await browser.close();
+  };
 
   let data = false;
   let attempts = 0;
@@ -142,9 +188,8 @@ const login = async (resolve, reject) => {
     }
   }
   if (data === false) {
-    debug("credentials retrieved, closing headless browser");
-    await page.close();
-    await browser.close();
+    debug("failed to get to login page, closing headless browser");
+    await cleanup();
     reject(new Error("failed to get to login page"));
     return;
   }
@@ -162,38 +207,27 @@ const login = async (resolve, reject) => {
     debug("password entered");
 
     // Check if 2FA is required and handle it
-    try {
-      const twoFactorHandled = await handle2FA(page);
-      if (twoFactorHandled) {
-        debug("2FA was handled successfully");
-        // Wait for navigation after 2FA
-        debug("Waiting for navigation after 2FA...");
-        await page.waitForNavigation({ waitUntil: "networkidle2" });
-        await delay(4000);
-        debug("Navigation after 2FA complete");
-      } else {
-        debug("No 2FA required");
-        // Wait for normal navigation
-        debug("Waiting for normal navigation...");
-        await page.waitForNavigation({ waitUntil: "networkidle2" });
-        await delay(4000);
-        debug("Normal navigation complete");
-      }
-    } catch (twoFactorError) {
-      debug(`2FA handling failed: ${twoFactorError.message}`);
-      // Continue anyway - maybe 2FA wasn't actually required
-      debug("Waiting for navigation after 2FA error...");
-      try {
-        await page.waitForNavigation({ waitUntil: "networkidle2" });
-        await delay(4000);
-        debug("Navigation after 2FA error complete");
-      } catch (navError) {
-        debug(`Navigation error: ${navError.message}`);
-      }
+    const twoFactorHandled = await handle2FA(page);
+    if (twoFactorHandled) {
+      debug("2FA was handled successfully");
+      debug("Waiting for navigation after 2FA...");
+    } else {
+      debug("No 2FA required");
+      debug("Waiting for normal navigation...");
     }
+
+    await page.waitForNavigation({ waitUntil: "networkidle2", timeout: 30000 });
+    await delay(4000);
+
+    const tokens = await authResponsePromise;
+
+    debug("writing tokens to tokens.json");
+    fs.writeFileSync("tokens.json", JSON.stringify(tokens, null, 2));
+    debug("credentials retrieved, closing headless browser");
+    await cleanup();
+    resolve(tokens);
   } catch (error) {
-    await page.close();
-    await browser.close();
+    await cleanup();
     debug("An error occurred:", error);
     reject(error);
     return;

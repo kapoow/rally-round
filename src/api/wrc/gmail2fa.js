@@ -9,6 +9,15 @@ const GMAIL_ENV_VARS = [
   "GMAIL_REFRESH_TOKEN"
 ];
 
+const isPermanentGmailAuthError = error => {
+  const message = String(error && error.message ? error.message : error);
+  return (
+    message.includes("invalid_grant") ||
+    message.includes("invalid_client") ||
+    message.includes("unauthorized_client")
+  );
+};
+
 /**
  * Returns true if Gmail API is configured (all required env vars set).
  * When false, 2FA will fall back to manual code entry in the terminal.
@@ -107,7 +116,15 @@ const waitForSecurityCode = async (page, timeout = 60000) => {
       );
     } catch (error) {
       debug(`Error checking for security code: ${error.message}`);
-      // Continue trying even if there's an error
+
+      if (isPermanentGmailAuthError(error)) {
+        throw new Error(
+          `Gmail authentication failed while retrieving EA security code: ${error.message}`
+        );
+      }
+
+      // Transient Gmail/API issues should back off before retrying.
+      await new Promise(resolve => setTimeout(resolve, 5000));
     }
   }
 

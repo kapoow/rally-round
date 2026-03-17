@@ -47,10 +47,17 @@ const waitForAuthResponse = (page, timeout = 60000) => {
         return;
       }
 
-      if (response.status() !== 200) {
+      if (response.status() >= 400) {
         finish(
           reject,
           new Error(`EA auth request failed with status ${response.status()}`)
+        );
+        return;
+      }
+
+      if (response.status() !== 200) {
+        debug(
+          `Ignoring EA auth response with status ${response.status()} while waiting for token payload`
         );
         return;
       }

@@ -1013,7 +1013,38 @@ const addLinks = (links, name, type, displayName) => {
 const addHistoricalLinks = links => {
   // Show all historical season links
   const allLinks = leagueRef.league.historicalSeasonLinks || [];
-  links.historical = allLinks;
+  links.historical = allLinks.map(link => ({
+    ...link,
+    href: getSiteHref(link.href, leagueRef.league.siteBasePath)
+  }));
+};
+
+const getSiteHref = (href, siteBasePath = "") => {
+  if (!href) {
+    return href;
+  }
+
+  if (/^(https?:)?\/\//.test(href)) {
+    return href;
+  }
+
+  if (!href.startsWith("/")) {
+    return href;
+  }
+
+  const normalizedBasePath = siteBasePath.replace(/\/$/, "");
+  if (!normalizedBasePath) {
+    return href;
+  }
+
+  if (
+    href === normalizedBasePath ||
+    href.startsWith(`${normalizedBasePath}/`)
+  ) {
+    return href;
+  }
+
+  return `${normalizedBasePath}${href}`;
 };
 
 const addSeriesLinks = links => {
@@ -1027,7 +1058,7 @@ const addSeriesLinks = links => {
       seriesLinks.push({
         name: otherLeague.siteTitlePrefix,
         link: otherLeague.siteTitlePrefix,
-        href: `/${subfolderName}`,
+        href: getSiteHref(`/${subfolderName}`, otherLeague.siteBasePath),
         active: false
       });
     }

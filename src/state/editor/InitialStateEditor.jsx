@@ -10,6 +10,7 @@ const InitialStateEditor = ({ initialState, onSave, onCancel }) => {
   const generalFields = [
     { key: 'pointsForDNF', type: 'boolean', label: 'Points for DNF' },
     { key: 'websiteName', type: 'string', label: 'Website Name' },
+    { key: 'siteBasePath', type: 'string', label: 'Site Base Path' },
     { key: 'subfolderName', type: 'string', label: 'Subfolder Name' },
     { key: 'useStandingsForHome', type: 'boolean', label: 'Use Standings for Home' },
     { key: 'showLivePoints', type: 'boolean', label: 'Show Live Points' },

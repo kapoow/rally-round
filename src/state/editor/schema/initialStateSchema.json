@@ -12,6 +12,10 @@
       "type": "string",
       "description": "Name of the website for routing and identification"
     },
+    "siteBasePath": {
+      "type": "string",
+      "description": "Base path prefix for hosted URLs"
+    },
     "subfolderName": {
       "type": "string",
       "description": "Subfolder name for URL routing"

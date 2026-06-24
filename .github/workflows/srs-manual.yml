@@ -43,14 +43,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate championship results for SRS EAWRC
+      - name: Generate championship results for SRS SOMMARCUPEN
         timeout-minutes: 6
-        run: CLUB=srs-eawrc node --unhandled-rejections=strict runner.js
+        run: CLUB=srs-sommarcupen node --unhandled-rejections=strict runner.js
 
-      - name: Generate championship results for SRS DR2
-        if: always()
-        timeout-minutes: 6
-        run: CLUB=srs-dr2 node --unhandled-rejections=strict runner.js
+#     - name: Generate championship results for SRS DR2
+#       if: always()
+#       timeout-minutes: 6
+#       run: CLUB=srs-dr2 node --unhandled-rejections=strict runner.js
 
       - name: Upload logs as artifact (on failure)
         if: failure()

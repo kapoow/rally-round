@@ -26,6 +26,32 @@ function openPopup(id) {
   popup.classList.toggle("show");
 }
 
+// When the event flags overflow, scroll the current event's flag into view,
+// or the latest event's flag on pages that aren't event results
+function scrollSecondaryNavToCurrent() {
+  const nav = document.querySelector(".secondaryNav");
+  if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+
+  const items = Array.from(nav.querySelectorAll(".secondaryNav__item"));
+  const page = window.location.pathname.split("/").pop();
+  let target = items.find(item => item.getAttribute("href") === "./" + page);
+  if (target) {
+    target.setAttribute("aria-current", "page");
+  } else {
+    const enabled = items.filter(item => !item.style.pointerEvents);
+    target = enabled[enabled.length - 1];
+  }
+  if (!target) return;
+
+  // scroll only the nav row horizontally (scrollIntoView would also scroll the page)
+  const navRect = nav.getBoundingClientRect();
+  const targetRect = target.getBoundingClientRect();
+  nav.scrollLeft +=
+    targetRect.left - navRect.left - (navRect.width - targetRect.width) / 2;
+}
+
+window.addEventListener("load", scrollSecondaryNavToCurrent);
+
 document.addEventListener("DOMContentLoaded", function() {
   const table = document.getElementById("tableDrivers");
   if (!table) return;

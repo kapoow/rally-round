@@ -998,15 +998,22 @@ tbody>tr:nth-child(odd) {
   background: var(--gray-light-3);
   display: flex;
   gap: var(--spacing-sm);
-  justify-content: space-evenly;
   padding: var(--spacing-sm) var(--spacing-md);
-  overflow: auto;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
   border-bottom: 1px solid var(--black-1);
 }
 
+/* Items grow to spread the flags when they fit, but never shrink below the flag
+   width - with many events the row scrolls sideways instead of overlapping flags */
 .secondaryNav__item {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  scroll-snap-align: start;
 }
 
 .secondaryNav__flag {

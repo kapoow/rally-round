@@ -201,13 +201,38 @@ const getRules = (league, divisions) => {
   };
 };
 
+// Standings are ordered by drop round points when sortByDropRoundPoints is set, but
+// those are 0 for everyone until the standings include more rounds (weighted by
+// endurance multiplier) than are dropped - until then the order falls back to total points.
+const useDropRoundPoints = division => {
+  const { league } = leagueRef;
+  const dropRounds = league.dropLowestScoringRoundsNumber || 0;
+  if (!dropRounds || !league.sortByDropRoundPoints) {
+    return false;
+  }
+  const standingsEvents = getStandingsEvents(
+    getEventsWithStandings(division.events || [], "driver")
+  );
+  const roundsWeight = standingsEvents.reduce(
+    (total, event) => total + (event.enduranceRoundMultiplier || 1),
+    0
+  );
+  return roundsWeight > dropRounds;
+};
+
+const getRankingPoints = (standing, dropRoundPoints) =>
+  dropRoundPoints ? standing.totalPointsAfterDropRounds : standing.totalPoints;
+
 const getTop3ByDivision = divisions => {
   return Object.keys(divisions || {}).map(divName => {
     const division = divisions[divName];
     try {
       const standingsData = transformForStandingsHTML(division, "driver");
+      const dropRoundPoints = useDropRoundPoints(division);
       const top3 = (standingsData.rows || []).slice(0, 3).map(row => ({
         ...row,
+        points: getRankingPoints(row.standing, dropRoundPoints),
+        dropRoundPoints,
         hasTeamLogo: row.teamLogo && !row.teamLogo.includes("unknown.png")
       }));
       return {
@@ -282,8 +307,13 @@ const getChampionshipBattles = divisions => {
 
         const leader = rows[0];
         const secondPlace = rows[1];
-        const gap =
-          leader.standing.totalPoints - secondPlace.standing.totalPoints;
+        const dropRoundPoints = useDropRoundPoints(division);
+        const leaderPoints = getRankingPoints(leader.standing, dropRoundPoints);
+        const secondPlacePoints = getRankingPoints(
+          secondPlace.standing,
+          dropRoundPoints
+        );
+        const gap = leaderPoints - secondPlacePoints;
 
         const completedEvents = (division.events || []).filter(
           e => e.eventStatus === eventStatuses.finished
@@ -301,10 +331,13 @@ const getChampionshipBattles = divisions => {
           divisionId: division.divisionName || divName,
           leader: leader.driver.name,
           leaderCountry: leader.country.code,
-          leaderPoints: leader.standing.totalPoints,
+          leaderPoints,
+          leaderTotalPoints: leader.standing.totalPoints,
           secondPlace: secondPlace.driver.name,
           secondPlaceCountry: secondPlace.country.code,
-          secondPlacePoints: secondPlace.standing.totalPoints,
+          secondPlacePoints,
+          secondPlaceTotalPoints: secondPlace.standing.totalPoints,
+          dropRoundPoints,
           gap,
           eventsRemaining,
           mathematicallyOpen: gap < totalPointsRemaining * 0.5,
@@ -703,6 +736,19 @@ const getEventsWithStandings = (events, type) => {
   return events.filter(e => e.standings && e.standings[`${type}Standings`]);
 };
 
+// Events counted in the displayed standings: the active event is left out when live
+// points are not shown, so the standings are those after the previous event
+const getStandingsEvents = eventsWithStandings => {
+  if (
+    leagueRef.endTime &&
+    !leagueRef.showLivePoints() &&
+    eventsWithStandings.length > 1
+  ) {
+    return eventsWithStandings.slice(0, -1);
+  }
+  return eventsWithStandings;
+};
+
 const transformForStandingsHTML = (division, type) => {
   const events = division.events;
   const headerLocations = getHeaderLocations(events);
@@ -714,14 +760,7 @@ const transformForStandingsHTML = (division, type) => {
       `no ${type} standings available for ${division.divisionName}`
     );
   }
-  let lastEvent = eventsWithStandings[eventsWithStandings.length - 1];
-  if (
-    leagueRef.endTime &&
-    !leagueRef.showLivePoints() &&
-    eventsWithStandings.length > 1
-  ) {
-    lastEvent = eventsWithStandings[eventsWithStandings.length - 2];
-  }
+  const lastEvent = getStandingsEvents(eventsWithStandings).at(-1);
   const lastEventStandings = lastEvent.standings[`${type}Standings`];
   const rows = lastEventStandings.map((standing, standingIndex) => {
     const movement = {
@@ -1164,5 +1203,6 @@ module.exports = {
   writeAllHTML,
   colours,
   // tests
-  getStandingColour
+  getStandingColour,
+  useDropRoundPoints
 };

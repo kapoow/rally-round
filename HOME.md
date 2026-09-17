@@ -51,6 +51,7 @@ Current `home.hbs` renders these sections in order:
 - `division.events` only contains active/finished events. Future events live in `division.upcomingEvents`.
 - Homepage result URLs use `eventIndex`, not `event.id`.
 - `excludeFromCarPerformance` only affects car stats. It does not hide a division from the rest of the homepage.
+- Championship Battles and Top 3 show the points the standings are ordered by. With `sortByDropRoundPoints` they show ADR (with total points muted) once the displayed standings include more rounds than `dropLowestScoringRoundsNumber` (`useDropRoundPoints()`); before that ADR is 0 for everyone, so total points are shown.
 - Standings-derived homepage sections must tolerate divisions with no processed events yet. Helpers should skip or return empty data instead of throwing.
 
 ## Editing Guidance

@@ -1651,6 +1651,16 @@ td.hide-column {
   font-size: 0.9rem;
 }
 
+.points-total {
+  color: var(--text-muted, #6c757d);
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.top-drivers-table .points-total {
+  display: block;
+}
+
 .battle-gap {
   display: flex;
   flex-direction: column;

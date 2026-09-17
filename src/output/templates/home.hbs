@@ -114,7 +114,12 @@
               <div class="battle-driver">
                 <img src="./assets/country-flags/{{this.leaderCountry}}.png" class="img-sm" alt="{{this.leaderCountry}}" />
                 <strong>{{this.leader}}</strong>
+                {{#if this.dropRoundPoints}}
+                <span class="points">{{this.leaderPoints}} {{../localization.adr}}</span>
+                <span class="points-total">({{this.leaderTotalPoints}} {{../localization.pts}})</span>
+                {{else}}
                 <span class="points">{{this.leaderPoints}} {{../localization.pts}}</span>
+                {{/if}}
               </div>
               <div class="battle-gap">
                 <span class="gap-value">{{this.gap}} {{../localization.pt_gap}}</span>
@@ -129,7 +134,12 @@
               <div class="battle-driver">
                 <img src="./assets/country-flags/{{this.secondPlaceCountry}}.png" class="img-sm" alt="{{this.secondPlaceCountry}}" />
                 {{this.secondPlace}}
+                {{#if this.dropRoundPoints}}
+                <span class="points">{{this.secondPlacePoints}} {{../localization.adr}}</span>
+                <span class="points-total">({{this.secondPlaceTotalPoints}} {{../localization.pts}})</span>
+                {{else}}
                 <span class="points">{{this.secondPlacePoints}} {{../localization.pts}}</span>
+                {{/if}}
               </div>
             </div>
             <p class="battle-remaining">{{this.eventsRemaining}} {{../localization.events_remaining}}</p>
@@ -275,12 +285,11 @@
 
         {{#if top3ByDivision.length}}
         <div class="top-drivers-by-division mb-1">
-          <h3>{{localization.top_3_drivers_by_division}}</h3>
           <div class="top-drivers-division-grid">
           {{#each top3ByDivision}}
           <div class="card">
             <div class="card-header">
-              <h3>{{this.divisionName}}</h3>
+              <h3>🏅 {{../localization.top_3_drivers}} – {{this.divisionName}}</h3>
             </div>
             <div class="card-body">
               <table class="top-drivers-table">
@@ -308,7 +317,7 @@
                         alt="{{this.country.code}}" title="{{this.country.code}}" />
                     </td>
                     <td class="td-driver text-left bold">{{this.driver.name}}</td>
-                    <td class="td-points bold">{{this.standing.totalPoints}}</td>
+                    <td class="td-points bold">{{this.points}}{{#if this.dropRoundPoints}} {{../../localization.adr}}<span class="points-total">{{this.standing.totalPoints}} {{../../localization.pts}}</span>{{/if}}</td>
                   </tr>
                   {{/each}}
                 </tbody>

@@ -2,6 +2,7 @@ const { downloadCache } = require("./api/aws/s3");
 const {
   orderResultsBy,
   knapsack,
+  knapsackDroppedIndexes,
   getDuration,
   getSummedTotalTimeStrings,
   useNationalityAsTeam,
@@ -721,7 +722,10 @@ const recalculateTotalTime = ({ stages }) => {
   }
 };
 
-const calculateTotalPointsAfterDropRounds = ({
+// Both the points total after drop rounds and which rounds were dropped to get
+// there. The indexes line up with the events array, so the standings table can
+// strike the round through in the column it is read in.
+const calculateDropRounds = ({
   allResultsForName,
   totalPoints,
   events,
@@ -747,10 +751,20 @@ const calculateTotalPointsAfterDropRounds = ({
       roundWeights,
       points
     );
-    return pointsAfterDropRounds;
+    return {
+      totalPointsAfterDropRounds: pointsAfterDropRounds,
+      droppedRoundIndexes: knapsackDroppedIndexes(
+        allowedRoundsWeight,
+        roundWeights,
+        points
+      )
+    };
   }
-  return totalPoints;
+  return { totalPointsAfterDropRounds: totalPoints, droppedRoundIndexes: [] };
 };
+
+const calculateTotalPointsAfterDropRounds = args =>
+  calculateDropRounds(args).totalPointsAfterDropRounds;
 
 const isDnsPenalty = allResultsForDriver => {
   const firstStartedEventIndex = allResultsForDriver.findIndex(
@@ -870,7 +884,7 @@ const calculateStandings = ({
       allResultsForName,
       nameResult => nameResult.totalPoints
     );
-    standing.totalPointsAfterDropRounds = calculateTotalPointsAfterDropRounds({
+    const dropRoundsResult = calculateDropRounds({
       allResultsForName,
       totalPoints: standing.totalPoints,
       events: [...(previousEvents || []), currentEvent],
@@ -878,6 +892,9 @@ const calculateStandings = ({
       showLivePoints: leagueRef.showLivePoints(),
       resultType
     });
+    standing.totalPointsAfterDropRounds =
+      dropRoundsResult.totalPointsAfterDropRounds;
+    standing.droppedRoundIndexes = dropRoundsResult.droppedRoundIndexes;
     if (previousStandings) {
       const previousStanding = previousStandings.find(
         standing => standing.name === result.name
@@ -1308,5 +1325,6 @@ module.exports = {
   calculatePromotionRelegation,
   calculatePromotionRelegations,
   calculateTotalPointsAfterDropRounds,
+  calculateDropRounds,
   getPromotionRelegationZoneNumber
 };

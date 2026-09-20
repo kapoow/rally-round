@@ -166,7 +166,7 @@ const max = (a, b) => {
 };
 
 // knapsack problem!! https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
-const knapsack = (allowedRoundsWeight, roundWeights, points) => {
+const buildKnapsackTable = (allowedRoundsWeight, roundWeights, points) => {
   const numRounds = points.length;
   let i, w;
   const K = new Array(numRounds + 1);
@@ -185,7 +185,35 @@ const knapsack = (allowedRoundsWeight, roundWeights, points) => {
     }
   }
 
-  return K[numRounds][allowedRoundsWeight];
+  return K;
+};
+
+const knapsack = (allowedRoundsWeight, roundWeights, points) => {
+  const K = buildKnapsackTable(allowedRoundsWeight, roundWeights, points);
+  return K[points.length][allowedRoundsWeight];
+};
+
+// Which rounds the optimal selection leaves out, so the standings can strike
+// them through. Walks the same table backwards; when keeping and dropping a
+// round score the same it prefers keeping, otherwise a zero point round would
+// read as dropped even though the drop budget was already spent elsewhere.
+const knapsackDroppedIndexes = (allowedRoundsWeight, roundWeights, points) => {
+  const K = buildKnapsackTable(allowedRoundsWeight, roundWeights, points);
+  const droppedIndexes = [];
+  let w = allowedRoundsWeight;
+
+  for (let i = points.length; i > 0; i--) {
+    const roundWeight = roundWeights[i - 1];
+    const keptPoints =
+      roundWeight <= w ? points[i - 1] + K[i - 1][w - roundWeight] : null;
+    if (keptPoints !== null && keptPoints === K[i][w]) {
+      w -= roundWeight;
+    } else {
+      droppedIndexes.push(i - 1);
+    }
+  }
+
+  return droppedIndexes.reverse();
 };
 
 const mergeEvent = (mergedEvent, event) => {
@@ -230,6 +258,7 @@ module.exports = {
   getCountryForAnyCode,
   addSeconds,
   knapsack,
+  knapsackDroppedIndexes,
   mergeEvent,
   useNationalityAsTeam,
   DNF_STAGE_TIME,

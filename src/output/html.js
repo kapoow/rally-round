@@ -834,14 +834,21 @@ const transformForStandingsHTML = (division, type) => {
           : -1
       )
     );
-    const results = rawResults.map(result =>
-      result
-        ? {
-            ...result,
-            isBest: bestScore > 0 && result.pointsDisplay === bestScore
-          }
-        : result
-    );
+    // Rounds the drop-round knapsack left out of the ADR total, marked so the
+    // column explains itself instead of relying on the footnote.
+    const droppedRoundIndexes = standing.droppedRoundIndexes || [];
+    const results = rawResults.map((result, index) => {
+      if (!result) {
+        return result;
+      }
+      const isDropped = droppedRoundIndexes.includes(index);
+      return {
+        ...result,
+        isBest: bestScore > 0 && result.pointsDisplay === bestScore,
+        isDropped,
+        droppedTitle: isDropped ? getLocalization().dropped : undefined
+      };
+    });
 
     // can be null for team overall
     const standingDivision = leagueRef.divisions[standing.divisionName];

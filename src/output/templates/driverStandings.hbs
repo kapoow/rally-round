@@ -115,7 +115,7 @@
               {{/if}}
               {{#each this.results}}
               {{#with this}}
-              <td class="td-result {{resultClass pointsDisplay}}{{#if isBest}} is-best{{/if}}">
+              <td class="td-result {{resultClass pointsDisplay}}{{#if isBest}} is-best{{/if}}{{#if isDropped}} is-dropped{{/if}}"{{#if isDropped}} title="{{droppedTitle}}"{{/if}}>
                 {{pointsDisplay}}
               </td>
               {{/with}}

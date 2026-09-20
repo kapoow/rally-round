@@ -4490,10 +4490,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 65
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 65
               </td>
               <td class="td-result is-empty">
@@ -4518,10 +4518,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 52
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 52
               </td>
               <td class="td-result is-empty">
@@ -4546,10 +4546,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 66
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 38
               </td>
               <td class="td-result is-empty">
@@ -4574,10 +4574,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 39
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 54
               </td>
               <td class="td-result is-empty">
@@ -4600,10 +4600,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 41
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 41
               </td>
               <td class="td-result is-empty">
@@ -4628,10 +4628,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 32
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 32
               </td>
               <td class="td-result is-empty">
@@ -4656,10 +4656,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 61
               </td>
               <td class="td-result is-empty">
@@ -4684,10 +4684,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 52
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -4710,10 +4710,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 25
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 25
               </td>
               <td class="td-result is-empty">
@@ -4738,10 +4738,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 32
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 16
               </td>
               <td class="td-result is-empty">
@@ -4764,10 +4764,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 20
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 27
               </td>
               <td class="td-result is-empty">
@@ -4792,10 +4792,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 20
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 20
               </td>
               <td class="td-result is-empty">
@@ -4820,10 +4820,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 24
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 14
               </td>
               <td class="td-result is-empty">
@@ -4848,10 +4848,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 18
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 18
               </td>
               <td class="td-result is-empty">
@@ -4876,10 +4876,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 3
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 32
               </td>
               <td class="td-result is-empty">
@@ -4904,10 +4904,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 16
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 16
               </td>
               <td class="td-result is-empty">
@@ -4930,10 +4930,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 14
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 14
               </td>
               <td class="td-result is-empty">
@@ -4958,10 +4958,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">No-recce</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 7
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 19
               </td>
               <td class="td-result is-empty">
@@ -4986,10 +4986,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 16
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 10
               </td>
               <td class="td-result is-empty">
@@ -5014,10 +5014,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 12
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 12
               </td>
               <td class="td-result is-empty">
@@ -5042,10 +5042,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 20
               </td>
               <td class="td-result is-empty">
@@ -5070,10 +5070,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 18
               </td>
-              <td class="td-result is-dns">
+              <td class="td-result is-dns is-dropped" title="dropped">
                 DNS
               </td>
               <td class="td-result is-empty">
@@ -5098,10 +5098,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 16
               </td>
               <td class="td-result is-empty">
@@ -5126,10 +5126,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 10
               </td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
               <td class="td-result is-empty">
@@ -5154,10 +5154,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 5
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 4
               </td>
               <td class="td-result is-empty">
@@ -5180,10 +5180,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 8
               </td>
               <td class="td-result is-empty">
@@ -5208,10 +5208,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 6
               </td>
               <td class="td-result is-empty">
@@ -5236,10 +5236,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 4
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5264,10 +5264,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 1
               </td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 1
               </td>
               <td class="td-result is-empty">
@@ -5292,10 +5292,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-result is-score is-best">
+              <td class="td-result is-score is-best is-dropped" title="dropped">
                 2
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5320,10 +5320,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5348,10 +5348,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5376,10 +5376,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5404,10 +5404,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-dns">
+              <td class="td-result is-dns is-dropped" title="dropped">
                 DNS
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5432,10 +5432,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5460,10 +5460,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5488,10 +5488,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5516,10 +5516,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
               <td class="td-result is-empty">
@@ -5544,10 +5544,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-score">
+              <td class="td-result is-score is-dropped" title="dropped">
                 0
               </td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
               <td class="td-result is-empty">
@@ -5572,10 +5572,10 @@ exports[`e2e generates overall driver standings 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result is-dnf">
+              <td class="td-result is-dnf is-dropped" title="dropped">
                 DNF
               </td>
-              <td class="td-result is-dns">
+              <td class="td-result is-dns is-dropped" title="dropped">
                 DNS
               </td>
               <td class="td-result is-empty">

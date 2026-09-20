@@ -2439,6 +2439,21 @@ td.hide-column {
   color: var(--accent);
 }
 
+/* 2b. DROPPED ROUND
+   The round the drop-round knapsack left out of the ADR total. Struck where
+   it is read, so the gap between Points and ADR explains itself without the
+   footnote. Muted rather than hidden: it still counts towards Points. */
+.td-result.is-dropped {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+/* A dropped round is never the round to celebrate, whatever the raw score. */
+.td-result.is-dropped.is-best {
+  color: var(--text);
+}
+
 /* 3. PODIUM CARDS (results page)
    Top three lifted out above the table: position, points, name, car,
    finishing time, gap. Gold/silver/bronze only as a hairline + wash so the

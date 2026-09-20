@@ -1274,19 +1274,36 @@ tbody > tr.is-zone-penalty .td-pos {
 }
 
 .navDrop:hover .navMenu,
-.navDrop:focus-within .navMenu,
-.navMenu:hover {
+.navDrop:focus-within .navMenu {
   display: block;
 }
 
-.navMenu::before {
+/* Hover bridge over the gap between a nav button and its menu.
+   It hangs off the trigger, not the menu: anchored inside the menu, its
+   containing block is the menu's padding box, so the menu's 1px border
+   pushed it down and left a dead band directly under the button. Crossing
+   that band dropped :hover, the menu went display:none, and it could no
+   longer be hovered to bring itself back - the menu closed on the way to it.
+   Wider than the trigger so a diagonal run at the menu is caught too, and it
+   only exists while the menu is open, so passing under the header does not
+   trip it. Matches how .dropdown::after bridges the brand menu. */
+.navDrop::after {
   content: "";
+  display: none;
   position: absolute;
+  top: 100%;
   left: -10px;
   right: -10px;
-  top: -0.75rem;
-  height: 0.75rem;
-  pointer-events: auto;
+  /* At least the menu's own min-width, so the bridge is never narrower than
+     what it bridges to. */
+  min-width: calc(260px + 20px);
+  height: calc(0.75rem + 1px);
+  z-index: var(--z-dropdown-overlay);
+}
+
+.navDrop:hover::after,
+.navDrop:focus-within::after {
+  display: block;
 }
 
 .navLink {

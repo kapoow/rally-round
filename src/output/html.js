@@ -27,15 +27,6 @@ const { getLocalization } = require("./localization");
 const { allLeagues } = require("../state/allLeagues");
 const { isEmpty, isNil } = require("lodash");
 // const { eventStatuses } = require("../shared");
-const resultColours = ["#76FF6A", "#faff5d", "#ffe300", "#ff5858"];
-
-const colours = {
-  red: "#ffb4b4",
-  green: "#ccffc8",
-  gold: "#ffd74e",
-  grey: "#dcdcdc",
-  default: ""
-};
 
 // Register Handlebars helpers
 Handlebars.registerHelper("eq", (a, b) => a === b);
@@ -107,18 +98,21 @@ const writeFantasyHTML = (fantasyResults, links) => {
   );
 };
 
-const getStageColours = (stageTimes, benchmarks) => {
+// Placement events grade each stage time against a division's benchmark
+// times: beat the first and you are in the top band, miss them all and you
+// are in the last. The band is emitted as a class rather than a hex colour so
+// the stylesheet can render it legibly - the old inline fills were built for
+// a white table.
+const getStageBenchmarkBands = (stageTimes, benchmarks) => {
   if (!stageTimes) return undefined;
   const out = [];
-  const defaultColour = benchmarks ? "#ff5858" : "";
-  // const defaultColour = "";
   for (let i = 0; i < stageTimes.length; i++) {
     const time = timeToSeconds(stageTimes[i]);
-    const obj = { time: stageTimes[i], colour: defaultColour };
+    const obj = { time: stageTimes[i], band: benchmarks ? "is-band-4" : null };
     if (benchmarks) {
       for (let j = 0; j < benchmarks[i].length; j++) {
         if (time < timeToSeconds(benchmarks[i][j])) {
-          obj.colour = resultColours[j];
+          obj.band = `is-band-${j + 1}`;
           break;
         }
       }
@@ -227,6 +221,170 @@ const getActiveEvents = divisions => {
   });
 
   return activeEvents;
+};
+
+// Total rounds a division runs this season: processed events plus the ones
+// still to come.
+const getTotalRounds = division =>
+  (division.events || []).length + (division.upcomingEvents || []).length;
+
+// The hero answers the one question the homepage exists for: what is on right
+// now. Live event first, then the next one on the calendar, then - once the
+// season is over - the round that finished it. Resolved here rather than in
+// the template so the fallbacks stay readable.
+const getHomeHero = divisions => {
+  const localization = getLocalization();
+  const entries = Object.entries(divisions || {});
+
+  const buildHero = (divName, division, event, round, state) => {
+    const location = getLocation(event) || {};
+    const name = event.name || event.locationName || location.countryName;
+    const divisionId = division.divisionName || divName;
+    const isUpcoming = state === "next";
+    const statusLabels = {
+      live: localization.live_now,
+      next: localization.up_next,
+      complete: localization.season_complete
+    };
+
+    return {
+      state,
+      live: state === "live",
+      statusLabel: statusLabels[state],
+      divisionId,
+      title: name,
+      subtitle:
+        location.countryName && location.countryName !== name
+          ? location.countryName
+          : null,
+      locationCode: location.countryCode,
+      divisionName: division.displayName || divName,
+      roundNumber: round,
+      totalRounds: getTotalRounds(division),
+      startDate:
+        isUpcoming && event.startDate
+          ? moment(event.startDate).format("MMMM D, YYYY [at] h:mm A")
+          : null,
+      resultsHref: isUpcoming
+        ? null
+        : `./${divisionId}-${round - 1}-driver-results.html`,
+      standingsHref: `./${divisionId}-driver-standings.html`
+    };
+  };
+
+  const findEvent = status => {
+    for (const [divName, division] of entries) {
+      const events = division.events || [];
+      const index = events.findIndex(event => event.eventStatus === status);
+      if (index !== -1) {
+        return { divName, division, event: events[index], round: index + 1 };
+      }
+    }
+    return null;
+  };
+
+  const live = findEvent(eventStatuses.active);
+  if (live) {
+    return buildHero(
+      live.divName,
+      live.division,
+      live.event,
+      live.round,
+      "live"
+    );
+  }
+
+  for (const [divName, division] of entries) {
+    const upcoming = (division.upcomingEvents || [])[0];
+    if (upcoming) {
+      return buildHero(
+        divName,
+        division,
+        upcoming,
+        (division.events || []).length + 1,
+        "next"
+      );
+    }
+  }
+
+  // Nothing active and nothing left: the season is done, so the hero shows the
+  // round that decided it rather than an empty state.
+  for (const [divName, division] of entries) {
+    const events = division.events || [];
+    for (let index = events.length - 1; index >= 0; index--) {
+      if (events[index].eventStatus === eventStatuses.finished) {
+        return buildHero(
+          divName,
+          division,
+          events[index],
+          index + 1,
+          "complete"
+        );
+      }
+    }
+  }
+
+  return null;
+};
+
+// Every round of the season as a card: what it was, who won it, and whether it
+// has been run. The season calendar is the homepage's map, so upcoming rounds
+// are listed alongside finished ones instead of being hidden until they open.
+const getRoundCards = divisions => {
+  const localization = getLocalization();
+
+  return Object.entries(divisions || {})
+    .map(([divName, division]) => {
+      const divisionId = division.divisionName || divName;
+
+      const processed = (division.events || []).map((event, eventIndex) => {
+        const location = getLocation(event) || {};
+        const finished = event.eventStatus === eventStatuses.finished;
+        const winnerName = event.results?.driverResults?.[0]?.name;
+        let winner = null;
+        if (finished && winnerName) {
+          winner = getDriverData(winnerName, divName).driver.name;
+        }
+
+        return {
+          round: eventIndex + 1,
+          name: event.name || event.locationName || location.countryName,
+          locationCode: location.countryCode,
+          state: finished ? "done" : "live",
+          statusLabel: finished
+            ? localization.round_finished
+            : localization.round_live,
+          winner,
+          href: `./${divisionId}-${eventIndex}-driver-results.html`
+        };
+      });
+
+      const upcoming = (division.upcomingEvents || []).map((event, index) => {
+        const location = getLocation(event) || {};
+        return {
+          round: (division.events || []).length + index + 1,
+          name: event.name || event.locationName || location.countryName,
+          locationCode: location.countryCode,
+          state: "upcoming",
+          statusLabel: localization.round_upcoming,
+          winner: null,
+          // A round nobody has driven has no winner to show, so the card
+          // carries the date instead - the only place the schedule appears
+          // once an event is live and the hero has moved on.
+          startDate: event.startDate
+            ? moment(event.startDate).format("MMM D, YYYY")
+            : null,
+          href: null
+        };
+      });
+
+      return {
+        divisionName: division.displayName || divName,
+        divisionId,
+        rounds: [...processed, ...upcoming]
+      };
+    })
+    .filter(group => group.rounds.length > 0);
 };
 
 const getDivisionInfo = divisions => {
@@ -383,6 +541,7 @@ const getChampionshipBattles = divisions => {
         const eventsRemaining = totalEvents - completedEvents;
 
         const maxPointsPerEvent = division.points?.overall?.[0] || 25;
+        const maxPowerStagePoints = division.points?.powerStage?.[0] || 0;
         const totalPointsRemaining = eventsRemaining * maxPointsPerEvent;
 
         return {
@@ -398,6 +557,18 @@ const getChampionshipBattles = divisions => {
           secondPlaceTotalPoints: secondPlace.standing.totalPoints,
           dropRoundPoints,
           gap,
+          // The two bars are read against each other, so the trailing driver's
+          // bar is a share of the leader's rather than of some absolute scale.
+          secondPlaceBarPercent:
+            leaderPoints > 0
+              ? Math.max(
+                  0,
+                  Math.round((secondPlacePoints / leaderPoints) * 100)
+                )
+              : 0,
+          maxPointsPerEvent,
+          maxPowerStagePoints,
+          totalPointsRemaining,
           eventsRemaining,
           mathematicallyOpen: gap < totalPointsRemaining * 0.5,
           tightBattle: gap < maxPointsPerEvent * 0.5
@@ -546,14 +717,31 @@ const getSeasonStats = divisions => {
     let totalEntries = 0;
     let totalDNFs = 0;
     let closestFinish = { margin: Infinity, event: null };
+    // Who has raced at all this season, and how many different names have won
+    // a round - the two numbers that say whether a championship is a contest.
+    const drivers = new Set();
+    const winners = new Set();
+
+    (division.events || []).forEach(event => {
+      (event.results?.driverResults || []).forEach(result =>
+        drivers.add(result.name)
+      );
+    });
 
     division.events.forEach(event => {
       if (event.eventStatus === eventStatuses.finished) {
         completedEvents++;
         const results = event.results?.driverResults || [];
         totalEntries += results.length;
+        if (results[0]) {
+          winners.add(results[0].name);
+        }
 
-        const dnfs = results.filter(r => r.entry?.isDnfEntry).length;
+        // A non-starter is flagged as a DNF entry too, so counting both would
+        // report a field that never drove as a field that retired.
+        const dnfs = results.filter(
+          r => r.entry?.isDnfEntry && !r.entry?.isDnsEntry
+        ).length;
         totalDNFs += dnfs;
 
         if (results.length >= 2 && results[1].entry?.totalDiff) {
@@ -596,9 +784,13 @@ const getSeasonStats = divisions => {
 
     divisionStats.push({
       divisionName: division.displayName || divName,
+      divisionId: division.divisionName || divName,
       totalEvents,
       completedEvents,
       eventsRemaining: totalEvents - completedEvents,
+      driverCount: drivers.size,
+      uniqueWinners: winners.size,
+      totalDnfs: totalDNFs,
       avgEntriesPerEvent,
       dnfRate,
       closestFinish: closestFinish.event ? closestFinish : null
@@ -610,11 +802,25 @@ const getSeasonStats = divisions => {
 
 const transformForHomeHTML = league => {
   const homeDivisions = getHomeDivisions(league.divisions);
+  const hero = getHomeHero(homeDivisions);
+  const activeEvents = getActiveEvents(homeDivisions);
 
   return {
     logo: league.logo,
     siteTitlePrefix: league.siteTitlePrefix,
-    activeEvents: getActiveEvents(homeDivisions),
+    hero,
+    activeEvents,
+    // A multi-division club can have more than one event running. The hero
+    // takes the first; the rest are listed under it rather than dropped.
+    otherActiveEvents: hero
+      ? activeEvents.filter(
+          event =>
+            event.divisionId !== hero.divisionId ||
+            event.eventIndex !== hero.roundNumber - 1
+        )
+      : activeEvents,
+    multipleDivisions: Object.keys(homeDivisions).length > 1,
+    roundGroups: getRoundCards(homeDivisions),
     endTime: leagueRef.endTime,
     activeCountry: leagueRef.activeCountryCode,
     divisionInfo: getDivisionInfo(homeDivisions),
@@ -748,20 +954,24 @@ const writeStandingsHTML = (division, type, links) => {
   }
 };
 
-const getStandingColour = standing => {
+// Promotion, relegation and DNS-penalty rows are marked with a class rather
+// than an inline colour: the fill used to be a light-theme pastel painted
+// straight onto the row, which on the dark table buried the driver's name and
+// every figure in it. The stylesheet now owns how a zone looks.
+const getStandingZone = standing => {
   if (standing.dnsPenalty) {
-    return colours.grey;
+    return "is-zone-penalty";
   }
   if (standing.promotionRelegation === 2) {
-    return colours.gold;
+    return "is-zone-promotion-double";
   }
   if (standing.promotionRelegation === 1) {
-    return colours.green;
+    return "is-zone-promotion";
   }
   if (standing.promotionRelegation === -1) {
-    return colours.red;
+    return "is-zone-relegation";
   }
-  return colours.default;
+  return null;
 };
 
 const getTeamLogo = teamId => {
@@ -857,13 +1067,12 @@ const transformForStandingsHTML = (division, type) => {
     const divisionDisplayName =
       standingDivision &&
       (standingDivision.displayName || standingDivision.divisionName);
-    const colour = getStandingColour(standing);
     const row = {
       results,
       standing,
       ...movement,
       divisionDisplayName,
-      colour
+      zone: getStandingZone(standing)
     };
     if (type === "driver") {
       const { driver, country, carBrand } = getDriverData(
@@ -1037,7 +1246,7 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
     const resultDivision = leagueRef.divisions[result.divisionName];
     const { driver, country } = getDriverData(result.name, divisionName);
     if (leagueRef.league.placement)
-      result.stageTimes = getStageColours(
+      result.stageTimes = getStageBenchmarkBands(
         result.stageTimes,
         division.benchmarks
       );
@@ -1362,9 +1571,8 @@ const writeAllHTML = () => {
 
 module.exports = {
   writeAllHTML,
-  colours,
   // tests
-  getStandingColour,
+  getStandingZone,
   useDropRoundPoints,
   compactStageTime,
   compactTimeDiff

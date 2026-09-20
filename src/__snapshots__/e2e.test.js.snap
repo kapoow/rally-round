@@ -199,22 +199,47 @@ exports[`e2e generates driver leg results 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">
@@ -1178,22 +1203,47 @@ exports[`e2e generates driver results 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">
@@ -2358,388 +2408,549 @@ exports[`e2e generates driver standings 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
-  <div class="container">
-  <div class="flexContainer">
-    <div class="flexBox">
-      <div class="mb-1">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">TEST-E2E Home</h2>
-        </div>
+  <div class="container home">
+  <section class="home-hero home-hero--live">
+    <div class="home-hero__body">
+      <div class="home-hero__eyebrow">
+        <span class="home-hero__dot" aria-hidden="true"></span>
+        <span>Live now · round 3 of 4</span>
       </div>
-      <div class="home-layout">
-        <main class="home-main">
-      <div class="home-hero card mb-1">
-        <div class="card-header">
-          <h3>🏁 Current Events</h3>
-        </div>
-        <div class="card-body">
-          <div class="current-event-item">
-            <p><strong>Test E2E</strong> - Rally Finland</p>
-            <div class="home-actions">
-              <a href="./test-e2e-2-driver-results.html" class="home-btn home-btn--primary">
-                View Results
-              </a>
-              <a href="./test-e2e-driver-standings.html" class="home-btn">
-                View Standings
-              </a>
-            </div>
-          </div>
-          <hr class="last-event-separator">
-          <div class="current-event-item">
-            <p><strong>Test E2E2</strong> - Rally Finland</p>
-            <div class="home-actions">
-              <a href="./test-e2e2-2-driver-results.html" class="home-btn home-btn--primary">
-                View Results
-              </a>
-              <a href="./test-e2e2-driver-standings.html" class="home-btn">
-                View Standings
-              </a>
-            </div>
-          </div>
-          <hr class="last-event-separator">
-          <div class="home-hero__live mb-1">
-            <img class="flag" src="./assets/country-flags/fin.png" alt="fin" />
-            <span id="homeCountdown" class="countdown"></span>
-          </div>
-        </div>
+      <h1 class="home-hero__title">
+        <span class="home-hero__title-line">Rally Finland</span>
+      </h1>
+      <div class="home-hero__meta">
+        <img class="home-hero__flag" src="./assets/country-flags/fin.png" alt="fin" />
+        <span>Test E2E</span>
       </div>
-
-      <div class="card mb-1 next-event-card">
-        <div class="card-header">
-          <h3>📅 Next Event: Rally Sweden</h3>
-        </div>
-        <div class="card-body">
-          <p>
-            <img src="./assets/country-flags/swe.png" class="img-sm" alt="swe" />
-            <strong>Test E2E</strong> - Rally Sweden
-          </p>
-          <p>Starts: January 1, 2031 at 12:00 AM</p>
-        </div>
+      <div class="home-hero__actions">
+        <a class="home-btn home-btn--primary" href="./test-e2e-2-driver-results.html">View Results</a>
+        <a class="home-btn" href="./test-e2e-driver-standings.html">View Standings</a>
       </div>
-
-      <div class="home-cards-grid">
-      <div class="card card--full-bg mb-1">
-        <div class="card-header">
-          <h3>🏆 Last Event Winners</h3>
-        </div>
-        <div class="card-body">
-          <div class="last-event-division">
-            <div class="last-event-header">
-              <h4>Test E2E - Rally Nonko</h4>
-              <span class="text-muted">Rally Nonko</span>
-            </div>
-            <div class="winner-info">
-              <img src="./assets/country-flags/est.png" class="img-sm" alt="est" />
-              <strong>ninko</strong>
-              <span class="winner-margin">won by +00:00:07.905</span>
-            </div>
-            <div class="last-event-meta">
-              <span class="text-muted">30 entries</span>
-              <a href="./test-e2e-1-driver-results.html" class="home-btn-inline">View Results</a>
-            </div>
-          </div>
-          <hr class="last-event-separator">
-          <div class="last-event-division">
-            <div class="last-event-header">
-              <h4>Test E2E2 - Rally Nonko</h4>
-              <span class="text-muted">Rally Nonko</span>
-            </div>
-            <div class="winner-info">
-              <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
-              <strong>woosh</strong>
-              <span class="winner-margin">won by +00:00:32.028</span>
-            </div>
-            <div class="last-event-meta">
-              <span class="text-muted">10 entries</span>
-              <a href="./test-e2e2-1-driver-results.html" class="home-btn-inline">View Results</a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="card card--full-bg mb-1">
-        <div class="card-header">
-          <h3>⚔️ Championship Battles</h3>
-        </div>
-        <div class="card-body">
-          <div class="battle-item tight-battle">
-            <h4>Test E2E</h4>
-            <div class="battle-leaders">
-              <div class="battle-driver">
-                <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
-                <strong>Hawk24</strong>
-                <span class="points">104 pts</span>
-              </div>
-              <div class="battle-gap">
-                <span class="gap-value">11 pt gap</span>
-                <span class="gap-status tight">Tight!</span>
-              </div>
-              <div class="battle-driver">
-                <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
-                QazRa
-                <span class="points">93 pts</span>
-              </div>
-            </div>
-            <p class="battle-remaining">2 events remaining</p>
-            <a href="./test-e2e-driver-standings.html" class="home-btn-inline">View Standings</a>
-          </div>
-          <hr class="last-event-separator">
-          <div class="battle-item ">
-            <h4>Test E2E2</h4>
-            <div class="battle-leaders">
-              <div class="battle-driver">
-                <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
-                <strong>woosh</strong>
-                <span class="points">130 pts</span>
-              </div>
-              <div class="battle-gap">
-                <span class="gap-value">26 pt gap</span>
-                <span class="gap-status">Still Open</span>
-              </div>
-              <div class="battle-driver">
-                <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
-                winstall
-                <span class="points">104 pts</span>
-              </div>
-            </div>
-            <p class="battle-remaining">2 events remaining</p>
-            <a href="./test-e2e2-driver-standings.html" class="home-btn-inline">View Standings</a>
-          </div>
-          
-        </div>
-      </div>
-      </div>
-
-      <div class="card mb-1">
-        <div class="card-header">
-          <h3>🔥 Hot Streaks</h3>
-        </div>
-        <div class="card-body">
-          <div class="form-guide-item">
-            <div class="form-guide-driver">
-              <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
-              <strong>woosh</strong>
-              <span class="division-badge">Test E2E2</span>
-            </div>
-            <div class="form-guide-stats">
-              <span>2 wins • 2 podiums in last 3 events</span>
-            </div>
-            <div class="form-guide-recent">
-              Recent finishes: 1, 1
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="card mb-1">
-        <div class="card-header">
-          <h3>🏎️ Car Performance</h3>
-        </div>
-        <div class="card-body">
-          <div class="car-stat-item">
-            <h4>Most Wins</h4>
-            <p><strong>Porsche 911 SC 3.0 Grp4</strong></p>
-            <p>2 wins • 4 podiums • 16.7% win rate</p>
-          </div>
-          <div class="car-stat-item">
-            <h4>Best Average Performance</h4>
-            <p><strong>Porsche 911 SC 3.0 Grp4</strong></p>
-            <p>32.3 avg points • 12 entries</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-1">
-        <div class="card-header">
-          <h3>📊 Season Statistics</h3>
-        </div>
-        <div class="card-body">
-          <div class="season-stats-division">
-            <h4>Test E2E</h4>
-            <div class="season-stats-grid">
-              <div class="stat-item">
-                <span class="stat-label">Events Completed</span>
-                <span class="stat-value">2 / 4</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Avg. Entries per Event</span>
-                <span class="stat-value">30</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">DNF Rate</span>
-                <span class="stat-value">16.7%</span>
-              </div>
-              <div class="stat-item stat-highlight">
-                <span class="stat-label">Closest Finish</span>
-                <span class="stat-value">+00:00:14.861</span>
-                <span class="stat-detail">Hawk24 vs THELC Matt • Rally Grundstrom</span>
-              </div>
-            </div>
-          </div>
-          <hr class="last-event-separator">
-          <div class="season-stats-division">
-            <h4>Test E2E2</h4>
-            <div class="season-stats-grid">
-              <div class="stat-item">
-                <span class="stat-label">Events Completed</span>
-                <span class="stat-value">2 / 4</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Avg. Entries per Event</span>
-                <span class="stat-value">10</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">DNF Rate</span>
-                <span class="stat-value">0.0%</span>
-              </div>
-              <div class="stat-item stat-highlight">
-                <span class="stat-label">Closest Finish</span>
-                <span class="stat-value">+00:00:29.867</span>
-                <span class="stat-detail">woosh vs winstall • Rally Grundstrom</span>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="card mb-1">
-        <div class="card-header">
-          <h3>Championship Rules</h3>
-        </div>
-        <div class="card-body">
-          <p><strong>Drop Rounds:</strong> 2 lowest scoring rounds dropped</p>
-          <p><strong>Points (Top 5):</strong> 30, 24, 19, 15, 12</p>
-          <p><strong>Power Stage Points:</strong> 5, 4, 3, 2, 1</p>
-        </div>
-      </div>
-
-        <div class="top-drivers-by-division mb-1">
-          <div class="top-drivers-division-grid">
-          <div class="card">
-            <div class="card-header">
-              <h3>🏅 Top 3 Drivers – Test E2E</h3>
-            </div>
-            <div class="card-body">
-              <table class="top-drivers-table">
-                <tbody>
-                  <tr>
-                    <td class="td-pos">1</td>
-                    <td class="td-change">
-                      <span class="neutral">=</span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/deu.png" class="img-sm"
-                        alt="deu" title="deu" />
-                    </td>
-                    <td class="td-driver text-left bold">Hawk24</td>
-                    <td class="td-points bold">104</td>
-                  </tr>
-                  <tr>
-                    <td class="td-pos">2</td>
-                    <td class="td-change">
-                      <span class="positive">
-                        <i class="arrow up"></i>&nbsp;1
-                      </span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/fin.png" class="img-sm"
-                        alt="fin" title="fin" />
-                    </td>
-                    <td class="td-driver text-left bold">QazRa</td>
-                    <td class="td-points bold">93</td>
-                  </tr>
-                  <tr>
-                    <td class="td-pos">3</td>
-                    <td class="td-change">
-                      <span class="positive">
-                        <i class="arrow up"></i>&nbsp;13
-                      </span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/est.png" class="img-sm"
-                        alt="est" title="est" />
-                    </td>
-                    <td class="td-driver text-left bold">ninko</td>
-                    <td class="td-points bold">61</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h3>🏅 Top 3 Drivers – Test E2E2</h3>
-            </div>
-            <div class="card-body">
-              <table class="top-drivers-table">
-                <tbody>
-                  <tr style="background-color: #ffd74e">
-                    <td class="td-pos">1</td>
-                    <td class="td-change">
-                      <span class="neutral">=</span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/aus.png" class="img-sm"
-                        alt="aus" title="aus" />
-                    </td>
-                    <td class="td-driver text-left bold">woosh</td>
-                    <td class="td-points bold">130</td>
-                  </tr>
-                  <tr style="background-color: #ccffc8">
-                    <td class="td-pos">2</td>
-                    <td class="td-change">
-                      <span class="neutral">=</span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/aus.png" class="img-sm"
-                        alt="aus" title="aus" />
-                    </td>
-                    <td class="td-driver text-left bold">winstall</td>
-                    <td class="td-points bold">104</td>
-                  </tr>
-                  <tr style="background-color: #ccffc8">
-                    <td class="td-pos">3</td>
-                    <td class="td-change">
-                      <span class="neutral">=</span>
-                    </td>
-                    <td class="td-nat">
-                      <img src="./assets/country-flags/aus.png" class="img-sm"
-                        alt="aus" title="aus" />
-                    </td>
-                    <td class="td-driver text-left bold">testdriver1</td>
-                    <td class="td-points bold">82</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          </div>
-        </div>
-        </main>
+      <div class="home-hero__also">
+        <span class="home-hero__also-label">Also running</span>
+        <a class="home-hero__also-item" href="./test-e2e2-2-driver-results.html">
+          Test E2E2 · Rally Finland
+        </a>
       </div>
     </div>
+    <div class="home-clock">
+      <div class="home-clock__label" id="homeClockLabel">Closes in</div>
+      <div class="home-clock__units">
+        <div class="home-clock__unit">
+          <span class="home-clock__value" id="homeClockDays">–</span>
+          <span class="home-clock__unit-label">Days</span>
+        </div>
+        <div class="home-clock__unit">
+          <span class="home-clock__value" id="homeClockHours">–</span>
+          <span class="home-clock__unit-label">Hours</span>
+        </div>
+        <div class="home-clock__unit">
+          <span class="home-clock__value" id="homeClockMinutes">–</span>
+          <span class="home-clock__unit-label">Min</span>
+        </div>
+        <div class="home-clock__unit">
+          <span class="home-clock__value" id="homeClockSeconds">–</span>
+          <span class="home-clock__unit-label">Sec</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="home-duo">
+    <div class="home-duo__main">
+      <section class="home-card battle battle--tight">
+        <header class="home-card__head">
+          <h2 class="home-card__title">
+            Championship Battles
+            <span class="home-card__title-note">Test E2E</span>
+          </h2>
+          <span class="home-card__meta">
+            2 events remaining · 30 pts + 5 PS max per round
+          </span>
+        </header>
+        <div class="battle__grid">
+          <div class="battle__side">
+            <div class="battle__driver">
+              <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
+              <span class="battle__name">Hawk24</span>
+            </div>
+            <div class="battle__points">
+              104
+              <span class="battle__points-unit">pts</span>
+            </div>
+            <div class="battle__bar"><span class="battle__bar-fill" style="width: 100%"></span></div>
+          </div>
+          <div class="battle__gap">
+            <div class="battle__gap-value">+11</div>
+            <div class="battle__gap-label">pt gap</div>
+            <span class="battle__badge battle__badge--tight">Tight!</span>
+          </div>
+          <div class="battle__side battle__side--right">
+            <div class="battle__driver">
+              <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
+              <span class="battle__name">QazRa</span>
+            </div>
+            <div class="battle__points">
+              93
+              <span class="battle__points-unit">pts</span>
+            </div>
+            <div class="battle__bar"><span class="battle__bar-fill battle__bar-fill--second" style="width: 89%"></span></div>
+          </div>
+        </div>
+        <footer class="battle__foot">
+          <span>60 points still available</span>
+          <a class="home-link" href="./test-e2e-driver-standings.html">View Standings →</a>
+        </footer>
+      </section>
+      <section class="home-card battle">
+        <header class="home-card__head">
+          <h2 class="home-card__title">
+            Championship Battles
+            <span class="home-card__title-note">Test E2E2</span>
+          </h2>
+          <span class="home-card__meta">
+            2 events remaining · 30 pts + 5 PS max per round
+          </span>
+        </header>
+        <div class="battle__grid">
+          <div class="battle__side">
+            <div class="battle__driver">
+              <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+              <span class="battle__name">woosh</span>
+            </div>
+            <div class="battle__points">
+              130
+              <span class="battle__points-unit">pts</span>
+            </div>
+            <div class="battle__bar"><span class="battle__bar-fill" style="width: 100%"></span></div>
+          </div>
+          <div class="battle__gap">
+            <div class="battle__gap-value">+26</div>
+            <div class="battle__gap-label">pt gap</div>
+            <span class="battle__badge">Still Open</span>
+          </div>
+          <div class="battle__side battle__side--right">
+            <div class="battle__driver">
+              <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+              <span class="battle__name">winstall</span>
+            </div>
+            <div class="battle__points">
+              104
+              <span class="battle__points-unit">pts</span>
+            </div>
+            <div class="battle__bar"><span class="battle__bar-fill battle__bar-fill--second" style="width: 80%"></span></div>
+          </div>
+        </div>
+        <footer class="battle__foot">
+          <span>60 points still available</span>
+          <a class="home-link" href="./test-e2e2-driver-standings.html">View Standings →</a>
+        </footer>
+      </section>
+    </div>
+
+    <div class="home-duo__aside">
+      <section class="home-card">
+        <header class="home-card__head">
+          <h2 class="home-card__title">
+            Season
+            <span class="home-card__title-note">Test E2E</span>
+          </h2>
+        </header>
+        <dl class="stat-list">
+          <div class="stat-row">
+            <dt>Rounds run</dt>
+            <dd>2 / 4</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Drivers</dt>
+            <dd>30</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Different winners</dt>
+            <dd>2</dd>
+          </div>
+          <div class="stat-row">
+            <dt>DNFs</dt>
+            <dd>7</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Avg. Entries per Event</dt>
+            <dd>30</dd>
+          </div>
+        </dl>
+        <div class="stat-note">
+          <span class="stat-note__label">Closest Finish</span>
+          <span class="stat-note__value">+00:00:14.861</span>
+          <span class="stat-note__detail">Hawk24 vs THELC Matt · Rally Grundstrom</span>
+        </div>
+      </section>
+      <section class="home-card">
+        <header class="home-card__head">
+          <h2 class="home-card__title">
+            Season
+            <span class="home-card__title-note">Test E2E2</span>
+          </h2>
+        </header>
+        <dl class="stat-list">
+          <div class="stat-row">
+            <dt>Rounds run</dt>
+            <dd>2 / 4</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Drivers</dt>
+            <dd>10</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Different winners</dt>
+            <dd>1</dd>
+          </div>
+          <div class="stat-row">
+            <dt>DNFs</dt>
+            <dd>0</dd>
+          </div>
+          <div class="stat-row">
+            <dt>Avg. Entries per Event</dt>
+            <dd>10</dd>
+          </div>
+        </dl>
+        <div class="stat-note">
+          <span class="stat-note__label">Closest Finish</span>
+          <span class="stat-note__value">+00:00:29.867</span>
+          <span class="stat-note__detail">woosh vs winstall · Rally Grundstrom</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="home-card">
+    <header class="home-card__head">
+      <h2 class="home-card__title">
+        Calendar
+        <span class="home-card__title-note">Test E2E</span>
+      </h2>
+    </header>
+    <div class="rounds-grid">
+      <a class="round-card round-card--done" href="./test-e2e-0-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R1</span>
+          <span class="round-card__badge">Done</span>
+        </div>
+        <div class="round-card__name">Rally Grundstrom</div>
+        <div class="round-card__winner">Winner: Hawk24</div>
+      </a>
+      <a class="round-card round-card--done" href="./test-e2e-1-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R2</span>
+          <span class="round-card__badge">Done</span>
+        </div>
+        <div class="round-card__name">Rally Nonko</div>
+        <div class="round-card__winner">Winner: ninko</div>
+      </a>
+      <a class="round-card round-card--live" href="./test-e2e-2-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R3</span>
+          <span class="round-card__badge">Live</span>
+        </div>
+        <div class="round-card__name">Rally Finland</div>
+      </a>
+      <a class="round-card round-card--upcoming">
+        <div class="round-card__top">
+          <span class="round-card__round">R4</span>
+          <span class="round-card__badge">To come</span>
+        </div>
+        <div class="round-card__name">Rally Sweden</div>
+        <div class="round-card__date">Jan 1, 2031</div>
+              </a>
+    </div>
+  </section>
+  <section class="home-card">
+    <header class="home-card__head">
+      <h2 class="home-card__title">
+        Calendar
+        <span class="home-card__title-note">Test E2E2</span>
+      </h2>
+    </header>
+    <div class="rounds-grid">
+      <a class="round-card round-card--done" href="./test-e2e2-0-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R1</span>
+          <span class="round-card__badge">Done</span>
+        </div>
+        <div class="round-card__name">Rally Grundstrom</div>
+        <div class="round-card__winner">Winner: woosh</div>
+      </a>
+      <a class="round-card round-card--done" href="./test-e2e2-1-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R2</span>
+          <span class="round-card__badge">Done</span>
+        </div>
+        <div class="round-card__name">Rally Nonko</div>
+        <div class="round-card__winner">Winner: woosh</div>
+      </a>
+      <a class="round-card round-card--live" href="./test-e2e2-2-driver-results.html">
+        <div class="round-card__top">
+          <span class="round-card__round">R3</span>
+          <span class="round-card__badge">Live</span>
+        </div>
+        <div class="round-card__name">Rally Finland</div>
+      </a>
+      <a class="round-card round-card--upcoming">
+        <div class="round-card__top">
+          <span class="round-card__round">R4</span>
+          <span class="round-card__badge">To come</span>
+        </div>
+        <div class="round-card__name">Rally Sweden</div>
+        <div class="round-card__date">Jan 1, 2031</div>
+              </a>
+    </div>
+  </section>
+
+  <div class="home-grid-2">
+    <section class="home-card">
+      <header class="home-card__head">
+        <h2 class="home-card__title">Last Event Winners</h2>
+      </header>
+      <div class="home-card__body">
+        <div class="recap">
+          <div class="recap__head">
+            <span class="recap__event">Rally Nonko</span>
+            <span class="recap__division">Test E2E</span>
+          </div>
+          <div class="recap__winner">
+            <img src="./assets/country-flags/est.png" class="img-sm" alt="est" />
+            <span class="recap__name">ninko</span>
+            <span class="recap__margin">won by +00:00:07.905</span>
+          </div>
+          <div class="recap__foot">
+            <span>30 entries</span>
+            <a class="home-link" href="./test-e2e-1-driver-results.html">View Results →</a>
+          </div>
+        </div>
+        <div class="recap">
+          <div class="recap__head">
+            <span class="recap__event">Rally Nonko</span>
+            <span class="recap__division">Test E2E2</span>
+          </div>
+          <div class="recap__winner">
+            <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+            <span class="recap__name">woosh</span>
+            <span class="recap__margin">won by +00:00:32.028</span>
+          </div>
+          <div class="recap__foot">
+            <span>10 entries</span>
+            <a class="home-link" href="./test-e2e2-1-driver-results.html">View Results →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-card">
+      <header class="home-card__head">
+        <h2 class="home-card__title">Hot Streaks</h2>
+      </header>
+      <div class="home-card__body">
+        <div class="streak">
+          <div class="streak__driver">
+            <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+            <span class="streak__name">woosh</span>
+            <span class="streak__division">Test E2E2</span>
+          </div>
+          <div class="streak__stats">
+            2 wins · 2 podiums in last 3 events
+          </div>
+          <div class="streak__recent">
+            Recent finishes:
+            <span class="streak__finish">1</span><span class="streak__finish">1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="home-grid-2">
+    <section class="home-card home-card--table">
+      <header class="home-card__head">
+        <h2 class="home-card__title">
+          Top 3 Drivers
+          <span class="home-card__title-note">Test E2E</span>
+        </h2>
+      </header>
+      <table class="top-drivers-table">
+        <tbody>
+          <tr>
+            <td class="td-pos">1</td>
+            <td class="td-change">
+              <span class="neutral">=</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/deu.png" class="img-sm"
+                alt="deu" title="deu" />
+            </td>
+            <td class="td-driver text-left bold">Hawk24</td>
+            <td class="td-points bold">
+              104
+            </td>
+          </tr>
+          <tr>
+            <td class="td-pos">2</td>
+            <td class="td-change">
+              <span class="positive"><i class="arrow up"></i>&nbsp;1</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/fin.png" class="img-sm"
+                alt="fin" title="fin" />
+            </td>
+            <td class="td-driver text-left bold">QazRa</td>
+            <td class="td-points bold">
+              93
+            </td>
+          </tr>
+          <tr>
+            <td class="td-pos">3</td>
+            <td class="td-change">
+              <span class="positive"><i class="arrow up"></i>&nbsp;13</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/est.png" class="img-sm"
+                alt="est" title="est" />
+            </td>
+            <td class="td-driver text-left bold">ninko</td>
+            <td class="td-points bold">
+              61
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="home-card home-card--table">
+      <header class="home-card__head">
+        <h2 class="home-card__title">
+          Top 3 Drivers
+          <span class="home-card__title-note">Test E2E2</span>
+        </h2>
+      </header>
+      <table class="top-drivers-table">
+        <tbody>
+          <tr class="is-zone-promotion-double">
+            <td class="td-pos">1</td>
+            <td class="td-change">
+              <span class="neutral">=</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/aus.png" class="img-sm"
+                alt="aus" title="aus" />
+            </td>
+            <td class="td-driver text-left bold">woosh</td>
+            <td class="td-points bold">
+              130
+            </td>
+          </tr>
+          <tr class="is-zone-promotion">
+            <td class="td-pos">2</td>
+            <td class="td-change">
+              <span class="neutral">=</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/aus.png" class="img-sm"
+                alt="aus" title="aus" />
+            </td>
+            <td class="td-driver text-left bold">winstall</td>
+            <td class="td-points bold">
+              104
+            </td>
+          </tr>
+          <tr class="is-zone-promotion">
+            <td class="td-pos">3</td>
+            <td class="td-change">
+              <span class="neutral">=</span>
+            </td>
+            <td class="td-nat">
+              <img src="./assets/country-flags/aus.png" class="img-sm"
+                alt="aus" title="aus" />
+            </td>
+            <td class="td-driver text-left bold">testdriver1</td>
+            <td class="td-points bold">
+              82
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="home-card">
+      <header class="home-card__head">
+        <h2 class="home-card__title">Car Performance</h2>
+      </header>
+      <div class="home-card__body">
+        <div class="car-stat">
+          <div class="car-stat__label">Most Wins</div>
+          <div class="car-stat__name">Porsche 911 SC 3.0 Grp4</div>
+          <div class="car-stat__detail">
+            2 wins · 4 podiums · 16.7% win rate
+          </div>
+        </div>
+        <div class="car-stat">
+          <div class="car-stat__label">Best Average Performance</div>
+          <div class="car-stat__name">Porsche 911 SC 3.0 Grp4</div>
+          <div class="car-stat__detail">
+            32.3 avg points · 12 entries
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-card">
+      <header class="home-card__head">
+        <h2 class="home-card__title">Championship Rules</h2>
+      </header>
+      <div class="home-card__body">
+        <p class="rule"><span class="rule__label">Drop Rounds:</span> 2 lowest scoring rounds dropped</p>
+        <p class="rule"><span class="rule__label">Points (Top 5):</span> 30, 24, 19, 15, 12</p>
+        <p class="rule"><span class="rule__label">Power Stage Points:</span> 5, 4, 3, 2, 1</p>
+      </div>
+    </section>
   </div>
 </div>
 
@@ -2948,22 +3159,47 @@ exports[`e2e generates overall driver results 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">
@@ -4368,22 +4604,47 @@ exports[`e2e generates overall driver standings 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">
@@ -5801,22 +6062,47 @@ exports[`e2e generates overall team standings 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">
@@ -6227,22 +6513,47 @@ exports[`e2e generates team standings 1`] = `
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "Event ended";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 
   <div class="container">

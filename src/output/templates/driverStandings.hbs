@@ -62,7 +62,7 @@
           </thead>
           <tbody>
             {{#each rows}}
-            <tr{{#if this.colour}} style="background-color: {{this.colour}}"{{/if}}>
+            <tr{{#if this.zone}} class="{{this.zone}}"{{/if}}>
               <td class="td-pos">{{this.standing.currentPosition}}</td>
               <td class="td-change">
                 {{#if this.positive}}

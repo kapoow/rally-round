@@ -201,21 +201,46 @@
 
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
-    var c3 = document.getElementById("homeCountdown");
+
+    // The homepage hero splits the same countdown into labelled units.
+    var clockUnits = {
+      homeClockDays: days,
+      homeClockHours: hours,
+      homeClockMinutes: minutes,
+      homeClockSeconds: seconds
+    };
+    var setClock = function(ended) {
+      Object.keys(clockUnits).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var value = ended ? 0 : clockUnits[id];
+        el.innerHTML = id === "homeClockDays" ? value : ("0" + value).slice(-2);
+      });
+      var label = document.getElementById("homeClockLabel");
+      if (label && ended) label.innerHTML = "{{localization.event_ended}}";
+    };
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
-      if (c3) c3.innerHTML = "Event Ended";
+      setClock(true);
       return false;
     }
     if (c1) c1.innerHTML = text;
     if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
+    setClock(false);
     return true;
   };
   var x;
   if (updateCountdown()) x = setInterval(updateCountdown, 1000);
+  // This runs in the head, before the homepage hero exists, so the split
+  // clock is filled again as soon as the body has parsed rather than
+  // showing placeholders until the first tick.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCountdown();
+    });
+  }
 </script>
 {{/if}}

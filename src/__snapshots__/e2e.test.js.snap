@@ -334,8 +334,8 @@ exports[`e2e generates driver leg results 1`] = `
               <th class="th-total">Total</th>
               <th class="th-diff">Diff</th>
               <th class="th-sr">SR</th>
-              <th class="th-points">Points</th>
-              <th class="th-total-points">Total Points</th>
+              <th class="th-points th-abbr" data-short="Pts"><span class="th-abbr__full">Points</span></th>
+              <th class="th-total-points th-abbr" data-short="Tot Pts"><span class="th-abbr__full">Total Points</span></th>
             </tr>
           </thead>
           <tbody>
@@ -1321,9 +1321,9 @@ exports[`e2e generates driver results 1`] = `
               <th class="th-leg">
                 <a href="./test-e2e-0-1-driver-results.html">Leg 2</a>
               </th>
-              <th class="th-ps-points">PS Points</th>
-              <th class="th-points">Points</th>
-              <th class="th-total-points">Total Points</th>
+              <th class="th-ps-points th-abbr" data-short="PS Pts"><span class="th-abbr__full">PS Points</span></th>
+              <th class="th-points th-abbr" data-short="Pts"><span class="th-abbr__full">Points</span></th>
+              <th class="th-total-points th-abbr" data-short="Tot Pts"><span class="th-abbr__full">Total Points</span></th>
             </tr>
           </thead>
           <tbody>
@@ -2012,9 +2012,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">TASIS Edgar</span>
               </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -2035,9 +2035,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">ninko</span>
               </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -2058,9 +2058,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">Htchet</span>
               </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -2081,9 +2081,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">Superciuc93</span>
               </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -2104,9 +2104,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">Williams Huw</span>
               </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -2127,9 +2127,9 @@ exports[`e2e generates driver results 1`] = `
                 <span class="td-driver__name">MartinRC</span>
               </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -3087,9 +3087,9 @@ exports[`e2e generates overall driver results 1`] = `
               <th class="th-total">Total</th>
               <th class="th-diff">Diff</th>
               <th class="th-sr">SR</th>
-              <th class="th-ps-points">PS Points</th>
-              <th class="th-points">Points</th>
-              <th class="th-total-points">Total Points</th>
+              <th class="th-ps-points th-abbr" data-short="PS Pts"><span class="th-abbr__full">PS Points</span></th>
+              <th class="th-points th-abbr" data-short="Pts"><span class="th-abbr__full">Points</span></th>
+              <th class="th-total-points th-abbr" data-short="Tot Pts"><span class="th-abbr__full">Total Points</span></th>
             </tr>
           </thead>
           <tbody>
@@ -4076,9 +4076,9 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 
@@ -4098,9 +4098,9 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">+14:59:20.906</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">+23:27:01.989</td>
               <td class="td-sr">
                 
@@ -4120,9 +4120,9 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">+14:59:20.906</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">+23:27:01.989</td>
               <td class="td-sr">
                 
@@ -4142,9 +4142,9 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-ps">15:00:00.000</td>
+              <td class="td-ps">—</td>
               <td class="td-diff">N/A</td>
-              <td class="td-total">23:59:59.000</td>
+              <td class="td-total">—</td>
               <td class="td-diff">N/A</td>
               <td class="td-sr">
                 

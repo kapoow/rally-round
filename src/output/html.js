@@ -18,7 +18,9 @@ const {
   eventStatuses,
   getDuration,
   formatDuration,
-  useNationalityAsTeam
+  useNationalityAsTeam,
+  DNF_STAGE_TIME,
+  MAX_TOTAL_TIME
 } = require("../shared");
 const { processFantasyResults } = require("../fantasy/fantasyCalculator");
 const { getLocalization } = require("./localization");
@@ -921,6 +923,15 @@ const hasPoints = (pointsField, rows) => {
 
 const hiddenTimeDisplay = "--";
 
+// DNF_STAGE_TIME and MAX_TOTAL_TIME are sort keys, not times: they park an
+// entry at the end of the order when it has no time to show. Printed as-is
+// they read as a 15 hour stage or a 23:59 rally, so the time columns show a
+// neutral marker instead. Display only - the stored values still drive
+// sorting, points and standings. DNS is deliberately not used here: it comes
+// from the points column on a finished event, and would be wrong while an
+// event is live, where a driver without a time may still start.
+const noTimeDisplay = "—";
+
 // Stage times are durations, not clock timestamps. Keep minutes as the
 // leading unit when the hour is zero, but retain real hour values (including
 // the long DNF penalty time) so the display never becomes ambiguous.
@@ -959,6 +970,9 @@ const getStageTimeDisplay = (result, event) => {
   ) {
     return hiddenTimeDisplay;
   }
+  if (result.entry.stageTime === DNF_STAGE_TIME) {
+    return noTimeDisplay;
+  }
   return compactStageTime(formatDuration(getDuration(result.entry.stageTime)));
 };
 
@@ -985,6 +999,9 @@ const getTotalTimeDisplay = (result, event) => {
     leagueRef.league.isRallySprint
   ) {
     return hiddenTimeDisplay;
+  }
+  if (result.entry.totalTime === MAX_TOTAL_TIME) {
+    return noTimeDisplay;
   }
   return formatDuration(getDuration(result.entry.totalTime));
 };

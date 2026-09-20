@@ -94,13 +94,13 @@
               {{/each}}
               {{/if}}
               {{#if showStagePoints}}
-              <th class="th-stage-points">{{localization.stage_points}}</th>
+              <th class="th-stage-points th-abbr" data-short="{{localization.stage_points_short}}"><span class="th-abbr__full">{{localization.stage_points}}</span></th>
               {{/if}}
               {{#if showPowerStagePoints}}
-              <th class="th-ps-points">{{localization.ps}} {{localization.points}}</th>
+              <th class="th-ps-points th-abbr" data-short="{{localization.ps}} {{localization.points_short}}"><span class="th-abbr__full">{{localization.ps}} {{localization.points}}</span></th>
               {{/if}}
-              <th class="th-points">{{localization.points}}</th>
-              <th class="th-total-points">{{localization.total_points}}</th>
+              <th class="th-points th-abbr" data-short="{{localization.points_short}}"><span class="th-abbr__full">{{localization.points}}</span></th>
+              <th class="th-total-points th-abbr" data-short="{{localization.total_points_short}}"><span class="th-abbr__full">{{localization.total_points}}</span></th>
             </tr>
           </thead>
           <tbody>

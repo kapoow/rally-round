@@ -1818,8 +1818,21 @@ table:has(.td-total-points) .td-points,
 
   th,
   td {
-    padding: 0.3em 0.4em;
+    padding: 0.3em 0.32em;
     font-size: 0.55em;
+  }
+
+  /* Several results columns are sized by their header rather than their data:
+     "Total Points" holds 47px to show a two-digit number. Swap in the short
+     label here. The full text stays in the DOM (just undisplayed), so the
+     column-filter chips and the accessibility tree keep the descriptive name
+     while the column itself gets its width back. */
+  .th-abbr > .th-abbr__full {
+    display: none;
+  }
+
+  .th-abbr::after {
+    content: attr(data-short);
   }
 
   th {
@@ -2740,11 +2753,19 @@ td.hide-column {
   }
 
   .td-pos,
-  .td-total,
   .td-total-points,
   .td-adr,
   table:has(.td-result):not(:has(.td-adr)) .td-points {
     font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  /* The finishing time is the widest data column on a phone. Size it like the
+     PS time - they are the same kind of value - but keep the heavier weight so
+     it still reads as the primary result. Total Points keeps the accent, so
+     the page still has exactly one anchor figure. */
+  .td-total {
+    font-size: 0.95rem;
     font-weight: 600;
   }
 

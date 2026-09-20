@@ -745,7 +745,20 @@ const calculateDropRounds = ({
     const roundWeights = events
       .map(event => event.enduranceRoundMultiplier || 1)
       .slice(0, points.length);
-    const allowedRoundsWeight = Math.max(sum(roundWeights) - dropRounds, 0);
+    const roundsWeight = sum(roundWeights);
+    // Dropping as many rounds as have been run leaves nothing to count. In the
+    // opening rounds of a season that made every score strike through and the
+    // after-drop total read 0 for the entire field - a club that drops two
+    // rounds showed it for the first two events of every championship. Drops
+    // only start once a round would survive them, which is the threshold the
+    // standings ordering and the homepage cards already use.
+    if (roundsWeight <= dropRounds) {
+      return {
+        totalPointsAfterDropRounds: totalPoints,
+        droppedRoundIndexes: []
+      };
+    }
+    const allowedRoundsWeight = roundsWeight - dropRounds;
     const pointsAfterDropRounds = knapsack(
       allowedRoundsWeight,
       roundWeights,

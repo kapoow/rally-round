@@ -2706,6 +2706,26 @@ td.hide-column {
     z-index: 2;
   }
 
+  /* Fill a few pixels past the scroll container's clip edge. That edge lands
+     on a fractional CSS pixel (the wrapper starts at 11.25px and carries a 1px
+     border), so a device at DPR 2.x/3 can round the clip and this cell's
+     background to different device pixels, leaving a hairline of the scrolling
+     row visible to the left of Driver. Only shows on real hardware, never in
+     devtools emulation at DPR 1. The overflow is clipped, so the extra fill
+     costs nothing. `inherit` keeps it in step with the striped-row override
+     below rather than hard-coding a second copy of the colour. */
+  .event-results-table .th-driver::before,
+  .event-results-table .td-driver::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -3px;
+    width: 3px;
+    background: inherit;
+    pointer-events: none;
+  }
+
   .event-results-table tbody>tr:nth-child(even)>.td-driver {
     background: #101418;
   }

@@ -24,7 +24,7 @@
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="driver-standings-table">
           <thead>
             <tr>
               <th class="th-pos">{{localization.pos}}</th>
@@ -49,7 +49,8 @@
               {{#each headerLocations}}
                 <th class="th-location">
                   <a href="./{{../divisionName}}-{{this.eventId}}-driver-results.html" style="{{#if this.disableLink}}pointer-events: none;{{/if}}">
-                    <span class="th-location__code">{{this.locationCode}}</span>
+                    <img class="th-location__flag" src="./assets/country-flags/{{this.locationCode}}.png"
+                      alt="{{this.locationCode}}" />
                     <span class="th-location__round">R{{this.round}}</span>
                   </a>
                 </th>

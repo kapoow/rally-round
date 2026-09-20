@@ -396,6 +396,28 @@ td {
   width: 100%;
 }
 
+/* In driver standings, keep the driver's identity beside nationality and let
+   the last visible team-identity column separate that group from the compact
+   event-results block. Driver remains the flexible fallback when a division
+   has no team column. This is desktop-only so phone tables do not gain a wide
+   empty column while scrolling. */
+@media (min-width: 769px) {
+  .driver-standings-table:has(.td-team-logo) .th-driver,
+  .driver-standings-table:has(.td-team-logo) .td-driver,
+  .driver-standings-table:has(.td-team-name) .th-driver,
+  .driver-standings-table:has(.td-team-name) .td-driver {
+    width: auto;
+  }
+
+  .driver-standings-table:has(.td-team-name) .th-team-name,
+  .driver-standings-table:has(.td-team-name) .td-team-name,
+  .driver-standings-table:not(:has(.td-team-name)):has(.td-team-logo) .th-team-logo,
+  .driver-standings-table:not(:has(.td-team-name)):has(.td-team-logo) .td-team-logo {
+    width: 100%;
+    text-align: left;
+  }
+}
+
 .th-team-name,
 .td-team-name,
 .th-car-name,
@@ -484,9 +506,8 @@ td {
   color: var(--danger);
 }
 
-/* Event columns. A flag per column cost ~2.5em and told you nothing at a
-   glance once there were nine of them; the country code plus round number is
-   narrower, scannable, and works for two events in the same country. */
+/* Event columns use the same visual language as team standings while the
+   round label keeps repeated visits to one country distinguishable. */
 .th-location {
   width: 3.4em;
   padding: 0;
@@ -508,12 +529,10 @@ td {
   color: var(--accent);
 }
 
-.th-location__code {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.th-location__flag {
+  width: 1.8rem;
+  height: 1.1rem;
+  object-fit: contain;
 }
 
 .th-location__round {
@@ -595,11 +614,21 @@ tbody>tr:nth-child(3) .td-pos {
   letter-spacing: 0.01em;
 }
 
+/* A driver's team is supporting identity detail, so it uses the same quiet,
+   readable body face as the car beneath the driver's name instead of falling
+   through to the condensed generic cell type. */
+.td-team-name {
+  font-family: var(--font-body);
+  font-size: 0.8rem; /* 12px */
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--text-dim);
+}
+
 /* On the team standings the team is the row's subject, so its name carries
-   the same weight the driver's name does on every other page. Everywhere else
-   .td-team-name is a supporting column - which team a driver drives for - and
-   keeps the quieter default cell size. */
+   the same weight the driver's name does on every other page. */
 .team-standings-table .td-team-name {
+  font-family: var(--font-display);
   font-size: 1.2rem; /* 18px */
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -1848,6 +1877,14 @@ tbody > tr.is-zone-penalty .td-pos {
   .td-team-name {
     min-width: 80px;
     max-width: 130px;
+  }
+
+  /* Do not let the generic cell scale make movement indicators and flags
+     illegible. The flag dimensions are em-based, so this also preserves a
+     useful image size rather than inheriting the 8.25px cell size. */
+  .td-change,
+  .td-nat {
+    font-size: 0.8rem;
   }
 
   .arrow {
@@ -3132,10 +3169,25 @@ a.round-card:focus-visible {
 }
 
 .podium__car {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
   margin-top: 0.15em;
   font-size: var(--text-sm);
   color: var(--text-dim);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.podium__car-logo {
+  flex: 0 0 auto;
+  width: 1.4em;
+  height: 1.4em;
+  object-fit: contain;
+}
+
+.podium__car > span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -3339,6 +3391,19 @@ a.round-card:focus-visible {
     background: var(--surface-3);
   }
 
+  .event-results-table .td-driver__name,
+  .event-results-table .td-driver__car-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .event-results-table .td-driver__car {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .td-driver__name,
   .team-standings-table .td-team-name {
     font-size: 1.05rem;
@@ -3380,5 +3445,17 @@ a.round-card:focus-visible {
 
   .td-driver__car {
     font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Keep enough identity to orient the row without letting the sticky label
+     consume half of a phone viewport. Long names and models yield with an
+     ellipsis instead of widening every result row. */
+  .event-results-table .th-driver,
+  .event-results-table .td-driver {
+    width: 8.5rem;
+    min-width: 8.5rem;
+    max-width: 8.5rem;
   }
 }

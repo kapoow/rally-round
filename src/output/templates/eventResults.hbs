@@ -31,7 +31,13 @@
             <span>{{this.driver.name}}</span>
           </div>
           {{#if ../showCarName}}
-          <div class="podium__car">{{this.entry.vehicleName}}</div>
+          <div class="podium__car">
+            {{#if this.car}}
+            <img class="podium__car-logo" src="./assets/cars/{{this.car}}.png" alt="{{this.car}}"
+              title="{{this.car}}" />
+            {{/if}}
+            <span>{{this.entry.vehicleName}}</span>
+          </div>
           {{/if}}
           <div class="podium__times">
             <span class="podium__total">{{this.totalTimeDisplay}}</span>

@@ -296,7 +296,11 @@ exports[`e2e generates driver leg results 1`] = `
             <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
             <span>QazRa</span>
           </div>
-          <div class="podium__car">Subaru Impreza N14 N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+              title="subaru" />
+            <span>Subaru Impreza N14 N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:15:31.747</span>
             <span class="podium__gap">leader</span>
@@ -311,7 +315,11 @@ exports[`e2e generates driver leg results 1`] = `
             <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
             <span>Hawk24</span>
           </div>
-          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+              title="mitsubishi" />
+            <span>Mitsubishi Lancer Evo IX N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:15:45.285</span>
             <span class="podium__gap">+13.538</span>
@@ -326,7 +334,11 @@ exports[`e2e generates driver leg results 1`] = `
             <img src="./assets/country-flags/bel.png" class="img-sm" alt="bel" />
             <span>THELC Matt</span>
           </div>
-          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+              title="mitsubishi" />
+            <span>Mitsubishi Lancer Evo IX N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:15:46.897</span>
             <span class="podium__gap">+15.150</span>
@@ -1300,7 +1312,11 @@ exports[`e2e generates driver results 1`] = `
             <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
             <span>Hawk24</span>
           </div>
-          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+              title="mitsubishi" />
+            <span>Mitsubishi Lancer Evo IX N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:36:39.874</span>
             <span class="podium__gap">leader</span>
@@ -1315,7 +1331,11 @@ exports[`e2e generates driver results 1`] = `
             <img src="./assets/country-flags/bel.png" class="img-sm" alt="bel" />
             <span>THELC Matt</span>
           </div>
-          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+              title="mitsubishi" />
+            <span>Mitsubishi Lancer Evo IX N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:36:54.735</span>
             <span class="podium__gap">+14.861</span>
@@ -1330,7 +1350,11 @@ exports[`e2e generates driver results 1`] = `
             <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
             <span>QazRa</span>
           </div>
-          <div class="podium__car">Subaru Impreza N14 N4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+              title="subaru" />
+            <span>Subaru Impreza N14 N4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:38:00.240</span>
             <span class="podium__gap">+1:20.366</span>
@@ -3257,7 +3281,11 @@ exports[`e2e generates overall driver results 1`] = `
             <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
             <span>woosh</span>
           </div>
-          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+              title="porsche" />
+            <span>Porsche 911 SC 3.0 Grp4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:32:57.011</span>
             <span class="podium__gap">leader</span>
@@ -3272,7 +3300,11 @@ exports[`e2e generates overall driver results 1`] = `
             <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
             <span>winstall</span>
           </div>
-          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+              title="porsche" />
+            <span>Porsche 911 SC 3.0 Grp4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:33:29.039</span>
             <span class="podium__gap">+32.028</span>
@@ -3287,7 +3319,11 @@ exports[`e2e generates overall driver results 1`] = `
             <img src="./assets/country-flags/est.png" class="img-sm" alt="est" />
             <span>ninko</span>
           </div>
-          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__car">
+            <img class="podium__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+              title="porsche" />
+            <span>Porsche 911 SC 3.0 Grp4</span>
+          </div>
           <div class="podium__times">
             <span class="podium__total">00:33:30.252</span>
             <span class="podium__gap">+33.241</span>
@@ -4702,7 +4738,7 @@ exports[`e2e generates overall driver standings 1`] = `
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="driver-standings-table">
           <thead>
             <tr>
               <th class="th-pos">Pos</th>
@@ -4714,19 +4750,22 @@ exports[`e2e generates overall driver standings 1`] = `
 
                 <th class="th-location">
                   <a href="./overall-0-driver-results.html" style="">
-                    <span class="th-location__code">swe</span>
+                    <img class="th-location__flag" src="./assets/country-flags/swe.png"
+                      alt="swe" />
                     <span class="th-location__round">R1</span>
                   </a>
                 </th>
                 <th class="th-location">
                   <a href="./overall-1-driver-results.html" style="">
-                    <span class="th-location__code">est</span>
+                    <img class="th-location__flag" src="./assets/country-flags/est.png"
+                      alt="est" />
                     <span class="th-location__round">R2</span>
                   </a>
                 </th>
                 <th class="th-location">
                   <a href="./overall-2-driver-results.html" style="">
-                    <span class="th-location__code">fin</span>
+                    <img class="th-location__flag" src="./assets/country-flags/fin.png"
+                      alt="fin" />
                     <span class="th-location__round">R3</span>
                   </a>
                 </th>
@@ -5857,6 +5896,7 @@ exports[`e2e generates overall driver standings 1`] = `
     </div>
   </div>
 </div>
+
   <script src="./assets/js/app.js" defer></script>
 </body>
 

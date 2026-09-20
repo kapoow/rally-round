@@ -11,6 +11,24 @@
   font-display: swap;
 }
 
+/* Regular-width Barlow gives supporting copy a calmer texture than the
+   broadcast-style condensed face while keeping the two families related. */
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Barlow Condensed";
   src: url("../fonts/BarlowCondensed-Bold.woff2") format("woff2");
@@ -287,6 +305,82 @@ template {
   border: 1px solid var(--gray-border);
 }
 
+/* Results-page identity and adjacent-event controls. The club/round context
+   stays quiet above a short event title instead of becoming one run-on line. */
+.page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+.page-heading__titles {
+  min-width: 0;
+}
+
+.page-heading__eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-heading__title {
+  margin: 0;
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+.page-heading__navigation {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.55rem;
+}
+
+.page-heading__nav-button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.page-heading__nav-button:hover,
+.page-heading__nav-button:focus-visible {
+  border-color: var(--line-hover);
+  background: var(--surface-2);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-heading__title {
+    font-size: clamp(2rem, 12vw, var(--text-display));
+  }
+
+  .page-heading__navigation {
+    width: 100%;
+  }
+
+  .page-heading__nav-button {
+    flex: 1 1 0;
+    text-align: center;
+  }
+}
+
 /* Cards */
 .card {
   border: 1px solid var(--black-1);
@@ -470,8 +564,10 @@ td {
 
 /* Gaps stay a step down: they qualify the time next to them. */
 .td-diff {
-  font-size: 0.933rem; /* 14px */
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: 0.82rem; /* 12.3px */
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 /* Times and gaps are supporting detail next to the points they explain. */
@@ -607,6 +703,7 @@ tbody>tr:nth-child(3) .td-pos {
   align-items: center;
   gap: 0.4em;
   margin-top: 0.15em;
+  font-family: var(--font-body);
   font-size: 0.8rem; /* 12px */
   font-weight: 400;
   color: var(--text-dim);
@@ -866,8 +963,8 @@ table:has(.td-total-points) .td-points,
   /* =========================
      TYPE
      ========================= */
-  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial,
-    sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, -apple-system, Roboto,
+    Helvetica, Arial, sans-serif;
   /* Condensed display face for headings, micro-labels and numerals. The
      fallbacks are condensed too, so a failed font load changes the texture
      rather than the layout. */
@@ -1004,29 +1101,46 @@ table:has(.td-total-points) .td-points,
   position: sticky;
   top: 0;
   z-index: var(--z-dropdown);
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklch, var(--surface-0) 94%, transparent);
+  backdrop-filter: blur(12px);
 }
 
 .siteHeader__bar {
-  background: var(--bg);
   color: var(--fg);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--border);
+  gap: 1.25rem;
+  max-width: 1280px;
+  min-height: 62px;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
 }
 
 /* Brand / logo */
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 0.7rem;
+  color: var(--text);
   text-decoration: none;
 }
 
 .brand__img {
-  max-height: 34px;
-  width: auto;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   display: block;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .brand__img--mobile {
@@ -1039,21 +1153,31 @@ table:has(.td-total-points) .td-points,
 .navLeft {
   display: flex;
   align-items: center;
+  flex: 1 1 0;
 }
 
 .navMain {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  flex: 1;
-  justify-content: start;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
 }
 
 .navRight {
-  margin-left: auto;
+  flex: 0 0 auto;
+  justify-content: flex-end;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
 }
 
 .flag {
@@ -1063,8 +1187,21 @@ table:has(.td-total-points) .td-points,
 }
 
 .countdown {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
-  color: var(--muted);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.countdown__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-wash);
 }
 
 /* Buttons */
@@ -1072,41 +1209,57 @@ table:has(.td-total-points) .td-points,
   appearance: none;
   background: transparent;
   border: 1px solid transparent;
-  color: var(--fg);
+  color: var(--text-dim);
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--text-base);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
   cursor: pointer;
   user-select: none;
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  border-radius: var(--radius-lg);
-  transition: all 0.2s ease;
+  padding: 0.65rem 1rem;
+  border-radius: 7px;
+  transition: color 0.15s ease, background-color 0.15s ease;
   position: relative;
 }
 
 .navBtn:hover,
 .navBtn:focus {
-  background: var(--white-1);
-  border-color: var(--white-2);
+  background: var(--surface-3);
+  border-color: transparent;
+  color: var(--text);
   outline: none;
-  transform: translateY(-1px);
 }
 
-.navBtn:active {
-  transform: translateY(0);
+.navBtn--link {
+  display: block;
+  text-decoration: none;
+}
+
+.navBtn.isActive {
+  background: var(--accent);
+  color: var(--accent-fg);
 }
 
 /* Active style when dropdown is open - matches navLink active style */
 .navDrop:hover .navBtn,
 .navDrop:focus-within .navBtn {
-  background: var(--primary-light);
-  color: var(--primary-fg);
-  border-color: var(--primary-light-3);
+  background: var(--surface-3);
+  color: var(--text);
+  border-color: transparent;
 }
 
 .navDrop:hover .navBtn:hover,
 .navDrop:focus-within .navBtn:hover {
-  background: var(--primary-light-2);
-  border-color: var(--primary-light-4);
+  background: var(--surface-3);
+  border-color: transparent;
+}
+
+.navDrop:hover .navBtn.isActive,
+.navDrop:focus-within .navBtn.isActive {
+  background: var(--accent);
+  color: var(--accent-fg);
 }
 
 /* Dropdowns (Driver/Team/Fantasy) */
@@ -1121,14 +1274,14 @@ table:has(.td-total-points) .td-points,
   top: calc(100% + 0.75rem);
   left: 0;
   min-width: 260px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--spacing-md);
-  box-shadow: 0 8px 24px var(--black-4), 0 2px 8px var(--black-2);
+  background: var(--surface-1);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 0.4rem;
+  box-shadow: 0 18px 45px var(--black-4), 0 4px 12px var(--black-2);
   z-index: var(--z-dropdown-overlay);
-  backdrop-filter: blur(10px);
-  animation: fadeInDown 0.2s ease-out;
+  backdrop-filter: blur(14px);
+  animation: fadeInDown 0.14s ease-out;
   pointer-events: auto;
 }
 
@@ -1163,9 +1316,13 @@ table:has(.td-total-points) .td-points,
 .navLink {
   display: flex;
   align-items: center;
-  padding: 0.65rem var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  color: var(--fg);
+  min-height: 38px;
+  padding: 0.65rem 0.75rem;
+  border-radius: 7px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-decoration: none;
   transition: all 0.15s ease;
   position: relative;
@@ -1174,25 +1331,24 @@ table:has(.td-total-points) .td-points,
 
 .navLink:hover,
 .navLink:focus {
-  background: var(--border);
+  background: var(--surface-3);
   outline: none;
-  transform: translateX(2px);
-  color: var(--white);
+  transform: none;
+  color: var(--text);
 }
 
 .navLink.isActive,
 .navLink.active {
-  background: var(--primary-light);
-  color: var(--primary-fg);
+  background: var(--accent-wash);
+  color: var(--accent);
   font-weight: 600;
-  border-left: 3px solid var(--primary);
-  padding-left: calc(var(--spacing-xl) - 3px);
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .navLink.isActive:hover,
 .navLink.active:hover {
-  background: var(--primary-light-2);
-  transform: translateX(2px);
+  background: var(--accent-wash);
+  transform: none;
 }
 
 .dropdown {
@@ -1205,14 +1361,15 @@ table:has(.td-total-points) .td-points,
   position: absolute;
   top: calc(100% + 0.9em);
   left: 0;
-  min-width: 160px;
+  min-width: 210px;
   max-height: 70vh;
   overflow-y: auto;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--spacing-sm);
-  box-shadow: 0 10px 30px var(--black-35);
+  background: var(--surface-1);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 0.4rem;
+  box-shadow: 0 18px 45px var(--black-4), 0 4px 12px var(--black-2);
+  backdrop-filter: blur(14px);
   display: none;
   z-index: var(--z-dropdown-overlay);
   pointer-events: auto;
@@ -1242,22 +1399,31 @@ table:has(.td-total-points) .td-points,
 }
 
 .dropdown__title {
-  padding: 0.45rem 0.6rem;
-  color: var(--muted);
-  font-size: 0.9rem;
+  padding: 0.45rem 0.65rem 0.35rem;
+  color: var(--text-dimmer);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .dropdown__item {
   display: block;
-  padding: 0.55rem var(--spacing-lg);
-  border-radius: var(--radius-xl);
-  color: var(--fg);
+  min-height: 38px;
+  padding: 0.6rem 0.65rem;
+  border-radius: 7px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-decoration: none;
 }
 
 .dropdown__item:hover,
 .dropdown__item:focus {
-  background: var(--hover);
+  background: var(--surface-3);
+  color: var(--text);
   outline: none;
 }
 
@@ -1310,7 +1476,10 @@ table:has(.td-total-points) .td-points,
 }
 
 .navTitle__main {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 /* Mobile drawers */
@@ -1318,39 +1487,56 @@ table:has(.td-total-points) .td-points,
   position: absolute;
   left: 0;
   right: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--line-strong);
   max-height: calc(100vh - 64px);
   overflow: auto;
   z-index: var(--z-dropdown-overlay);
-  box-shadow: 0 4px 12px var(--black-3);
+  box-shadow: 0 18px 45px var(--black-4);
+  backdrop-filter: blur(14px);
 }
 
 .drawer__content {
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 0.75rem 0.85rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 .drawer__title {
-  padding: 0.5rem 0.25rem;
-  color: var(--muted);
+  padding: 0.65rem 0.75rem 0.35rem;
+  color: var(--text-dimmer);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .drawer__link {
-  padding: 0.75rem var(--spacing-lg);
-  border-radius: var(--radius);
+  min-height: 44px;
+  padding: 0.75rem;
+  border-radius: 8px;
   text-decoration: none;
-  color: var(--fg);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.03em;
   border: 1px solid transparent;
 }
 
 .drawer__link:hover,
 .drawer__link:focus {
-  background: var(--hover);
-  border-color: var(--border);
+  background: var(--surface-3);
+  border-color: transparent;
+  color: var(--text);
   outline: none;
+}
+
+.drawer__link.isActive {
+  border-color: var(--accent-edge);
+  background: var(--accent-wash);
+  color: var(--accent);
 }
 
 /* Secondary nav (event pills).
@@ -1437,7 +1623,13 @@ table:has(.td-total-points) .td-points,
   }
 
   .siteHeader__bar {
-    padding: 0.6rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    padding: 0.7rem 1.5rem;
+  }
+
+  .navRight {
+    justify-self: end;
   }
 }
 
@@ -2478,4 +2670,66 @@ td.hide-column {
    than by column index. */
 .hide-car .td-driver__car {
   display: none;
+}
+
+/* Mobile table density. Earlier generic td scaling was being overridden by
+   the component-level rem sizes above, leaving phone rows nearly as loud as
+   desktop. Keep names and final totals as anchors; soften supporting data. */
+@media (max-width: 768px) {
+  /* Let rank and nationality scroll away, then keep the driver's identity as
+     the row label while the user compares the remaining result columns. */
+  .event-results-table .th-driver,
+  .event-results-table .td-driver {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface-1);
+    box-shadow: 1px 0 0 var(--line), 8px 0 12px -12px rgba(0, 0, 0, 0.9);
+  }
+
+  .event-results-table .th-driver {
+    z-index: 2;
+  }
+
+  .event-results-table tbody>tr:nth-child(even)>.td-driver {
+    background: #101418;
+  }
+
+  .event-results-table tbody>tr:hover>.td-driver {
+    background: var(--surface-3);
+  }
+
+  .td-driver__name {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .td-pos,
+  .td-total,
+  .td-total-points,
+  .td-adr,
+  table:has(.td-result):not(:has(.td-adr)) .td-points {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .td-ps,
+  .td-sr,
+  .td-leg,
+  .td-stage-points,
+  .td-ps-points,
+  .td-points,
+  .td-result {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .td-diff {
+    font-size: 0.82rem;
+    font-weight: 400;
+  }
+
+  .td-driver__car {
+    font-size: 0.72rem;
+  }
 }

@@ -1,10 +1,20 @@
 <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/{{logo}}" />
-          <h2 class="ml-1">{{fullTitle}}</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            {{siteTitlePrefix}}{{#if pageContext}} · {{pageContext}}{{/if}} · R{{roundNumber}} {{localization.of}} {{totalRounds}}
+          </div>
+          <h1 class="page-heading__title">{{resultsTitle}}</h1>
+        </div>
+        <div class="page-heading__navigation" aria-label="Event navigation">
+          {{#if previousEventHref}}
+          <a class="page-heading__nav-button" href="{{previousEventHref}}">← {{localization.previous}}</a>
+          {{/if}}
+          {{#if nextEventHref}}
+          <a class="page-heading__nav-button" href="{{nextEventHref}}">{{localization.next}} →</a>
+          {{/if}}
         </div>
       </div>
       {{{eventNav}}}
@@ -47,7 +57,7 @@
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="event-results-table">
           <thead>
             <tr>
               <th class="th-pos">{{localization.pos}}</th>
@@ -104,11 +114,13 @@
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">{{this.driver.name}}</span>
                 {{#if ../showCar}}
+                {{#if this.car}}
                 <span class="td-driver__car">
                   <img class="td-driver__car-logo" src="./assets/cars/{{this.car}}.png" alt="{{this.car}}"
                     title="{{this.car}}" />
                   {{#if ../showCarName}}<span class="td-driver__car-name">{{this.entry.vehicleName}}</span>{{/if}}
                 </span>
+                {{/if}}
                 {{/if}}
               </td>
               {{#if ../overall}}

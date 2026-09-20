@@ -146,7 +146,7 @@ const getEventNavHTML = (links, headerLocations, currentEventIndex) => {
   });
 };
 
-const getNavigationHTML = (currentPage, currentMenu, links) => {
+const getNavigationHTML = (currentPage, currentMenu, links, currentView) => {
   Object.keys(links).forEach(menu => {
     if (menu === "active") return;
     links[menu].forEach(link => {
@@ -157,8 +157,38 @@ const getNavigationHTML = (currentPage, currentMenu, links) => {
       }
     });
   });
+  const resultsLinks = (links.driver || [])
+    .map(link => {
+      const division = leagueRef.divisions[link.name];
+      if (!division || !division.events || division.events.length === 0) {
+        return null;
+      }
+      return {
+        ...link,
+        href: `./${getResultsFileName({
+          divisionName: division.divisionName,
+          eventIndex: division.events.length - 1
+        })}`
+      };
+    })
+    .filter(Boolean);
+  const activeView =
+    currentView || (currentPage === "home" ? "home" : "standings");
+
   return compiledNavigation({
     links,
+    resultsLinks,
+    hasMultipleResults: resultsLinks.length > 1,
+    hasMultipleDriverStandings: (links.driver || []).length > 1,
+    hasMultipleTeamStandings: (links.team || []).length > 1,
+    homeActive: activeView === "home",
+    resultsActive: activeView === "results",
+    driverStandingsActive:
+      activeView === "standings" && currentMenu === "driver",
+    teamStandingsActive: activeView === "standings" && currentMenu === "team",
+    primaryResultsHref: resultsLinks[0]?.href,
+    primaryDriverHref: links.driver?.[0]?.href,
+    primaryTeamHref: links.team?.[0]?.href,
     endTime: leagueRef.endTime,
     activeCountry: leagueRef.activeCountryCode,
     logo: leagueRef.league.logo,
@@ -952,10 +982,7 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
   const headerLocations = getHeaderLocations(events);
   const rows = event.results.driverResults.map((result, index) => {
     const resultDivision = leagueRef.divisions[result.divisionName];
-    const { driver, country, carBrand } = getDriverData(
-      result.name,
-      divisionName
-    );
+    const { driver, country } = getDriverData(result.name, divisionName);
     if (leagueRef.league.placement)
       result.stageTimes = getStageColours(
         result.stageTimes,
@@ -965,7 +992,10 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
     return {
       ...result,
       position: index + 1,
-      car: entryCar ? entryCar.brand : carBrand,
+      // Event-result rows must only identify the car actually recorded for
+      // this event. DNS placeholders have no vehicleName; falling back to the
+      // driver's season/profile car falsely attributes an earlier car here.
+      car: entryCar ? entryCar.brand : undefined,
       driver,
       teamLogo: getTeamLogo(driver.teamId),
       team2Logo: getTeamLogo(driver.team2Id),
@@ -1043,11 +1073,39 @@ const writeDriverResultsHTML = ({
   const data = transformForDriverResultsHTML(event, division, legIndex);
   data.overall = division.divisionName === "overall";
 
-  data.navigation = getNavigationHTML(division.divisionName, "driver", links);
+  data.navigation = getNavigationHTML(
+    division.divisionName,
+    "driver",
+    links,
+    "results"
+  );
   data.eventNav = getEventNavHTML(links, data.headerLocations, eventIndex);
   data.links = links;
   data.siteTitlePrefix = leagueRef.league.siteTitlePrefix;
   data.lastUpdatedAt = getLastUpdatedAt();
+  if (data.title.toLowerCase() !== data.siteTitlePrefix.toLowerCase()) {
+    data.pageContext = data.title;
+  }
+  data.roundNumber = eventIndex + 1;
+  data.totalRounds =
+    division.events.length + (division.upcomingEvents || []).length;
+  data.resultsTitle = `${data.location.countryName} ${
+    isNil(legIndex) ? "" : `${data.localization.leg} ${legIndex + 1} `
+  }${data.localization.driver_results}`;
+  if (eventIndex > 0) {
+    data.previousEventHref = `./${getResultsFileName({
+      divisionName: division.divisionName,
+      eventIndex: eventIndex - 1,
+      legIndex
+    })}`;
+  }
+  if (eventIndex < division.events.length - 1) {
+    data.nextEventHref = `./${getResultsFileName({
+      divisionName: division.divisionName,
+      eventIndex: eventIndex + 1,
+      legIndex
+    })}`;
+  }
 
   const templateFile = `${templatePath}/eventResults.hbs`;
   const _t = fs.readFileSync(templateFile).toString();

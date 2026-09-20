@@ -45,6 +45,7 @@ exports[`e2e generates driver leg results 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -57,37 +58,49 @@ exports[`e2e generates driver leg results 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink isActive" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink isActive" href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -97,11 +110,7 @@ exports[`e2e generates driver leg results 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -116,8 +125,7 @@ exports[`e2e generates driver leg results 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">driver - Test E2E</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -133,23 +141,32 @@ exports[`e2e generates driver leg results 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link isActive" href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link isActive" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -169,7 +186,7 @@ exports[`e2e generates driver leg results 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -183,26 +200,35 @@ exports[`e2e generates driver leg results 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Test E2E Rally Grundstrom Leg 1 Driver Results</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Test E2E · R1 of 4
+          </div>
+          <h1 class="page-heading__title">Rally Grundstrom Leg 1 Driver Results</h1>
+        </div>
+        <div class="page-heading__navigation" aria-label="Event navigation">
+          <a class="page-heading__nav-button" href="./test-e2e-1-0-driver-results.html">Next →</a>
         </div>
       </div>
           <div class="secondaryNav">
@@ -298,7 +324,7 @@ exports[`e2e generates driver leg results 1`] = `
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="event-results-table">
           <thead>
             <tr>
               <th class="th-pos">Pos</th>
@@ -946,6 +972,7 @@ exports[`e2e generates driver leg results 1`] = `
     </div>
   </div>
 </div>
+
   <script src="./assets/js/app.js" defer></script>
 </body>
 
@@ -997,6 +1024,7 @@ exports[`e2e generates driver results 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -1009,37 +1037,49 @@ exports[`e2e generates driver results 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink isActive" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink isActive" href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -1049,11 +1089,7 @@ exports[`e2e generates driver results 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -1068,8 +1104,7 @@ exports[`e2e generates driver results 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">driver - Test E2E</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -1085,23 +1120,32 @@ exports[`e2e generates driver results 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link isActive" href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link isActive" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -1121,7 +1165,7 @@ exports[`e2e generates driver results 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -1135,26 +1179,35 @@ exports[`e2e generates driver results 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Test E2E Rally Grundstrom Driver Results</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Test E2E · R1 of 4
+          </div>
+          <h1 class="page-heading__title">Rally Grundstrom Driver Results</h1>
+        </div>
+        <div class="page-heading__navigation" aria-label="Event navigation">
+          <a class="page-heading__nav-button" href="./test-e2e-1-driver-results.html">Next →</a>
         </div>
       </div>
           <div class="secondaryNav">
@@ -1250,7 +1303,7 @@ exports[`e2e generates driver results 1`] = `
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="event-results-table">
           <thead>
             <tr>
               <th class="th-pos">Pos</th>
@@ -1957,11 +2010,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">TASIS Edgar</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">privateer</td>
               <td class="td-ps">15:00:00.000</td>
@@ -1985,11 +2033,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">ninko</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
               <td class="td-ps">15:00:00.000</td>
@@ -2013,11 +2056,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Htchet</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">privateer</td>
               <td class="td-ps">15:00:00.000</td>
@@ -2041,11 +2079,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Superciuc93</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">privateer</td>
               <td class="td-ps">15:00:00.000</td>
@@ -2069,11 +2102,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Williams Huw</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">privateer</td>
               <td class="td-ps">15:00:00.000</td>
@@ -2097,11 +2125,6 @@ exports[`e2e generates driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">MartinRC</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
-                    title="ford" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-team-name text-left">privateer</td>
               <td class="td-ps">15:00:00.000</td>
@@ -2129,6 +2152,7 @@ exports[`e2e generates driver results 1`] = `
     </div>
   </div>
 </div>
+
   <script src="./assets/js/app.js" defer></script>
 </body>
 
@@ -2180,6 +2204,7 @@ exports[`e2e generates driver standings 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -2192,37 +2217,49 @@ exports[`e2e generates driver standings 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link isActive" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -2232,11 +2269,7 @@ exports[`e2e generates driver standings 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -2251,8 +2284,7 @@ exports[`e2e generates driver standings 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">TEST-E2E</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -2268,23 +2300,32 @@ exports[`e2e generates driver standings 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link " href="./test-e2e-driver-standings.html">
+      <a class="drawer__link isActive" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -2304,7 +2345,7 @@ exports[`e2e generates driver standings 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -2318,17 +2359,21 @@ exports[`e2e generates driver standings 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
@@ -2749,6 +2794,7 @@ exports[`e2e generates overall driver results 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -2761,37 +2807,49 @@ exports[`e2e generates overall driver results 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink isActive" href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -2801,11 +2859,7 @@ exports[`e2e generates overall driver results 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -2820,8 +2874,7 @@ exports[`e2e generates overall driver results 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">driver - Overall</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -2837,23 +2890,32 @@ exports[`e2e generates overall driver results 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link " href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link isActive" href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -2873,7 +2935,7 @@ exports[`e2e generates overall driver results 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -2887,26 +2949,36 @@ exports[`e2e generates overall driver results 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Overall Rally Nonko Driver Results</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Overall · R2 of 3
+          </div>
+          <h1 class="page-heading__title">Rally Nonko Driver Results</h1>
+        </div>
+        <div class="page-heading__navigation" aria-label="Event navigation">
+          <a class="page-heading__nav-button" href="./overall-0-driver-results.html">← Previous</a>
+          <a class="page-heading__nav-button" href="./overall-2-driver-results.html">Next →</a>
         </div>
       </div>
           <div class="secondaryNav">
@@ -3002,7 +3074,7 @@ exports[`e2e generates overall driver results 1`] = `
         <div class="table-scroll-indicator__content"></div>
       </div>
       <div class="table-scroll-wrapper">
-        <table id="tableDrivers">
+        <table id="tableDrivers" class="event-results-table">
           <thead>
             <tr>
               <th class="th-pos">Pos</th>
@@ -4001,11 +4073,6 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Joe Hutchinson</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
@@ -4028,11 +4095,6 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Erki Erik Poola</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
@@ -4055,11 +4117,6 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Thom B</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
@@ -4082,11 +4139,6 @@ exports[`e2e generates overall driver results 1`] = `
               </td>
               <td class="td-driver text-left bold">
                 <span class="td-driver__name">Williams Huw</span>
-                <span class="td-driver__car">
-                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
-                    title="mitsubishi" />
-                  <span class="td-driver__car-name"></span>
-                </span>
               </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
@@ -4110,6 +4162,7 @@ exports[`e2e generates overall driver results 1`] = `
     </div>
   </div>
 </div>
+
   <script src="./assets/js/app.js" defer></script>
 </body>
 
@@ -4161,6 +4214,7 @@ exports[`e2e generates overall driver standings 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -4173,16 +4227,28 @@ exports[`e2e generates overall driver standings 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
             <a class="navLink isActive" href="./overall-driver-standings.html">
@@ -4192,18 +4258,18 @@ exports[`e2e generates overall driver standings 1`] = `
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -4213,11 +4279,7 @@ exports[`e2e generates overall driver standings 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -4232,8 +4294,7 @@ exports[`e2e generates overall driver standings 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">driver - Overall</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -4249,23 +4310,32 @@ exports[`e2e generates overall driver standings 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link " href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
           <a class="drawer__link isActive" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -4285,7 +4355,7 @@ exports[`e2e generates overall driver standings 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -4299,17 +4369,21 @@ exports[`e2e generates overall driver standings 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
@@ -5573,6 +5647,7 @@ exports[`e2e generates overall team standings 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -5585,34 +5660,46 @@ exports[`e2e generates overall team standings 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-team-standings.html">
+            <a class="navLink" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
             <a class="navLink isActive" href="./overall-team-standings.html">
@@ -5625,11 +5712,7 @@ exports[`e2e generates overall team standings 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -5644,8 +5727,7 @@ exports[`e2e generates overall team standings 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">team - Overall</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -5661,20 +5743,29 @@ exports[`e2e generates overall team standings 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link " href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
-          <a class="drawer__link " href="./test-e2e-team-standings.html">
+          <a class="drawer__link" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
           <a class="drawer__link isActive" href="./overall-team-standings.html">
@@ -5697,7 +5788,7 @@ exports[`e2e generates overall team standings 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -5711,17 +5802,21 @@ exports[`e2e generates overall team standings 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">
@@ -5978,6 +6073,7 @@ exports[`e2e generates team standings 1`] = `
       <div class="dropdown">
         <a class="brand" href="./index.html" aria-label="Home">
           <img class="brand__img" src="./assets/rsc-guy.png" alt="Logo" />
+          <span class="brand__name">TEST-E2E</span>
         </a>
 
         <div class="dropdown__menu" role="menu">
@@ -5990,37 +6086,49 @@ exports[`e2e generates team standings 1`] = `
     </div>
 
 <nav class="navMain navDesktopOnly" aria-label="Primary">
+  <a class="navBtn navBtn--link" href="./index.html">
+    Home
+  </a>
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link" href="./test-e2e-2-driver-results.html">
+        Driver Results
+      </a>
+      <div class="navMenu">
+          <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
+          <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+      </div>
+    </div>
+    <div class="navDrop" tabindex="0">
+      <a class="navBtn navBtn--link" href="./test-e2e-driver-standings.html">
         Driver Standings
-      </button>
+      </a>
 
       <div class="navMenu">
-            <a class="navLink " href="./test-e2e-driver-standings.html">
+            <a class="navLink" href="./test-e2e-driver-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-driver-standings.html">
+            <a class="navLink" href="./test-e2e2-driver-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-driver-standings.html">
+            <a class="navLink" href="./overall-driver-standings.html">
               Overall
             </a>
       </div>
     </div>
 
     <div class="navDrop" tabindex="0">
-      <button class="navBtn" type="button" aria-haspopup="true">
+      <a class="navBtn navBtn--link isActive" href="./test-e2e-team-standings.html">
         Team Standings
-      </button>
+      </a>
 
       <div class="navMenu">
             <a class="navLink isActive" href="./test-e2e-team-standings.html">
               Test E2E
             </a>
-            <a class="navLink " href="./test-e2e2-team-standings.html">
+            <a class="navLink" href="./test-e2e2-team-standings.html">
               Test E2E2
             </a>
-            <a class="navLink " href="./overall-team-standings.html">
+            <a class="navLink" href="./overall-team-standings.html">
               Overall
             </a>
       </div>
@@ -6030,11 +6138,7 @@ exports[`e2e generates team standings 1`] = `
 
 
       <div class="navRight navDesktopOnly">
-        <img
-          class="flag"
-          src="./assets/country-flags/fin.png"
-          alt="fin"
-        />
+        <span class="countdown__dot" aria-hidden="true"></span>
         <span id="countdown2" class="countdown"></span>
       </div>
 
@@ -6049,8 +6153,7 @@ exports[`e2e generates team standings 1`] = `
     </button>
 
     <div class="navTitle navMobileOnly">
-          <div class="navTitle__main">team - Test E2E</div>
-      <div id="countdown" class="countdown"></div>
+      <div class="navTitle__main">TEST-E2E</div>
     </div>
 
 		<button
@@ -6066,23 +6169,32 @@ exports[`e2e generates team standings 1`] = `
 
   <div id="mobileNav" class="drawer" hidden>
     <nav class="drawer__content" aria-label="Mobile menu">
-          <a class="drawer__link " href="./test-e2e-driver-standings.html">
+      <a class="drawer__link" href="./index.html">
+        Home
+      </a>
+        <a class="drawer__link" href="./test-e2e-2-driver-results.html">
+          Driver Results - Test E2E
+        </a>
+        <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
+          Driver Results - Test E2E2
+        </a>
+          <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-driver-standings.html">
+          <a class="drawer__link" href="./test-e2e2-driver-standings.html">
             Driver Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-driver-standings.html">
+          <a class="drawer__link" href="./overall-driver-standings.html">
             Driver Standings - Overall
           </a>
 
           <a class="drawer__link isActive" href="./test-e2e-team-standings.html">
             Team Standings - Test E2E
           </a>
-          <a class="drawer__link " href="./test-e2e2-team-standings.html">
+          <a class="drawer__link" href="./test-e2e2-team-standings.html">
             Team Standings - Test E2E2
           </a>
-          <a class="drawer__link " href="./overall-team-standings.html">
+          <a class="drawer__link" href="./overall-team-standings.html">
             Team Standings - Overall
           </a>
 
@@ -6102,7 +6214,7 @@ exports[`e2e generates team standings 1`] = `
 
 <script>
   var countDownDate = new Date("2030-12-31T22:59:00.000Z").getTime();
-  var x = setInterval(function() {
+  var updateCountdown = function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
@@ -6116,17 +6228,21 @@ exports[`e2e generates team standings 1`] = `
     var c1 = document.getElementById("countdown");
     var c2 = document.getElementById("countdown2");
     var c3 = document.getElementById("homeCountdown");
-    if (c1) c1.innerHTML = text;
-    if (c2) c2.innerHTML = text;
-    if (c3) c3.innerHTML = text;
 
     if (distance < 0) {
       clearInterval(x);
       if (c1) c1.innerHTML = "Event Ended";
       if (c2) c2.innerHTML = "Event Ended";
       if (c3) c3.innerHTML = "Event Ended";
+      return false;
     }
-  }, 1000);
+    if (c1) c1.innerHTML = text;
+    if (c2) c2.innerHTML = text;
+    if (c3) c3.innerHTML = text;
+    return true;
+  };
+  var x;
+  if (updateCountdown()) x = setInterval(updateCountdown, 1000);
 </script>
 
   <div class="container">

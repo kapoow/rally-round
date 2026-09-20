@@ -59,6 +59,9 @@ const pageShortcuts = useE2E
 const target = args.find(arg => !arg.startsWith("--")) || "home";
 const startPage = pageShortcuts[target] || target;
 const basePort = Number(process.env.PORT) || 4173;
+// Listen beyond WSL's loopback interface so Windows can forward this port to
+// other devices on the LAN (for example, a physical phone via portproxy).
+const previewHost = process.env.HOST || "0.0.0.0";
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -215,9 +218,10 @@ const listen = port => {
     throw err;
   });
 
-  server.listen(port, () => {
+  server.listen(port, previewHost, () => {
     const url = `http://localhost:${port}/${startPage}`;
     console.log(`\npreview server running: ${url}`);
+    console.log(`listening on: ${previewHost}:${port}`);
     console.log(
       `data: ${useE2E ? "e2e fixtures (full pipeline)" : "snapshot (9 events, 1 active)"}`
     );

@@ -29,8 +29,15 @@ npm run validate-configs
 npm run config-editor
 
 # Preview homepage changes (fast development workflow)
-npm run preview        # Generate test-e2e homepage and open in browser
-npm run preview:watch  # Auto-regenerate on file changes
+# Live preview server (recommended for frontend work)
+npm run preview:serve             # Full 9-event season snapshot, live reload
+npm run preview:serve standings   # Open straight on a page (home|standings|results|active)
+npm run preview:serve -- --e2e    # Use e2e fixtures + full pipeline instead
+LOCALE=se npm run preview:serve   # Render in Swedish (default is English)
+
+# One-shot / no server
+npm run preview        # Generate test-e2e site and open homepage in browser
+npm run preview:watch  # Auto-regenerate on file changes (no server, manual refresh)
 ```
 
 ### Generating Results
@@ -262,7 +269,12 @@ theme: "dark"  // Options: "dark", "red", "green", "orange" (default: blue/purpl
 
 **Debug event fetch**: Set `DEBUG=tkidman:*` env var for detailed logging
 
-**Update templates**: Edit `.hbs` files in `src/output/templates/`, data comes from `writeHTML` functions. Use `npm run preview` for fast feedback during homepage development.
+**Update templates**: Edit `.hbs` files in `src/output/templates/`, data comes from `writeHTML` functions. Use `npm run preview:serve` for fast feedback — it live-reloads on save.
+
+**Preview data sources**:
+- **Snapshot** (default): `src/__fixtures__/preview/leagueResults.json` is a committed, fully-processed league — 9 events (8 finished + 1 active), 39 drivers, real DNF/DNS rows. `scripts/preview-snapshot.js` loads it straight into `leagueRef` and calls `writeAllHTML()`, skipping fetch and processing entirely (~700ms rebuilds, no credentials). Use it for design work, especially wide standings tables.
+- **E2E** (`--e2e`): runs the real pipeline over RBR CSV fixtures. Only 3 processed events, but exercises `src/index.js` — use it when changing processing logic.
+- The snapshot renderer pins `CLUB=preview` (`src/state/preview/`) so output goes to `./hidden/out/preview` and can never overwrite a real club's results. Note `checkOutputDirs()` in `src/output/output.js` **deletes** `outputPath` — never point it at a real club.
 
 **Change deployment target**: Update `websiteName` and optionally `subfolderName` in config
 

@@ -13,7 +13,8 @@
     "prepush": "npm run lint -- --fix && npm run test && npm run validate-configs",
     "prepare-championship": "node prepareNewChampionship.js",
     "preview": "node scripts/preview-e2e.js",
-    "preview:watch": "nodemon --watch src --watch assets/css --exec 'npm run preview'"
+    "preview:watch": "nodemon --watch src --watch assets --ext js,hbs,css,json --exec 'npm run preview -- --no-open'",
+    "preview:serve": "node scripts/preview-server.js"
   },
   "repository": {
     "type": "git",

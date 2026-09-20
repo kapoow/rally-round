@@ -1,4 +1,8 @@
-const { useDropRoundPoints } = require("./html");
+const {
+  useDropRoundPoints,
+  compactStageTime,
+  compactTimeDiff
+} = require("./html");
 const { leagueRef } = require("../state/league");
 
 describe("useDropRoundPoints", () => {
@@ -55,5 +59,27 @@ describe("useDropRoundPoints", () => {
   test("uses total points when there are no drop rounds", () => {
     leagueRef.league.dropLowestScoringRoundsNumber = 0;
     expect(useDropRoundPoints({ events: events(3) })).toBe(false);
+  });
+});
+
+describe("compact timing displays", () => {
+  test("removes only a zero hour from stage times", () => {
+    expect(compactStageTime("00:06:15.778")).toBe("06:15.778");
+    expect(compactStageTime("00:00:39.094")).toBe("00:39.094");
+    expect(compactStageTime("01:06:15.778")).toBe("1:06:15.778");
+    expect(compactStageTime("15:00:00.000")).toBe("15:00:00.000");
+  });
+
+  test("removes redundant leading units from gaps", () => {
+    expect(compactTimeDiff("+00:00:01.952")).toBe("+1.952");
+    expect(compactTimeDiff("+00:02:06.986")).toBe("+2:06.986");
+    expect(compactTimeDiff("+01:02:06.986")).toBe("+1:02:06.986");
+    expect(compactTimeDiff("-00:00:00.358")).toBe("-0.358");
+  });
+
+  test("leaves result markers unchanged", () => {
+    expect(compactTimeDiff("--")).toBe("--");
+    expect(compactTimeDiff("N/A")).toBe("N/A");
+    expect(compactTimeDiff(undefined)).toBeUndefined();
   });
 });

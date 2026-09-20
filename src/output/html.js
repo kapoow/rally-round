@@ -913,6 +913,35 @@ const hasPoints = (pointsField, rows) => {
 };
 
 const hiddenTimeDisplay = "--";
+
+// Stage times are durations, not clock timestamps. Keep minutes as the
+// leading unit when the hour is zero, but retain real hour values (including
+// the long DNF penalty time) so the display never becomes ambiguous.
+const compactStageTime = value => {
+  if (typeof value !== "string") return value;
+  const match = value.match(/^(\d+):(\d{2}:\d{2}(?:\.\d+)?)$/);
+  if (!match) return value;
+  const [, hours, remainder] = match;
+  return Number(hours) === 0 ? remainder : `${Number(hours)}:${remainder}`;
+};
+
+// Gaps read most quickly in motorsport notation when leading zero units are
+// omitted: +1.952, +2:06.986, +1:02:06.986. Non-time markers pass through.
+const compactTimeDiff = value => {
+  if (typeof value !== "string") return value;
+  const match = value.match(/^([+-]?)(\d+):(\d{2}):(\d{2}(?:\.\d+)?)$/);
+  if (!match) return value;
+
+  const [, sign, hours, minutes, seconds] = match;
+  if (Number(hours) > 0) {
+    return `${sign}${Number(hours)}:${minutes}:${seconds}`;
+  }
+  if (Number(minutes) > 0) {
+    return `${sign}${Number(minutes)}:${seconds}`;
+  }
+  return `${sign}${seconds.replace(/^0(?=\d)/, "")}`;
+};
+
 const getStageTimeDisplay = (result, event) => {
   if (event.hideTimesUntilEventEnd) {
     return hiddenTimeDisplay;
@@ -923,7 +952,7 @@ const getStageTimeDisplay = (result, event) => {
   ) {
     return hiddenTimeDisplay;
   }
-  return formatDuration(getDuration(result.entry.stageTime));
+  return compactStageTime(formatDuration(getDuration(result.entry.stageTime)));
 };
 
 const getStageDiffDisplay = (result, event) => {
@@ -936,7 +965,7 @@ const getStageDiffDisplay = (result, event) => {
   ) {
     return hiddenTimeDisplay;
   }
-  return result.entry.stageDiff;
+  return compactTimeDiff(result.entry.stageDiff);
 };
 
 const getTotalTimeDisplay = (result, event) => {
@@ -963,7 +992,7 @@ const getTotalDiffDisplay = (result, event) => {
   ) {
     return hiddenTimeDisplay;
   }
-  return result.entry.totalDiff;
+  return compactTimeDiff(result.entry.totalDiff);
 };
 
 const getFullResultsLink = (division, event) => {
@@ -1312,5 +1341,7 @@ module.exports = {
   colours,
   // tests
   getStandingColour,
-  useDropRoundPoints
+  useDropRoundPoints,
+  compactStageTime,
+  compactTimeDiff
 };

@@ -595,6 +595,17 @@ tbody>tr:nth-child(3) .td-pos {
   letter-spacing: 0.01em;
 }
 
+/* On the team standings the team is the row's subject, so its name carries
+   the same weight the driver's name does on every other page. Everywhere else
+   .td-team-name is a supporting column - which team a driver drives for - and
+   keeps the quieter default cell size. */
+.team-standings-table .td-team-name {
+  font-size: 1.2rem; /* 18px */
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
 .td-driver__car {
   display: flex;
   align-items: center;
@@ -3328,7 +3339,8 @@ a.round-card:focus-visible {
     background: var(--surface-3);
   }
 
-  .td-driver__name {
+  .td-driver__name,
+  .team-standings-table .td-team-name {
     font-size: 1.05rem;
     font-weight: 600;
   }

@@ -520,35 +520,122 @@ function initColumnFilter(table) {
     }
   };
 
-  // Batch filter item creation using DocumentFragment
-  const fragment = document.createDocumentFragment();
-  headers.forEach((header, index) => {
-    const isVisible = !hiddenColumns.has(index);
+  // Column groups. A reader does not think in columns, they think in the
+  // handful of things they want out of the way - so one chip toggles every
+  // column belonging to that idea. Labels come from the headers themselves,
+  // which keeps them localized for free.
+  const GROUPS = {
+    "driver-results": [
+      { key: "ps", classes: ["th-ps"] },
+      { key: "diff", classes: ["th-diff"] },
+      { key: "sr", classes: ["th-sr"] },
+      {
+        key: "points-detail",
+        label: "Points detail",
+        // Total points always stays: it is the answer the page exists to give.
+        classes: ["th-ps-points", "th-stage-points", "th-leg", "th-points"]
+      }
+    ],
+    standings: [
+      { key: "nat", classes: ["th-nat"] },
+      { key: "change", label: "Change", classes: ["th-change"] },
+      { key: "points", classes: ["th-points"] }
+    ]
+  };
 
-    const item = document.createElement("div");
-    item.className = "column-filter__item";
-    item.innerHTML = `
-      <input 
-        type="checkbox" 
-        class="column-filter__checkbox" 
-        id="col-${index}" 
-        data-column-index="${index}"
-        ${isVisible ? "checked" : ""}
-      >
-      <label class="column-filter__label" for="col-${index}">
-        ${getColumnName(header, index)}
-      </label>
-    `;
-    fragment.appendChild(item);
-  });
-  filterItems.appendChild(fragment);
+  const headerList = Array.from(headers);
+  const groups = (GROUPS[getPageType()] || [])
+    .map(group => {
+      const indices = headerList
+        .map((header, index) =>
+          group.classes.some(cls => header.classList.contains(cls))
+            ? index
+            : -1
+        )
+        .filter(index => index >= 0);
+      return { ...group, indices };
+    })
+    .filter(group => group.indices.length > 0)
+    .map(group => ({
+      ...group,
+      label: group.label || getColumnName(headerList[group.indices[0]], 0)
+    }));
 
-  // Apply all column visibility changes IMMEDIATELY (synchronously)
-  // This prevents FOUC - we want columns hidden before first paint
-  headers.forEach((header, index) => {
-    const isVisible = !hiddenColumns.has(index);
-    toggleColumn(index, isVisible);
+  // The car logo and model live inside the driver cell rather than in their
+  // own column, so they are toggled by class instead of by column index and
+  // stored under their own key.
+  const carStorageKey = `${storageKey}_car`;
+  const hasCar = !!table.querySelector(".td-driver__car");
+  let carHidden = false;
+  try {
+    carHidden = localStorage.getItem(carStorageKey) === "hidden";
+  } catch (e) {
+    carHidden = false;
+  }
+
+  const applyCar = () => {
+    table.classList.toggle("hide-car", carHidden);
+  };
+
+  const isGroupVisible = group =>
+    group.indices.some(index => !hiddenColumns.has(index));
+
+  const renderChips = () => {
+    filterItems.textContent = "";
+    const fragment = document.createDocumentFragment();
+
+    groups.forEach(group => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "column-chip";
+      chip.dataset.group = group.key;
+      chip.textContent = group.label;
+      chip.setAttribute("aria-pressed", String(isGroupVisible(group)));
+      chip.classList.toggle("is-off", !isGroupVisible(group));
+      fragment.appendChild(chip);
+    });
+
+    if (hasCar) {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "column-chip";
+      chip.dataset.group = "car";
+      chip.textContent = "Car";
+      chip.setAttribute("aria-pressed", String(!carHidden));
+      chip.classList.toggle("is-off", carHidden);
+      fragment.appendChild(chip);
+    }
+
+    filterItems.appendChild(fragment);
+  };
+
+  filterItems.addEventListener("click", e => {
+    const chip = e.target.closest(".column-chip");
+    if (!chip) return;
+
+    if (chip.dataset.group === "car") {
+      carHidden = !carHidden;
+      applyCar();
+      try {
+        localStorage.setItem(carStorageKey, carHidden ? "hidden" : "shown");
+      } catch (err) {
+        // Silently fail if localStorage is unavailable
+      }
+      renderChips();
+      return;
+    }
+
+    const group = groups.find(g => g.key === chip.dataset.group);
+    if (!group) return;
+
+    const makeVisible = !isGroupVisible(group);
+    group.indices.forEach(index => toggleColumn(index, makeVisible));
+    savePreferences();
+    renderChips();
   });
+
+  renderChips();
+  applyCar();
 
   const preloadStyle = document.getElementById('filter-preload');
   if (preloadStyle) {

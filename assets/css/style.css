@@ -1,3 +1,24 @@
+/* === Fonts ===
+   Barlow Condensed (SIL OFL, see assets/fonts/OFL.txt), subset to Latin +
+   Latin Extended-A so names like "ŠKODA Fabia" still render, and served as
+   woff2 at ~22KB a weight. font-display: swap so a cold cache shows text in
+   the fallback face immediately rather than blocking on the download. */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/BarlowCondensed-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/BarlowCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* === Base reset  === */
 *,
 *:before,
@@ -12,10 +33,13 @@ html {
 
 body {
   margin: 0;
-  font-family: Verdana, "Segoe UI", system-ui, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
-  color: #111;
-  background-color: #fff;
+  color: var(--text);
+  background-color: var(--surface-0);
+  /* Clubs set a light gradient via inline backgroundStyle; the dark ground
+     must win until those configs are cleaned up. */
+  background-image: none !important;
 }
 
 h1,
@@ -24,15 +48,28 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Segoe UI", Verdana, system-ui, sans-serif;
+  font-family: var(--font-display);
   margin: 0.5em 0;
-  font-weight: 500;
-  line-height: 1.25;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 h2 {
-  font-size: 2rem;
-  color: black;
+  font-size: var(--text-2xl);
+  color: var(--text);
+}
+
+/* Page title. Condensed uppercase at display size is what gives the pages
+   their broadcast-graphic feel; it also buys back the width that a long club
+   name plus page name would otherwise eat. */
+.logo h2 {
+  font-size: var(--text-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 0.95;
+  margin: 0;
 }
 
 p {
@@ -318,15 +355,38 @@ template {
    TABLES
    ========================= */
 
+/* Tables run entirely in the condensed face. It unifies names, times and
+   points into one texture, and the narrower figures buy back real width in a
+   table this wide. Tabular figures keep every time and points column aligned
+   on the decimal, so numbers read as a column rather than as text. */
+table {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Let columns take the width their content needs and scroll the wrapper,
+   rather than squeezing nine event columns until the numbers collide. Scales
+   with however many events a division has, so no magic min-width. */
+.table-scroll-wrapper>table {
+  min-width: max-content;
+}
+
 th {
   cursor: pointer;
-  padding: 0.5em;
+  padding: 0.75em 0.6em;
   text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--text-muted);
 }
 
 td {
-  padding: 0.5em;
+  padding: 0.7em 0.6em;
   text-align: center;
+  font-size: var(--text-sm);
 }
 
 .th-driver,
@@ -370,17 +430,78 @@ td {
   font-weight: bold;
 }
 
+/* Condensed sets smaller at a given size, so the data cells get nudged back
+   up rather than inheriting the body scale. */
+.td-pos,
+.td-ps,
+.td-diff,
+.td-total,
+.td-sr,
+.td-leg,
+.td-stage-points,
+.td-ps-points,
+.td-points,
+.td-total-points,
+.td-adr,
+.td-result {
+  font-weight: 600;
+  font-size: var(--text-base);
+  letter-spacing: 0.01em;
+}
+
+/* Times and gaps are supporting detail next to the points they explain. */
+.td-ps,
+.td-diff,
+.td-total {
+  color: var(--text-muted);
+}
+
+/* The finishing time is the one clock value worth reading first. */
+.td-total {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.td-sr {
+  color: var(--danger);
+}
+
+/* Event columns. A flag per column cost ~2.5em and told you nothing at a
+   glance once there were nine of them; the country code plus round number is
+   narrower, scannable, and works for two events in the same country. */
 .th-location {
-  width: 2.5em;
+  width: 3.4em;
+  padding: 0;
 }
 
 .th-location a {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 0.65em 0.3em;
   text-decoration: none;
+  color: inherit;
+  transition: background-color 0.12s ease, color 0.12s ease;
 }
 
 .th-location a:hover {
-  opacity: 0.8;
+  background-color: var(--surface-3);
+  color: var(--accent);
+}
+
+.th-location__code {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.th-location__round {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
 }
 
 th>img,
@@ -389,17 +510,152 @@ th>a>img {
   margin: auto;
 }
 
+/* The table sits in its own card: a bordered, rounded surface lifted off the
+   page ground. It gives the data an edge to sit against and makes the
+   horizontal scroll on narrow screens read as the card's own, not the page's. */
+.table-scroll-wrapper {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-1);
+  overflow-x: auto;
+}
+
 thead>tr {
-  background-color: var(--primary);
-  color: var(--primary-fg);
+  background-color: transparent;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Striping is back, but two steps apart instead of the old light theme's
+   jump: enough to guide the eye across a nine-event row, not enough to read
+   as banding. */
+tbody>tr {
+  background-color: var(--surface-1);
+  border-bottom: 1px solid var(--line-soft);
 }
 
 tbody>tr:nth-child(even) {
-  background-color: var(--gray-light-2);
+  background-color: #101418;
 }
 
-tbody>tr:nth-child(odd) {
-  background-color: var(--gray-light);
+tbody>tr:last-child {
+  border-bottom: 0;
+}
+
+tbody>tr:hover {
+  background-color: var(--surface-3);
+}
+
+/* Position and driver: the two columns you scan down. */
+.td-pos {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+tbody>tr:nth-child(1) .td-pos,
+tbody>tr:nth-child(2) .td-pos,
+tbody>tr:nth-child(3) .td-pos {
+  color: var(--accent);
+}
+
+/* Driver identity: name over car. Folding the car logo and model in here
+   retires two columns whose only job was to describe the same driver, and
+   pairs facts that are read together anyway. */
+.td-driver {
+  font-size: var(--text-base);
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.td-driver__name {
+  display: block;
+  /* Condensed reads lighter than the body face, so names take the heavier
+     weight to stay the anchor of the row. */
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: 0.01em;
+}
+
+.td-driver__car {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.15em;
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.td-driver__car-logo {
+  flex: 0 0 auto;
+  width: 1.4em;
+  height: 1.4em;
+  object-fit: contain;
+}
+
+.td-driver__car-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A points cell carries three meanings; colour separates them at a glance
+   while the literal DNF/DNS text keeps it readable without colour. */
+.td-result.is-score {
+  color: var(--text);
+}
+
+.td-result.is-dnf {
+  color: var(--danger);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.td-result.is-dns {
+  color: var(--text-dim);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+}
+
+/* Season totals are the answer the page exists to give. */
+.td-points {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.td-adr {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+/* Each page has exactly one figure the reader came for, and it gets the
+   accent. On standings that is points after drop rounds, falling back to
+   total points when a division has no drop rounds. On an event's results it
+   is the driver's total for that event, not the overall-placement points. */
+table:has(.td-result):not(:has(.td-adr)) .td-points {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.td-total-points {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+/* On a results page the component point columns are supporting detail. */
+table:has(.td-total-points) .td-points,
+.td-ps-points,
+.td-stage-points,
+.td-leg {
+  color: var(--text-muted);
 }
 
 /* =========================
@@ -530,39 +786,119 @@ tbody>tr:nth-child(odd) {
    ========================= */
 
 :root {
-  /* Colors */
-  --bg: #0b0b0b;
-  --fg: #f4f4f4;
-  --muted: #bdbdbd;
-  --border: rgba(255, 255, 255, 0.12);
-  --hover: rgba(255, 255, 255, 0.08);
-  --primary: #5355bf;
-  --primary-dark: #4345a8;
-  --primary-light: rgba(83, 85, 191, 0.2);
-  --primary-light-2: rgba(83, 85, 191, 0.3);
-  --primary-light-3: rgba(83, 85, 191, 0.4);
-  --primary-light-4: rgba(83, 85, 191, 0.5);
-  --primary-fg: #ffffff;
-  --white: #ffffff;
-  --white-95: rgba(255, 255, 255, 0.95);
-  --white-25: rgba(255, 255, 255, 0.25);
-  --white-3: rgba(255, 255, 255, 0.3);
-  --white-5: rgba(255, 255, 255, 0.5);
-  --white-1: rgba(255, 255, 255, 0.1);
-  --white-2: rgba(255, 255, 255, 0.2);
-  --black-1: rgba(0, 0, 0, 0.1);
-  --black-2: rgba(0, 0, 0, 0.2);
-  --black-3: rgba(0, 0, 0, 0.3);
-  --black-35: rgba(0, 0, 0, 0.35);
-  --black-4: rgba(0, 0, 0, 0.4);
-  --gray-light: #f5f5f5;
-  --gray-light-2: #dfedff;
-  --gray-light-3: #e9e9e9;
-  --gray-dark: #555;
-  --gray-dark-2: #1f1f1f;
-  --gray-border: darkgray;
-  --success: green;
-  --error: red;
+  /* =========================
+     ACCENT
+     One hue drives the whole accent ramp. Lightness and chroma stay fixed,
+     so a club changes its accent by setting --accent-h alone (see the accent
+     presets below). OKLCH is perceptually uniform, which is what keeps every
+     hue equally legible on the dark ground - plain hex ramps do not.
+     ========================= */
+  --accent-h: 75; /* amber; at this hue --accent resolves to #FFB020 */
+  --accent-c: 0.165;
+
+  --accent: oklch(0.813 var(--accent-c) var(--accent-h));
+  --accent-bright: oklch(0.862 calc(var(--accent-c) * 0.85) var(--accent-h));
+  --accent-dim: oklch(0.62 calc(var(--accent-c) * 0.6) var(--accent-h));
+  --accent-faint: oklch(0.45 calc(var(--accent-c) * 0.35) var(--accent-h));
+  /* Hotter, deeper partner to the accent - hue-rotated rather than fixed, so
+     it stays in family whichever accent a club picks. */
+  --accent-deep: oklch(0.636 0.187 calc(var(--accent-h) - 35));
+  /* Text placed on an accent fill: dark, not white - accent is a light tone. */
+  --accent-fg: oklch(0.161 0.033 var(--accent-h));
+  --accent-wash: oklch(0.813 var(--accent-c) var(--accent-h) / 0.12);
+  --accent-edge: oklch(0.813 var(--accent-c) var(--accent-h) / 0.35);
+
+  /* =========================
+     SURFACES + TEXT (dark)
+     A near-neutral ramp with a trace of blue so it reads as considered black
+     rather than muddy grey.
+     ========================= */
+  --surface-0: #0a0c0e; /* page ground */
+  --surface-1: #0e1114; /* cards, table body */
+  --surface-2: #12161a; /* raised: chips, toggles, sticky columns */
+  --surface-3: #161b20; /* hover */
+
+  --text: #e9edf2;
+  --text-muted: #a6aeb7; /* secondary copy */
+  --text-dim: #8a939d; /* tertiary: car names, diffs */
+  --text-dimmer: #727c86; /* micro-labels, DNS */
+  --text-faint: #5c656f; /* round numbers under event codes */
+
+  --line: #1c2126; /* borders, table rules */
+  --line-soft: #161a1f; /* row separators */
+  --line-strong: #2a3138; /* button and chip outlines */
+  --line-hover: #4a545e;
+
+  /* =========================
+     STATUS
+     Independent of accent so meaning never shifts with a club's colour. The
+     warm red sits with the amber family rather than fighting it.
+     ========================= */
+  --danger: oklch(0.636 0.187 40); /* DNF, super rally penalty */
+  --positive: oklch(0.72 0.17 148); /* position gained */
+  --negative: oklch(0.636 0.187 40); /* position lost */
+
+  /* =========================
+     TYPE
+     ========================= */
+  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial,
+    sans-serif;
+  /* Condensed display face for headings, micro-labels and numerals. The
+     fallbacks are condensed too, so a failed font load changes the texture
+     rather than the layout. */
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed",
+    system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas,
+    monospace;
+
+  --text-xs: 0.72rem;
+  --text-sm: 0.82rem;
+  --text-base: 0.95rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-display: clamp(2.2rem, 5vw, 3.4rem);
+
+  --tracking-label: 0.12em; /* uppercase micro-labels */
+
+  /* =========================
+     LEGACY ALIASES
+     The component CSS below still speaks in these names. Pointing them at the
+     new palette turns the whole site dark in one step; components get
+     rewritten onto the semantic tokens page by page.
+     ========================= */
+  --bg: var(--surface-0);
+  --fg: var(--text);
+  --muted: var(--text-muted);
+  --border: var(--line);
+  --hover: oklch(1 0 0 / 0.06);
+  --primary: var(--surface-2);
+  --primary-dark: var(--surface-1);
+  --primary-light: oklch(1 0 0 / 0.06);
+  --primary-light-2: oklch(1 0 0 / 0.09);
+  --primary-light-3: oklch(1 0 0 / 0.12);
+  --primary-light-4: oklch(1 0 0 / 0.16);
+  --primary-fg: var(--text);
+  --white: var(--text);
+  --white-95: oklch(1 0 0 / 0.95);
+  --white-25: oklch(1 0 0 / 0.25);
+  --white-3: oklch(1 0 0 / 0.3);
+  --white-5: oklch(1 0 0 / 0.5);
+  --white-1: oklch(1 0 0 / 0.1);
+  --white-2: oklch(1 0 0 / 0.2);
+  --black-1: oklch(0 0 0 / 0.1);
+  --black-2: oklch(0 0 0 / 0.2);
+  --black-3: oklch(0 0 0 / 0.3);
+  --black-35: oklch(0 0 0 / 0.35);
+  --black-4: oklch(0 0 0 / 0.4);
+  --gray-light: var(--surface-2);
+  --gray-light-2: var(--surface-2);
+  --gray-light-3: var(--surface-3);
+  --gray-dark: var(--text-muted);
+  --gray-dark-2: var(--surface-1);
+  --gray-border: var(--line);
+  --success: var(--positive);
+  --error: var(--danger);
 
   /* Border radius */
   --radius: 12px;
@@ -596,48 +932,47 @@ tbody>tr:nth-child(odd) {
    THEME VARIANTS
    ========================= */
 
-/* Dark theme - Blue Grey with white text */
-.theme-dark {
-  --primary: #263238;
-  --primary-dark: #1a1f23;
-  --primary-light: rgba(38, 50, 56, 0.2);
-  --primary-light-2: rgba(38, 50, 56, 0.3);
-  --primary-light-3: rgba(38, 50, 56, 0.4);
-  --primary-light-4: rgba(38, 50, 56, 0.5);
-  --primary-fg: #ffffff;
+/* Every club now renders on the dark ground; the theme class only picks an
+   accent hue. Hues were measured from each club's previous brand colour, so
+   the identity survives the redesign.
+
+   A club sets its accent with `theme: "<name>"` in initialState.js. Arbitrary
+   colours (hex/rgb/oklch) can later be passed straight through as an inline
+   --accent-h override without adding a class here. */
+
+/* Amber - the default; matches the SRS design. */
+.theme-dark,
+.theme-amber {
+  --accent-h: 75;
 }
 
-/* Red theme - Material Red 800 with white text */
+/* Measured from #c62828. Note: close to --danger (H=25), so DNF markers lean
+   on the literal "DNF" text rather than colour alone on this accent. */
 .theme-red {
-  --primary: #c62828;
-  --primary-dark: #b71c1c;
-  --primary-light: rgba(198, 40, 40, 0.2);
-  --primary-light-2: rgba(198, 40, 40, 0.3);
-  --primary-light-3: rgba(198, 40, 40, 0.4);
-  --primary-light-4: rgba(198, 40, 40, 0.5);
-  --primary-fg: #ffffff;
+  --accent-h: 27;
 }
 
-/* Green theme - Material Green 800 with white text */
+/* Measured from #2e7d32. */
 .theme-green {
-  --primary: #2e7d32;
-  --primary-dark: #1b5e20;
-  --primary-light: rgba(46, 125, 50, 0.2);
-  --primary-light-2: rgba(46, 125, 50, 0.3);
-  --primary-light-3: rgba(46, 125, 50, 0.4);
-  --primary-light-4: rgba(46, 125, 50, 0.5);
-  --primary-fg: #ffffff;
+  --accent-h: 144;
+  --accent-c: 0.14;
 }
 
-/* Orange theme - Material Orange 800 with white text */
+/* Measured from #ef6c00. */
 .theme-orange {
-  --primary: #ef6c00;
-  --primary-dark: #e65100;
-  --primary-light: rgba(239, 108, 0, 0.2);
-  --primary-light-2: rgba(239, 108, 0, 0.3);
-  --primary-light-3: rgba(239, 108, 0, 0.4);
-  --primary-light-4: rgba(239, 108, 0, 0.5);
-  --primary-fg: #ffffff;
+  --accent-h: 48;
+}
+
+/* Measured from #5355bf - the old default for JRC/OOR/BRL. */
+.theme-violet {
+  --accent-h: 278;
+  --accent-c: 0.15;
+}
+
+/* Blue, for clubs that want cooler branding than violet. */
+.theme-blue {
+  --accent-h: 245;
+  --accent-c: 0.15;
 }
 
 .siteHeader {
@@ -993,33 +1328,69 @@ tbody>tr:nth-child(odd) {
   outline: none;
 }
 
-/* Secondary nav (flags row) */
+/* Secondary nav (event pills).
+   Previously a full-bleed row of 32px flags stretched edge to edge, which
+   shouted louder than the page title and told you nothing about which event
+   you were on. Now a centred row of compact pills: flag for recognition,
+   country code for precision, and the current event marked in the accent. */
 .secondaryNav {
-  background: var(--gray-light-3);
   display: flex;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-sm) var(--spacing-md);
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin-bottom: 1rem;
+  padding-bottom: 2px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
-  scrollbar-width: thin;
-  border-bottom: 1px solid var(--black-1);
+  scrollbar-width: none;
 }
 
-/* Items grow to spread the flags when they fit, but never shrink below the flag
-   width - with many events the row scrolls sideways instead of overlapping flags */
+.secondaryNav::-webkit-scrollbar {
+  display: none;
+}
+
 .secondaryNav__item {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  flex: 1 0 auto;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 5px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  text-decoration: none;
   scroll-snap-align: start;
+  transition: border-color 0.12s ease, color 0.12s ease,
+    background-color 0.12s ease;
+}
+
+.secondaryNav__item:hover {
+  border-color: var(--line-hover);
+  color: var(--text);
+}
+
+.secondaryNav__item--active {
+  border-color: var(--accent-edge);
+  background: var(--accent-wash);
+  color: var(--accent);
 }
 
 .secondaryNav__flag {
-  height: 32px;
-  border-radius: var(--spacing-sm);
+  height: 12px;
+  width: 18px;
+  object-fit: cover;
+  border-radius: 2px;
   display: block;
+}
+
+.secondaryNav__code {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* Responsive visibility */
@@ -1045,11 +1416,6 @@ tbody>tr:nth-child(odd) {
   }
 }
 
-@media only screen and (max-width: 992px) {
-  .secondaryNav__flag {
-    height: 32px;
-  }
-}
 
 /* =========================
    MOBILE TABLE RESPONSIVENESS
@@ -1283,12 +1649,16 @@ tbody>tr:nth-child(odd) {
     padding: 0.5em;
   }
 
+  /* Keep a comfortable touch target on phones without turning the pills
+     into chunky blocks. */
   .secondaryNav__item {
-    min-width: 44px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 36px;
+    padding: 6px 12px;
+  }
+
+  .secondaryNav {
+    justify-content: flex-start;
+    padding: 8px 12px;
   }
 }
 
@@ -1833,4 +2203,149 @@ td.hide-column {
   .season-stats-grid {
     grid-template-columns: 1fr;
   }
+}
+/* =========================================================
+   Sections 2-4 of the design-mock additions (best score,
+   podium cards, quieter column filter). The pinned-column
+   section is deliberately not included - see NOTES review.
+   ========================================================= */
+/* 2. BEST SCORE PER DRIVER
+   Reading across a row, the driver's best round should pop — it turns the
+   row into a form curve. Needs a class from the generator (see notes). */
+.td-result.is-best {
+  color: var(--accent);
+}
+
+/* 3. PODIUM CARDS (results page)
+   Top three lifted out above the table: position, points, name, car,
+   finishing time, gap. Gold/silver/bronze only as a hairline + wash so the
+   accent stays meaningful in the table below. */
+.podium {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin-bottom: 1em;
+}
+
+.podium__item {
+  flex: 1 1 15em;
+  min-width: 0;
+  padding: 1em 1.1em;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-1);
+}
+
+.podium__item--1 {
+  border-color: color-mix(in oklch, var(--accent) 30%, var(--line));
+  background: linear-gradient(160deg, color-mix(in oklch, var(--accent) 10%, var(--surface-1)), var(--surface-1) 70%);
+}
+
+.podium__item--2 {
+  background: linear-gradient(160deg, color-mix(in oklch, #c9d2db 7%, var(--surface-1)), var(--surface-1) 70%);
+}
+
+.podium__item--3 {
+  background: linear-gradient(160deg, color-mix(in oklch, #c08552 8%, var(--surface-1)), var(--surface-1) 70%);
+}
+
+.podium__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.podium__pos {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.podium__points {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.podium__item--1 .podium__pos,
+.podium__item--1 .podium__points { color: var(--accent); }
+.podium__item--2 .podium__pos,
+.podium__item--2 .podium__points { color: #c9d2db; }
+.podium__item--3 .podium__pos,
+.podium__item--3 .podium__points { color: #c08552; }
+
+.podium__name {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.6em;
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.podium__car {
+  margin-top: 0.15em;
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.podium__times {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5em;
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+  border-top: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.podium__total {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.podium__gap {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  .podium__item { flex-basis: 100%; }
+}
+
+/* 4. QUIETER COLUMN FILTER
+   The trigger is a utility, not a destination — it should not compete with
+   the event pills or the data. Small, outlined, no fill. */
+.column-filter__btn {
+  padding: 0.3em 0.7em;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.column-filter__btn:hover,
+.column-filter__btn.is-open {
+  background: transparent;
+  border-color: var(--white-25);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.column-filter__btn::after {
+  font-size: 0.6em;
+  opacity: 0.6;
 }

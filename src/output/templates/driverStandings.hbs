@@ -7,6 +7,7 @@
           <h2 class="ml-1">{{title}} {{localization.driver_standings}}</h2>
         </div>
       </div>
+      {{{eventNav}}}
       <div class="column-filter">
         <button class="column-filter__btn" type="button" aria-label="Filter columns">
           <span>Filter Columns</span>
@@ -44,20 +45,18 @@
               {{#if showTeam2LogoColumn}}
               <th class="th-team2">{{team2ColumnName}}</th>
               {{/if}}
-              {{#if showCar}}
-              <th class="th-car">{{localization.car}}</th>
-              {{/if}}
 
               {{#each headerLocations}}
                 <th class="th-location">
                   <a href="./{{../divisionName}}-{{this.eventId}}-driver-results.html" style="{{#if this.disableLink}}pointer-events: none;{{/if}}">
-                    <img src="./assets/country-flags/{{this.locationCode}}.png" alt="{{this.locationCode}}" title="{{this.locationCode}}"/>
+                    <span class="th-location__code">{{this.locationCode}}</span>
+                    <span class="th-location__round">R{{this.round}}</span>
                   </a>
                 </th>
               {{/each}}
               <th class="th-points">{{localization.points}}</th>
               {{#if showPointsAfterDropRounds}}
-              <th class="th-adr">{{localization.adr}}</th>
+              <th class="th-adr" title="{{afterDropRoundMessage}}">{{localization.adr}}</th>
               {{/if}}
             </tr>
           </thead>
@@ -84,7 +83,16 @@
                 <img src="./assets/country-flags/{{this.country.code}}.png" class="img-sm"
                   alt="{{this.country.code}}" title="{{this.country.code}}" />
               </td>
-              <td class="td-driver text-left bold">{{this.driver.name}}</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">{{this.driver.name}}</span>
+                {{#if ../showCar}}
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/{{this.car}}.png" alt="{{this.car}}"
+                    title="{{this.car}}" />
+                  {{#if ../showCarName}}<span class="td-driver__car-name">{{this.driver.car}}</span>{{/if}}
+                </span>
+                {{/if}}
+              </td>
               {{#if ../overall}}
               <td class="td-div">{{this.divisionDisplayName}}</td>
               {{/if}}
@@ -105,21 +113,9 @@
                   title="{{this.driver.team2Id}}" />
               </td>
               {{/if}}
-              {{#if ../showCar}}
-              {{#if ../showCarName}}
-              <td class="td-car-name text-left">
-                {{this.driver.car}}
-              </td>
-              {{else}}
-              <td class="td-car">
-                <img src="./assets/cars/{{this.car}}.png" class="img-md" alt="{{this.car}}"
-                  title="{{this.car}}" />
-              </td>
-              {{/if}}
-              {{/if}}
               {{#each this.results}}
               {{#with this}}
-              <td class="td-result">
+              <td class="td-result {{resultClass pointsDisplay}}{{#if isBest}} is-best{{/if}}">
                 {{pointsDisplay}}
               </td>
               {{/with}}

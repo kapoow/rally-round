@@ -1,6 +1,7 @@
 // Load the AWS SDK for Node.js
 const AWS = require("aws-sdk");
 const fs = require("fs");
+const path = require("path");
 const debug = require("debug")("tkidman:rally-round:awsAPI");
 const { outputPath, cachePath } = require("../../shared");
 const { difference } = require("lodash");
@@ -121,6 +122,40 @@ const uploadJS = async ({ bucket, championshipFolder }) => {
   debug(`uploaded app.js to s3`);
 };
 
+// Fonts are few and change rarely, so they go up whole rather than diffed
+// like the logo folders. Without this the site falls back to a system face
+// and the display type silently loses its condensed look.
+const uploadFonts = async ({ bucket, championshipFolder }) => {
+  const fontDir = "./assets/fonts";
+  if (!fs.existsSync(fontDir)) {
+    return;
+  }
+  const remoteFontFolder = championshipFolder
+    ? `${championshipFolder}/assets/fonts`
+    : "assets/fonts";
+  const contentTypes = {
+    ".woff2": "font/woff2",
+    ".woff": "font/woff",
+    ".ttf": "font/ttf",
+    ".txt": "text/plain"
+  };
+  const files = fs
+    .readdirSync(fontDir)
+    .filter(file => contentTypes[path.extname(file).toLowerCase()]);
+
+  await Promise.all(
+    files.map(file =>
+      uploadToS3({
+        file: `${fontDir}/${file}`,
+        key: `${remoteFontFolder}/${file}`,
+        bucket,
+        contentType: contentTypes[path.extname(file).toLowerCase()]
+      })
+    )
+  );
+  debug(`uploaded ${files.length} font files to s3`);
+};
+
 const uploadCache = async ({
   directory,
   bucket,
@@ -197,6 +232,7 @@ const upload = async (bucket, championshipFolder) => {
 
   await uploadCSS({ bucket, championshipFolder });
   await uploadJS({ bucket, championshipFolder });
+  await uploadFonts({ bucket, championshipFolder });
 };
 
 const downloadFiles = async (bucket, keys) => {

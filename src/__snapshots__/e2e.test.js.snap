@@ -165,29 +165,6 @@ exports[`e2e generates driver leg results 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>
@@ -228,6 +205,83 @@ exports[`e2e generates driver leg results 1`] = `
           <h2 class="ml-1">Test E2E Rally Grundstrom Leg 1 Driver Results</h2>
         </div>
       </div>
+          <div class="secondaryNav">
+        <a
+          class="secondaryNav__item secondaryNav__item--active"
+          href="./test-e2e-0-driver-results.html"
+          style=""
+          title="swe - R1"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="" />
+          <span class="secondaryNav__code">swe</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-1-driver-results.html"
+          style=""
+          title="est - R2"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="" />
+          <span class="secondaryNav__code">est</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-2-driver-results.html"
+          style=""
+          title="fin - R3"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="" />
+          <span class="secondaryNav__code">fin</span>
+        </a>
+    </div>
+
+      <div class="podium">
+        <div class="podium__item podium__item--1">
+          <div class="podium__top">
+            <span class="podium__pos">1</span>
+            <span class="podium__points">1 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
+            <span>QazRa</span>
+          </div>
+          <div class="podium__car">Subaru Impreza N14 N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:15:31.747</span>
+            <span class="podium__gap">leader</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--2">
+          <div class="podium__top">
+            <span class="podium__pos">2</span>
+            <span class="podium__points">0 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
+            <span>Hawk24</span>
+          </div>
+          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:15:45.285</span>
+            <span class="podium__gap">+00:00:13.538</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--3">
+          <div class="podium__top">
+            <span class="podium__pos">3</span>
+            <span class="podium__points">0 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/bel.png" class="img-sm" alt="bel" />
+            <span>THELC Matt</span>
+          </div>
+          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:15:46.897</span>
+            <span class="podium__gap">+00:00:15.150</span>
+          </div>
+        </div>
+      </div>
       <div class="column-filter">
         <button class="column-filter__btn" type="button" aria-label="Filter columns">
           <span>Filter Columns</span>
@@ -251,8 +305,6 @@ exports[`e2e generates driver leg results 1`] = `
               <th class="th-nat">Nat</th>
               <th class="th-driver">Driver</th>
               <th class="th-team-name">Team Name</th>
-              <th class="th-car">Car</th>
-              <th class="th-car-name">Car Name</th>
               <th class="th-total">Total</th>
               <th class="th-diff">Diff</th>
               <th class="th-sr">SR</th>
@@ -267,15 +319,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/fin.png" class="img-sm"
                   alt="fin" title="fin" />
               </td>
-              <td class="td-driver text-left bold">QazRa</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">QazRa</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-total">00:15:31.747</td>
               <td class="td-diff">--</td>
               <td class="td-sr">
@@ -290,15 +342,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Hawk24</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Hawk24</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:15:45.285</td>
               <td class="td-diff">+00:00:13.538</td>
               <td class="td-sr">
@@ -313,15 +365,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/bel.png" class="img-sm"
                   alt="bel" title="bel" />
               </td>
-              <td class="td-driver text-left bold">THELC Matt</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">THELC Matt</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:15:46.897</td>
               <td class="td-diff">+00:00:15.150</td>
               <td class="td-sr">
@@ -336,15 +388,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Joe Hutchinson</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Joe Hutchinson</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:16:00.404</td>
               <td class="td-diff">+00:00:28.657</td>
               <td class="td-sr">
@@ -359,15 +411,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">HotdogCowboy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">HotdogCowboy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:16:01.516</td>
               <td class="td-diff">+00:00:29.769</td>
               <td class="td-sr">
@@ -382,15 +434,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">PETTET Jordan (shakey-deal)</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-total">00:16:08.614</td>
               <td class="td-diff">+00:00:36.867</td>
               <td class="td-sr">
@@ -405,15 +457,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/nor.png" class="img-sm"
                   alt="nor" title="nor" />
               </td>
-              <td class="td-driver text-left bold">Roy Magnes</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Roy Magnes</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-total">00:16:08.765</td>
               <td class="td-diff">+00:00:37.018</td>
               <td class="td-sr">
@@ -428,15 +480,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">satchmo</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">satchmo</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:16:25.551</td>
               <td class="td-diff">+00:00:53.804</td>
               <td class="td-sr">
@@ -451,15 +503,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Weepy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Weepy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:16:40.901</td>
               <td class="td-diff">+00:01:09.154</td>
               <td class="td-sr">
@@ -474,15 +526,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/kor.png" class="img-sm"
                   alt="kor" title="kor" />
               </td>
-              <td class="td-driver text-left bold">Prodicrux</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Prodicrux</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:16:46.396</td>
               <td class="td-diff">+00:01:14.649</td>
               <td class="td-sr">
@@ -497,15 +549,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">FAHEY Andrew</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">FAHEY Andrew</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/seat.png" alt="seat"
+                    title="seat" />
+                  <span class="td-driver__car-name">Seat Leon Cupra R GrpN</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/seat.png" class="img-md" alt="seat"
-                  title="seat" />
-              </td>
-              <td class="td-car-name text-left">
-                Seat Leon Cupra R GrpN
-              </td>
               <td class="td-total">00:17:33.411</td>
               <td class="td-diff">+00:02:01.664</td>
               <td class="td-sr">
@@ -520,15 +572,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">jezza</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">jezza</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/seat.png" alt="seat"
+                    title="seat" />
+                  <span class="td-driver__car-name">Seat Leon Cupra R GrpN</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/seat.png" class="img-md" alt="seat"
-                  title="seat" />
-              </td>
-              <td class="td-car-name text-left">
-                Seat Leon Cupra R GrpN
-              </td>
               <td class="td-total">00:17:40.456</td>
               <td class="td-diff">+00:02:08.709</td>
               <td class="td-sr">
@@ -543,15 +595,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">ctbr</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ctbr</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:17:50.029</td>
               <td class="td-diff">+00:02:18.282</td>
               <td class="td-sr">
@@ -566,15 +618,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Maximilian Maksy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Maximilian Maksy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:19:33.054</td>
               <td class="td-diff">+00:04:01.307</td>
               <td class="td-sr">
@@ -589,15 +641,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Thom B</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Thom B</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:19:48.728</td>
               <td class="td-diff">+00:04:16.981</td>
               <td class="td-sr">
@@ -612,15 +664,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/row.png" class="img-sm"
                   alt="row" title="row" />
               </td>
-              <td class="td-driver text-left bold">Erki Erik Poola</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Erki Erik Poola</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:19:53.542</td>
               <td class="td-diff">+00:04:21.795</td>
               <td class="td-sr">
@@ -635,15 +687,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">davidgrundstrom</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">davidgrundstrom</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">No-recce</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:20:09.472</td>
               <td class="td-diff">+00:04:37.725</td>
               <td class="td-sr">
@@ -658,15 +710,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">dejota95</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">dejota95</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:20:15.968</td>
               <td class="td-diff">+00:04:44.221</td>
               <td class="td-sr">
@@ -681,15 +733,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">meatcreap</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">meatcreap</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:20:36.795</td>
               <td class="td-diff">+00:05:05.048</td>
               <td class="td-sr">
@@ -704,15 +756,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Bollis</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Bollis</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:20:44.073</td>
               <td class="td-diff">+00:05:12.326</td>
               <td class="td-sr">
@@ -727,15 +779,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/hun.png" class="img-sm"
                   alt="hun" title="hun" />
               </td>
-              <td class="td-driver text-left bold">fujiRS</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">fujiRS</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:23:01.081</td>
               <td class="td-diff">+00:07:29.334</td>
               <td class="td-sr">
@@ -750,15 +802,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Kringelwurst</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Kringelwurst</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:25:21.345</td>
               <td class="td-diff">+00:09:49.598</td>
               <td class="td-sr">
@@ -773,15 +825,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">TheZenor</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TheZenor</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:25:28.642</td>
               <td class="td-diff">+00:09:56.895</td>
               <td class="td-sr">
@@ -796,15 +848,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Tommie Lindberg</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Tommie Lindberg</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:27:18.000</td>
               <td class="td-diff">+00:11:46.253</td>
               <td class="td-sr">
@@ -819,15 +871,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">TASIS Edgar</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TASIS Edgar</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:25:20.749</td>
               <td class="td-diff">+00:09:49.002</td>
               <td class="td-sr">
@@ -842,15 +894,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">ninko</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ninko</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">00:25:24.432</td>
               <td class="td-diff">+00:09:52.685</td>
               <td class="td-sr">
@@ -865,15 +917,15 @@ exports[`e2e generates driver leg results 1`] = `
                 <img src="./assets/country-flags/bra.png" class="img-sm"
                   alt="bra" title="bra" />
               </td>
-              <td class="td-driver text-left bold">Htchet</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Htchet</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-total">15:11:11.161</td>
               <td class="td-diff">+14:55:39.414</td>
               <td class="td-sr">
@@ -1065,29 +1117,6 @@ exports[`e2e generates driver results 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>
@@ -1128,6 +1157,83 @@ exports[`e2e generates driver results 1`] = `
           <h2 class="ml-1">Test E2E Rally Grundstrom Driver Results</h2>
         </div>
       </div>
+          <div class="secondaryNav">
+        <a
+          class="secondaryNav__item secondaryNav__item--active"
+          href="./test-e2e-0-driver-results.html"
+          style=""
+          title="swe - R1"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="" />
+          <span class="secondaryNav__code">swe</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-1-driver-results.html"
+          style=""
+          title="est - R2"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="" />
+          <span class="secondaryNav__code">est</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./test-e2e-2-driver-results.html"
+          style=""
+          title="fin - R3"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="" />
+          <span class="secondaryNav__code">fin</span>
+        </a>
+    </div>
+
+      <div class="podium">
+        <div class="podium__item podium__item--1">
+          <div class="podium__top">
+            <span class="podium__pos">1</span>
+            <span class="podium__points">66 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/deu.png" class="img-sm" alt="deu" />
+            <span>Hawk24</span>
+          </div>
+          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:36:39.874</span>
+            <span class="podium__gap">leader</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--2">
+          <div class="podium__top">
+            <span class="podium__pos">2</span>
+            <span class="podium__points">52 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/bel.png" class="img-sm" alt="bel" />
+            <span>THELC Matt</span>
+          </div>
+          <div class="podium__car">Mitsubishi Lancer Evo IX N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:36:54.735</span>
+            <span class="podium__gap">+00:00:14.861</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--3">
+          <div class="podium__top">
+            <span class="podium__pos">3</span>
+            <span class="podium__points">39 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/fin.png" class="img-sm" alt="fin" />
+            <span>QazRa</span>
+          </div>
+          <div class="podium__car">Subaru Impreza N14 N4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:38:00.240</span>
+            <span class="podium__gap">+00:01:20.366</span>
+          </div>
+        </div>
+      </div>
       <div class="column-filter">
         <button class="column-filter__btn" type="button" aria-label="Filter columns">
           <span>Filter Columns</span>
@@ -1151,8 +1257,6 @@ exports[`e2e generates driver results 1`] = `
               <th class="th-nat">Nat</th>
               <th class="th-driver">Driver</th>
               <th class="th-team-name">Team Name</th>
-              <th class="th-car">Car</th>
-              <th class="th-car-name">Car Name</th>
               <th class="th-ps">PS</th>
               <th class="th-diff">Diff</th>
               <th class="th-total">Total</th>
@@ -1176,15 +1280,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Hawk24</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Hawk24</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:05:58.725</td>
               <td class="td-diff">--</td>
               <td class="td-total">00:36:39.874</td>
@@ -1204,15 +1308,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/bel.png" class="img-sm"
                   alt="bel" title="bel" />
               </td>
-              <td class="td-driver text-left bold">THELC Matt</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">THELC Matt</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:08.560</td>
               <td class="td-diff">+00:00:09.835</td>
               <td class="td-total">00:36:54.735</td>
@@ -1232,15 +1336,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/fin.png" class="img-sm"
                   alt="fin" title="fin" />
               </td>
-              <td class="td-driver text-left bold">QazRa</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">QazRa</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-ps">00:06:27.630</td>
               <td class="td-diff">+00:00:28.905</td>
               <td class="td-total">00:38:00.240</td>
@@ -1260,15 +1364,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">HotdogCowboy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">HotdogCowboy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:15.381</td>
               <td class="td-diff">+00:00:16.656</td>
               <td class="td-total">00:38:05.045</td>
@@ -1288,15 +1392,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/nor.png" class="img-sm"
                   alt="nor" title="nor" />
               </td>
-              <td class="td-driver text-left bold">Roy Magnes</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Roy Magnes</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-ps">00:06:24.457</td>
               <td class="td-diff">+00:00:25.732</td>
               <td class="td-total">00:38:49.944</td>
@@ -1316,15 +1420,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">satchmo</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">satchmo</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:23.351</td>
               <td class="td-diff">+00:00:24.626</td>
               <td class="td-total">00:38:56.208</td>
@@ -1344,15 +1448,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Joe Hutchinson</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Joe Hutchinson</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:37.517</td>
               <td class="td-diff">+00:00:38.792</td>
               <td class="td-total">00:39:25.422</td>
@@ -1372,15 +1476,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/kor.png" class="img-sm"
                   alt="kor" title="kor" />
               </td>
-              <td class="td-driver text-left bold">Prodicrux</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Prodicrux</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:37.507</td>
               <td class="td-diff">+00:00:38.782</td>
               <td class="td-total">00:39:57.017</td>
@@ -1400,15 +1504,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Thom B</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Thom B</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:14.609</td>
               <td class="td-diff">+00:00:15.884</td>
               <td class="td-total">00:41:44.586</td>
@@ -1428,15 +1532,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">davidgrundstrom</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">davidgrundstrom</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">No-recce</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:18.475</td>
               <td class="td-diff">+00:00:19.750</td>
               <td class="td-total">00:42:12.016</td>
@@ -1456,15 +1560,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Bollis</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Bollis</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:26.622</td>
               <td class="td-diff">+00:00:27.897</td>
               <td class="td-total">00:43:33.809</td>
@@ -1484,15 +1588,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">meatcreap</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">meatcreap</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:54.465</td>
               <td class="td-diff">+00:00:55.740</td>
               <td class="td-total">00:45:20.708</td>
@@ -1512,15 +1616,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Kringelwurst</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Kringelwurst</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:06:53.085</td>
               <td class="td-diff">+00:00:54.360</td>
               <td class="td-total">00:48:05.626</td>
@@ -1540,15 +1644,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">PETTET Jordan (shakey-deal)</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/subaru.png" alt="subaru"
+                    title="subaru" />
+                  <span class="td-driver__car-name">Subaru Impreza N14 N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/subaru.png" class="img-md" alt="subaru"
-                  title="subaru" />
-              </td>
-              <td class="td-car-name text-left">
-                Subaru Impreza N14 N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">00:54:17.683</td>
@@ -1568,15 +1672,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">FAHEY Andrew</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">FAHEY Andrew</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/seat.png" alt="seat"
+                    title="seat" />
+                  <span class="td-driver__car-name">Seat Leon Cupra R GrpN</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/seat.png" class="img-md" alt="seat"
-                  title="seat" />
-              </td>
-              <td class="td-car-name text-left">
-                Seat Leon Cupra R GrpN
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">00:56:23.828</td>
@@ -1596,15 +1700,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">ctbr</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ctbr</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">00:56:47.703</td>
@@ -1624,15 +1728,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Weepy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Weepy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:41.500</td>
               <td class="td-diff">+00:06:42.775</td>
               <td class="td-total popup" onclick="openPopup('Weepy')">
@@ -1655,15 +1759,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">jezza</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">jezza</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/seat.png" alt="seat"
+                    title="seat" />
+                  <span class="td-driver__car-name">Seat Leon Cupra R GrpN</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/seat.png" class="img-md" alt="seat"
-                  title="seat" />
-              </td>
-              <td class="td-car-name text-left">
-                Seat Leon Cupra R GrpN
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:01:55.456</td>
@@ -1683,15 +1787,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/hun.png" class="img-sm"
                   alt="hun" title="hun" />
               </td>
-              <td class="td-driver text-left bold">fujiRS</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">fujiRS</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:02:50.520</td>
@@ -1711,15 +1815,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Maximilian Maksy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Maximilian Maksy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:03:48.054</td>
@@ -1739,15 +1843,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/row.png" class="img-sm"
                   alt="row" title="row" />
               </td>
-              <td class="td-driver text-left bold">Erki Erik Poola</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Erki Erik Poola</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:04:08.542</td>
@@ -1767,15 +1871,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">dejota95</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">dejota95</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:04:30.968</td>
@@ -1795,15 +1899,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Tommie Lindberg</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Tommie Lindberg</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:05:55.714</td>
@@ -1823,15 +1927,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">TheZenor</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TheZenor</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name">Mitsubishi Lancer Evo IX N4</span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                Mitsubishi Lancer Evo IX N4
-              </td>
               <td class="td-ps">00:12:31.500</td>
               <td class="td-diff">+00:06:32.775</td>
               <td class="td-total">01:09:43.642</td>
@@ -1851,15 +1955,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">TASIS Edgar</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TASIS Edgar</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -1879,15 +1983,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">ninko</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ninko</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -1907,15 +2011,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/bra.png" class="img-sm"
                   alt="bra" title="bra" />
               </td>
-              <td class="td-driver text-left bold">Htchet</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Htchet</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -1935,15 +2039,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/ita.png" class="img-sm"
                   alt="ita" title="ita" />
               </td>
-              <td class="td-driver text-left bold">Superciuc93</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Superciuc93</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -1963,15 +2067,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Williams Huw</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Williams Huw</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -1991,15 +2095,15 @@ exports[`e2e generates driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">MartinRC</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">MartinRC</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -2765,29 +2869,6 @@ exports[`e2e generates overall driver results 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./overall-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>
@@ -2828,6 +2909,83 @@ exports[`e2e generates overall driver results 1`] = `
           <h2 class="ml-1">Overall Rally Nonko Driver Results</h2>
         </div>
       </div>
+          <div class="secondaryNav">
+        <a
+          class="secondaryNav__item"
+          href="./overall-0-driver-results.html"
+          style=""
+          title="swe - R1"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="" />
+          <span class="secondaryNav__code">swe</span>
+        </a>
+        <a
+          class="secondaryNav__item secondaryNav__item--active"
+          href="./overall-1-driver-results.html"
+          style=""
+          title="est - R2"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="" />
+          <span class="secondaryNav__code">est</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-2-driver-results.html"
+          style=""
+          title="fin - R3"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="" />
+          <span class="secondaryNav__code">fin</span>
+        </a>
+    </div>
+
+      <div class="podium">
+        <div class="podium__item podium__item--1">
+          <div class="podium__top">
+            <span class="podium__pos">1</span>
+            <span class="podium__points">65 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+            <span>woosh</span>
+          </div>
+          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:32:57.011</span>
+            <span class="podium__gap">leader</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--2">
+          <div class="podium__top">
+            <span class="podium__pos">2</span>
+            <span class="podium__points">52 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/aus.png" class="img-sm" alt="aus" />
+            <span>winstall</span>
+          </div>
+          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:33:29.039</span>
+            <span class="podium__gap">+00:00:32.028</span>
+          </div>
+        </div>
+        <div class="podium__item podium__item--3">
+          <div class="podium__top">
+            <span class="podium__pos">3</span>
+            <span class="podium__points">61 pts</span>
+          </div>
+          <div class="podium__name">
+            <img src="./assets/country-flags/est.png" class="img-sm" alt="est" />
+            <span>ninko</span>
+          </div>
+          <div class="podium__car">Porsche 911 SC 3.0 Grp4</div>
+          <div class="podium__times">
+            <span class="podium__total">00:33:30.252</span>
+            <span class="podium__gap">+00:00:33.241</span>
+          </div>
+        </div>
+      </div>
       <div class="column-filter">
         <button class="column-filter__btn" type="button" aria-label="Filter columns">
           <span>Filter Columns</span>
@@ -2852,8 +3010,6 @@ exports[`e2e generates overall driver results 1`] = `
               <th class="th-driver">Driver</th>
               <th class="th-div">Div</th>
               <th class="th-team-name">Team Name</th>
-              <th class="th-car">Car</th>
-              <th class="th-car-name">Car Name</th>
               <th class="th-ps">PS</th>
               <th class="th-diff">Diff</th>
               <th class="th-total">Total</th>
@@ -2871,16 +3027,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">woosh</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">woosh</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:39.094</td>
               <td class="td-diff">--</td>
               <td class="td-total">00:32:57.011</td>
@@ -2898,16 +3054,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">winstall</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">winstall</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:39.452</td>
               <td class="td-diff">+00:00:00.358</td>
               <td class="td-total">00:33:29.039</td>
@@ -2925,16 +3081,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">ninko</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ninko</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:51.854</td>
               <td class="td-diff">+00:00:12.760</td>
               <td class="td-total">00:33:30.252</td>
@@ -2952,16 +3108,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver1</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver1</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:39.952</td>
               <td class="td-diff">+00:00:00.858</td>
               <td class="td-total">00:33:33.039</td>
@@ -2979,16 +3135,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver2</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver2</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.052</td>
               <td class="td-diff">+00:00:00.958</td>
               <td class="td-total">00:33:34.539</td>
@@ -3006,16 +3162,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver3</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver3</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:40.152</td>
               <td class="td-diff">+00:00:01.058</td>
               <td class="td-total">00:33:36.039</td>
@@ -3033,16 +3189,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver4</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver4</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.252</td>
               <td class="td-diff">+00:00:01.158</td>
               <td class="td-total">00:33:37.539</td>
@@ -3060,16 +3216,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/fin.png" class="img-sm"
                   alt="fin" title="fin" />
               </td>
-              <td class="td-driver text-left bold">QazRa</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">QazRa</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:39.094</td>
               <td class="td-diff">+00:00:00.000</td>
               <td class="td-total">00:33:38.157</td>
@@ -3087,16 +3243,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver5</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver5</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:40.352</td>
               <td class="td-diff">+00:00:01.258</td>
               <td class="td-total">00:33:39.039</td>
@@ -3114,16 +3270,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver6</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver6</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.452</td>
               <td class="td-diff">+00:00:01.358</td>
               <td class="td-total">00:33:40.539</td>
@@ -3141,16 +3297,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver7</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver7</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:40.552</td>
               <td class="td-diff">+00:00:01.458</td>
               <td class="td-total">00:33:42.039</td>
@@ -3168,16 +3324,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver8</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver8</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.652</td>
               <td class="td-diff">+00:00:01.558</td>
               <td class="td-total">00:33:43.539</td>
@@ -3195,16 +3351,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Hawk24</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Hawk24</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:40.644</td>
               <td class="td-diff">+00:00:01.550</td>
               <td class="td-total">00:34:16.260</td>
@@ -3222,16 +3378,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Kringelwurst</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Kringelwurst</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.198</td>
               <td class="td-diff">+00:00:01.104</td>
               <td class="td-total">00:35:06.801</td>
@@ -3249,16 +3405,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">satchmo</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">satchmo</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:40.073</td>
               <td class="td-diff">+00:00:00.979</td>
               <td class="td-total">00:35:49.452</td>
@@ -3276,16 +3432,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Weepy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Weepy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/lancia.png" alt="lancia"
+                    title="lancia" />
+                  <span class="td-driver__car-name">Lancia Stratos HF Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-car">
-                <img src="./assets/cars/lancia.png" class="img-md" alt="lancia"
-                  title="lancia" />
-              </td>
-              <td class="td-car-name text-left">
-                Lancia Stratos HF Grp4
-              </td>
               <td class="td-ps">00:00:42.855</td>
               <td class="td-diff">+00:00:03.761</td>
               <td class="td-total">00:35:55.042</td>
@@ -3303,16 +3459,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">davidgrundstrom</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">davidgrundstrom</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">No-recce</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:40.500</td>
               <td class="td-diff">+00:00:01.406</td>
               <td class="td-total">00:36:08.039</td>
@@ -3330,16 +3486,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/bra.png" class="img-sm"
                   alt="bra" title="bra" />
               </td>
-              <td class="td-driver text-left bold">Htchet</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Htchet</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/lancia.png" alt="lancia"
+                    title="lancia" />
+                  <span class="td-driver__car-name">Lancia Stratos HF Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/lancia.png" class="img-md" alt="lancia"
-                  title="lancia" />
-              </td>
-              <td class="td-car-name text-left">
-                Lancia Stratos HF Grp4
-              </td>
               <td class="td-ps">00:00:41.367</td>
               <td class="td-diff">+00:00:02.273</td>
               <td class="td-total">00:36:09.704</td>
@@ -3357,16 +3513,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/nor.png" class="img-sm"
                   alt="nor" title="nor" />
               </td>
-              <td class="td-driver text-left bold">Roy Magnes</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Roy Magnes</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:42.462</td>
               <td class="td-diff">+00:00:03.368</td>
               <td class="td-total">00:36:15.682</td>
@@ -3384,16 +3540,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">HotdogCowboy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">HotdogCowboy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:39.452</td>
               <td class="td-diff">+00:00:00.358</td>
               <td class="td-total">00:36:19.636</td>
@@ -3411,16 +3567,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/kor.png" class="img-sm"
                   alt="kor" title="kor" />
               </td>
-              <td class="td-driver text-left bold">Prodicrux</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Prodicrux</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:44.303</td>
               <td class="td-diff">+00:00:05.209</td>
               <td class="td-total">00:37:27.546</td>
@@ -3438,16 +3594,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/ita.png" class="img-sm"
                   alt="ita" title="ita" />
               </td>
-              <td class="td-driver text-left bold">Superciuc93</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Superciuc93</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:42.699</td>
               <td class="td-diff">+00:00:03.605</td>
               <td class="td-total">00:38:01.850</td>
@@ -3465,16 +3621,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">jezza</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">jezza</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:43.563</td>
               <td class="td-diff">+00:00:04.469</td>
               <td class="td-total">00:39:22.515</td>
@@ -3492,16 +3648,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Bollis</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Bollis</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:42.470</td>
               <td class="td-diff">+00:00:03.376</td>
               <td class="td-total">00:39:43.947</td>
@@ -3519,16 +3675,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">FAHEY Andrew</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">FAHEY Andrew</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:47.913</td>
               <td class="td-diff">+00:00:08.819</td>
               <td class="td-total">00:44:05.459</td>
@@ -3546,16 +3702,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">ctbr</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ctbr</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:49:13.508</td>
@@ -3573,16 +3729,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">TASIS Edgar</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TASIS Edgar</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:49:52.645</td>
@@ -3600,16 +3756,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/hun.png" class="img-sm"
                   alt="hun" title="hun" />
               </td>
-              <td class="td-driver text-left bold">fujiRS</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">fujiRS</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:50:25.142</td>
@@ -3627,16 +3783,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">MartinRC</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">MartinRC</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:51:48.797</td>
@@ -3654,16 +3810,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">meatcreap</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">meatcreap</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:52:26.933</td>
@@ -3681,16 +3837,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Tommie Lindberg</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Tommie Lindberg</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:55:41.040</td>
@@ -3708,16 +3864,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">PETTET Jordan (shakey-deal)</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/lancia.png" alt="lancia"
+                    title="lancia" />
+                  <span class="td-driver__car-name">Lancia Stratos HF Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-car">
-                <img src="./assets/cars/lancia.png" class="img-md" alt="lancia"
-                  title="lancia" />
-              </td>
-              <td class="td-car-name text-left">
-                Lancia Stratos HF Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:59:11.712</td>
@@ -3735,16 +3891,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">dejota95</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">dejota95</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">00:59:17.892</td>
@@ -3762,16 +3918,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Maximilian Maksy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Maximilian Maksy</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/opel.png" alt="opel"
+                    title="opel" />
+                  <span class="td-driver__car-name">Opel Ascona 400 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-car">
-                <img src="./assets/cars/opel.png" class="img-md" alt="opel"
-                  title="opel" />
-              </td>
-              <td class="td-car-name text-left">
-                Opel Ascona 400 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">01:00:13.506</td>
@@ -3789,16 +3945,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/bel.png" class="img-sm"
                   alt="bel" title="bel" />
               </td>
-              <td class="td-driver text-left bold">THELC Matt</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">THELC Matt</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/porsche.png" alt="porsche"
+                    title="porsche" />
+                  <span class="td-driver__car-name">Porsche 911 SC 3.0 Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/porsche.png" class="img-md" alt="porsche"
-                  title="porsche" />
-              </td>
-              <td class="td-car-name text-left">
-                Porsche 911 SC 3.0 Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">01:04:22.331</td>
@@ -3816,16 +3972,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">TheZenor</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TheZenor</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/ford.png" alt="ford"
+                    title="ford" />
+                  <span class="td-driver__car-name">Ford Escort Mk II RS Grp4</span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-car">
-                <img src="./assets/cars/ford.png" class="img-md" alt="ford"
-                  title="ford" />
-              </td>
-              <td class="td-car-name text-left">
-                Ford Escort Mk II RS Grp4
-              </td>
               <td class="td-ps">00:00:58.500</td>
               <td class="td-diff">+00:00:19.406</td>
               <td class="td-total">01:07:03.299</td>
@@ -3843,16 +3999,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Joe Hutchinson</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Joe Hutchinson</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -3870,16 +4026,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/row.png" class="img-sm"
                   alt="row" title="row" />
               </td>
-              <td class="td-driver text-left bold">Erki Erik Poola</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Erki Erik Poola</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">+14:59:20.906</td>
               <td class="td-total">23:59:59.000</td>
@@ -3897,16 +4053,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Thom B</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Thom B</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">+14:59:20.906</td>
               <td class="td-total">23:59:59.000</td>
@@ -3924,16 +4080,16 @@ exports[`e2e generates overall driver results 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Williams Huw</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Williams Huw</span>
+                <span class="td-driver__car">
+                  <img class="td-driver__car-logo" src="./assets/cars/mitsubishi.png" alt="mitsubishi"
+                    title="mitsubishi" />
+                  <span class="td-driver__car-name"></span>
+                </span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-car">
-                <img src="./assets/cars/mitsubishi.png" class="img-md" alt="mitsubishi"
-                  title="mitsubishi" />
-              </td>
-              <td class="td-car-name text-left">
-                
-              </td>
               <td class="td-ps">15:00:00.000</td>
               <td class="td-diff">N/A</td>
               <td class="td-total">23:59:59.000</td>
@@ -4125,29 +4281,6 @@ exports[`e2e generates overall driver standings 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./overall-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>
@@ -4188,6 +4321,36 @@ exports[`e2e generates overall driver standings 1`] = `
           <h2 class="ml-1">Overall Driver Standings</h2>
         </div>
       </div>
+          <div class="secondaryNav">
+        <a
+          class="secondaryNav__item"
+          href="./overall-0-driver-results.html"
+          style=""
+          title="swe - R1"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="" />
+          <span class="secondaryNav__code">swe</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-1-driver-results.html"
+          style=""
+          title="est - R2"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="" />
+          <span class="secondaryNav__code">est</span>
+        </a>
+        <a
+          class="secondaryNav__item"
+          href="./overall-2-driver-results.html"
+          style=""
+          title="fin - R3"
+        >
+          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="" />
+          <span class="secondaryNav__code">fin</span>
+        </a>
+    </div>
+
       <div class="column-filter">
         <button class="column-filter__btn" type="button" aria-label="Filter columns">
           <span>Filter Columns</span>
@@ -4216,21 +4379,24 @@ exports[`e2e generates overall driver standings 1`] = `
 
                 <th class="th-location">
                   <a href="./overall-0-driver-results.html" style="">
-                    <img src="./assets/country-flags/swe.png" alt="swe" title="swe"/>
+                    <span class="th-location__code">swe</span>
+                    <span class="th-location__round">R1</span>
                   </a>
                 </th>
                 <th class="th-location">
                   <a href="./overall-1-driver-results.html" style="">
-                    <img src="./assets/country-flags/est.png" alt="est" title="est"/>
+                    <span class="th-location__code">est</span>
+                    <span class="th-location__round">R2</span>
                   </a>
                 </th>
                 <th class="th-location">
                   <a href="./overall-2-driver-results.html" style="">
-                    <img src="./assets/country-flags/fin.png" alt="fin" title="fin"/>
+                    <span class="th-location__code">fin</span>
+                    <span class="th-location__round">R3</span>
                   </a>
                 </th>
               <th class="th-points">Points</th>
-              <th class="th-adr">ADR*</th>
+              <th class="th-adr" title="*After Dropped Rounds: total points after 2 lowest scoring rounds removed - endurance rounds count as 2">ADR*</th>
             </tr>
           </thead>
           <tbody>
@@ -4245,16 +4411,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">woosh</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">woosh</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 65
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 65
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">130</td>
@@ -4271,16 +4439,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">winstall</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">winstall</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 52
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 52
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">104</td>
@@ -4297,16 +4467,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Hawk24</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Hawk24</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 66
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 38
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">104</td>
@@ -4323,16 +4495,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/fin.png" class="img-sm"
                   alt="fin" title="fin" />
               </td>
-              <td class="td-driver text-left bold">QazRa</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">QazRa</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 39
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 54
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">93</td>
@@ -4347,16 +4521,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver1</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver1</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 41
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 41
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">82</td>
@@ -4373,16 +4549,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver2</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver2</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 32
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 32
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">64</td>
@@ -4399,16 +4577,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">ninko</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ninko</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 61
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">61</td>
@@ -4425,16 +4605,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/bel.png" class="img-sm"
                   alt="bel" title="bel" />
               </td>
-              <td class="td-driver text-left bold">THELC Matt</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">THELC Matt</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 52
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">52</td>
@@ -4449,16 +4631,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver3</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver3</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 25
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 25
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">50</td>
@@ -4475,16 +4659,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">HotdogCowboy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">HotdogCowboy</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 32
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 16
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">48</td>
@@ -4499,16 +4685,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">satchmo</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">satchmo</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 20
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 27
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">47</td>
@@ -4525,16 +4713,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver4</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver4</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 20
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 20
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">40</td>
@@ -4551,16 +4741,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/nor.png" class="img-sm"
                   alt="nor" title="nor" />
               </td>
-              <td class="td-driver text-left bold">Roy Magnes</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Roy Magnes</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 24
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 14
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">38</td>
@@ -4577,16 +4769,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver5</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver5</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 18
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 18
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">36</td>
@@ -4603,16 +4797,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Kringelwurst</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Kringelwurst</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 3
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 32
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">35</td>
@@ -4629,16 +4825,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver6</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver6</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 16
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 16
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">32</td>
@@ -4653,16 +4851,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver7</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver7</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 14
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 14
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">28</td>
@@ -4679,16 +4879,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">davidgrundstrom</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">davidgrundstrom</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">No-recce</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 7
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 19
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">26</td>
@@ -4705,16 +4907,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/kor.png" class="img-sm"
                   alt="kor" title="kor" />
               </td>
-              <td class="td-driver text-left bold">Prodicrux</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Prodicrux</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 16
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 10
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">26</td>
@@ -4731,16 +4935,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">testdriver8</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">testdriver8</span>
+              </td>
               <td class="td-div">Test E2E2</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 12
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 12
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">24</td>
@@ -4757,16 +4963,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Weepy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Weepy</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">CodeBros</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 20
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">20</td>
@@ -4783,16 +4991,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Joe Hutchinson</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Joe Hutchinson</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Rizla&#x27;s Suffering Club</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 18
               </td>
-              <td class="td-result">
+              <td class="td-result is-dns">
                 DNS
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">18</td>
@@ -4809,16 +5019,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/bra.png" class="img-sm"
                   alt="bra" title="bra" />
               </td>
-              <td class="td-driver text-left bold">Htchet</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Htchet</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 16
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">16</td>
@@ -4835,16 +5047,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Thom B</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Thom B</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Kringel&#x27;s Coal Rental and Co.</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 10
               </td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">10</td>
@@ -4861,16 +5075,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Bollis</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Bollis</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 5
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 4
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">9</td>
@@ -4885,16 +5101,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/ita.png" class="img-sm"
                   alt="ita" title="ita" />
               </td>
-              <td class="td-driver text-left bold">Superciuc93</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Superciuc93</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 8
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">8</td>
@@ -4911,16 +5129,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/aus.png" class="img-sm"
                   alt="aus" title="aus" />
               </td>
-              <td class="td-driver text-left bold">jezza</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">jezza</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 6
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">6</td>
@@ -4937,16 +5157,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/usa.png" class="img-sm"
                   alt="usa" title="usa" />
               </td>
-              <td class="td-driver text-left bold">meatcreap</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">meatcreap</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">All Beef Franks</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 4
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">4</td>
@@ -4963,16 +5185,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">FAHEY Andrew</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">FAHEY Andrew</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 1
               </td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 1
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">2</td>
@@ -4989,16 +5213,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">PETTET Jordan (shakey-deal)</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">PETTET Jordan (shakey-deal)</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Heat Seeking Geezers mk2</td>
-              <td class="td-result">
+              <td class="td-result is-score is-best">
                 2
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">2</td>
@@ -5015,16 +5241,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">ctbr</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">ctbr</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5041,16 +5269,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">TASIS Edgar</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TASIS Edgar</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5067,16 +5297,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/hun.png" class="img-sm"
                   alt="hun" title="hun" />
               </td>
-              <td class="td-driver text-left bold">fujiRS</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">fujiRS</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5093,16 +5325,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">MartinRC</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">MartinRC</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-dns">
                 DNS
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5119,16 +5353,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/swe.png" class="img-sm"
                   alt="swe" title="swe" />
               </td>
-              <td class="td-driver text-left bold">Tommie Lindberg</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Tommie Lindberg</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5145,16 +5381,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/esp.png" class="img-sm"
                   alt="esp" title="esp" />
               </td>
-              <td class="td-driver text-left bold">dejota95</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">dejota95</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5171,16 +5409,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/deu.png" class="img-sm"
                   alt="deu" title="deu" />
               </td>
-              <td class="td-driver text-left bold">Maximilian Maksy</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Maximilian Maksy</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">The stale poos</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5197,16 +5437,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/est.png" class="img-sm"
                   alt="est" title="est" />
               </td>
-              <td class="td-driver text-left bold">TheZenor</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">TheZenor</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">Flat Out Racing</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5223,16 +5465,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/row.png" class="img-sm"
                   alt="row" title="row" />
               </td>
-              <td class="td-driver text-left bold">Erki Erik Poola</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Erki Erik Poola</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-score">
                 0
               </td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5249,16 +5493,18 @@ exports[`e2e generates overall driver standings 1`] = `
                 <img src="./assets/country-flags/gbr.png" class="img-sm"
                   alt="gbr" title="gbr" />
               </td>
-              <td class="td-driver text-left bold">Williams Huw</td>
+              <td class="td-driver text-left bold">
+                <span class="td-driver__name">Williams Huw</span>
+              </td>
               <td class="td-div">Test E2E</td>
               <td class="td-team-name text-left">privateer</td>
-              <td class="td-result">
+              <td class="td-result is-dnf">
                 DNF
               </td>
-              <td class="td-result">
+              <td class="td-result is-dns">
                 DNS
               </td>
-              <td class="td-result">
+              <td class="td-result is-empty">
                 
               </td>
               <td class="td-points bold">0</td>
@@ -5447,29 +5693,6 @@ exports[`e2e generates overall team standings 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./overall-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./overall-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>
@@ -5875,29 +6098,6 @@ exports[`e2e generates team standings 1`] = `
     </div>
   </div>
 
-    <div class="secondaryNav">
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-0-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/swe.png" alt="swe" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-1-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/est.png" alt="est" />
-        </a>
-        <a
-          class="secondaryNav__item"
-          href="./test-e2e-2-driver-results.html"
-          style=""
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/fin.png" alt="fin" />
-        </a>
-    </div>
 </header>
 
 <script>

@@ -170,19 +170,6 @@
     </div>
   </div>
 
-  {{#if secondary}}
-    <div class="secondaryNav">
-      {{#each secondary}}
-        <a
-          class="secondaryNav__item"
-          href="./{{../links.active.name}}-{{this.eventId}}-driver-results.html"
-          style="{{#if this.disableLink}}pointer-events:none;opacity:.45;{{/if}}"
-        >
-          <img class="secondaryNav__flag" src="./assets/country-flags/{{this.locationCode}}.png" alt="{{this.locationCode}}" />
-        </a>
-      {{/each}}
-    </div>
-  {{/if}}
 </header>
 
 {{#if endTime}}

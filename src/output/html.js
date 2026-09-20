@@ -38,7 +38,25 @@ const colours = {
 // Register Handlebars helpers
 Handlebars.registerHelper("eq", (a, b) => a === b);
 
+// Classifies a points cell so the stylesheet can tell a score from a
+// non-finish. Done here rather than in processing so it also applies when
+// rendering an already-processed league (see scripts/preview-snapshot.js).
+Handlebars.registerHelper("resultClass", value => {
+  if (value === null || value === undefined || value === "") {
+    return "is-empty";
+  }
+  const text = String(value).toUpperCase();
+  if (text === "DNF" || text === "DQ" || text === "DSQ") {
+    return "is-dnf";
+  }
+  if (text === "DNS") {
+    return "is-dns";
+  }
+  return "is-score";
+});
+
 let compiledNavigation = null;
+let compiledEventNav = null;
 let compiledLayout = null;
 
 const writeFantasyHTML = (fantasyResults, links) => {
@@ -113,12 +131,22 @@ const timeToSeconds = time => {
   return _t[0] * 60 + parseFloat(_t[1].replace(",", "."));
 };
 
-const getNavigationHTML = (
-  currentPage,
-  currentMenu,
-  links,
-  headerLocations
-) => {
+// The event pills that sit under a page's heading. Kept separate from the
+// site header so the row reads as part of the page it belongs to.
+const getEventNavHTML = (links, headerLocations, currentEventIndex) => {
+  if (!headerLocations || headerLocations.length === 0) return "";
+  return compiledEventNav({
+    links,
+    // Copied rather than mutated: the same headerLocations array also feeds
+    // the standings table, which must not inherit a per-page "active" flag.
+    secondary: headerLocations.map(location => ({
+      ...location,
+      active: location.eventId === currentEventIndex
+    }))
+  });
+};
+
+const getNavigationHTML = (currentPage, currentMenu, links) => {
   Object.keys(links).forEach(menu => {
     if (menu === "active") return;
     links[menu].forEach(link => {
@@ -131,7 +159,6 @@ const getNavigationHTML = (
   });
   return compiledNavigation({
     links,
-    secondary: headerLocations,
     endTime: leagueRef.endTime,
     activeCountry: leagueRef.activeCountryCode,
     logo: leagueRef.league.logo,
@@ -647,12 +674,8 @@ const writeStandingsHTML = (division, type, links) => {
   const data = transformForStandingsHTML(division, type);
   data.overall = division.divisionName === "overall";
 
-  data.navigation = getNavigationHTML(
-    division.divisionName,
-    type,
-    links,
-    data.headerLocations
-  );
+  data.navigation = getNavigationHTML(division.divisionName, type, links);
+  data.eventNav = getEventNavHTML(links, data.headerLocations);
   data.lastUpdatedAt = getLastUpdatedAt();
 
   const templateFile = `${templatePath}/${type}Standings.hbs`;
@@ -769,7 +792,26 @@ const transformForStandingsHTML = (division, type) => {
       negative: standing.positionChange < 0
     };
 
-    const results = getAllResults(standing.name, events, type);
+    const rawResults = getAllResults(standing.name, events, type);
+
+    // Mark each driver's best round so the row tells you where their season
+    // was won at a glance. Copied rather than mutated: these result objects
+    // are the same ones the event results pages and the JSON dump render.
+    const bestScore = Math.max(
+      ...rawResults.map(result =>
+        result && typeof result.pointsDisplay === "number"
+          ? result.pointsDisplay
+          : -1
+      )
+    );
+    const results = rawResults.map(result =>
+      result
+        ? {
+            ...result,
+            isBest: bestScore > 0 && result.pointsDisplay === bestScore
+          }
+        : result
+    );
 
     // can be null for team overall
     const standingDivision = leagueRef.divisions[standing.divisionName];
@@ -936,9 +978,17 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
       totalDiffDisplay: getTotalDiffDisplay(result, event)
     };
   });
+  // Top three finishers for the podium cards. Filtered on the entry flags,
+  // not on position: a retired driver still holds a position number but does
+  // not belong on a podium.
+  const podium = rows
+    .filter(row => !row.entry.isDnfEntry && !row.entry.isDnsEntry)
+    .slice(0, 3);
+
   const data = {
     headerLocations,
     rows,
+    podium,
     title: division.displayName || divisionName,
     showTeam: leagueRef.hasTeams && !useNationalityAsTeam(leagueRef, division),
     showTeamNameTextColumn: leagueRef.league.showTeamNameTextColumn,
@@ -993,12 +1043,8 @@ const writeDriverResultsHTML = ({
   const data = transformForDriverResultsHTML(event, division, legIndex);
   data.overall = division.divisionName === "overall";
 
-  data.navigation = getNavigationHTML(
-    division.divisionName,
-    "driver",
-    links,
-    data.headerLocations
-  );
+  data.navigation = getNavigationHTML(division.divisionName, "driver", links);
+  data.eventNav = getEventNavHTML(links, data.headerLocations, eventIndex);
   data.links = links;
   data.siteTitlePrefix = leagueRef.league.siteTitlePrefix;
   data.lastUpdatedAt = getLastUpdatedAt();
@@ -1176,6 +1222,10 @@ const writeAllHTML = () => {
   const navigationTemplateFile = `${templatePath}/navigation.hbs`;
   const navTemplate = fs.readFileSync(navigationTemplateFile).toString();
   compiledNavigation = Handlebars.compile(navTemplate);
+
+  const eventNavTemplateFile = `${templatePath}/eventNav.hbs`;
+  const eventNavTemplate = fs.readFileSync(eventNavTemplateFile).toString();
+  compiledEventNav = Handlebars.compile(eventNavTemplate);
 
   const links = getHtmlLinks();
   const league = leagueRef.league;

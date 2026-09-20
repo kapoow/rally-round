@@ -219,7 +219,7 @@ const runGitHubOperations = async () => {
     if (fs.existsSync(fontDir)) {
       const fontFiles = fs
         .readdirSync(fontDir)
-        .filter(file => /\.(woff2?|ttf|txt)$/i.test(file));
+        .filter(file => /\.(woff2?|ttf)$/i.test(file));
 
       for (const file of fontFiles) {
         const content = fs.readFileSync(path.join(fontDir, file));

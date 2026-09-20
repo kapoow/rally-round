@@ -136,8 +136,7 @@ const uploadFonts = async ({ bucket, championshipFolder }) => {
   const contentTypes = {
     ".woff2": "font/woff2",
     ".woff": "font/woff",
-    ".ttf": "font/ttf",
-    ".txt": "text/plain"
+    ".ttf": "font/ttf"
   };
   const files = fs
     .readdirSync(fontDir)

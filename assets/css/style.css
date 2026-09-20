@@ -1,5 +1,5 @@
 /* === Fonts ===
-   Barlow Condensed (SIL OFL, see assets/fonts/OFL.txt), subset to Latin +
+   Barlow Condensed (SIL Open Font License 1.1), subset to Latin +
    Latin Extended-A so names like "ŠKODA Fabia" still render, and served as
    woff2 at ~22KB a weight. font-display: swap so a cold cache shows text in
    the fallback face immediately rather than blocking on the download. */

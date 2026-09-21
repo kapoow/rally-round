@@ -301,7 +301,7 @@
           <div class="car-stat__label">{{localization.most_wins}}</div>
           <div class="car-stat__name">{{carStats.mostWins.name}}</div>
           <div class="car-stat__detail">
-            {{carStats.mostWins.wins}} {{localization.wins}} · {{carStats.mostWins.podiums}} {{localization.podiums}} · {{carStats.mostWins.winRate}}% {{localization.win_rate}}
+            {{carStats.mostWins.wins}} {{#if (eq carStats.mostWins.wins 1)}}{{localization.win}}{{else}}{{localization.wins}}{{/if}} · {{carStats.mostWins.podiums}} {{#if (eq carStats.mostWins.podiums 1)}}{{localization.podium}}{{else}}{{localization.podiums}}{{/if}} · {{carStats.mostWins.winRate}}% {{localization.win_rate}}
           </div>
         </div>
         {{/if}}
@@ -310,7 +310,7 @@
           <div class="car-stat__label">{{localization.best_average_performance}}</div>
           <div class="car-stat__name">{{carStats.bestAverage.name}}</div>
           <div class="car-stat__detail">
-            {{carStats.bestAverage.avgPoints}} {{localization.avg_points}} · {{carStats.bestAverage.entries}} {{localization.entries}}
+            {{carStats.bestAverage.avgPoints}} {{localization.avg_points}} · {{carStats.bestAverage.entries}} {{#if (eq carStats.bestAverage.entries 1)}}{{localization.entry}}{{else}}{{localization.entries}}{{/if}}
           </div>
         </div>
         {{/if}}

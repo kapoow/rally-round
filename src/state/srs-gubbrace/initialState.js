@@ -34,6 +34,7 @@ const initialState = {
       divisionName: "srsgubbrace",
       displayName: "SRS GUBBRACE",
       disableSameCarValidation: true,
+      plannedRounds: 4,
       wrc: [
         {
           clubId: "19871",

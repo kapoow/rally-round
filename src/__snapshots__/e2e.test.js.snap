@@ -38,7 +38,7 @@ exports[`e2e generates driver leg results 1`] = `
   <title>TEST-E2E | Test E2E Rally Grundstrom Leg 1 Driver Results</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -1058,7 +1058,7 @@ exports[`e2e generates driver results 1`] = `
   <title>TEST-E2E | Test E2E Rally Grundstrom Driver Results</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -2279,7 +2279,7 @@ exports[`e2e generates driver standings 1`] = `
   <title>TEST-E2E | Home</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -3034,7 +3034,7 @@ exports[`e2e generates overall driver results 1`] = `
   <title>TEST-E2E | Overall Rally Nonko Driver Results</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -4495,7 +4495,7 @@ exports[`e2e generates overall driver standings 1`] = `
   <title>TEST-E2E | Overall – Driver Standings</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -5960,7 +5960,7 @@ exports[`e2e generates overall team standings 1`] = `
   <title>TEST-E2E | Overall – Team Standings</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">
@@ -6417,7 +6417,7 @@ exports[`e2e generates team standings 1`] = `
   <title>TEST-E2E | Test E2E – Team Standings</title>
 </head>
 
-<body style="background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <header class="siteHeader">
   <div class="siteHeader__bar">
     <div class="navLeft navDesktopOnly">

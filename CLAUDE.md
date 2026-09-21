@@ -242,7 +242,7 @@ teamOverride: {
 
 **Color Theme**:
 ```javascript
-theme: "dark"  // Options: "dark", "red", "green", "orange" (default: blue/purple if not set)
+theme: "violet"  // Accent: "amber" (default), "red", "orange", "green", "blue", "violet"; "dark" is an alias for amber
 // Themes are WCAG AA compliant for accessibility
 ```
 

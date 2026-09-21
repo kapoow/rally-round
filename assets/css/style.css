@@ -423,7 +423,7 @@ td {
 .td-points,
 .td-result {
   font-weight: 600;
-  font-size: 1.133rem; /* 17px */
+  font-size: var(--figure-support);
   letter-spacing: 0.01em;
 }
 
@@ -432,7 +432,7 @@ td {
 .td-total-points,
 .td-adr {
   font-weight: 700;
-  font-size: 1.267rem; /* 19px */
+  font-size: var(--figure-anchor);
   letter-spacing: 0.01em;
 }
 
@@ -525,8 +525,6 @@ tbody>tr:hover {
 /* Position and driver: the two columns you scan down. */
 .td-pos {
   font-family: var(--font-display);
-  font-size: 1.267rem; /* 19px */
-  font-weight: 700;
   color: var(--text-muted);
 }
 
@@ -614,28 +612,23 @@ tbody>tr:nth-child(3) .td-pos {
 /* Season totals are the answer the page exists to give. */
 .td-points {
   color: var(--text-muted);
-  font-size: 1.133rem; /* 17px */
 }
 
 .td-adr {
   color: var(--accent);
   font-family: var(--font-display);
-  font-size: 1.267rem; /* 19px */
-  font-weight: 700;
 }
 
 table:has(.td-result):not(:has(.td-adr)) .td-points {
   color: var(--accent);
   font-family: var(--font-display);
-  font-size: 1.267rem; /* 19px */
+  font-size: var(--figure-anchor);
   font-weight: 700;
 }
 
 .td-total-points {
   color: var(--accent);
   font-family: var(--font-display);
-  font-size: 1.267rem; /* 19px */
-  font-weight: 700;
 }
 
 /* On a results page the component point columns are supporting detail. */
@@ -909,6 +902,9 @@ tbody > tr.is-zone-penalty .td-pos {
   --text-display: clamp(2.2rem, 5vw, 3.4rem);
 
   --tracking-label: 0.12em; /* uppercase micro-labels */
+
+  --figure-anchor: 1.267rem; /* 19px - position, totals, ADR */
+  --figure-support: 1.133rem; /* 17px - component points, times */
 
   /* =========================
      LEGACY ALIASES
@@ -2888,7 +2884,7 @@ a.round-card:focus-visible {
 .top-drivers-table .td-points {
   color: var(--accent);
   font-family: var(--font-display);
-  font-size: 1.267rem;
+  font-size: var(--figure-anchor);
   font-weight: 700;
   white-space: nowrap;
 }

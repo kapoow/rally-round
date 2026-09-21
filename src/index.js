@@ -722,9 +722,7 @@ const recalculateTotalTime = ({ stages }) => {
   }
 };
 
-// Both the points total after drop rounds and which rounds were dropped to get
-// there. The indexes line up with the events array, so the standings table can
-// strike the round through in the column it is read in.
+// Indexes line up with the events array so the table strikes the right column.
 const calculateDropRounds = ({
   allResultsForName,
   totalPoints,
@@ -746,12 +744,7 @@ const calculateDropRounds = ({
       .map(event => event.enduranceRoundMultiplier || 1)
       .slice(0, points.length);
     const roundsWeight = sum(roundWeights);
-    // Dropping as many rounds as have been run leaves nothing to count. In the
-    // opening rounds of a season that made every score strike through and the
-    // after-drop total read 0 for the entire field - a club that drops two
-    // rounds showed it for the first two events of every championship. Drops
-    // only start once a round would survive them, which is the threshold the
-    // standings ordering and the homepage cards already use.
+    // Drops only start once a round would survive them, else the whole field reads 0.
     if (roundsWeight <= dropRounds) {
       return {
         totalPointsAfterDropRounds: totalPoints,
@@ -1293,9 +1286,7 @@ const processAllDivisions = async () => {
       allFetchedEvents.forEach(event => {
         event.divisionName = divisionName;
 
-        // Check if event is in the future:
-        // - WRC events have eventStatus === eventStatuses.future
-        // - RBR events without eventStatus but with future startDate
+        // Future: WRC sets eventStatus; RBR has no status but a future startDate.
         const moment = require("moment");
         const isFutureEvent =
           event.eventStatus === eventStatuses.future ||

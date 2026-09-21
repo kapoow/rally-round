@@ -23,7 +23,6 @@ const missingDrivers = {};
 const drivers = {};
 const leagueRef = {};
 
-// cars by lowercase name
 const carsByName = Object.keys(vehicles).reduce((acc, key) => {
   acc[key.toLowerCase()] = vehicles[key];
   return acc;

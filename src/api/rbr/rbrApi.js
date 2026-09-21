@@ -219,7 +219,6 @@ const fetchHtmlSuperRally = async ({ rallyId, saveCacheFile }) => {
 
   // Check if the table was found
   if (finalStandingsTable.length > 0) {
-    // Find the rows in the table
     const tableRows = finalStandingsTable.find("tr");
 
     // Loop through the rows, starting from the second row (index 1)
@@ -276,7 +275,6 @@ const extractStageNameCellData = (nameCell, $) => {
 const extractStageTableData = ({ stageTable, eventFinished, $ }) => {
   const data = [];
   if (stageTable.length > 0) {
-    // Find the rows in the table
     const tableRows = stageTable.find("tr");
 
     // Loop through the rows, starting from the second row (index 1)

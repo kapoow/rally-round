@@ -104,10 +104,8 @@ router.post("/:configName/initialState", (req, res) => {
       fs.mkdirSync(dir, { recursive: true });
     }
 
-    // Generate the JavaScript content
     const jsContent = generateJavaScriptFile(config);
 
-    // Write the file
     fs.writeFileSync(initialStatePath, jsContent, "utf8");
 
     res.json({ success: true, message: "Configuration saved successfully" });
@@ -129,7 +127,6 @@ router.post("/validate", (req, res) => {
   });
 });
 
-// Generate JavaScript file content
 function generateJavaScriptFile(config) {
   // Convert the config object to a nicely formatted JavaScript string
   const jsString = `const initialState = ${JSON.stringify(config, null, 2)};

@@ -68,6 +68,7 @@ exports[`e2e generates driver leg results 1`] = `
       <div class="navMenu">
           <a class="navLink isActive" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -149,6 +150,9 @@ exports[`e2e generates driver leg results 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -1084,6 +1088,7 @@ exports[`e2e generates driver results 1`] = `
       <div class="navMenu">
           <a class="navLink isActive" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -1165,6 +1170,9 @@ exports[`e2e generates driver results 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -2301,6 +2309,7 @@ exports[`e2e generates driver standings 1`] = `
       <div class="navMenu">
           <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -2382,6 +2391,9 @@ exports[`e2e generates driver standings 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -2772,7 +2784,7 @@ exports[`e2e generates driver standings 1`] = `
     </div>
   </section>
 
-  <div class="home-grid-2">
+  <div class="home-grid-2 home-grid-2--paired">
     <section class="home-card">
       <header class="home-card__head">
         <h2 class="home-card__title">Last Event Winners</h2>
@@ -3052,6 +3064,7 @@ exports[`e2e generates overall driver results 1`] = `
       <div class="navMenu">
           <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink isActive" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -3133,6 +3146,9 @@ exports[`e2e generates overall driver results 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link isActive" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -4509,6 +4525,7 @@ exports[`e2e generates overall driver standings 1`] = `
       <div class="navMenu">
           <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -4590,6 +4607,9 @@ exports[`e2e generates overall driver standings 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -4686,10 +4706,12 @@ exports[`e2e generates overall driver standings 1`] = `
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Overall Driver Standings</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Overall · 2 of 3 rounds run
+          </div>
+          <h1 class="page-heading__title">Driver Standings</h1>
         </div>
       </div>
           <div class="secondaryNav">
@@ -4749,24 +4771,21 @@ exports[`e2e generates overall driver standings 1`] = `
               <th class="th-team-name">Team Name</th>
 
                 <th class="th-location">
-                  <a href="./overall-0-driver-results.html" style="">
+                  <a href="./overall-0-driver-results.html" title="swe - R1" style="">
                     <img class="th-location__flag" src="./assets/country-flags/swe.png"
-                      alt="swe" />
-                    <span class="th-location__round">R1</span>
+                      alt="swe R1" />
                   </a>
                 </th>
                 <th class="th-location">
-                  <a href="./overall-1-driver-results.html" style="">
+                  <a href="./overall-1-driver-results.html" title="est - R2" style="">
                     <img class="th-location__flag" src="./assets/country-flags/est.png"
-                      alt="est" />
-                    <span class="th-location__round">R2</span>
+                      alt="est R2" />
                   </a>
                 </th>
                 <th class="th-location">
-                  <a href="./overall-2-driver-results.html" style="">
+                  <a href="./overall-2-driver-results.html" title="fin - R3" style="">
                     <img class="th-location__flag" src="./assets/country-flags/fin.png"
-                      alt="fin" />
-                    <span class="th-location__round">R3</span>
+                      alt="fin R3" />
                   </a>
                 </th>
               <th class="th-points">Points</th>
@@ -5971,6 +5990,7 @@ exports[`e2e generates overall team standings 1`] = `
       <div class="navMenu">
           <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -6052,6 +6072,9 @@ exports[`e2e generates overall team standings 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -6148,10 +6171,12 @@ exports[`e2e generates overall team standings 1`] = `
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Overall Team Standings</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Overall · 2 of 3 rounds run
+          </div>
+          <h1 class="page-heading__title">Team Standings</h1>
         </div>
       </div>
       <div class="column-filter">
@@ -6422,6 +6447,7 @@ exports[`e2e generates team standings 1`] = `
       <div class="navMenu">
           <a class="navLink" href="./test-e2e-2-driver-results.html">Test E2E</a>
           <a class="navLink" href="./test-e2e2-2-driver-results.html">Test E2E2</a>
+          <a class="navLink" href="./overall-2-driver-results.html">Overall</a>
       </div>
     </div>
     <div class="navDrop" tabindex="0">
@@ -6503,6 +6529,9 @@ exports[`e2e generates team standings 1`] = `
         </a>
         <a class="drawer__link" href="./test-e2e2-2-driver-results.html">
           Driver Results - Test E2E2
+        </a>
+        <a class="drawer__link" href="./overall-2-driver-results.html">
+          Driver Results - Overall
         </a>
           <a class="drawer__link" href="./test-e2e-driver-standings.html">
             Driver Standings - Test E2E
@@ -6599,10 +6628,12 @@ exports[`e2e generates team standings 1`] = `
   <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/rsc-guy.png" />
-          <h2 class="ml-1">Test E2E Team Standings</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            TEST-E2E · Test E2E · 2 of 4 rounds run
+          </div>
+          <h1 class="page-heading__title">Team Standings</h1>
         </div>
       </div>
       <div class="column-filter">

@@ -1,10 +1,12 @@
 <div class="container">
   <div class="flexContainer">
     <div class="flexBox">
-      <div class="mb-1 hide-medium hide-small">
-        <div class="logo d-flex">
-          <img src="./assets/{{logo}}" />
-          <h2 class="ml-1">{{title}} {{localization.driver_standings}}</h2>
+      <div class="page-heading">
+        <div class="page-heading__titles">
+          <div class="page-heading__eyebrow">
+            {{siteTitlePrefix}}{{#if pageContext}} · {{pageContext}}{{/if}}{{#if seasonProgress}} · {{seasonProgress}}{{/if}}
+          </div>
+          <h1 class="page-heading__title">{{standingsTitle}}</h1>
         </div>
       </div>
       {{{eventNav}}}
@@ -48,10 +50,9 @@
 
               {{#each headerLocations}}
                 <th class="th-location">
-                  <a href="./{{../divisionName}}-{{this.eventId}}-driver-results.html" style="{{#if this.disableLink}}pointer-events: none;{{/if}}">
+                  <a href="./{{../divisionName}}-{{this.eventId}}-driver-results.html" title="{{this.locationCode}} - R{{this.round}}" style="{{#if this.disableLink}}pointer-events: none;{{/if}}">
                     <img class="th-location__flag" src="./assets/country-flags/{{this.locationCode}}.png"
-                      alt="{{this.locationCode}}" />
-                    <span class="th-location__round">R{{this.round}}</span>
+                      alt="{{this.locationCode}} R{{this.round}}" />
                   </a>
                 </th>
               {{/each}}

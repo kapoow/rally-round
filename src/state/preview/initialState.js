@@ -1,12 +1,5 @@
-// Frontend preview club.
-//
-// This club is never fetched or deployed. It exists so the snapshot preview
-// renderer has its own CLUB - and therefore its own ./hidden/out/preview
-// output directory - instead of writing into (and wiping) a real club's folder.
-//
-// Every value here is overridden at render time by the committed snapshot in
-// src/__fixtures__/preview/leagueResults.json, which carries the real league
-// config it was generated with. See scripts/preview-snapshot.js.
+// Preview-only club: gives the snapshot renderer its own CLUB and output dir.
+// Every value is overridden by src/__fixtures__/preview/leagueResults.json.
 const initialState = {
   pointsForDNF: false,
   useStandingsForHome: false,

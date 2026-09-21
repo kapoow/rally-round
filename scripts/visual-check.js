@@ -2,7 +2,7 @@
  * Bounded Puppeteer helper for generated-site visual checks.
  *
  * Examples:
- *   node scripts/visual-check.js srssommarcupen-7-driver-results.html
+ *   node scripts/visual-check.js overall-7-driver-results.html
  *   node scripts/visual-check.js standings --width 390 --height 844
  *   node scripts/visual-check.js active --click ".page-heading__nav-button"
  *   node scripts/visual-check.js results --hover ".navDrop"
@@ -27,9 +27,12 @@ const getOption = (name, fallback) => {
 
 const pageShortcuts = {
   home: "index.html",
-  standings: "srssommarcupen-driver-standings.html",
-  results: "srssommarcupen-7-driver-results.html",
-  active: "srssommarcupen-8-driver-results.html"
+  standings: "overall-driver-standings.html",
+  teams: "overall-team-standings.html",
+  results: "overall-7-driver-results.html",
+  active: "overall-8-driver-results.html",
+  tiera: "tiera-driver-standings.html",
+  tierb: "tierb-driver-standings.html"
 };
 
 const width = Number(getOption("width", 1536));

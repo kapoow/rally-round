@@ -89,9 +89,6 @@
               {{this.leaderPoints}}
               <span class="battle__points-unit">{{#if this.dropRoundPoints}}{{../localization.adr}}{{else}}{{../localization.pts}}{{/if}}</span>
             </div>
-            {{#if this.dropRoundPoints}}
-            <div class="battle__points-total">{{this.leaderTotalPoints}} {{../localization.pts}}</div>
-            {{/if}}
             <div class="battle__bar"><span class="battle__bar-fill" style="width: 100%"></span></div>
           </div>
           <div class="battle__gap">
@@ -114,9 +111,6 @@
               {{this.secondPlacePoints}}
               <span class="battle__points-unit">{{#if this.dropRoundPoints}}{{../localization.adr}}{{else}}{{../localization.pts}}{{/if}}</span>
             </div>
-            {{#if this.dropRoundPoints}}
-            <div class="battle__points-total">{{this.secondPlaceTotalPoints}} {{../localization.pts}}</div>
-            {{/if}}
             <div class="battle__bar"><span class="battle__bar-fill battle__bar-fill--second" style="width: {{this.secondPlaceBarPercent}}%"></span></div>
           </div>
         </div>
@@ -179,7 +173,7 @@
     <header class="home-card__head">
       <h2 class="home-card__title">
         {{../localization.calendar}}
-        {{#if ../multipleDivisions}}<span class="home-card__title-note">{{this.divisionName}}</span>{{/if}}
+        {{#if this.divisionName}}<span class="home-card__title-note">{{this.divisionName}}</span>{{/if}}
       </h2>
     </header>
     <div class="rounds-grid">
@@ -201,7 +195,7 @@
   </section>
   {{/each}}
 
-  <div class="home-grid-2">
+  <div class="home-grid-2 home-grid-2--paired">
     {{#if lastCompletedEvents.length}}
     <section class="home-card">
       <header class="home-card__head">

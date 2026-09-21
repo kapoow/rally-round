@@ -162,7 +162,6 @@ const handle2FA = async page => {
     } else {
       debug("#btnSendCode not found, trying alternative selectors...");
 
-      // Try alternative selectors
       const alternativeSelectors = ['a[role="button"]', "button", "a"];
 
       for (const selector of alternativeSelectors) {

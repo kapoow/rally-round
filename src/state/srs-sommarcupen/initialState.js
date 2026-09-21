@@ -11,7 +11,7 @@ const initialState = {
   superRallyIsDnf: true,
   showSuperRallyColumn: true,
   disableTeams: true,
-  hideCarColumnInStandings: false,
+  hideCarColumnInStandings: true,
   showCarNameAsTextInResults: true,
   nullTeamIsPrivateer: true,
   showTeamNameTextColumn: false,

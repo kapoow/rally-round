@@ -26,8 +26,7 @@ function openPopup(id) {
   popup.classList.toggle("show");
 }
 
-// When the event flags overflow, scroll the current event's flag into view,
-// or the latest event's flag on pages that aren't event results
+// Scroll the current event's flag into view, or the latest on non-results pages.
 function scrollSecondaryNavToCurrent() {
   const nav = document.querySelector(".secondaryNav");
   if (!nav || nav.scrollWidth <= nav.clientWidth) return;
@@ -251,8 +250,6 @@ document.addEventListener("DOMContentLoaded", function() {
           );
           if (timeSort !== null) return timeSort;
         }
-        // Fallback to string comparison for non-numeric, non-time columns
-        // or when secondary time sorting is unavailable
         if (cellA === "" && cellB === "") return 0;
         return (
           cellA.localeCompare(cellB, undefined, {
@@ -520,10 +517,7 @@ function initColumnFilter(table) {
     }
   };
 
-  // Column groups. A reader does not think in columns, they think in the
-  // handful of things they want out of the way - so one chip toggles every
-  // column belonging to that idea. Labels come from the headers themselves,
-  // which keeps them localized for free.
+  // One chip toggles every column belonging to an idea. Labels come from the headers.
   const GROUPS = {
     "driver-results": [
       { key: "ps", classes: ["th-ps"] },
@@ -561,9 +555,7 @@ function initColumnFilter(table) {
       label: group.label || getColumnName(headerList[group.indices[0]], 0)
     }));
 
-  // The car logo and model live inside the driver cell rather than in their
-  // own column, so they are toggled by class instead of by column index and
-  // stored under their own key.
+  // Car logo and model live in the driver cell, so they toggle by class not column index.
   const carStorageKey = `${storageKey}_car`;
   const hasCar = !!table.querySelector(".td-driver__car");
   let carHidden = false;

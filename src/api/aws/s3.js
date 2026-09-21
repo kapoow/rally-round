@@ -122,9 +122,7 @@ const uploadJS = async ({ bucket, championshipFolder }) => {
   debug(`uploaded app.js to s3`);
 };
 
-// Fonts are few and change rarely, so they go up whole rather than diffed
-// like the logo folders. Without this the site falls back to a system face
-// and the display type silently loses its condensed look.
+// Fonts go up whole, not diffed; without them the display type loses its condensed face.
 const uploadFonts = async ({ bucket, championshipFolder }) => {
   const fontDir = "./assets/fonts";
   if (!fs.existsSync(fontDir)) {

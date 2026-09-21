@@ -202,9 +202,8 @@ const fetchWRCEvents = async (division, divisionName, getAllResults) => {
       }
     }
   }
-  // appendEventIndexesToPrevious is an array of ints. Each int will cause the event at that index to have
-  // its stages appended to the event at the previous index, and the event is removed from the array.
-  // If merging more than one event it's best to order the array from high to low as the length of the events array changes as the process goes on.
+  // Each index appends that event's stages to the previous event and removes it.
+  // Order high to low: the array shortens as it goes.
   if (division.appendEventIndexesToPrevious) {
     appendEvents({ division, mergedEvents });
   }

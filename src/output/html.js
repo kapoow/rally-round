@@ -28,12 +28,9 @@ const { allLeagues } = require("../state/allLeagues");
 const { isEmpty, isNil } = require("lodash");
 // const { eventStatuses } = require("../shared");
 
-// Register Handlebars helpers
 Handlebars.registerHelper("eq", (a, b) => a === b);
 
-// Classifies a points cell so the stylesheet can tell a score from a
-// non-finish. Done here rather than in processing so it also applies when
-// rendering an already-processed league (see scripts/preview-snapshot.js).
+// Done here, not in processing, so it also applies to an already-processed league.
 Handlebars.registerHelper("resultClass", value => {
   if (value === null || value === undefined || value === "") {
     return "is-empty";
@@ -127,14 +124,11 @@ const timeToSeconds = time => {
   return _t[0] * 60 + parseFloat(_t[1].replace(",", "."));
 };
 
-// The event pills that sit under a page's heading. Kept separate from the
-// site header so the row reads as part of the page it belongs to.
 const getEventNavHTML = (links, headerLocations, currentEventIndex) => {
   if (!headerLocations || headerLocations.length === 0) return "";
   return compiledEventNav({
     links,
-    // Copied rather than mutated: the same headerLocations array also feeds
-    // the standings table, which must not inherit a per-page "active" flag.
+    // Copied, not mutated: the standings table shares this array.
     secondary: headerLocations.map(location => ({
       ...location,
       active: location.eventId === currentEventIndex
@@ -155,7 +149,11 @@ const getNavigationHTML = (currentPage, currentMenu, links, currentView) => {
   });
   const resultsLinks = (links.driver || [])
     .map(link => {
-      const division = leagueRef.divisions[link.name];
+      // overall hangs off the league, not leagueRef.divisions.
+      const division =
+        link.name === "overall"
+          ? leagueRef.league.overall
+          : leagueRef.divisions[link.name];
       if (!division || !division.events || division.events.length === 0) {
         return null;
       }
@@ -223,15 +221,10 @@ const getActiveEvents = divisions => {
   return activeEvents;
 };
 
-// Total rounds a division runs this season: processed events plus the ones
-// still to come.
 const getTotalRounds = division =>
   (division.events || []).length + (division.upcomingEvents || []).length;
 
-// The hero answers the one question the homepage exists for: what is on right
-// now. Live event first, then the next one on the calendar, then - once the
-// season is over - the round that finished it. Resolved here rather than in
-// the template so the fallbacks stay readable.
+// Live event first, then the next on the calendar, then the round that ended the season.
 const getHomeHero = divisions => {
   const localization = getLocalization();
   const entries = Object.entries(divisions || {});
@@ -307,8 +300,6 @@ const getHomeHero = divisions => {
     }
   }
 
-  // Nothing active and nothing left: the season is done, so the hero shows the
-  // round that decided it rather than an empty state.
   for (const [divName, division] of entries) {
     const events = division.events || [];
     for (let index = events.length - 1; index >= 0; index--) {
@@ -327,65 +318,88 @@ const getHomeHero = divisions => {
   return null;
 };
 
-// Every round of the season as a card: what it was, who won it, and whether it
-// has been run. The season calendar is the homepage's map, so upcoming rounds
-// are listed alongside finished ones instead of being hidden until they open.
-const getRoundCards = divisions => {
+const buildRoundGroup = ([divName, division]) => {
   const localization = getLocalization();
+  const divisionId = division.divisionName || divName;
 
-  return Object.entries(divisions || {})
-    .map(([divName, division]) => {
-      const divisionId = division.divisionName || divName;
+  const processed = (division.events || []).map((event, eventIndex) => {
+    const location = getLocation(event) || {};
+    const finished = event.eventStatus === eventStatuses.finished;
+    const winnerName = event.results?.driverResults?.[0]?.name;
+    let winner = null;
+    if (finished && winnerName) {
+      winner = getDriverData(winnerName, divName).driver.name;
+    }
 
-      const processed = (division.events || []).map((event, eventIndex) => {
-        const location = getLocation(event) || {};
-        const finished = event.eventStatus === eventStatuses.finished;
-        const winnerName = event.results?.driverResults?.[0]?.name;
-        let winner = null;
-        if (finished && winnerName) {
-          winner = getDriverData(winnerName, divName).driver.name;
-        }
+    return {
+      round: eventIndex + 1,
+      name: event.name || event.locationName || location.countryName,
+      locationCode: location.countryCode,
+      state: finished ? "done" : "live",
+      statusLabel: finished
+        ? localization.round_finished
+        : localization.round_live,
+      winner,
+      href: `./${divisionId}-${eventIndex}-driver-results.html`
+    };
+  });
 
-        return {
-          round: eventIndex + 1,
-          name: event.name || event.locationName || location.countryName,
-          locationCode: location.countryCode,
-          state: finished ? "done" : "live",
-          statusLabel: finished
-            ? localization.round_finished
-            : localization.round_live,
-          winner,
-          href: `./${divisionId}-${eventIndex}-driver-results.html`
-        };
-      });
+  const upcoming = (division.upcomingEvents || []).map((event, index) => {
+    const location = getLocation(event) || {};
+    return {
+      round: (division.events || []).length + index + 1,
+      name: event.name || event.locationName || location.countryName,
+      locationCode: location.countryCode,
+      state: "upcoming",
+      statusLabel: localization.round_upcoming,
+      winner: null,
+      // No winner yet, so the card carries the date instead.
+      startDate: event.startDate
+        ? moment(event.startDate).format("MMM D, YYYY")
+        : null,
+      href: null
+    };
+  });
 
-      const upcoming = (division.upcomingEvents || []).map((event, index) => {
-        const location = getLocation(event) || {};
-        return {
-          round: (division.events || []).length + index + 1,
-          name: event.name || event.locationName || location.countryName,
-          locationCode: location.countryCode,
-          state: "upcoming",
-          statusLabel: localization.round_upcoming,
-          winner: null,
-          // A round nobody has driven has no winner to show, so the card
-          // carries the date instead - the only place the schedule appears
-          // once an event is live and the hero has moved on.
-          startDate: event.startDate
-            ? moment(event.startDate).format("MMM D, YYYY")
-            : null,
-          href: null
-        };
-      });
-
-      return {
-        divisionName: division.displayName || divName,
-        divisionId,
-        rounds: [...processed, ...upcoming]
-      };
-    })
-    .filter(group => group.rounds.length > 0);
+  return {
+    divisionName: division.displayName || divName,
+    divisionId,
+    rounds: [...processed, ...upcoming]
+  };
 };
+
+// Divisions on identical schedules share one calendar, taken from overall.
+const roundSignature = rounds =>
+  JSON.stringify(
+    rounds.map(round => [
+      round.round,
+      round.name,
+      round.locationCode,
+      round.state,
+      round.startDate || null
+    ])
+  );
+
+const collapseSharedCalendar = groups => {
+  const overall = leagueRef.league.overall;
+  if (groups.length < 2 || !overall) return groups;
+
+  const signature = roundSignature(groups[0].rounds);
+  if (groups.some(group => roundSignature(group.rounds) !== signature)) {
+    return groups;
+  }
+
+  const overallGroup = buildRoundGroup(["overall", overall]);
+  if (roundSignature(overallGroup.rounds) !== signature) return groups;
+  return [{ ...overallGroup, divisionName: null }];
+};
+
+const getRoundCards = divisions =>
+  collapseSharedCalendar(
+    Object.entries(divisions || {})
+      .map(buildRoundGroup)
+      .filter(group => group.rounds.length > 0)
+  );
 
 const getDivisionInfo = divisions => {
   return Object.entries(divisions || {})
@@ -418,9 +432,7 @@ const getRules = (league, divisions) => {
   };
 };
 
-// Standings are ordered by drop round points when sortByDropRoundPoints is set, but
-// those are 0 for everyone until the standings include more rounds (weighted by
-// endurance multiplier) than are dropped - until then the order falls back to total points.
+// ADR is 0 for everyone until more rounds are run than are dropped.
 const useDropRoundPoints = division => {
   const { league } = leagueRef;
   const dropRounds = league.dropLowestScoringRoundsNumber || 0;
@@ -550,15 +562,12 @@ const getChampionshipBattles = divisions => {
           leader: leader.driver.name,
           leaderCountry: leader.country.code,
           leaderPoints,
-          leaderTotalPoints: leader.standing.totalPoints,
           secondPlace: secondPlace.driver.name,
           secondPlaceCountry: secondPlace.country.code,
           secondPlacePoints,
-          secondPlaceTotalPoints: secondPlace.standing.totalPoints,
           dropRoundPoints,
           gap,
-          // The two bars are read against each other, so the trailing driver's
-          // bar is a share of the leader's rather than of some absolute scale.
+          // The trailing bar is a share of the leader's, not of an absolute scale.
           secondPlaceBarPercent:
             leaderPoints > 0
               ? Math.max(
@@ -717,8 +726,6 @@ const getSeasonStats = divisions => {
     let totalEntries = 0;
     let totalDNFs = 0;
     let closestFinish = { margin: Infinity, event: null };
-    // Who has raced at all this season, and how many different names have won
-    // a round - the two numbers that say whether a championship is a contest.
     const drivers = new Set();
     const winners = new Set();
 
@@ -737,8 +744,7 @@ const getSeasonStats = divisions => {
           winners.add(results[0].name);
         }
 
-        // A non-starter is flagged as a DNF entry too, so counting both would
-        // report a field that never drove as a field that retired.
+        // A non-starter is flagged isDnfEntry too, so DNS rows are excluded here.
         const dnfs = results.filter(
           r => r.entry?.isDnfEntry && !r.entry?.isDnsEntry
         ).length;
@@ -810,8 +816,7 @@ const transformForHomeHTML = league => {
     siteTitlePrefix: league.siteTitlePrefix,
     hero,
     activeEvents,
-    // A multi-division club can have more than one event running. The hero
-    // takes the first; the rest are listed under it rather than dropped.
+    // The hero takes the first active event; the rest are listed under it.
     otherActiveEvents: hero
       ? activeEvents.filter(
           event =>
@@ -904,6 +909,18 @@ const getLastUpdatedAt = () => {
   return moment().utc().format();
 };
 
+// A live round is deliberately not counted as run: its points are still moving.
+const getSeasonProgress = (division, localization) => {
+  const totalRounds = getTotalRounds(division);
+  if (!totalRounds) return null;
+  const roundsRun = (division.events || []).filter(
+    event => event.eventStatus === eventStatuses.finished
+  ).length;
+  const roundLabel =
+    roundsRun === 1 ? localization.round_run : localization.rounds_run_plural;
+  return `${roundsRun} ${localization.of} ${totalRounds} ${roundLabel}`;
+};
+
 const writeStandingsHTML = (division, type, links) => {
   if (getEventsWithStandings(division.events, type).length === 0) {
     debug(`no ${type} standings found for ${division.divisionName}, skipping`);
@@ -915,6 +932,16 @@ const writeStandingsHTML = (division, type, links) => {
   data.navigation = getNavigationHTML(division.divisionName, type, links);
   data.eventNav = getEventNavHTML(links, data.headerLocations);
   data.lastUpdatedAt = getLastUpdatedAt();
+
+  data.siteTitlePrefix = leagueRef.league.siteTitlePrefix;
+  if (data.title.toLowerCase() !== data.siteTitlePrefix.toLowerCase()) {
+    data.pageContext = data.title;
+  }
+  data.standingsTitle =
+    type === "team"
+      ? data.localization.team_standings
+      : data.localization.driver_standings;
+  data.seasonProgress = getSeasonProgress(division, data.localization);
 
   const templateFile = `${templatePath}/${type}Standings.hbs`;
   const src = fs.readFileSync(templateFile).toString();
@@ -954,10 +981,7 @@ const writeStandingsHTML = (division, type, links) => {
   }
 };
 
-// Promotion, relegation and DNS-penalty rows are marked with a class rather
-// than an inline colour: the fill used to be a light-theme pastel painted
-// straight onto the row, which on the dark table buried the driver's name and
-// every figure in it. The stylesheet now owns how a zone looks.
+// Zones are a class, not an inline colour: the stylesheet owns how they look.
 const getStandingZone = standing => {
   if (standing.dnsPenalty) {
     return "is-zone-penalty";
@@ -1001,8 +1025,7 @@ const getEventsWithStandings = (events, type) => {
   return events.filter(e => e.standings && e.standings[`${type}Standings`]);
 };
 
-// Events counted in the displayed standings: the active event is left out when live
-// points are not shown, so the standings are those after the previous event
+// The active event is left out unless live points are shown.
 const getStandingsEvents = eventsWithStandings => {
   if (
     leagueRef.endTime &&
@@ -1036,9 +1059,7 @@ const transformForStandingsHTML = (division, type) => {
 
     const rawResults = getAllResults(standing.name, events, type);
 
-    // Mark each driver's best round so the row tells you where their season
-    // was won at a glance. Copied rather than mutated: these result objects
-    // are the same ones the event results pages and the JSON dump render.
+    // Copied, not mutated: these results are shared with the results pages and JSON dump.
     const bestScore = Math.max(
       ...rawResults.map(result =>
         result && typeof result.pointsDisplay === "number"
@@ -1046,8 +1067,6 @@ const transformForStandingsHTML = (division, type) => {
           : -1
       )
     );
-    // Rounds the drop-round knapsack left out of the ADR total, marked so the
-    // column explains itself instead of relying on the footnote.
     const droppedRoundIndexes = standing.droppedRoundIndexes || [];
     const results = rawResults.map((result, index) => {
       if (!result) {
@@ -1132,18 +1151,11 @@ const hasPoints = (pointsField, rows) => {
 
 const hiddenTimeDisplay = "--";
 
-// DNF_STAGE_TIME and MAX_TOTAL_TIME are sort keys, not times: they park an
-// entry at the end of the order when it has no time to show. Printed as-is
-// they read as a 15 hour stage or a 23:59 rally, so the time columns show a
-// neutral marker instead. Display only - the stored values still drive
-// sorting, points and standings. DNS is deliberately not used here: it comes
-// from the points column on a finished event, and would be wrong while an
-// event is live, where a driver without a time may still start.
+// DNF_STAGE_TIME and MAX_TOTAL_TIME are sort keys, not times, so they show a marker.
+// Not used for DNS: a driver without a time may still start a live event.
 const noTimeDisplay = "—";
 
-// Stage times are durations, not clock timestamps. Keep minutes as the
-// leading unit when the hour is zero, but retain real hour values (including
-// the long DNF penalty time) so the display never becomes ambiguous.
+// Durations, not clock times: drop a zero hour but keep real ones.
 const compactStageTime = value => {
   if (typeof value !== "string") return value;
   const match = value.match(/^(\d+):(\d{2}:\d{2}(?:\.\d+)?)$/);
@@ -1254,9 +1266,7 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
     return {
       ...result,
       position: index + 1,
-      // Event-result rows must only identify the car actually recorded for
-      // this event. DNS placeholders have no vehicleName; falling back to the
-      // driver's season/profile car falsely attributes an earlier car here.
+      // Only the car recorded for this event; a DNS placeholder has no vehicleName.
       car: entryCar ? entryCar.brand : undefined,
       driver,
       teamLogo: getTeamLogo(driver.teamId),
@@ -1270,9 +1280,7 @@ const transformForDriverResultsHTML = (event, division, legIndex) => {
       totalDiffDisplay: getTotalDiffDisplay(result, event)
     };
   });
-  // Top three finishers for the podium cards. Filtered on the entry flags,
-  // not on position: a retired driver still holds a position number but does
-  // not belong on a podium.
+  // Filtered on entry flags, not position: a retired driver still holds a position.
   const podium = rows
     .filter(row => !row.entry.isDnfEntry && !row.entry.isDnsEntry)
     .slice(0, 3);
@@ -1416,7 +1424,6 @@ const addLinks = (links, name, type, displayName) => {
 };
 
 const addHistoricalLinks = links => {
-  // Show all historical season links
   const allLinks = leagueRef.league.historicalSeasonLinks || [];
   links.historical = allLinks.map(link => ({
     ...link,

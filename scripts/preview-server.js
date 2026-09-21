@@ -48,19 +48,21 @@ const pageShortcuts = useE2E
     }
   : {
       home: "index.html",
-      standings: "srssommarcupen-driver-standings.html",
+      standings: "overall-driver-standings.html",
+      teams: "overall-team-standings.html",
       // Round 8 of 9: the last finished event, matching the results mockup.
-      results: "srssommarcupen-7-driver-results.html",
+      results: "overall-7-driver-results.html",
       // Round 9: the active event, for live/in-progress styling.
-      active: "srssommarcupen-8-driver-results.html",
+      active: "overall-8-driver-results.html",
+      tiera: "tiera-driver-standings.html",
+      tierb: "tierb-driver-standings.html",
       error: "error.html"
     };
 
 const target = args.find(arg => !arg.startsWith("--")) || "home";
 const startPage = pageShortcuts[target] || target;
 const basePort = Number(process.env.PORT) || 4173;
-// Listen beyond WSL's loopback interface so Windows can forward this port to
-// other devices on the LAN (for example, a physical phone via portproxy).
+// Bind beyond loopback so WSL can forward this port to devices on the LAN.
 const previewHost = process.env.HOST || "0.0.0.0";
 
 const mimeTypes = {
@@ -129,8 +131,7 @@ const build = () => {
       console.error(stderr.trim().split("\n").slice(-15).join("\n"));
     }
 
-    // Reload either way: a failed build usually still leaves the last good
-    // pages in place, and the error output is on the terminal.
+    // Reload either way: a failed build leaves the last good pages in place.
     clients.forEach(res => res.write("data: reload\n\n"));
 
     if (queued) {

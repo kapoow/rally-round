@@ -193,10 +193,7 @@ const knapsack = (allowedRoundsWeight, roundWeights, points) => {
   return K[points.length][allowedRoundsWeight];
 };
 
-// Which rounds the optimal selection leaves out, so the standings can strike
-// them through. Walks the same table backwards; when keeping and dropping a
-// round score the same it prefers keeping, otherwise a zero point round would
-// read as dropped even though the drop budget was already spent elsewhere.
+// Prefers keeping on a tie, so a zero-point round does not read as dropped.
 const knapsackDroppedIndexes = (allowedRoundsWeight, roundWeights, points) => {
   const K = buildKnapsackTable(allowedRoundsWeight, roundWeights, points);
   const droppedIndexes = [];

@@ -11,7 +11,6 @@ const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
 const ajv = new Ajv({ allErrors: true });
 addFormats(ajv);
 
-// Compile the schema
 const validate = ajv.compile(schema);
 
 /**

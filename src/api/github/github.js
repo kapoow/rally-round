@@ -205,9 +205,7 @@ const runGitHubOperations = async () => {
       debug("Uploaded JS file as blob");
     }
 
-    // 4. Font files - woff2 is binary, so it goes up base64 like the logos.
-    // Uploaded every run rather than diffed: there are only a couple of them,
-    // and identical content resolves to the same blob sha anyway.
+    // 4. Font files - binary, so base64 like the logos; identical content dedupes by sha.
     const fontDir = path.resolve(
       __dirname,
       "..",
@@ -258,7 +256,6 @@ const runGitHubOperations = async () => {
           `Found ${existingLogos.length} existing ${logoType} logos in GitHub`
         );
 
-        // Get local logos
         const localLogos = fs
           .readdirSync(logoDir)
           .filter(file => file.endsWith(".png"));

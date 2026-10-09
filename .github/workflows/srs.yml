@@ -2,8 +2,8 @@ name: SRS - Automated Update
 
 on:
   schedule:
-    # every hour on the hour
-    - cron: "0 * * * *"
+    # every hour at minute 17
+    - cron: "17 * * * *"
 
 jobs:
   update-srs:

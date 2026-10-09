@@ -63,6 +63,11 @@ const fetchEventsForClub = async ({
       reversedChampionshipIds,
       startingChampionshipId
     );
+    if (startingChampionshipIndex === -1) {
+      throw new Error(
+        `Starting WRC championship ${startingChampionshipId} was not found for club ${club.clubId}. Check that championshipIds contains championship IDs, not event IDs.`
+      );
+    }
     championshipIds = slice(reversedChampionshipIds, startingChampionshipIndex);
   }
   const allRacenetEvents = [];

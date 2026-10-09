@@ -38,7 +38,7 @@ const initialState = {
       wrc: [
         {
           clubId: "19871",
-          championshipIds: ["Mbn5YQ1U7Fz1AHQ4"],
+          championshipIds: ["6YQMdLK8xMZnMdq7"],
           includeNextChampionships: true
         }
       ],
